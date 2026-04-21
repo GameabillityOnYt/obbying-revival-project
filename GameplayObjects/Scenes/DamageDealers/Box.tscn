@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bmgcwka64ivk6"]
+
+[ext_resource type="Script" uid="uid://ctgpp52r21ksi" path="res://GameplayObjects/Scripts/DamageDealer.gd" id="1_c127l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wh0s8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cgaq4"]
+
+[node name="Box" type="StaticBody3D" unique_id=1165275932]
+script = ExtResource("1_c127l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2049788073]
+shape = SubResource("BoxShape3D_wh0s8")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=718019876]
+mesh = SubResource("BoxMesh_cgaq4")

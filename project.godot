@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Obbying Revival Project"
 run/main_scene="uid://de5w0bnvhc3wn"
+config/auto_accept_quit=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 config/icon="uid://bff45kdw0wpbe"
@@ -32,9 +33,11 @@ window/vsync/vsync_mode=0
 
 folder_colors={
 "res://GUI/": "green",
+"res://GameplayObjects/": "pink",
 "res://assets/": "purple",
 "res://character/": "blue",
-"res://scenes/": "pink",
+"res://resources/": "teal",
+"res://scenes/": "orange",
 "res://scripts/": "yellow"
 }
 
@@ -42,6 +45,7 @@ folder_colors={
 
 climbable="climbable"
 DamageDealer=""
+SpawnLocation=""
 
 [input]
 
@@ -75,10 +79,6 @@ ui_text_caret_up={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":83,"physical_keycode":0,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
-}
-down={
-"deadzone": 0.2,
-"events": []
 }
 shift_lock={
 "deadzone": 0.2,

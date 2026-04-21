@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ttqhrbnnvaxv"
-path="res://.godot/imported/trusss.glb-4e355d901cf1d8cc93d353ae9808be15.scn"
+uid="uid://bnmpwwl2t8vuh"
+path="res://.godot/imported/spawn.glb-da8c7801feb571c6d2945e675e604fc1.scn"
 
 [deps]
 
-source_file="res://Parts/trusss.glb"
-dest_files=["res://.godot/imported/trusss.glb-4e355d901cf1d8cc93d353ae9808be15.scn"]
+source_file="res://assets/models/spawn.glb"
+dest_files=["res://.godot/imported/spawn.glb-da8c7801feb571c6d2945e675e604fc1.scn"]
 
 [params]
 

@@ -13,10 +13,9 @@ var pitch := 0.0
 var rotating := false
 
 enum CameraMode {NORMAL, FIRSTPERSON}
-@export var shiftlocked:bool = false
 @export var mode: CameraMode = CameraMode.NORMAL
-
 @onready var ray: RayCast3D = target.get_node("Focus/ray")
+@export var offset:Vector3 = Vector3.ZERO
 
 var target_distance := 10.0 :
 	set(new):
@@ -25,7 +24,13 @@ var target_distance := 10.0 :
 		target_distance = new
 
 func _ready():
+	GameManager.Camera = self
 	target_distance = distance
+	fov = GameManager.data.fov
+	ray.add_exception(target)
+	GameManager.data.FOVChanged.connect(func(new):
+		fov = new
+		pass)
 
 func _input(event):
 	if Input.is_action_just_pressed("left_align"):
@@ -39,8 +44,8 @@ func _input(event):
 		yaw = wrapf(step_index * step, -PI, PI)
 		snapping = true
 	if Input.is_action_just_pressed("shift_lock"):
-		shiftlocked = !shiftlocked
-	if not shiftlocked:
+		GameManager.shiftlocked = !GameManager.shiftlocked
+	if not GameManager.shiftlocked:
 		rotating = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
 		Input.set_mouse_mode(
 			Input.MOUSE_MODE_CAPTURED if rotating else Input.MOUSE_MODE_VISIBLE
@@ -53,7 +58,7 @@ func _input(event):
 	target_distance = clamp(target_distance, 0, max_distance)
 	mode = CameraMode.NORMAL if target_distance > 0 else CameraMode.FIRSTPERSON
 
-	if not shiftlocked and mode == CameraMode.NORMAL:
+	if not GameManager.shiftlocked and mode == CameraMode.NORMAL:
 		rotating = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
 		Input.set_mouse_mode(
 			Input.MOUSE_MODE_CAPTURED if rotating else Input.MOUSE_MODE_VISIBLE
@@ -65,16 +70,17 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	target.visible = mode == CameraMode.NORMAL
-	target.shiftlockLogo.visible = shiftlocked
-	target.follow_camera = shiftlocked or mode == CameraMode.FIRSTPERSON
+	target.shiftlockLogo.visible = GameManager.shiftlocked
+	target.follow_camera = GameManager.shiftlocked or mode == CameraMode.FIRSTPERSON
 
 	if event is InputEventMouseMotion:
-		if rotating or shiftlocked:
+		if rotating or GameManager.shiftlocked:
 			yaw -= event.relative.x * GameManager.data.sensitivity/200
 			pitch -= event.relative.y * GameManager.data.sensitivity/200
 			pitch = clamp(pitch, -1.5, 1.5)
 
 func _process(delta):
+	offset = Vector3(.35,0,0) if GameManager.shiftlocked else Vector3.ZERO
 	if target == null:
 		return
 	if not snapping:
@@ -95,4 +101,4 @@ func _process(delta):
 	distance = min(lerp(distance, target_distance, smooth_speed * delta),final_distance)
 	rotation = Vector3(pitch,yaw,0)
 	
-	global_position = target.get_node("Focus").global_position + global_basis.z * distance
+	global_position = target.get_node("Focus").global_position + global_basis.z * distance + global_transform.basis*offset

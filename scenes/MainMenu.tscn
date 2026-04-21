@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bff45kdw0wpbe" path="res://assets/images/aa.png" id="1_yqorp"]
 [ext_resource type="FontFile" uid="uid://bb74yqfgngijg" path="res://assets/fonts/AlteHaasGroteskBold.ttf" id="2_0ykhv"]
 [ext_resource type="Theme" uid="uid://dyn87lf4436y3" path="res://resources/MainMenuButton.tres" id="4_l72w3"]
+[ext_resource type="PackedScene" uid="uid://bwlmhgmpfqdjh" path="res://GUI/Scenes/sensitivity.tscn" id="5_l72w3"]
+[ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://GUI/Scenes/FOV.tscn" id="6_826wr"]
+[ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://GUI/Scenes/maxFPS.tscn" id="7_ucygd"]
 
 [sub_resource type="GDScript" id="GDScript_yqorp"]
 resource_name = "Rotating"
@@ -111,7 +114,38 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
+[node name="Settings" type="Node2D" parent="." unique_id=132079008]
+position = Vector2(1300, 0)
+
+[node name="Sensitivity" parent="Settings" unique_id=736337411 instance=ExtResource("5_l72w3")]
+offset_left = -617.0
+offset_top = -41.0
+offset_right = -132.15149
+offset_bottom = 9.0
+
+[node name="MaxFps" parent="Settings" unique_id=1734334787 instance=ExtResource("7_ucygd")]
+offset_left = -373.0
+offset_top = 60.0
+offset_right = -286.5
+offset_bottom = 91.0
+
+[node name="Back" type="Button" parent="Settings" unique_id=1445670015]
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -519.0
+offset_bottom = -300.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+alignment = 0
+
+[node name="FOV" parent="Settings" unique_id=432107997 instance=ExtResource("6_826wr")]
+offset_left = 44.0
+offset_right = 528.8485
+
 [connection signal="mouse_entered" from="Main/Aa/Area2D" to="Main/Aa" method="_on_hover"]
 [connection signal="mouse_exited" from="Main/Aa/Area2D" to="Main/Aa" method="_leave_hover"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_return_to_main_pressed"]

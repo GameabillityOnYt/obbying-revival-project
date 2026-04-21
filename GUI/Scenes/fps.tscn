@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhgjl8nsom23c"]
 
-[ext_resource type="Script" uid="uid://5n860nl6ayum" path="res://GUI/Scripts/FPS.gd" id="2_7arvn"]
+[ext_resource type="Script" uid="uid://5n860nl6ayum" path="res://scripts/gui/FPS.gd" id="2_7arvn"]
 [ext_resource type="FontFile" uid="uid://bb74yqfgngijg" path="res://assets/fonts/AlteHaasGroteskBold.ttf" id="2_yal45"]
 
 [sub_resource type="Theme" id="Theme_mlofp"]

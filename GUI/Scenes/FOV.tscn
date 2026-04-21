@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bll3e5wwm6qpo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
+bg_color = Color(0.11103695, 0.6930888, 0.61143726, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_l72w3"]
+color = Color(0, 0, 0, 0)
+thickness = 12
+
+[sub_resource type="Theme" id="Theme_l72w3"]
+HSlider/constants/center_grabber = 0
+HSlider/icons/grabber = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ow34m")
+HSlider/styles/slider = SubResource("StyleBoxLine_l72w3")
+
+[sub_resource type="GDScript" id="GDScript_y7cst"]
+resource_name = "FOVHandler"
+script/source = "extends HSlider
+
+@onready var textHolder = $Value
+var old_text := \"\"
+
+func _ready():
+	self.value = GameManager.data.fov
+	old_text = str(self.value)
+	_on_value_text_changed(old_text)
+	pass
+
+func _on_value_text_changed(new_text: String) -> void:
+	var old_column = textHolder.caret_column
+	if new_text.is_valid_int():
+		old_text = new_text
+		value = old_text.to_int()
+	else:
+		textHolder.caret_column = old_column
+		textHolder.text = old_text
+
+func _on_value_changed(n: float) -> void:
+	old_text = str(n)
+	var old_column = textHolder.caret_column
+	if textHolder.text != old_text:
+		textHolder.text = old_text
+		textHolder.caret_column = old_column
+	GameManager.data.fov = n
+"
+
+[node name="FOV" type="HSlider" unique_id=736337411]
+offset_left = -608.0
+offset_top = -57.0
+offset_right = -123.15152
+offset_bottom = -7.0
+theme = SubResource("Theme_l72w3")
+min_value = 25.0
+max_value = 120.0
+value = 70.0
+ticks_on_borders = true
+ticks_position = 3
+script = SubResource("GDScript_y7cst")
+
+[node name="Label" type="Label" parent="." unique_id=633577005]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.000244
+offset_top = -7.49
+offset_right = 39.99977
+offset_bottom = 15.51
+grow_horizontal = 2
+text = "FOV"
+horizontal_alignment = 1
+
+[node name="Value" type="LineEdit" parent="." unique_id=423327062]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.750244
+offset_top = -15.0
+offset_right = 63.74977
+offset_bottom = 16.000015
+grow_horizontal = 2
+grow_vertical = 0
+text = "70"
+alignment = 1
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]
+[connection signal="text_changed" from="Value" to="." method="_on_value_text_changed"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b5gciitoxxw3j"]
+
+[ext_resource type="Script" uid="uid://cyc4vejy68uxt" path="res://Scripts/gui/max_fps.gd" id="1_fgfc4"]
+
+[node name="MaxFps" type="SpinBox" unique_id=1734334787]
+offset_right = 86.5
+offset_bottom = 31.0
+min_value = 30.0
+max_value = 9.223372e+18
+value = 60.0
+custom_arrow_step = 1.0
+script = ExtResource("1_fgfc4")
+
+[node name="Label" type="Label" parent="." unique_id=229336366]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -11.5
+offset_right = -5.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Max FPS"
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

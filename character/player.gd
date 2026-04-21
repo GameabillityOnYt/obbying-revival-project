@@ -55,7 +55,6 @@ var just_jumped_off := false
 @onready var player = $Character
 @onready var playerAnims = $Character/AnimationPlayer
 @export var HealthBar: ProgressBar
-@export var spawn: Node3D
 
 @export var voidDepth := 50.0
 @export var follow_camera := false 
@@ -111,6 +110,7 @@ func update_state():
 		State = states.Walking
 	else:
 		State = states.Idle
+		
 func _ready() -> void:
 	reset()
 
@@ -125,8 +125,8 @@ func update_health_bar():
 
 func reset():
 	await get_tree().process_frame
-	position = spawn.position
 	Health = MaxHealth
+	GameManager.CharacterAdded.emit(self)
 
 func _physics_process(delta: float) -> void:
 	# timers
@@ -269,7 +269,7 @@ func _physics_process(delta: float) -> void:
 	just_jumped_off = false
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Health <= 0:
 		reset()
 

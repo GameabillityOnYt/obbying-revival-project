@@ -1,9 +1,116 @@
 [gd_scene format=3 uid="uid://r7idkhhne3c0"]
 
+[ext_resource type="PackedScene" uid="uid://bwlmhgmpfqdjh" path="res://GUI/Scenes/sensitivity.tscn" id="1_lxta3"]
+[ext_resource type="Script" uid="uid://cmky20j52nk1b" path="res://scripts/gui/esc_menu.gd" id="1_vgykv"]
+[ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://GUI/Scenes/maxFPS.tscn" id="2_ldi25"]
+[ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://GUI/Scenes/FOV.tscn" id="3_dpyxx"]
+[ext_resource type="Theme" uid="uid://dyn87lf4436y3" path="res://resources/MainMenuButton.tres" id="4_dpyxx"]
+[ext_resource type="FontFile" uid="uid://bb74yqfgngijg" path="res://assets/fonts/AlteHaasGroteskBold.ttf" id="5_vgykv"]
+
 [node name="EscMenu" type="Control" unique_id=1769971828]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -720.0
+offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vgykv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=48466012]
+z_index = -1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.17254902, 0.17254902, 0.17254902, 0.34509805)
+
+[node name="Sensitivity" parent="." unique_id=736337411 instance=ExtResource("1_lxta3")]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 510.0
+offset_right = 526.8485
+offset_bottom = 560.0
+
+[node name="MaxFps" parent="." unique_id=1734334787 instance=ExtResource("2_ldi25")]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 611.0
+offset_right = 372.5
+offset_bottom = 642.0
+
+[node name="FOV" parent="." unique_id=575552083 instance=ExtResource("3_dpyxx")]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 494.0
+offset_right = 1187.8485
+offset_bottom = 544.0
+
+[node name="Back" type="Button" parent="." unique_id=819489497]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -60.0
+offset_right = 68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_dpyxx")
+theme_override_fonts/font = ExtResource("5_vgykv")
+theme_override_font_sizes/font_size = 50
+text = "close"
+alignment = 0
+
+[node name="Menu" type="Button" parent="." unique_id=1889324263]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -558.0
+offset_top = -60.0
+offset_right = -232.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_dpyxx")
+theme_override_fonts/font = ExtResource("5_vgykv")
+theme_override_font_sizes/font_size = 50
+text = "back to menu"
+alignment = 0
+
+[node name="Quit" type="Button" parent="." unique_id=1246730492]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 265.0
+offset_top = -60.0
+offset_right = 591.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_dpyxx")
+theme_override_fonts/font = ExtResource("5_vgykv")
+theme_override_font_sizes/font_size = 50
+text = "quit game"
+alignment = 0
+
+[node name="Label" type="Label" parent="." unique_id=757265512]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -152.5
+offset_right = 152.5
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_vgykv")
+theme_override_font_sizes/font_size = 64
+text = "ESC Menu"
+horizontal_alignment = 1

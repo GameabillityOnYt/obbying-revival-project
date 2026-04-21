@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bu5ec1ohqmn8f"]
 
-[ext_resource type="PackedScene" uid="uid://ttqhrbnnvaxv" path="res://Parts/trusss.glb" id="1_oy6c7"]
+[ext_resource type="PackedScene" uid="uid://ttqhrbnnvaxv" path="res://assets/models/trusss.glb" id="1_oy6c7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oy6c7"]
 
