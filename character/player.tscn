@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bqn7xr4afyk5h" path="res://character/Character.glb" id="3_hhoun"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aypkh"]
-size = Vector3(0.5, 1.6538575, 0.2)
+size = Vector3(1.3789063, 2.2563477, 1)
 
 [sub_resource type="GDScript" id="GDScript_aypkh"]
 script/source = "extends RayCast3D
@@ -20,7 +20,7 @@ script = ExtResource("1_monf5")
 jump_up_force = 7.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=430059723]
-transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, 0.5036839, 0)
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, 2.016971, 0)
 shape = SubResource("BoxShape3D_aypkh")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=335641631 node_paths=PackedStringArray("target")]
@@ -42,23 +42,23 @@ transform = Transform3D(1, 0, 0, 0, 0.96000004, 0, 0, 0, 1, 0, 0.41, 0)
 shape = SubResource("BoxShape3D_hhoun")
 
 [node name="flickRay" type="RayCast3D" parent="." unique_id=1153203733]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0.1)
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.03, 0.1)
 target_position = Vector3(0, -0.4, 0.7)
 
 [node name="flickRay2" type="RayCast3D" parent="." unique_id=1694837158]
-transform = Transform3D(-2, 0, -1.509958e-07, 0, 1, 0, 3.019916e-07, 0, -1, -1.7484556e-08, 0.03, -0.1)
+transform = Transform3D(-4, 0, -3.019916e-07, 0, 2, 0, 6.039832e-07, 0, -2, -1.7484556e-08, 0.03, -0.1)
 target_position = Vector3(0, -0.4, 0.7)
 
 [node name="flickRay3" type="RayCast3D" parent="." unique_id=364928567]
-transform = Transform3D(1.509958e-07, 0, -1, 0, 1, 0, 2, 0, 7.54979e-08, -8.742278e-09, 0.03, 0)
+transform = Transform3D(3.019916e-07, 0, -2, 0, 2, 0, 4, 0, 1.509958e-07, -8.742278e-09, 0.03, 0)
 target_position = Vector3(0, -0.4, 0.7)
 
 [node name="flickRay4" type="RayCast3D" parent="." unique_id=1295963090]
-transform = Transform3D(-3.2584137e-07, 0, 1, 0, 1, 0, -2, 0, -1.6292068e-07, -8.742278e-09, 0.03, 0)
+transform = Transform3D(-6.5168274e-07, 0, 2, 0, 2, 0, -4, 0, -3.2584137e-07, -8.742278e-09, 0.03, 0)
 target_position = Vector3(0, -0.4, 0.7)
 
 [node name="Character" parent="." unique_id=61312156 instance=ExtResource("3_hhoun")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.6, 0)
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 2, 0)
 
 [node name="Focus" type="Marker3D" parent="." unique_id=1520751196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8708539, 0)
