@@ -27,18 +27,22 @@ GameManager="*uid://cte5656lvloub"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/mode=1
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [file_customization]
 
 folder_colors={
-"res://GUI/": "green",
-"res://GameplayObjects/": "pink",
-"res://assets/": "purple",
-"res://character/": "blue",
-"res://resources/": "teal",
+"res://assets/fonts/": "red",
+"res://assets/images/": "orange",
+"res://assets/models/": "yellow",
+"res://assets/prefabs/": "teal",
+"res://assets/resources/": "green",
+"res://assets/skyboxes/": "blue",
 "res://scenes/": "orange",
-"res://scripts/": "yellow"
+"res://scripts/autoload/": "purple",
+"res://scripts/classes/": "yellow",
+"res://scripts/gui/": "green"
 }
 
 [global_group]

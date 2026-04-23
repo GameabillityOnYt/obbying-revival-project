@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bhjjorrv2iufc"]
+
+[ext_resource type="Shader" uid="uid://b85tmyn414mvx" path="res://assets/resources/shaders/TextureRepeating.gdshader" id="1_v7nkk"]
+[ext_resource type="Texture2D" uid="uid://b0s1otkehsr8g" path="res://assets/images/textures/Stud.jpg" id="2_7j2qb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_v7nkk")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("2_7j2qb")
+shader_parameter/tiling_scale = Vector2(0.25, 0.25)
+shader_parameter/sharpness = 10.0
+shader_parameter/transparency = 0.0
