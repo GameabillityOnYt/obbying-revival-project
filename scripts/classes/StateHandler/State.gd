@@ -15,7 +15,6 @@ func _on_exit():
 func update(_dt:float):
 	pass
 
+# Every physics update
 func physics_update(_dt:float):
 	pass 
-
-#
