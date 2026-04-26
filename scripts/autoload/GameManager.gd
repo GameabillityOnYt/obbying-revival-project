@@ -4,10 +4,11 @@ extends Node
 signal DataLoaded
 signal CharacterAdded(Player)
 
-@export var Camera:Camera3D
+@export var Camera:CamStuff
 @export var shiftlocked:bool = false
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	get_window().mode = Window.MODE_WINDOWED
 	if FileAccess.file_exists("user://data.tres"):
 		data = ResourceLoader.load("user://data.tres")

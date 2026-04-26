@@ -1,4 +1,5 @@
 extends Camera3D
+class_name CamStuff
 
 @export var target: PlayerClass
 @export var distance := 10.0
@@ -45,11 +46,7 @@ func _input(event):
 		snapping = true
 	if Input.is_action_just_pressed("shift_lock"):
 		GameManager.shiftlocked = !GameManager.shiftlocked
-	if not GameManager.shiftlocked:
-		rotating = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
-		Input.set_mouse_mode(
-			Input.MOUSE_MODE_CAPTURED if rotating else Input.MOUSE_MODE_VISIBLE
-		)
+
 	if Input.is_action_pressed("zoom_in"):
 		target_distance -= zoom_speed
 	elif Input.is_action_pressed("zoom_out"):
@@ -57,20 +54,14 @@ func _input(event):
 
 	target_distance = clamp(target_distance, 0, max_distance)
 	mode = CameraMode.NORMAL if target_distance > 0 else CameraMode.FIRSTPERSON
-
+	
 	if not GameManager.shiftlocked and mode == CameraMode.NORMAL:
 		rotating = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
-		Input.set_mouse_mode(
-			Input.MOUSE_MODE_CAPTURED if rotating else Input.MOUSE_MODE_VISIBLE
-		)
-
 		target_distance = clamp(target_distance, 0, max_distance)
 	else:
 		rotating = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	target.visible = mode == CameraMode.NORMAL
-	target.shiftlockLogo.visible = GameManager.shiftlocked
 	target.follow_camera = GameManager.shiftlocked or mode == CameraMode.FIRSTPERSON
 
 	if event is InputEventMouseMotion:

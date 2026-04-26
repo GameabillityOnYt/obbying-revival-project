@@ -21,6 +21,7 @@ config/show_image=true
 [autoload]
 
 GameManager="*uid://cte5656lvloub"
+Mouse="*uid://cu25jxjffbj0w"
 
 [display]
 
@@ -29,7 +30,6 @@ window/size/viewport_height=720
 window/size/mode=1
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
-mouse_cursor/custom_image="uid://d07b8ov2c21ma"
 mouse_cursor/custom_image_hotspot=Vector2(0.04, 0)
 
 [file_customization]

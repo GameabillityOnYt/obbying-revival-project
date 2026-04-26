@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cu25jxjffbj0w"]
+
+[ext_resource type="Shader" uid="uid://c2arbg5223u0l" path="res://assets/resources/shaders/mouse.gdshader" id="1_g65vp"]
+[ext_resource type="Texture2D" uid="uid://d07b8ov2c21ma" path="res://assets/images/textures/cursors/astro_arrow.png" id="1_sq6e0"]
+[ext_resource type="Texture2D" uid="uid://bwm0xb5fd3h1f" path="res://assets/images/textures/cursors/astro_link.png" id="2_g65vp"]
+[ext_resource type="Texture2D" uid="uid://ba4gvup1thf8d" path="res://assets/images/UI/lockshiftez.png" id="3_xdcin"]
+[ext_resource type="Script" uid="uid://4xb0hdx20tip" path="res://scripts/gui/mouse.gd" id="4_vwui0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdcin"]
+shader = ExtResource("1_g65vp")
+shader_parameter/Inverted = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5orol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sq6e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g65vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xdcin")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Mouse" type="AnimatedSprite2D" unique_id=1291654805]
+z_index = 4096
+material = SubResource("ShaderMaterial_xdcin")
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_5orol")
+offset = Vector2(16, 16)
+script = ExtResource("4_vwui0")
