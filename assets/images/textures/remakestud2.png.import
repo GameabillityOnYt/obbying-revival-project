@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cghl43fp08ydv"
-path.s3tc="res://.godot/imported/remakestud2.png-6e450ba7e8d05b45358f1816af100b0a.s3tc.ctex"
+path.etc2="res://.godot/imported/remakestud2.png-6e450ba7e8d05b45358f1816af100b0a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/textures/remakestud2.png"
-dest_files=["res://.godot/imported/remakestud2.png-6e450ba7e8d05b45358f1816af100b0a.s3tc.ctex"]
+dest_files=["res://.godot/imported/remakestud2.png-6e450ba7e8d05b45358f1816af100b0a.etc2.ctex"]
 
 [params]
 

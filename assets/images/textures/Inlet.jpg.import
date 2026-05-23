@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://t5hgotry1dqp"
-path.s3tc="res://.godot/imported/Inlet.jpg-822db6a205286e2510ee0c85e8303723.s3tc.ctex"
+path.etc2="res://.godot/imported/Inlet.jpg-822db6a205286e2510ee0c85e8303723.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/textures/Inlet.jpg"
-dest_files=["res://.godot/imported/Inlet.jpg-822db6a205286e2510ee0c85e8303723.s3tc.ctex"]
+dest_files=["res://.godot/imported/Inlet.jpg-822db6a205286e2510ee0c85e8303723.etc2.ctex"]
 
 [params]
 

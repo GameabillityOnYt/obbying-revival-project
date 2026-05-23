@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://btf0iccai10qr"]
+
+[ext_resource type="Script" uid="uid://lcsb24etxvyb" path="res://addons/versatile-mobile-joystick/joystick.gd" id="1_ofv6b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_46m5w"]
+radius = 4.0
+
+[node name="JoystickController" type="Node2D" unique_id=667813749]
+script = ExtResource("1_ofv6b")
+
+[node name="Joystick" type="Node2D" parent="." unique_id=543385813]
+unique_name_in_owner = true
+
+[node name="Tip" type="Sprite2D" parent="Joystick" unique_id=902181527]
+unique_name_in_owner = true
+
+[node name="Base" type="Sprite2D" parent="Joystick" unique_id=626904221]
+unique_name_in_owner = true
+
+[node name="TouchDetectorIndicator" type="Area2D" parent="." unique_id=1039416190]
+collision_layer = 0
+collision_mask = 2147483648
+monitoring = false
+monitorable = false
+
+[node name="TouchDetector" type="CollisionShape2D" parent="TouchDetectorIndicator" unique_id=373647753]
+unique_name_in_owner = true
+debug_color = Color(0.137255, 0.647059, 0, 0.0509804)
+
+[node name="DeadZoneIndicator" type="Area2D" parent="." unique_id=1830794976]
+
+[node name="DeadZone" type="CollisionShape2D" parent="DeadZoneIndicator" unique_id=467039357]
+unique_name_in_owner = true
+debug_color = Color(1, 0, 0.133333, 0.117647)
+
+[node name="TipLimitIndicator" type="Area2D" parent="." unique_id=801235294]
+
+[node name="TipLimit" type="CollisionShape2D" parent="TipLimitIndicator" unique_id=483127215]
+unique_name_in_owner = true
+debug_color = Color(0.666667, 0.509804, 0, 0.117647)
+
+[node name="TouchIndicator" type="Area2D" parent="." unique_id=801689391 groups=["TouchIndicator"]]
+unique_name_in_owner = true
+collision_layer = 2147483648
+collision_mask = 0
+monitoring = false
+
+[node name="Touch" type="CollisionShape2D" parent="TouchIndicator" unique_id=222844287]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_46m5w")
+debug_color = Color(1, 0.6, 0.701961, 0)

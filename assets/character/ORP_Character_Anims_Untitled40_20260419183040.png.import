@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1b6f2e50evx7"
-path.s3tc="res://.godot/imported/ORP_Character_Anims_Untitled40_20260419183040.png-e41d10e88d33e4982a4146b542f4e069.s3tc.ctex"
+path.etc2="res://.godot/imported/ORP_Character_Anims_Untitled40_20260419183040.png-e41d10e88d33e4982a4146b542f4e069.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/character/ORP_Character_Anims_Untitled40_20260419183040.png"
-dest_files=["res://.godot/imported/ORP_Character_Anims_Untitled40_20260419183040.png-e41d10e88d33e4982a4146b542f4e069.s3tc.ctex"]
+dest_files=["res://.godot/imported/ORP_Character_Anims_Untitled40_20260419183040.png-e41d10e88d33e4982a4146b542f4e069.etc2.ctex"]
 
 [params]
 

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bu5ec1ohqmn8f" path="res://assets/prefabs/building/Old/Truss.tscn" id="6_1ainy"]
 [ext_resource type="PackedScene" uid="uid://dsdlq7h2hl07f" path="res://assets/prefabs/building/Old/spawnLocation.tscn" id="8_km5ld"]
 [ext_resource type="PackedScene" uid="uid://21fflrxp85y2" path="res://assets/prefabs/UI/Health.tscn" id="9_i2t4f"]
+[ext_resource type="PackedScene" uid="uid://osa7vyyqaa0k" path="res://assets/prefabs/UI/mobile_controls.tscn" id="12_h6smj"]
 [ext_resource type="PackedScene" uid="uid://d3w0odx2msggi" path="res://assets/prefabs/building/Old/Winpad.tscn" id="13_8b0r0"]
 [ext_resource type="PackedScene" uid="uid://r7idkhhne3c0" path="res://assets/prefabs/UI/esc_menu.tscn" id="13_h6smj"]
 [ext_resource type="PackedScene" uid="uid://fuehl670w3lw" path="res://assets/prefabs/UI/Timer.tscn" id="13_v5j5c"]
@@ -636,6 +637,7 @@ transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 4.8012094, 2.1393604, -19.992
 
 [node name="Part8" parent="Old" unique_id=606536727 instance=ExtResource("2_vonw3")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 3.5012093, 2.1393604, -19.992676)
+visible = false
 
 [node name="Part4" parent="Old" unique_id=11903657 instance=ExtResource("2_vonw3")]
 transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 2.5, 6.5012093, 1.6393604, -19.492676)
@@ -644,6 +646,8 @@ transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 2.5, 6.5012093, 1.6393604, -19.4
 transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 2, 3.854906, 0.5, -21.75)
 
 [node name="EscMenu" parent="." unique_id=1769971828 instance=ExtResource("13_h6smj")]
+
+[node name="MobileControls" parent="." unique_id=2029212896 instance=ExtResource("12_h6smj")]
 
 [node name="Timer" parent="." unique_id=1938707771 instance=ExtResource("13_v5j5c")]
 mouse_filter = 2

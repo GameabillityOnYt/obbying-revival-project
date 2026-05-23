@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://assets/prefabs/UI/FOV.tscn" id="6_826wr"]
 [ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
 
+[sub_resource type="Theme" id="Theme_ucygd"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = null
+
 [sub_resource type="Shader" id="Shader_8a8k8"]
 code = "shader_type canvas_item;
 
@@ -53,7 +57,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
 shader = SubResource("Shader_8a8k8")
 shader_parameter/star_density = 0.5
-shader_parameter/elapsed_time = 6454.263786483122
+shader_parameter/elapsed_time = 7290.109619474932
 shader_parameter/direction = Vector2(-1, 0)
 
 [sub_resource type="GDScript" id="GDScript_ucygd"]
@@ -129,6 +133,14 @@ offset_bottom = 470.0
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Load" type="Button" parent="Main" unique_id=1040376984]
+offset_left = -200.0
+offset_top = 289.0
+offset_right = -11.0
+offset_bottom = 342.0
+theme = SubResource("Theme_ucygd")
+text = "Load Folder"
+
 [node name="BG" type="Control" parent="." unique_id=500703345]
 layout_mode = 3
 anchors_preset = 0
@@ -156,7 +168,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = SubResource("GDScript_ucygd")
-elapsed_time = 6454.263786483122
+elapsed_time = 7290.109619474932
 
 [node name="Settings" type="Node2D" parent="." unique_id=132079008]
 position = Vector2(1300, 0)
@@ -207,6 +219,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
+[node name="FileDialog" type="FileDialog" parent="." unique_id=816336805]
+oversampling_override = 1.0
+title = "Open a Directory"
+file_mode = 2
+access = 2
+
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main/Load" to="." method="_on_load_folder_pressed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_return_to_main_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]

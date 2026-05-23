@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmqsubae2di2r"
-path.s3tc="res://.godot/imported/ouch.png-0900b0694dcbbbce38abaeedadb576fd.s3tc.ctex"
+path.etc2="res://.godot/imported/ouch.png-0900b0694dcbbbce38abaeedadb576fd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/textures/ouch.png"
-dest_files=["res://.godot/imported/ouch.png-0900b0694dcbbbce38abaeedadb576fd.s3tc.ctex"]
+dest_files=["res://.godot/imported/ouch.png-0900b0694dcbbbce38abaeedadb576fd.etc2.ctex"]
 
 [params]
 

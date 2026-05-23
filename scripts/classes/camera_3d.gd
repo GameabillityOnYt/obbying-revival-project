@@ -38,7 +38,7 @@ func _ready():
 		fov = new
 	)
 
-func _input(event):
+func _unhandled_input(event):
 	if Input.is_action_just_pressed("left_align"):
 		var step_index = round(yaw / step)
 		step_index += 1
@@ -61,8 +61,8 @@ func _input(event):
 	target.visible = (mode != CameraMode.FIRSTPERSON)
 	target.rotation_locked = GameManager.shiftlocked or mode == CameraMode.FIRSTPERSON
 
-	if event is InputEventMouseMotion:
-		if rotating or GameManager.shiftlocked:
+	if event is InputEventMouseMotion or event is InputEventScreenDrag:
+		if rotating or GameManager.shiftlocked or event is InputEventScreenDrag:
 			yaw -= event.relative.x * GameManager.data.sensitivity / 200.0
 			pitch -= event.relative.y * GameManager.data.sensitivity / 200.0
 			pitch = clamp(pitch, -1.5, 1.5)

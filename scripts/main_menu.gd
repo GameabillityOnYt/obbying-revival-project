@@ -6,6 +6,7 @@ extends Node2D
 var button = preload("res://assets/prefabs/UI/LevelCard.tscn")
 @onready var descLabel = $Desc/Label
 @onready var list = $Main/Panel/ScrollContainer/VBoxContainer
+@onready var file_dialog = $FileDialog
 
 func _ready():
 	var levels = load_all_levels()
@@ -52,9 +53,9 @@ func load_level(path):
 	var data = json.data
 	return data
 
-func load_all_levels():
+func load_all_levels(dir_path = "user://levels"):
 	var levels = []
-	var dir = DirAccess.open("user://levels")
+	var dir = DirAccess.open(dir_path)
 	
 	if dir == null:
 		print("no levels folder gng")
@@ -70,3 +71,11 @@ func load_all_levels():
 	
 	dir.list_dir_end()
 	return levels
+
+
+func _on_load_folder_pressed() -> void:
+	file_dialog.show()
+
+
+func _on_file_dialog_dir_selected(dir: String) -> void:
+	load_all_levels(dir)

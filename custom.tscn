@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b35nds8m0c77l" path="res://assets/prefabs/UI/shiftlockIcon.tscn" id="2_o1hpr"]
 [ext_resource type="PackedScene" uid="uid://21fflrxp85y2" path="res://assets/prefabs/UI/Health.tscn" id="3_j68um"]
 [ext_resource type="PackedScene" uid="uid://bhgjl8nsom23c" path="res://assets/prefabs/UI/fps.tscn" id="4_wj2ro"]
+[ext_resource type="PackedScene" uid="uid://osa7vyyqaa0k" path="res://assets/prefabs/UI/mobile_controls.tscn" id="9_o3jt7"]
 [ext_resource type="PackedScene" uid="uid://r7idkhhne3c0" path="res://assets/prefabs/UI/esc_menu.tscn" id="11_bdh7s"]
 [ext_resource type="PackedScene" uid="uid://fuehl670w3lw" path="res://assets/prefabs/UI/Timer.tscn" id="12_fgt82"]
 [ext_resource type="PackedScene" uid="uid://b8q02e5g57tx4" path="res://assets/character/player.tscn" id="13_ye4bg"]
@@ -26,7 +27,6 @@ script = ExtResource("1_o3jt7")
 environment = SubResource("Environment_1ainy")
 
 [node name="ShiftlockIcon" parent="." unique_id=598571543 instance=ExtResource("2_o1hpr")]
-visible = false
 
 [node name="Health" parent="." unique_id=1544686410 instance=ExtResource("3_j68um")]
 offset_left = -237.0
@@ -45,3 +45,5 @@ mouse_filter = 2
 shiftlockLogo = NodePath("../ShiftlockIcon")
 timer = NodePath("../Timer")
 HealthBar = NodePath("../Health")
+
+[node name="MobileControls" parent="." unique_id=2029212896 instance=ExtResource("9_o3jt7")]

@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqw8ff4dgn7db"
-path.s3tc="res://.godot/imported/spawn_PC _ Computer - Roblox - Miscellaneous - Spawn Location.png-fd25da83c47b9d0f073a4c099d391b52.s3tc.ctex"
+path.etc2="res://.godot/imported/spawn_PC _ Computer - Roblox - Miscellaneous - Spawn Location.png-fd25da83c47b9d0f073a4c099d391b52.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/spawn_PC _ Computer - Roblox - Miscellaneous - Spawn Location.png"
-dest_files=["res://.godot/imported/spawn_PC _ Computer - Roblox - Miscellaneous - Spawn Location.png-fd25da83c47b9d0f073a4c099d391b52.s3tc.ctex"]
+dest_files=["res://.godot/imported/spawn_PC _ Computer - Roblox - Miscellaneous - Spawn Location.png-fd25da83c47b9d0f073a4c099d391b52.etc2.ctex"]
 
 [params]
 
