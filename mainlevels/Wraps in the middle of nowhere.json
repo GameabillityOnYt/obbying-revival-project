@@ -1,0 +1,2588 @@
+{
+    "Difficulty": "7",
+    "Data": {
+        "Children": [
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 10.500001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 357
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 39.57622528076172,
+                        "X": -18,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 8,
+                        "Z": 8
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 38.576202392578125,
+                        "X": -18,
+                        "Z": 340.40277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 9.000001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 360
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 55.07623291015625,
+                        "X": -18,
+                        "Z": 332.40277099609375
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 34.076202392578125,
+                        "X": -18,
+                        "Z": 316.40277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 21.000001907348633,
+                        "X": -22.5,
+                        "Z": 359
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 41.076202392578125,
+                        "X": -18,
+                        "Z": 316.40277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 6,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 7.500002384185791,
+                        "X": -18,
+                        "Z": 372
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 4,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 52.57622528076172,
+                        "X": -18,
+                        "Z": 274.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 10,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 21.000001907348633,
+                        "X": -18,
+                        "Z": 356
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 3,
+                        "Z": 8
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 26.576194763183594,
+                        "X": -18,
+                        "Z": 278.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 6,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 24.000003814697266,
+                        "X": -24.75,
+                        "Z": 353.5
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 3.5,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 34.076202392578125,
+                        "X": -20,
+                        "Z": 316.40277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 1.9999945163726807,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 38.57622528076172,
+                        "X": -18,
+                        "Z": 269.90277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 13.500001907348633,
+                        "X": -18,
+                        "Z": 359
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 16
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 33.076194763183594,
+                        "X": -18,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 10,
+                        "Z": 10
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 8.000001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 362
+                    },
+                    "Size": {
+                        "Y": 10,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 70.07622528076172,
+                        "X": -17.999996185302734,
+                        "Z": 289.40277099609375
+                    },
+                    "Size": {
+                        "Y": 0.25,
+                        "X": 0.25,
+                        "Z": 17
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 12.000001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 354
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 8.000001907348633,
+                        "X": -18,
+                        "Z": 365.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 42.57622528076172,
+                        "X": -18,
+                        "Z": 269.90277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0,
+                        "G": 0,
+                        "R": 1
+                    },
+                    "Position": {
+                        "Y": 71.07622528076172,
+                        "X": -18,
+                        "Z": 278.90277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 39.57622528076172,
+                        "X": -14.5,
+                        "Z": 281.40277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 3,
+                        "Z": 15
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 31.576194763183594,
+                        "X": -14,
+                        "Z": 295.90277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 37.076202392578125,
+                        "X": -18,
+                        "Z": 316.40277099609375
+                    },
+                    "Size": {
+                        "Y": 32,
+                        "X": 5,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 55.576202392578125,
+                        "X": -18,
+                        "Z": 309.40277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 23.5000057220459,
+                        "X": -29,
+                        "Z": 352.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 10.000001907348633,
+                        "X": -18,
+                        "Z": 365.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 33.576202392578125,
+                        "X": -18,
+                        "Z": 332.40277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 4,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 7.000001907348633,
+                        "X": -18.000001907348633,
+                        "Z": 364
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 39.576229095458984,
+                        "X": -11,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 6,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 33.076202392578125,
+                        "X": -18,
+                        "Z": 341.90277099609375
+                    },
+                    "Size": {
+                        "Y": 10,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 63.57623291015625,
+                        "X": -18,
+                        "Z": 309.40277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 27.576200485229492,
+                        "X": -18,
+                        "Z": 340.40277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 21.000001907348633,
+                        "X": -22.5,
+                        "Z": 353
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 2.000001907348633,
+                        "X": -18,
+                        "Z": 365.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 23.5000057220459,
+                        "X": -4,
+                        "Z": 352.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 27.076229095458984,
+                        "X": -12,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 44.576202392578125,
+                        "X": -18,
+                        "Z": 332.40277099609375
+                    },
+                    "Size": {
+                        "Y": 10,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 34.076202392578125,
+                        "X": -16,
+                        "Z": 316.40277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 1.9999945163726807,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 52.57622528076172,
+                        "X": -18,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 6,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 1.500002384185791,
+                        "X": -18,
+                        "Z": 373.25
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 4,
+                        "Z": 3.5
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 27.576200485229492,
+                        "X": -18,
+                        "Z": 324.90277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 63.07623291015625,
+                        "X": -17.5,
+                        "Z": 305.90277099609375
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 6,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 12.000001907348633,
+                        "X": -18,
+                        "Z": 365.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 21.000001907348633,
+                        "X": -14,
+                        "Z": 359
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 14.576193809509277,
+                        "X": -18,
+                        "Z": 278.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 4,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 60.07623291015625,
+                        "X": -16,
+                        "Z": 309.40277099609375
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 7.500001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 363
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 39.576194763183594,
+                        "X": -21.5,
+                        "Z": 296.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 3,
+                        "Z": 16
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 0.5,
+                        "X": -18,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 10,
+                        "Z": 10
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 33.076194763183594,
+                        "X": -18,
+                        "Z": 279.15277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 10,
+                        "Z": 10.5
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 39.57622528076172,
+                        "X": -22.5,
+                        "Z": 278.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 1,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 2.5,
+                        "X": -18,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 27.576200485229492,
+                        "X": -18,
+                        "Z": 356.0049133300781
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 8,
+                        "Z": 8.204282760620117
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 26.576200485229492,
+                        "X": -18,
+                        "Z": 324.90277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 37.576202392578125,
+                        "X": -18,
+                        "Z": 339.90277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 14.576193809509277,
+                        "X": -18,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 4,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 34.57622528076172,
+                        "X": -18,
+                        "Z": 269.90277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 46.07622528076172,
+                        "X": -18,
+                        "Z": 278.90277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 10,
+                        "Z": 10
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 12.500001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 353
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 8.500001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 361
+                    },
+                    "Size": {
+                        "Y": 9,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 52.07622528076172,
+                        "X": -18,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 16,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 19.500001907348633,
+                        "X": -23.75,
+                        "Z": 353
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1.5,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 44.57622528076172,
+                        "X": -18,
+                        "Z": 269.90277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 46.07622528076172,
+                        "X": -18,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 10,
+                        "Z": 11
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 11.500001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 30.076202392578125,
+                        "X": -18,
+                        "Z": 316.40277099609375
+                    },
+                    "Size": {
+                        "Y": 6,
+                        "X": 6,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 21.000001907348633,
+                        "X": -14,
+                        "Z": 353
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 11.000001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 356
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 36.57622528076172,
+                        "X": -18,
+                        "Z": 269.90277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 7.500010013580322,
+                        "X": -18,
+                        "Z": 373
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 9.500001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 359
+                    },
+                    "Size": {
+                        "Y": 7,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 40.57622528076172,
+                        "X": -18,
+                        "Z": 269.90277099609375
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 19.000003814697266,
+                        "X": -12.75,
+                        "Z": 353
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 1.5,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 23.500003814697266,
+                        "X": -11.75,
+                        "Z": 353.5
+                    },
+                    "Size": {
+                        "Y": 7,
+                        "X": 3.5,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 33.07623291015625,
+                        "X": -18,
+                        "Z": 342.90277099609375
+                    },
+                    "Size": {
+                        "Y": 10,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 52.57622528076172,
+                        "X": -18,
+                        "Z": 278.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 6,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 1.5,
+                        "X": -18,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 12,
+                        "Z": 12
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "SpawnLocation",
+                "ClassName": "Spawn",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.23529411852359772,
+                        "G": 0.4627451002597809,
+                        "R": 0.21960784494876862
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -18,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 39.57622528076172,
+                        "X": -18,
+                        "Z": 278.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 8,
+                        "Z": 8
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 26.576194763183594,
+                        "X": -18,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 6,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 6.000001907348633,
+                        "X": -18,
+                        "Z": 365.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 10.000001907348633,
+                        "X": -18.000003814697266,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 6,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 39.57622528076172,
+                        "X": -18,
+                        "Z": 288.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 64.57622528076172,
+                        "X": -18,
+                        "Z": 278.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 4,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 60.07623291015625,
+                        "X": -20,
+                        "Z": 309.40277099609375
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 4.000001907348633,
+                        "X": -18,
+                        "Z": 365.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 21.000001907348633,
+                        "X": -18,
+                        "Z": 356
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 5,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 64.57622528076172,
+                        "X": -18,
+                        "Z": 299.90277099609375
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 4,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.22745098173618317,
+                        "R": 0.2862745225429535
+                    },
+                    "Position": {
+                        "Y": 20.5000057220459,
+                        "X": -7,
+                        "Z": 352.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Wraps in the middle of nowhere",
+                "Children": []
+            }
+        ],
+        "Name": "Obby",
+        "ObbyName": "Wraps in the middle of nowhere",
+        "ClassName": "Folder"
+    },
+    "ObbyName": "Wraps in the middle of nowhere",
+    "Creator": "Gameabillity"
+}
