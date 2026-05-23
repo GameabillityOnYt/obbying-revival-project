@@ -21,6 +21,7 @@ func _ready():
 	$Menu.pressed.connect(func():
 		get_tree().call_deferred("change_scene_to_file","res://scenes/MainMenu.tscn")
 		get_tree().paused = false
+		GameManager.alljump = false
 		pass)
 	$Quit.pressed.connect(func():
 		GameManager._notification(NOTIFICATION_WM_CLOSE_REQUEST)

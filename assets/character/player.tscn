@@ -7,10 +7,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_aypkh"]
 size = Vector3(0.4, 2.4252687, 0.2)
 
-[sub_resource type="GDScript" id="GDScript_aypkh"]
-script/source = "extends RayCast3D
-"
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_hhoun"]
 size = Vector3(0.8, 1.14, 0.2)
 
@@ -28,9 +24,8 @@ script = ExtResource("2_j3eqw")
 target = NodePath("..")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=212384371]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.21276987, 0.42678496)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.10428202, 0.42678496)
 target_position = Vector3(0, -2, 0)
-script = SubResource("GDScript_aypkh")
 
 [node name="Shiftlock" type="Node3D" parent="." unique_id=1753339858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.90000004, 0)

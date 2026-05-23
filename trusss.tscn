@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bwa4vusmhsn0p"]
+
+[ext_resource type="PackedScene" uid="uid://ttqhrbnnvaxv" path="res://assets/models/building/trusss.glb" id="1_ky8do"]
+
+[node name="trusss" unique_id=508748960 instance=ExtResource("1_ky8do")]

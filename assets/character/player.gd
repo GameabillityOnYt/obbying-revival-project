@@ -37,6 +37,7 @@ var took_damage := false
 @export var jump_up_force := 1.1
 var knockback_timer := 0.0
 
+
 var just_jumped_off := false
 @export var shiftlockLogo: TextureRect
 @onready var flickRay = $flickRay
@@ -48,6 +49,7 @@ var just_jumped_off := false
 @onready var brickCollision = $Area3D
 @onready var player = $Character
 @onready var playerAnims = $Character/AnimationPlayer
+
 @export var timer: Control
 @export var HealthBar: ProgressBar
 @export var spawn: Node3D
@@ -162,11 +164,24 @@ func add_Health(amount: float):
 		update_health_bar()
 
 func reset():
-	if not spawn:
-		global_position = Vector3(0,0,0)
-	else:
+	if spawn != null:
 		global_position = spawn.global_position
-	timer.get_node("Panel").resetTime()
+		global_rotation = spawn.global_rotation
+		
+		if spawn.has_meta("saved_velocity"):
+			velocity = spawn.get_meta("saved_velocity")
+			if velocity.length() > 0.1:
+				knockback_timer = 0.1 
+		else:
+			velocity = Vector3.ZERO
+		if not GameManager.alljump:
+			timer.get_node("Panel").resetTime()
+
+	Health = MaxHealth
+	update_health_bar()
+	is_climbing = false
+	climb_normal = Vector3.ZERO
+
 	Health = MaxHealth
 	update_health_bar()
 	is_climbing = false
@@ -201,17 +216,13 @@ func _physics_process(delta: float) -> void:
 				is_climbing = true
 				climb_normal = ray.get_collision_normal()
 			
-			if climb_normal != Vector3.ZERO:
-		# Changed minus (-) to plus (+) to look into the wall face
-				var target_look = global_position + climb_normal
-				look_at(Vector3(target_look.x, global_position.y, target_look.z), Vector3.UP)
-			ray.target_position.y = -0.2
+			ray.target_position.y = -1.0
 			truss_timer = 0.0
 			truss_used = false
 		else:
 			is_climbing = false
 			climb_normal = Vector3.ZERO
-			ray.target_position.y = -0.1
+			ray.target_position.y = -0.5
 	else:
 		is_climbing = false
 
@@ -233,7 +244,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		coyote_timer = max(coyote_timer - delta, 0.0)
 
-	# Regular jumping from ground
 	if Input.is_action_pressed("ui_accept"):
 		if coyote_timer > 0 and not is_climbing and jump_lock <= 0.0:
 			velocity.y = JUMP_VELOCITY
@@ -244,7 +254,8 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_climbing:
-			var knockback_dir = Vector3(climb_normal.x, 0, climb_normal.z).normalized()
+			var backward_dir = global_transform.basis.z
+			var knockback_dir = Vector3(-backward_dir.x, 0, -backward_dir.z).normalized()
 			
 			velocity.x = knockback_dir.x * jump_off_force * 2.0
 			velocity.z = knockback_dir.z * jump_off_force * 2.0

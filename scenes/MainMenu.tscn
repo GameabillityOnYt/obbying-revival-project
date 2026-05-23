@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwlmhgmpfqdjh" path="res://assets/prefabs/UI/sensitivity.tscn" id="5_l72w3"]
 [ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://assets/prefabs/UI/FOV.tscn" id="6_826wr"]
 [ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
+[ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/alljumpToggle.tscn" id="8_mipys"]
 
 [sub_resource type="Theme" id="Theme_ucygd"]
 Button/font_sizes/font_size = 32
@@ -57,7 +58,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
 shader = SubResource("Shader_8a8k8")
 shader_parameter/star_density = 0.5
-shader_parameter/elapsed_time = 7290.109619474932
+shader_parameter/elapsed_time = 7312.887385969616
 shader_parameter/direction = Vector2(-1, 0)
 
 [sub_resource type="GDScript" id="GDScript_ucygd"]
@@ -168,7 +169,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = SubResource("GDScript_ucygd")
-elapsed_time = 7290.109619474932
+elapsed_time = 7312.887385969616
 
 [node name="Settings" type="Node2D" parent="." unique_id=132079008]
 position = Vector2(1300, 0)
@@ -186,10 +187,10 @@ offset_right = -286.5
 offset_bottom = 91.0
 
 [node name="Back" type="Button" parent="Settings" unique_id=1445670015]
-offset_left = -640.0
-offset_top = -360.0
-offset_right = -519.0
-offset_bottom = -300.0
+offset_left = -558.0
+offset_top = -355.0
+offset_right = -437.0
+offset_bottom = -295.0
 theme = ExtResource("4_l72w3")
 theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 50
@@ -212,9 +213,7 @@ offset_right = 525.0
 offset_bottom = 201.0
 theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 40
-text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa asa
-Tier 12
-Creator"
+text = "Select a level"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
@@ -224,6 +223,11 @@ oversampling_override = 1.0
 title = "Open a Directory"
 file_mode = 2
 access = 2
+[node name="AlljumpToggle" parent="." unique_id=118282012 instance=ExtResource("8_mipys")]
+offset_left = 1057.0
+offset_top = 52.0
+offset_right = 1165.0
+offset_bottom = 91.0
 
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]

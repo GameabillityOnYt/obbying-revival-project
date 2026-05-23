@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://buyvpgvyi0uoh"]
+
+[ext_resource type="Script" uid="uid://ua2ohq1i1urw" path="res://assets/prefabs/UI/alljump_toggle.gd" id="1_hjxjx"]
+
+[node name="AlljumpToggle" type="CheckButton" unique_id=118282012]
+text = "Alljump"
+script = ExtResource("1_hjxjx")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

@@ -12,5 +12,4 @@ freeze = true
 [node name="trusss" parent="Truss" unique_id=1348580265 instance=ExtResource("1_oy6c7")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Truss" unique_id=950393698]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 shape = SubResource("BoxShape3D_oy6c7")

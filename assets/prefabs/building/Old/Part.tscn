@@ -8,7 +8,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wljxp"]
 render_priority = 0
 shader = ExtResource("1_hhwbl")
-shader_parameter/base_color = Color(0.41470394, 0.414704, 0.4147039, 1)
+shader_parameter/base_color = Color(0.48962194, 0.48962235, 0.48962206, 1)
 shader_parameter/albedo_texture = ExtResource("2_wljxp")
 shader_parameter/tiling_scale = Vector2(0.5, 0.5)
 shader_parameter/sharpness = 10.000000475
