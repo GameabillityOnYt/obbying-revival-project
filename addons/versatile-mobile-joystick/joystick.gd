@@ -190,13 +190,13 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventScreenDrag:
 		# Touch drag
 		if event.index == joystick_touch_index:
-			if _is_inside_touch_detector(event.position):
-				being_touched = true
-				_move_and_calculate(event)
-			else:
-				being_touched = false
-				%Tip.global_position = %Base.global_position
-				_update_input_actions(Vector2.ZERO)
+			#if _is_inside_touch_detector(event.position):
+			being_touched = true
+			_move_and_calculate(event)
+			#else:
+				#being_touched = false
+				#%Tip.global_position = %Base.global_position
+				#_update_input_actions(Vector2.ZERO)
 
 # Calculate joystick movement and strength
 func _move_and_calculate(event: InputEvent) -> void:
