@@ -277,7 +277,8 @@ func _physics_process(delta: float) -> void:
 	var forward = Vector3(-sin(cam_yaw), 0, -cos(cam_yaw)).normalized()
 	var right = Vector3(cos(cam_yaw), 0, -sin(cam_yaw)).normalized()
 
-	var direction = (right * input_dir.x + forward * input_dir.y).normalized()
+	var direction = (right * input_dir.x + forward * input_dir.y).normalized() * input_dir.length()
+	print( input_dir.length())
 
 	if is_climbing:
 		velocity.x = 0

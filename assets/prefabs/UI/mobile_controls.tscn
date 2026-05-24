@@ -3,22 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="1_ffs2a"]
 [ext_resource type="Texture2D" uid="uid://bn778dy02slmj" path="res://assets/images/UI/mouseLock_off@2x.png" id="1_ghxuc"]
 [ext_resource type="Texture2D" uid="uid://dbaag83cnx4ax" path="res://assets/images/UI/mouseLock_on@2x.png" id="2_7w2gi"]
-[ext_resource type="Texture2D" uid="uid://b3rjj1bmqtiok" path="res://addons/versatile-mobile-joystick/default_textures/BaseJoystickTest.png" id="2_wt71a"]
-[ext_resource type="Texture2D" uid="uid://dlgmq4q7t23o8" path="res://addons/versatile-mobile-joystick/default_textures/TipJoystickTest.png" id="3_tke8v"]
-[ext_resource type="Texture2D" uid="uid://d4m7lkeq7j2vm" path="res://assets/images/UI/TouchControlsSheet (1).png" id="4_tke8v"]
-[ext_resource type="Texture2D" uid="uid://y01lopxekg3s" path="res://assets/images/UI/TouchControlsSheet.png" id="5_fq1r1"]
+[ext_resource type="Texture2D" uid="uid://c3b0m64lbepod" path="res://assets/images/UI/StickArea.png" id="2_ghxuc"]
+[ext_resource type="Texture2D" uid="uid://o82tl0kd84u4" path="res://assets/images/UI/Stick.png" id="3_7w2gi"]
+[ext_resource type="Texture2D" uid="uid://cfe434g5de0x1" path="res://assets/images/UI/Jump.png" id="4_5kjwr"]
+[ext_resource type="Texture2D" uid="uid://xpitdqek7ure" path="res://assets/images/UI/Jump2.png" id="5_esy1q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fq1r1"]
 radius = 8.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghxuc"]
-radius = 30.0
+radius = 100.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7w2gi"]
 size = Vector2(640, 360)
 
 [sub_resource type="Curve" id="Curve_5kjwr"]
-_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+_data = [Vector2(0, 0), 0.0, 2.0, 0, 1, Vector2(0.5, 1), 2.0, 0.0, 1, 0]
 point_count = 2
 
 [node name="MobileControls" type="Control" unique_id=2029212896]
@@ -32,8 +32,8 @@ mouse_filter = 1
 
 [node name="JoystickController" parent="." unique_id=838116185 instance=ExtResource("1_ffs2a")]
 position = Vector2(338, 524)
-base_texture = ExtResource("2_wt71a")
-tip_texture = ExtResource("3_tke8v")
+base_texture = ExtResource("2_ghxuc")
+tip_texture = ExtResource("3_7w2gi")
 deadzone_circle = SubResource("CircleShape2D_fq1r1")
 tip_limit_circle = SubResource("CircleShape2D_ghxuc")
 touch_detection_region = SubResource("RectangleShape2D_7w2gi")
@@ -71,8 +71,8 @@ grow_vertical = 2
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Buttons" unique_id=1699270692]
 position = Vector2(-173, 167)
-texture_normal = ExtResource("4_tke8v")
-texture_pressed = ExtResource("5_fq1r1")
+texture_normal = ExtResource("4_5kjwr")
+texture_pressed = ExtResource("5_esy1q")
 action = "ui_accept"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Buttons" unique_id=724760563]
