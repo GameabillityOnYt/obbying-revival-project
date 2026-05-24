@@ -10,7 +10,6 @@ class_name CharacterAvatarMesh
 @onready var right_leg_mesh: MeshInstance3D = $ObbyAvatar/Skeleton3D/rightleg/RightLeg
 
 func _ready() -> void:
-	# Automatically look at global saved data on load
 	apply_saved_colors()
 
 func apply_saved_colors() -> void:
@@ -35,7 +34,7 @@ func update_part_color(part_name: String, new_color: Color) -> void:
 		
 	if not target_mesh: return
 	
-	# Override with a clean standard material to handle flat/bare mesh setups
+	# Override to setup new colors
 	var mat = StandardMaterial3D.new()
 	mat.shading_mode = StandardMaterial3D.SHADING_MODE_PER_PIXEL
 	mat.roughness = 0.7
