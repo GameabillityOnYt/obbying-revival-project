@@ -21,19 +21,14 @@ size = Vector2(640, 360)
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
 point_count = 2
 
-[node name="MobileControls" type="Node2D" unique_id=86643832]
-
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="." unique_id=724760563]
-position = Vector2(1177, 286)
-texture_normal = ExtResource("1_ghxuc")
-texture_pressed = ExtResource("2_7w2gi")
-action = "shift_lock"
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1699270692]
-position = Vector2(1032, 487)
-texture_normal = ExtResource("4_tke8v")
-texture_pressed = ExtResource("5_fq1r1")
-action = "ui_accept"
+[node name="MobileControls" type="Control" unique_id=2029212896]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
 [node name="JoystickController" parent="." unique_id=838116185 instance=ExtResource("1_ffs2a")]
 position = Vector2(338, 524)
@@ -60,3 +55,28 @@ offset_right = 320.0
 offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Buttons" type="Control" parent="." unique_id=1766576519]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Buttons" unique_id=1699270692]
+position = Vector2(-173, 167)
+texture_normal = ExtResource("4_tke8v")
+texture_pressed = ExtResource("5_fq1r1")
+action = "ui_accept"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Buttons" unique_id=724760563]
+position = Vector2(-56, -36)
+texture_normal = ExtResource("1_ghxuc")
+texture_pressed = ExtResource("2_7w2gi")
+action = "shift_lock"
