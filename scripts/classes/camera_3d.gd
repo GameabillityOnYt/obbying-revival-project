@@ -96,3 +96,14 @@ func _process(delta):
 		side_offset = look_basis.x * 1.75
 		
 	global_position = target_focus_pos + (look_basis.z * distance) + side_offset
+	
+func sync_angles(target_transform: Transform3D):
+	var euler = target_transform.basis.get_euler()
+	
+	self.yaw = euler.y
+	self.pitch = euler.x 
+	if mode == CameraMode.FIRSTPERSON:
+		self.target_distance = 0
+		self.distance = 0
+	
+	global_transform = target_transform

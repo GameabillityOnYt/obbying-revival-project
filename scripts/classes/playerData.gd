@@ -13,5 +13,5 @@ signal MaxFPSChanged
 	set(new):
 		MaxFPSChanged.emit(new)
 		maxFPS = new
-@export var rendering:String = "opengl3"
-# other types: vulkan, d3d12
+@export var rendering:String = "vulkan"
+# other types: vulkan, d3d12, metal

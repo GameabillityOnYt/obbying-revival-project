@@ -43,6 +43,7 @@ folder_colors={
 "res://assets/resources/": "green",
 "res://assets/skyboxes/": "blue",
 "res://scenes/": "orange",
+"res://scripts/": "pink",
 "res://scripts/autoload/": "purple",
 "res://scripts/classes/": "yellow",
 "res://scripts/gui/": "green"
@@ -189,6 +190,4 @@ jolt_physics_3d/collisions/collision_margin_fraction=0.18245
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/decals/filter=0

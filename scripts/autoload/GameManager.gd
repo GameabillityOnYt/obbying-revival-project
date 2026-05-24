@@ -82,5 +82,7 @@ func _ready():
 	
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		ResourceSaver.save(data,"user://data.tres")
+		if !OS.is_restart_on_exit_set():
+			data.rendering = "d312"
+			ResourceSaver.save(data,"user://data.tres")
 		get_tree().quit()

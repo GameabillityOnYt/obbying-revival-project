@@ -174,8 +174,15 @@ func reset():
 				knockback_timer = 0.1 
 		else:
 			velocity = Vector3.ZERO
+		if spawn.has_meta("camera_mode"):
+			cam.mode = spawn.get_meta("camera_mode")
+			GameManager.shiftlocked = spawn.get_meta("shiftlocked")
+			cam.global_transform = spawn.get_meta("camera_transform")
+			
+			cam.sync_angles(cam.global_transform)
 		if not GameManager.alljump:
 			timer.get_node("Panel").resetTime()
+		
 
 	Health = MaxHealth
 	update_health_bar()
