@@ -32,6 +32,9 @@ func _on_pressed() -> void:
 Button/font_sizes/font_size = 32
 Button/fonts/font = null
 
+[sub_resource type="LabelSettings" id="LabelSettings_2nypq"]
+font_size = 32
+
 [sub_resource type="Shader" id="Shader_8a8k8"]
 code = "shader_type canvas_item;
 
@@ -77,7 +80,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
 shader = SubResource("Shader_8a8k8")
 shader_parameter/star_density = 0.5
-shader_parameter/elapsed_time = 3414.8947873393454
+shader_parameter/elapsed_time = 4419.306175342056
 shader_parameter/direction = Vector2(-1, 0)
 
 [sub_resource type="GDScript" id="GDScript_ucygd"]
@@ -183,6 +186,22 @@ offset_bottom = 342.0
 theme = SubResource("Theme_ucygd")
 text = "Load Folder"
 
+[node name="warn" type="Label" parent="Main" unique_id=490335572]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -608.0
+offset_top = 247.0
+offset_right = -20.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "We need files aceess for loading levels"
+label_settings = SubResource("LabelSettings_2nypq")
+
 [node name="BG" type="Control" parent="." unique_id=500703345]
 layout_mode = 3
 anchors_preset = 0
@@ -210,7 +229,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = SubResource("GDScript_ucygd")
-elapsed_time = 3414.8947873393454
+elapsed_time = 4419.306175342056
 metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node2D" parent="." unique_id=132079008]
@@ -244,7 +263,6 @@ offset_left = -617.0
 offset_top = -120.0
 offset_right = -132.15149
 offset_bottom = -70.0
-max_value = 80.0
 tick_count = 16
 
 [node name="Goog" parent="Settings" unique_id=179873097 instance=ExtResource("10_2nypq")]
