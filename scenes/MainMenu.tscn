@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://assets/prefabs/UI/FOV.tscn" id="6_826wr"]
 [ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
 [ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/alljumpToggle.tscn" id="8_mipys"]
+[ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://character.tscn" id="12_bky6r"]
 
 [sub_resource type="GDScript" id="GDScript_2nypq"]
 resource_name = "Location"
@@ -73,7 +74,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
 shader = SubResource("Shader_8a8k8")
 shader_parameter/star_density = 0.5
-shader_parameter/elapsed_time = 1901.4189832210093
+shader_parameter/elapsed_time = 4471.526052730534
 shader_parameter/direction = Vector2(-1, 0)
 
 [sub_resource type="GDScript" id="GDScript_ucygd"]
@@ -87,8 +88,15 @@ func _process(delta: float) -> void:
 	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
 "
 
-[node name="MainMenu" type="Node2D" unique_id=361961899]
+[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar", "head_picker", "torso_picker", "left_arm_picker", "right_arm_picker", "left_leg_picker", "right_leg_picker")]
 script = ExtResource("1_ow34m")
+menu_avatar = NodePath("AvatarCustom/SubViewportContainer/SubViewport/CharacterAvatar")
+head_picker = NodePath("AvatarCustom/VBoxContainer/HeadRow/ColorPickerButton")
+torso_picker = NodePath("AvatarCustom/VBoxContainer/TorsoRow/ColorPickerButton")
+left_arm_picker = NodePath("AvatarCustom/VBoxContainer/LeftArmRow/ColorPickerButton")
+right_arm_picker = NodePath("AvatarCustom/VBoxContainer/RightArmRow/ColorPickerButton")
+left_leg_picker = NodePath("AvatarCustom/VBoxContainer/LeftLegRow/ColorPickerButton")
+right_leg_picker = NodePath("AvatarCustom/VBoxContainer/RightLegRow/ColorPickerButton")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1544198342]
 position_smoothing_enabled = true
@@ -171,7 +179,7 @@ expand_icon = true
 script = SubResource("GDScript_7la6k")
 
 [node name="Goog" type="Sprite2D" parent="Main" unique_id=219827493]
-position = Vector2(1856.0001, 246)
+position = Vector2(-485.99988, 605)
 scale = Vector2(0.20777778, 0.20777778)
 texture = ExtResource("5_8a8k8")
 
@@ -202,7 +210,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = SubResource("GDScript_ucygd")
-elapsed_time = 1901.4189832210093
+elapsed_time = 4471.526052730534
 metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node2D" parent="." unique_id=132079008]
@@ -239,6 +247,17 @@ offset_bottom = -70.0
 max_value = 80.0
 tick_count = 16
 
+[node name="Avatar" type="Button" parent="Settings" unique_id=1635049905]
+offset_left = -494.0
+offset_top = 114.0
+offset_right = -243.0
+offset_bottom = 151.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 30
+text = "Customize avatar"
+alignment = 0
+
 [node name="Desc" type="Panel" parent="." unique_id=2044121970]
 offset_top = -351.0
 offset_right = 525.0
@@ -272,8 +291,124 @@ offset_top = 52.0
 offset_right = 1165.0
 offset_bottom = 91.0
 
+[node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
+position = Vector2(2539, 0)
+
+[node name="Back" type="Button" parent="AvatarCustom" unique_id=1981547515]
+offset_left = -570.0
+offset_top = -355.0
+offset_right = -449.0
+offset_bottom = -295.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+alignment = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AvatarCustom" unique_id=519592603]
+offset_top = -269.0
+offset_right = 417.0
+offset_bottom = 505.0
+
+[node name="HeadRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=141435309]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/HeadRow" unique_id=1364609920]
+layout_mode = 2
+text = "Head color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/HeadRow" unique_id=2101495266]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="TorsoRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=220887813]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/TorsoRow" unique_id=122244041]
+layout_mode = 2
+text = "Torso color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/TorsoRow" unique_id=1800295999]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="LeftArmRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=1534101169]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/LeftArmRow" unique_id=1195080106]
+layout_mode = 2
+text = "Left Arm color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/LeftArmRow" unique_id=1161515155]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="RightArmRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=427476715]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/RightArmRow" unique_id=640877830]
+layout_mode = 2
+text = "Right Arm color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/RightArmRow" unique_id=660041187]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="LeftLegRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=521700655]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/LeftLegRow" unique_id=231310304]
+layout_mode = 2
+text = "Left Leg color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/LeftLegRow" unique_id=1848019659]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="RightLegRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=92480307]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/RightLegRow" unique_id=427697439]
+layout_mode = 2
+text = "Right Leg color:"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/RightLegRow" unique_id=1491178475]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="AvatarCustom" unique_id=1384360897]
+offset_left = 15.0
+offset_top = -48.0
+offset_right = 363.37778
+offset_bottom = 196.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="AvatarCustom/SubViewportContainer" unique_id=2007702056]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(348, 244)
+render_target_update_mode = 4
+
+[node name="CharacterAvatar" parent="AvatarCustom/SubViewportContainer/SubViewport" unique_id=65602991 instance=ExtResource("12_bky6r")]
+
+[node name="Camera3D" type="Camera3D" parent="AvatarCustom/SubViewportContainer/SubViewport" unique_id=1926858213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5819216)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="AvatarCustom/SubViewportContainer/SubViewport" unique_id=823543101]
+light_energy = 0.5
+sky_mode = 1
+
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/Panel/Open Location" to="Main/Panel/Open Location" method="_on_pressed"]
 [connection signal="pressed" from="Main/Panel/Reload" to="Main/Panel/Reload" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_return_to_main_pressed"]
+[connection signal="pressed" from="Settings/Avatar" to="." method="_on_avatar_pressed"]
+[connection signal="pressed" from="AvatarCustom/Back" to="." method="_on_return_to_settings_pressed"]

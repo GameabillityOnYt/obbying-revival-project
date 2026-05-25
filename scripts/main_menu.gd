@@ -2,15 +2,31 @@ extends Node2D
 
 @onready var Main:Node2D = $Main
 @onready var Settings:Node2D = $Settings
+@onready var AvatarCustom:Node2D = $AvatarCustom
 @onready var cam:Camera2D = $Camera2D
 var button = preload("res://assets/prefabs/UI/LevelCard.tscn")
 @onready var title = $Desc/Label
 @onready var desc = $Desc/Label2
 @onready var list = $Main/Panel/ScrollContainer/VBoxContainer
 
+@export var menu_avatar: CharacterAvatarMesh
+@export var body_parts: Dictionary[ColorPickerButton, String]
+
 func _ready():
 	get_window().files_dropped.connect(_file_dragged)
 	load_all_levels()
+	
+	for picker in body_parts:
+		var part_name: String = body_parts[picker]
+		picker.color_changed.connect(func(c): _send_color_to_player(part_name, c))
+		picker.color = GameManager.data.body_colors.get(part_name, Color.WHITE)
+	
+# 
+func _send_color_to_player(part: String, color: Color):
+	GameManager.data.body_colors[part] = color
+	
+	if menu_avatar:
+		menu_avatar.update_part_color(part, color)
 
 func _file_dragged(files:PackedStringArray):
 	for x in files:
@@ -29,7 +45,7 @@ func _file_dragged(files:PackedStringArray):
 		else:
 			print("file not json durr")
 	pass
-
+	
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://custom.tscn")
 
@@ -39,6 +55,11 @@ func _on_settings_pressed() -> void:
 func _on_return_to_main_pressed() -> void:
 	cam.global_position = Main.global_position
 
+func _on_return_to_settings_pressed() -> void:
+	cam.global_position = Settings.global_position
+
+func _on_avatar_pressed() -> void:
+	cam.global_position = AvatarCustom.global_position
 
 func load_level(path):
 	var file = FileAccess.open(path,FileAccess.READ)

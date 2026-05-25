@@ -9,6 +9,22 @@ signal CharacterAdded(Player)
 @export var shiftlocked:bool = false
 @export var alljump:bool = false
 const TARGETRATIO = 16.0/9.0
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_F11:
+			toggle_fullscreen()
+
+func toggle_fullscreen():
+	if window.mode == Window.MODE_WINDOWED:
+		window.mode = Window.MODE_FULLSCREEN # take a wild guess on what this does
+		print("fullscreen")
+	else:
+		window.mode = Window.MODE_WINDOWED
+		print("no fullscreen")
+
+# fullscreen (not) copyrighted by Tob Odin Odin and (not) only allowed in ORP usage.
+
 func copy_default_levels():
 	var source_dir = DirAccess.open("res://mainlevels")
 	if source_dir == null:

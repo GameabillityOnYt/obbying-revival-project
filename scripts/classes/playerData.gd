@@ -15,3 +15,12 @@ signal MaxFPSChanged
 		maxFPS = new
 @export var rendering:String = "vulkan"
 # other types: vulkan, d3d12, metal
+
+@export var body_colors: Dictionary = {
+	"head": Color.WHITE,
+	"torso": Color.WHITE,
+	"left_arm": Color.WHITE,
+	"right_arm": Color.WHITE,
+	"left_leg": Color.WHITE,
+	"right_leg": Color.WHITE
+}

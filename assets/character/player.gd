@@ -188,11 +188,6 @@ func reset():
 	update_health_bar()
 	is_climbing = false
 	climb_normal = Vector3.ZERO
-
-	Health = MaxHealth
-	update_health_bar()
-	is_climbing = false
-	climb_normal = Vector3.ZERO
 	knockback_timer = 0.0
 
 func _physics_process(delta: float) -> void:
@@ -232,7 +227,6 @@ func _physics_process(delta: float) -> void:
 			ray.target_position.y = -0.5
 	else:
 		is_climbing = false
-
 	# gravity
 	if not is_on_floor() and not is_climbing:
 		velocity += get_gravity() * delta
@@ -287,8 +281,27 @@ func _physics_process(delta: float) -> void:
 	var direction = (right * input_dir.x + forward * input_dir.y).normalized()
 
 	if is_climbing:
-		velocity.x = 0
-		velocity.z = 0
+		var at_top := true
+		if climb_normal != Vector3.ZERO:
+			var space_state = get_world_3d().direct_space_state
+			
+			# Starts at chest height (0.5 best value)
+			var ray_start = global_position + Vector3(0, 0.5, 0) 
+			var ray_end = ray_start - climb_normal * 1.2 
+			
+			var query = PhysicsRayQueryParameters3D.create(ray_start, ray_end)
+			
+			var result = space_state.intersect_ray(query)
+			
+			if result and result.collider.is_in_group("climbable"):
+				at_top = false
+		# Allows gliding ONLY IF torso is above truss
+		if at_top and input_dir.x != 0:
+			velocity.x = right.x * input_dir.x * SPEED
+			velocity.z = right.z * input_dir.x * SPEED
+		else:
+			velocity.x = 0
+			velocity.z = 0
 
 		if Input.is_action_pressed("ui_up"):
 			velocity.y = -climb_speed
@@ -299,7 +312,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y = 0
 			set_climb_anim(true, "Idle")
-
 	else:
 		if knockback_timer > 0.0:
 			knockback_timer -= delta
@@ -324,7 +336,7 @@ func _physics_process(delta: float) -> void:
 			var target_angle = atan2(-direction.x, -direction.z)
 			var stable_delta = min(delta, 0.1)
 			rotation.y = lerp_angle(rotation.y, target_angle + PI, 10.0 * stable_delta)
-
+			
 	move_and_slide()
 	update_state()
 	update_anim()
