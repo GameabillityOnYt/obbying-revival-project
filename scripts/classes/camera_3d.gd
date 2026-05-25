@@ -7,6 +7,9 @@ class_name CamStuff
 @export var zoom_speed := 2.0
 @export var smooth_speed := 10
 
+var fingers = {}
+var fingers2 = {}
+
 var snapping := false
 const step := PI / 4.0
 var yaw := 0.0
@@ -66,7 +69,18 @@ func _unhandled_input(event):
 			yaw -= event.relative.x * GameManager.data.sensitivity / 200.0
 			pitch -= event.relative.y * GameManager.data.sensitivity / 200.0
 			pitch = clamp(pitch, -1.5, 1.5)
-
+	if event is InputEventScreenDrag and event.index < 3:
+		fingers2[event.index] = event.position
+		if len(fingers) == 2 and len(fingers2) == 2:
+			target_distance -= ((fingers2[0] - fingers2[1]).length()-(fingers[0] - fingers[1]).length()) * 0.3
+			print(fingers)
+			fingers = fingers2.duplicate()
+	elif event is InputEventScreenTouch and event.index < 3:
+		if event.pressed:
+			fingers[event.index] = event.position
+		else:
+			fingers.erase(event.index)
+			fingers2.erase(event.index)
 func _process(delta):
 	if target == null:
 		return
