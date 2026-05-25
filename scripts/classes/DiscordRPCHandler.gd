@@ -9,7 +9,7 @@ var sync_interval:float = 1.5
 
 func _ready():
 	start_time = int(Time.get_unix_time_from_system())
-	enabled = GameManager.RPC
+	enabled = GameManager.data.rpc_enabled
 
 	await get_tree().create_timer(0.2).timeout # bad but works
 
@@ -31,7 +31,7 @@ func init():
 func enable():
 
 	enabled = true
-	GameManager.RPC = true
+	GameManager.data.rpc_enabled = true
 
 	await get_tree().process_frame
 
@@ -41,7 +41,7 @@ func enable():
 func disable():
 
 	enabled = false
-	GameManager.RPC = false
+	GameManager.data.rpc_enabled = false
 
 	DiscordRPC.clear()
 
@@ -95,8 +95,8 @@ func clear():
 func _process(_delta):
 	# this function originally meant to fix time jumping in rpc
 	# but i feel like i broke something with it instead
-	if GameManager.RPC != enabled:
-		if GameManager.RPC:
+	if GameManager.data.rpc_enabled != enabled:
+		if GameManager.data.rpc_enabled:
 			enable()
 		else:
 			disable()

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ba4gvup1thf8d" path="res://assets/images/UI/lockshiftez.png" id="3_xdcin"]
 [ext_resource type="Script" uid="uid://4xb0hdx20tip" path="res://scripts/gui/mouse.gd" id="4_vwui0"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdcin"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g65vp"]
 shader = ExtResource("1_g65vp")
 shader_parameter/Inverted = false
 
@@ -27,11 +27,13 @@ animations = [{
 "speed": 0.0
 }]
 
-[node name="Mouse" type="AnimatedSprite2D" unique_id=1291654805]
+[node name="Mouse" type="CanvasLayer" unique_id=1574605669]
 process_mode = 3
-z_index = 4096
-material = SubResource("ShaderMaterial_xdcin")
-scale = Vector2(1.5, 1.5)
+layer = 1000000
+follow_viewport_enabled = true
+
+[node name="Cursor" type="AnimatedSprite2D" parent="." unique_id=205214244]
+material = SubResource("ShaderMaterial_g65vp")
 sprite_frames = SubResource("SpriteFrames_5orol")
 offset = Vector2(16, 16)
 script = ExtResource("4_vwui0")

@@ -5,8 +5,8 @@ extends Node2D
 @onready var AvatarCustom:Node2D = $AvatarCustom
 @onready var cam:Camera2D = $Camera2D
 var button = preload("res://assets/prefabs/UI/LevelCard.tscn")
-@onready var title = $Desc/Label
-@onready var desc = $Desc/Label2
+@onready var title = $Main/Desc/Label
+@onready var desc = $Main/Desc/Label2
 @onready var list = $Main/Panel/ScrollContainer/VBoxContainer
 
 @export var menu_avatar: CharacterAvatarMesh

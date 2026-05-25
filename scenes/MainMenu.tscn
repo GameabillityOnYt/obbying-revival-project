@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://assets/prefabs/UI/FOV.tscn" id="6_826wr"]
 [ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
 [ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/alljumpToggle.tscn" id="8_mipys"]
-[ext_resource type="Script" uid="uid://cnf37e8gvyjsb" path="res://assets/prefabs/UI/RPC_toggle.gd" id="12_bky6r"]
-[ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://character.tscn" id="12_bky6r"]
+[ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="12_bky6r"]
+[ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/RPCToggle.tscn" id="13_l4mxc"]
 
 [sub_resource type="GDScript" id="GDScript_2nypq"]
 resource_name = "Location"
@@ -75,30 +75,40 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
 shader = SubResource("Shader_8a8k8")
 shader_parameter/star_density = 0.5
-shader_parameter/elapsed_time = 2273.879354889491
-shader_parameter/elapsed_time = 4471.526052730534
+shader_parameter/elapsed_time = 81.1095726666665
 shader_parameter/direction = Vector2(-1, 0)
 
 [sub_resource type="GDScript" id="GDScript_ucygd"]
 script/source = "@tool
 extends ColorRect
-@export var elapsed_time:float
+var elapsed_time:float
 
 func _process(delta: float) -> void:
 	elapsed_time += delta
 	var mat = material as ShaderMaterial
 	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
+
+func _get_property_list() -> Array:
+	var properties = []
+	properties.append({
+		\"name\": \"elapsed_time\",
+		\"type\": TYPE_FLOAT,
+		\"usage\": PROPERTY_USAGE_EDITOR 
+	})
+	return properties
 "
 
-[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar", "head_picker", "torso_picker", "left_arm_picker", "right_arm_picker", "left_leg_picker", "right_leg_picker")]
+[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar", "body_parts")]
 script = ExtResource("1_ow34m")
 menu_avatar = NodePath("AvatarCustom/SubViewportContainer/SubViewport/CharacterAvatar")
-head_picker = NodePath("AvatarCustom/VBoxContainer/HeadRow/ColorPickerButton")
-torso_picker = NodePath("AvatarCustom/VBoxContainer/TorsoRow/ColorPickerButton")
-left_arm_picker = NodePath("AvatarCustom/VBoxContainer/LeftArmRow/ColorPickerButton")
-right_arm_picker = NodePath("AvatarCustom/VBoxContainer/RightArmRow/ColorPickerButton")
-left_leg_picker = NodePath("AvatarCustom/VBoxContainer/LeftLegRow/ColorPickerButton")
-right_leg_picker = NodePath("AvatarCustom/VBoxContainer/RightLegRow/ColorPickerButton")
+body_parts = {
+NodePath("AvatarCustom/VBoxContainer/HeadRow/ColorPickerButton"): "head",
+NodePath("AvatarCustom/VBoxContainer/TorsoRow/ColorPickerButton"): "torso",
+NodePath("AvatarCustom/VBoxContainer/LeftArmRow/ColorPickerButton"): "left_arm",
+NodePath("AvatarCustom/VBoxContainer/RightArmRow/ColorPickerButton"): "right_arm",
+NodePath("AvatarCustom/VBoxContainer/LeftLegRow/ColorPickerButton"): "left_leg",
+NodePath("AvatarCustom/VBoxContainer/RightLegRow/ColorPickerButton"): "right_leg"
+}
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1544198342]
 position_smoothing_enabled = true
@@ -181,9 +191,36 @@ expand_icon = true
 script = SubResource("GDScript_7la6k")
 
 [node name="Goog" type="Sprite2D" parent="Main" unique_id=219827493]
-position = Vector2(-485.99988, 605)
+position = Vector2(2355, -71)
 scale = Vector2(0.20777778, 0.20777778)
 texture = ExtResource("5_8a8k8")
+
+[node name="Desc" type="Panel" parent="Main" unique_id=2044121970]
+offset_top = -351.0
+offset_right = 525.0
+offset_bottom = -144.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Main/Desc" unique_id=1568104838]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 30
+text = "Select a level"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Main/Desc" unique_id=463695962]
+layout_mode = 0
+offset_top = 95.0
+offset_right = 525.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+clip_text = true
 
 [node name="BG" type="Control" parent="." unique_id=500703345]
 layout_mode = 3
@@ -212,7 +249,6 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = SubResource("GDScript_ucygd")
-elapsed_time = 0
 metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node2D" parent="." unique_id=132079008]
@@ -259,47 +295,12 @@ theme_override_font_sizes/font_size = 30
 text = "Customize avatar"
 alignment = 0
 
-[node name="Desc" type="Panel" parent="." unique_id=2044121970]
-offset_top = -351.0
-offset_right = 525.0
-offset_bottom = -144.0
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="Desc" unique_id=1568104838]
-layout_mode = 0
-offset_right = 525.0
-offset_bottom = 48.0
-theme_override_fonts/font = ExtResource("2_0ykhv")
-theme_override_font_sizes/font_size = 30
-text = "Select a level"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
-
-[node name="Label2" type="Label" parent="Desc" unique_id=463695962]
-layout_mode = 0
-offset_top = 95.0
-offset_right = 525.0
-offset_bottom = 207.0
-theme_override_fonts/font = ExtResource("2_0ykhv")
-theme_override_font_sizes/font_size = 20
-autowrap_mode = 2
-clip_text = true
-
 [node name="AlljumpToggle" parent="." unique_id=118282012 instance=ExtResource("8_mipys")]
 offset_left = 1057.0
 offset_top = 52.0
 offset_right = 1165.0
 offset_bottom = 91.0
 
-[node name="DiscordRPCToggle" parent="." unique_id=6787001 instance=ExtResource("8_mipys")]
-offset_left = 676.0
-offset_top = 56.0
-offset_right = 813.0
-offset_bottom = 95.0
-button_pressed = true
-text = "Discord RPC"
-script = ExtResource("12_bky6r")
 [node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
 position = Vector2(2539, 0)
 
@@ -413,6 +414,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5819216)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="AvatarCustom/SubViewportContainer/SubViewport" unique_id=823543101]
 light_energy = 0.5
 sky_mode = 1
+
+[node name="RPCToggle" parent="." unique_id=214793037 instance=ExtResource("13_l4mxc")]
+offset_left = 704.0
+offset_top = 61.0
+offset_right = 845.0
+offset_bottom = 92.0
 
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]

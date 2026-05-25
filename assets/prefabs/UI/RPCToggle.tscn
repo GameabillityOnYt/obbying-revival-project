@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dy2sb60hk1gd2"]
+
+[ext_resource type="Script" uid="uid://cnf37e8gvyjsb" path="res://scripts/gui/RPC_toggle.gd" id="1_btywy"]
+
+[node name="RPCToggle" type="CheckButton" unique_id=118282012]
+text = "Discord RPC"
+script = ExtResource("1_btywy")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

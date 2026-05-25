@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dn6n3bwoca1ur"]
 
-[ext_resource type="Script" uid="uid://bw7pfhsbjiclh" path="res://assets/prefabs/UI/selecting.gd" id="1_ovgvq"]
+[ext_resource type="Script" uid="uid://bw7pfhsbjiclh" path="res://scripts/gui/selecting.gd" id="1_ovgvq"]
 
 [node name="Editorhud" type="Control" unique_id=1301252983]
 layout_mode = 3
