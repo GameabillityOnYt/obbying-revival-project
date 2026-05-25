@@ -5,6 +5,7 @@
 [sub_resource type="CylinderMesh" id="CylinderMesh_3nosk"]
 
 [node name="Cylinder" type="RigidBody3D" unique_id=360271298]
+freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=95344513]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
