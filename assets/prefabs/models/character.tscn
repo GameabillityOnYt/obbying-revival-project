@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://duj8uanvn1sqi"]
+
+[ext_resource type="PackedScene" uid="uid://bqn7xr4afyk5h" path="res://assets/character/Character.glb" id="1_glpr6"]
+[ext_resource type="Script" uid="uid://cpxi2640mxigo" path="res://scripts/classes/character.gd" id="2_h6hlt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjt0s"]
+transparency = 4
+
+[node name="Character" unique_id=65602991 instance=ExtResource("1_glpr6")]
+script = ExtResource("2_h6hlt")
+
+[node name="Torso" parent="ObbyAvatar/Skeleton3D/torso" parent_id_path=PackedInt32Array(1196189740) index="0" unique_id=1255143763]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="Head" parent="ObbyAvatar/Skeleton3D/head" parent_id_path=PackedInt32Array(1579656867) index="0" unique_id=363482359]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="LeftArm" parent="ObbyAvatar/Skeleton3D/leftarm" parent_id_path=PackedInt32Array(1192775816) index="0" unique_id=1160501965]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="RightArm" parent="ObbyAvatar/Skeleton3D/rightarm" parent_id_path=PackedInt32Array(1538354514) index="0" unique_id=1696177478]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="LeftLeg" parent="ObbyAvatar/Skeleton3D/leftleg" parent_id_path=PackedInt32Array(1380474795) index="0" unique_id=1056607272]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="RightLeg" parent="ObbyAvatar/Skeleton3D/rightleg" parent_id_path=PackedInt32Array(921866148) index="0" unique_id=1868908888]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")

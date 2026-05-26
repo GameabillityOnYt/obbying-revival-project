@@ -4,8 +4,23 @@ enum ICON {NORMAL, CLICK, SHIFTLOCK}
 
 var last_pos:Vector2
 var last_rotating = false
+var wobbly = false # >:3
+var wobbly_speed = 0
+@onready var canvas:CanvasLayer = get_parent()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if wobbly:
+		var mouse_speed = (get_global_mouse_position().x-global_position.x)/get_window().size.x
+		var force = (0 - skew) * 200.0 - wobbly_speed * 4.0
+		wobbly_speed += force * delta
+		wobbly_speed += mouse_speed * 75
+		skew += wobbly_speed * delta
+		rotation += wobbly_speed * delta
+		wobbly_speed *= .98
+	
+	if Input.is_action_just_pressed("WOBBLE"):
+		wobbly = not wobbly
+	
 	if get_tree().paused:
 		if not Input.mouse_mode == Input.MOUSE_MODE_HIDDEN:
 			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
@@ -31,9 +46,11 @@ func _process(_delta: float) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	if GameManager.shiftlocked or is_first_person:
+		if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+			last_pos = mouse_pos # this fixes mouse bugging out after unshiftlock
+
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		global_position = get_viewport_rect().size / 2
-		last_pos = Vector2.ONE/2
 	elif !rotating:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN

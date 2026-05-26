@@ -27,7 +27,9 @@ animations = [{
 "speed": 0.0
 }]
 
-[node name="Mouse" type="AnimatedSprite2D" unique_id=1291654805]
+[node name="Mouse" type="CanvasLayer" unique_id=339055303]
+
+[node name="Mouse" type="AnimatedSprite2D" parent="." unique_id=1291654805]
 process_mode = 3
 visible = false
 z_index = 4096

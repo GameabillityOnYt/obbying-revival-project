@@ -80,7 +80,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
 shader = SubResource("Shader_8a8k8")
 shader_parameter/star_density = 0.5
-shader_parameter/elapsed_time = 4419.306175342056
+shader_parameter/elapsed_time = 4841.583382045779
 shader_parameter/direction = Vector2(-1, 0)
 
 [sub_resource type="GDScript" id="GDScript_ucygd"]
@@ -202,6 +202,33 @@ grow_vertical = 2
 text = "We need files aceess for loading levels"
 label_settings = SubResource("LabelSettings_2nypq")
 
+[node name="Desc" type="Panel" parent="Main" unique_id=2044121970]
+offset_top = -351.0
+offset_right = 525.0
+offset_bottom = -144.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Main/Desc" unique_id=1568104838]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 30
+text = "Select a level"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Main/Desc" unique_id=463695962]
+layout_mode = 0
+offset_top = 95.0
+offset_right = 525.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+clip_text = true
+
 [node name="BG" type="Control" parent="." unique_id=500703345]
 layout_mode = 3
 anchors_preset = 0
@@ -229,7 +256,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = SubResource("GDScript_ucygd")
-elapsed_time = 4419.306175342056
+elapsed_time = 4841.583382045779
 metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node2D" parent="." unique_id=132079008]
@@ -267,33 +294,6 @@ tick_count = 16
 
 [node name="Goog" parent="Settings" unique_id=179873097 instance=ExtResource("10_2nypq")]
 position = Vector2(556.0001, 246)
-
-[node name="Desc" type="Panel" parent="." unique_id=2044121970]
-offset_top = -351.0
-offset_right = 525.0
-offset_bottom = -144.0
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="Desc" unique_id=1568104838]
-layout_mode = 0
-offset_right = 525.0
-offset_bottom = 48.0
-theme_override_fonts/font = ExtResource("2_0ykhv")
-theme_override_font_sizes/font_size = 30
-text = "Select a level"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
-
-[node name="Label2" type="Label" parent="Desc" unique_id=463695962]
-layout_mode = 0
-offset_top = 95.0
-offset_right = 525.0
-offset_bottom = 207.0
-theme_override_fonts/font = ExtResource("2_0ykhv")
-theme_override_font_sizes/font_size = 20
-autowrap_mode = 2
-clip_text = true
 
 [node name="FileDialog" type="FileDialog" parent="." unique_id=816336805]
 oversampling_override = 1.0

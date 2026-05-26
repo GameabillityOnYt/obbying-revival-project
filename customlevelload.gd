@@ -36,7 +36,7 @@ func addCheckpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_
 		newcheckpoint.set_meta("shiftlocked", shiftlock)
 		
 		add_child(newcheckpoint)
-		newcheckpoint.position = pos + Vector3(0,1,0)
+		newcheckpoint.position = pos
 		newcheckpoint.rotation = rot
 		checkpoints.append(newcheckpoint)
 		spawn_point = newcheckpoint

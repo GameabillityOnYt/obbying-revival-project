@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ypneyahtpnck" path="res://assets/character/player.gd" id="1_monf5"]
 [ext_resource type="Script" uid="uid://5pbiggcq3lln" path="res://scripts/classes/camera_3d.gd" id="2_j3eqw"]
-[ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://character.tscn" id="3_j3eqw"]
+[ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="3_j3eqw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aypkh"]
 size = Vector3(0.4, 2.4252687, 0.2)

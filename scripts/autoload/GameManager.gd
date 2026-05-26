@@ -52,13 +52,13 @@ func copy_default_levels():
 		if source_file == null:
 			continue
 
-		var data = source_file.get_buffer(source_file.get_length())
+		var lvl_data = source_file.get_buffer(source_file.get_length())
 
 		var target_file = FileAccess.open(target_path, FileAccess.WRITE)
 		if target_file == null:
 			continue
 
-		target_file.store_buffer(data)
+		target_file.store_buffer(lvl_data)
 
 		print("Copied level:", file_name)
 
@@ -99,6 +99,5 @@ func _ready():
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		if !OS.is_restart_on_exit_set():
-			data.rendering = "d312"
 			ResourceSaver.save(data,"user://data.tres")
 		get_tree().quit()

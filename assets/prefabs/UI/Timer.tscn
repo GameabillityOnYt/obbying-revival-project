@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fuehl670w3lw"]
 
-[ext_resource type="Script" uid="uid://rpn42b373ch7" path="res://assets/prefabs/UI/timer.gd" id="1_0jqax"]
+[ext_resource type="Script" uid="uid://rpn42b373ch7" path="res://scripts/gui/timer.gd" id="1_0jqax"]
 [ext_resource type="Texture2D" uid="uid://dc47pf48oq0pg" path="res://assets/images/UI/timer-icon-14.png" id="1_xc1va"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jqax"]
