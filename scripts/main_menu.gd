@@ -8,9 +8,12 @@ var button = preload("res://assets/prefabs/UI/LevelCard.tscn")
 @onready var title = $Main/Desc/Label
 @onready var desc = $Main/Desc/Label2
 @onready var list = $Main/Panel/ScrollContainer/VBoxContainer
+@onready var version = $Main/Version
 
 @export var menu_avatar: CharacterAvatarMesh
 @export var body_parts: Dictionary[ColorPickerButton, String]
+
+var whitespace_remover = RegEx.new()
 
 func _ready():
 	get_window().files_dropped.connect(_file_dragged)
@@ -31,6 +34,16 @@ func _send_color_to_player(part: String, color: Color):
 	if DiscordRPCManager != null:
 		DiscordRPCManager.menu()
 
+func _init() -> void:
+	if GameManager.version_latest == "": await GameManager.VersionLoaded
+	whitespace_remover.compile("\\s+")
+	var curr_version = whitespace_remover.sub(GameManager.version,"",true)
+	var latest_version = whitespace_remover.sub(GameManager.version_latest,"",true)
+	if curr_version != latest_version:
+		version.add_theme_color_override("font_color",Color(1,0,0))
+		version.text = "%s is outdated! latest version: %s" % [curr_version, latest_version]
+	else:
+		version.text = GameManager.version
 
 func _file_dragged(files:PackedStringArray):
 	for x in files:

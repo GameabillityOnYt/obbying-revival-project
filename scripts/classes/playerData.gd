@@ -14,6 +14,7 @@ signal MaxFPSChanged
 		MaxFPSChanged.emit(new)
 		maxFPS = new
 @export var rpc_enabled = false
+@export var renderer = "forward_plus"
 
 @export var body_colors: Dictionary = {
 	"head": Color.WHITE,

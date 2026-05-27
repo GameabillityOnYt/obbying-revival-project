@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://assets/prefabs/UI/FOV.tscn" id="6_826wr"]
 [ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
 [ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/alljumpToggle.tscn" id="8_mipys"]
+[ext_resource type="Script" uid="uid://ywm0qwb34xhy" path="res://scripts/gui/renderer_switcher.gd" id="11_ptake"]
 [ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="12_bky6r"]
 [ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/RPCToggle.tscn" id="14_5faoh"]
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/RToggle.tscn" id="14_ptake"]
@@ -213,6 +214,13 @@ theme_override_font_sizes/font_size = 20
 autowrap_mode = 2
 clip_text = true
 
+[node name="Version" type="Label" parent="Main" unique_id=71385192]
+offset_left = -638.0
+offset_top = 339.0
+offset_right = -484.0
+offset_bottom = 362.0
+text = "VERSION TEXT HERE"
+
 [node name="BG" type="Control" parent="." unique_id=500703345]
 layout_mode = 3
 anchors_preset = 0
@@ -231,15 +239,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -6400.0
-offset_top = -3600.0
-offset_right = 6400.0
-offset_bottom = 3600.0
+offset_left = -7079.0
+offset_top = -3089.0
+offset_right = 5721.0
+offset_bottom = 4111.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = SubResource("GDScript_ucygd")
+metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node2D" parent="." unique_id=132079008]
 position = Vector2(1300, 0)
@@ -284,6 +293,39 @@ theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 30
 text = "Customize avatar"
 alignment = 0
+
+[node name="RendererSwitcher" type="OptionButton" parent="Settings" unique_id=1316471072]
+offset_left = 135.0
+offset_top = -111.0
+offset_right = 271.0
+offset_bottom = -80.0
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Forward+"
+popup/item_0/id = 0
+popup/item_1/text = "Mobile"
+popup/item_1/id = 1
+popup/item_2/text = "Compatibility"
+popup/item_2/id = 2
+script = ExtResource("11_ptake")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/RendererSwitcher" unique_id=1393853769]
+layout_mode = 0
+offset_left = -101.04348
+offset_top = 2.0
+offset_bottom = 30.0
+text = "Rendering"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Settings/RendererSwitcher" unique_id=651435297]
+oversampling_override = 1.0
+title = "Notification"
+initial_position = 2
+size = Vector2i(300, 150)
+dialog_text = "Restart to apply changes"
 
 [node name="AlljumpToggle" parent="." unique_id=118282012 instance=ExtResource("8_mipys")]
 offset_left = 1057.0
@@ -423,4 +465,5 @@ offset_bottom = 134.0
 [connection signal="pressed" from="Main/Panel/Reload" to="Main/Panel/Reload" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_return_to_main_pressed"]
 [connection signal="pressed" from="Settings/Avatar" to="." method="_on_avatar_pressed"]
+[connection signal="item_selected" from="Settings/RendererSwitcher" to="Settings/RendererSwitcher" method="_on_item_selected"]
 [connection signal="pressed" from="AvatarCustom/Back" to="." method="_on_return_to_settings_pressed"]

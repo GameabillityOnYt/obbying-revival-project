@@ -1,16 +1,36 @@
 extends Node
 
+const VERSIONLINK = "https://raw.githubusercontent.com/GameabillityOnYt/obbying-revival-project/refs/heads/main/version.txt"
+const TARGETRATIO = 16.0/9.0
+
 @onready var window = get_window()
 @export var data:PlayerData = PlayerData.new()
-signal DataLoaded
-signal CharacterAdded(Player)
 @export var currentLevel:String
 @export var Camera:CamStuff
 @export var shiftlocked:bool = false
 @export var alljump:bool = false
 @export var RToggle:bool = false
-const TARGETRATIO = 16.0/9.0
 
+signal DataLoaded
+signal CharacterAdded(Player)
+signal VersionLoaded
+
+var version_latest:String   #  This is the latest version from github - danki
+var version:String          #  The current version - danki
+
+func _init() -> void:
+	# Loading playerdata
+	if FileAccess.file_exists("user://data.tres"):
+		data = ResourceLoader.load("user://data.tres")
+	else:
+		data = PlayerData.new()
+		ResourceSaver.save(data,"user://data.tres")
+	DataLoaded.emit() # Telling game its done loading
+	
+	if RenderingServer.get_current_rendering_method() != data.renderer:
+		OS.create_instance(["--rendering-method",data.renderer])
+		OS.kill(OS.get_process_id())
+	
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_F11:
@@ -19,10 +39,8 @@ func _input(event):
 func toggle_fullscreen():
 	if window.mode == Window.MODE_WINDOWED:
 		window.mode = Window.MODE_FULLSCREEN # take a wild guess on what this does
-		print("fullscreen")
 	else:
 		window.mode = Window.MODE_WINDOWED
-		print("no fullscreen")
 
 # fullscreen (not) copyrighted by Tob Odin Odin and (not) only allowed in ORP usage.
 
@@ -71,19 +89,25 @@ func ensure_levels_folder(): # makes sure that levels exists lol
 		dir.make_dir("levels")
 
 func _ready():
+	print(RenderingServer.get_current_rendering_method())
+	var open = FileAccess.open("res://version.txt",FileAccess.READ)
+	version = open.get_as_text()
+	open.close()
+	var request = HTTPRequest.new()
+	add_child(request)
+	request.request_completed.connect(func(result: int, _response_code: int, _headers: PackedStringArray, body: PackedByteArray):
+		if result == OK:
+			version_latest = body.get_string_from_utf8()
+			VersionLoaded.emit()
+		pass)
+		
+	request.request(VERSIONLINK,[],HTTPClient.METHOD_GET)
+	
 	# Window + Mouse Setup
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	get_window().mode = Window.MODE_WINDOWED
 	ensure_levels_folder()
 	copy_default_levels()
-
-	# Loading playerdata
-	if FileAccess.file_exists("user://data.tres"):
-		data = ResourceLoader.load("user://data.tres")
-	else:
-		data = PlayerData.new()
-		ResourceSaver.save(data,"user://data.tres")
-	DataLoaded.emit() # Telling game its done loading
 	
 	# Fps handling thing
 	data.MaxFPSChanged.connect(func(new):
