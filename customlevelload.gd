@@ -3,6 +3,7 @@ extends Node3D
 @onready var part = preload("res://assets/prefabs/building/Old/Part.tscn")
 @onready var cylinder = preload("res://assets/prefabs/building/Old/cylinder.tscn")
 @onready var wedge = preload("res://assets/prefabs/building/Old/wedge.tscn")
+@onready var cornerwedge = preload("res://assets/prefabs/building/Old/cornerwedge.tscn")
 @onready var ball = preload("res://assets/prefabs/building/Old/ball.tscn")
 @onready var truss = preload("res://assets/prefabs/building/Old/Truss.tscn")
 @onready var player = $Player
@@ -217,6 +218,69 @@ func addWedge(pos, rot_deg, size, color):
 		arr_mesh.surface_set_material(0, wedge_mesh)
 		mesh.mesh = arr_mesh
 
+func addCornerWedge(pos, rot_deg, size, color):
+	var newcornerwedge = cornerwedge.instantiate()
+	add_child(newcornerwedge)
+	var mesh = newcornerwedge.get_node("MeshInstance3D") as MeshInstance3D
+	var coll = newcornerwedge.get_node("CollisionShape3D")
+	newcornerwedge.position = pos
+	
+	var rot_rad = Vector3(
+		deg_to_rad(rot_deg.x),
+		deg_to_rad(rot_deg.y),
+		deg_to_rad(rot_deg.z)
+	)
+	# transforming the vertices of the origin to the player's vertices
+	var basis_ = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	
+	var h = max(size.y, 0.001)
+	var w = max(size.x, 0.001)
+	var l = max(size.z, 0.001)
+	# need this to map each of the vertices individually
+	var origin_vertices = PackedVector3Array([
+		# bottom face
+		Vector3(-w/2, -h/2,  l/2), Vector3( w/2, -h/2,  l/2), Vector3( w/2, -h/2, -l/2),
+		Vector3(-w/2, -h/2,  l/2), Vector3( w/2, -h/2, -l/2), Vector3(-w/2, -h/2, -l/2),
+		# back face
+		Vector3(-w/2, -h/2, -l/2), Vector3( w/2, -h/2, -l/2), Vector3( w/2,  h/2, -l/2),
+		# left face
+		Vector3(-w/2, -h/2,  l/2), Vector3(-w/2, -h/2, -l/2), Vector3( w/2,  h/2, -l/2),
+		# slope face
+		Vector3(-w/2, -h/2,  l/2), Vector3( w/2,  h/2, -l/2), Vector3( w/2, -h/2,  l/2),
+		# right face
+		Vector3( w/2, -h/2,  l/2), Vector3( w/2,  h/2, -l/2), Vector3( w/2, -h/2, -l/2),
+	])
+	var final_vertices = PackedVector3Array()
+	for vert in origin_vertices:
+		final_vertices.append(basis_ * vert)
+	
+	if coll.shape:
+		var shape = ConvexPolygonShape3D.new()
+		shape.points = final_vertices
+		coll.shape = shape
+		
+	var normals = PackedVector3Array()
+	for i in range(0, final_vertices.size(), 3):
+		var n = (final_vertices[i + 2] - final_vertices[i]).cross(
+			final_vertices[i + 1] - final_vertices[i]).normalized()
+		normals.append(n)
+		normals.append(n)
+		normals.append(n)
+		
+	var arrays = []
+	arrays.resize(Mesh.ARRAY_MAX)
+	arrays[Mesh.ARRAY_VERTEX] = final_vertices
+	arrays[Mesh.ARRAY_NORMAL] = normals
+	
+	if mesh.mesh.material:
+		var cornerwedge_mesh = mesh.mesh.material.duplicate() as ShaderMaterial
+		cornerwedge_mesh.set_shader_parameter("base_color", color)
+		
+		var arr_mesh = ArrayMesh.new()
+		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+		arr_mesh.surface_set_material(0, cornerwedge_mesh)
+		mesh.mesh = arr_mesh
+	
 func addBall(pos, rot_deg, size, color):
 	var newball = ball.instantiate()
 	add_child(newball)
@@ -282,6 +346,13 @@ func spawn_node(node_data):
 			)
 		elif shape == "Wedge":
 			addWedge(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color"))
+			)
+		elif shape == "CornerWedge":
+			addCornerWedge(
 				to_vec3(p.get("Position")),
 				to_vec3(p.get("Rotation")),
 				to_vec3(p.get("Size")),
