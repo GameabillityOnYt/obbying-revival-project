@@ -79,6 +79,8 @@ func _process(delta):
 	var look_basis = Basis.from_euler(Vector3(pitch, yaw, 0))
 	global_transform.basis = look_basis
 	var target_focus_pos = target.get_node("Focus").global_position
+	if "step_visual_offset" in target:
+		target_focus_pos.y += target.step_visual_offset
 	
 	var side_offset = Vector3.ZERO
 	if GameManager.shiftlocked and mode == CameraMode.NORMAL:

@@ -36,6 +36,7 @@ var took_damage := false
 @export var jump_off_force := 15.0 
 @export var jump_up_force := 1.1
 var knockback_timer := 0.0
+var step_visual_offset := 0.0
 
 
 var just_jumped_off := false
@@ -235,30 +236,43 @@ func _physics_process(delta: float) -> void:
 			var collider = active_ray.get_collider()
 			# this should be changed to work with parts later
 			if collider and collider.is_in_group("climbable"):
-				touching_truss = true
-
-				climb_normal = active_ray.get_collision_normal()
-				last_truss_point = active_ray.get_collision_point()
-
-				climb_grace = 0.08
-
-				truss_timer = 0.0
-				truss_used = false
+				var normal = active_ray.get_collision_normal()
+				
+				var input_dir_check := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+				var cam_yaw_check = cam.yaw
+				var forward_check = Vector3(-sin(cam_yaw_check), 0, -cos(cam_yaw_check)).normalized()
+				var right_check = Vector3(cos(cam_yaw_check), 0, -sin(cam_yaw_check)).normalized()
+				var move_dir_check = (right_check * input_dir_check.x + forward_check * input_dir_check.y).normalized()
+				
+				if is_on_floor() and move_dir_check.length() > 0.1 and move_dir_check.dot(normal) > 0.2:
+					touching_truss = false
+				else:
+					touching_truss = true
+					climb_normal = normal
+					last_truss_point = active_ray.get_collision_point()
+					climb_grace = 0.08
+					truss_timer = 0.0
+					truss_used = false
 
 		if touching_truss:
 			is_climbing = true
-
 		else:
 			climb_grace -= delta
-
 			var dist = global_position.distance_to(last_truss_point)
 
-			if climb_grace > 0.0 and dist < 0.45:
+			if climb_grace > 0.0 and dist < 0.45 and not (is_on_floor() and Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").length() > 0.1):
 				is_climbing = true
 			else:
 				is_climbing = false
 				climb_normal = Vector3.ZERO
 				
+	if step_visual_offset != 0.0:
+		var old_offset = step_visual_offset
+		step_visual_offset = move_toward(step_visual_offset, 0.0, delta * 20.0) 
+		var diff = step_visual_offset - old_offset
+		
+		if player:
+			player.position.y += diff
 
 	# gravity
 	if not is_on_floor() and not is_climbing:
@@ -319,11 +333,6 @@ func _physics_process(delta: float) -> void:
 	if is_climbing:
 		velocity -= climb_normal * 6.0 * delta # attaching player to truss
 		
-		# leave truss when feet touch ground
-		if is_on_floor() and velocity.y <= 0:
-			is_climbing = false
-			climb_grace = 0.0
-	
 		var at_top := true
 		if climb_normal != Vector3.ZERO:
 			var hitting_truss: bool = glidetop.is_colliding() and glidetop.get_collider().is_in_group("climbable")
@@ -358,16 +367,23 @@ func _physics_process(delta: float) -> void:
 
 		velocity.y = climb_input * climb_speed
 		
-		# from 0-1, the closer to 1 the stricter your camera needs to be straight to glide (fixes gliding backward accidentally)
+		# leave truss when feet touch ground
+		if is_on_floor() and climb_input <= 0:
+			is_climbing = false
+			climb_grace = 0.0
+			climb_normal = Vector3.ZERO
+		
+		# bigger the number the stricter your camera needs to be straight to glide
 		var looking_from_behind : float = abs(camf.dot(climb_normal))
 		
 		if at_top and input_dir.x != 0 and looking_from_behind > 0.7:
 			velocity.x = right.x * input_dir.x * SPEED
 			velocity.z = right.z * input_dir.x * SPEED
 		else:
-			# If looking from the side, prevent side velocity from breaking the stick force
+			# so technically this fixes gliding hopefully
 			velocity.x = 0
 			velocity.z = 0
+			
 		set_climb_anim(
 			climb_input == 0,
 			"Up" if climb_input > 0 else "Down" if climb_input < 0 else "Idle"
@@ -398,10 +414,85 @@ func _physics_process(delta: float) -> void:
 			var stable_delta = min(delta, 0.1)
 			rotation.y = lerp_angle(rotation.y, target_angle + PI, 10.0 * stable_delta)
 			
+			
+	_step_climbing()
 	move_and_slide()
 	update_state()
 	update_anim()
 	just_jumped_off = false
+	
+func _step_climbing() -> void:
+	if is_climbing or not is_on_floor():
+		return
+
+	var horizontal_vel := Vector3(velocity.x, 0.0, velocity.z)
+	if horizontal_vel.length() < 0.1:
+		return
+
+	var dt = get_physics_process_delta_time()
+	var step_displacement = horizontal_vel * dt
+	var hit_info = KinematicCollision3D.new()
+
+	if test_move(global_transform, step_displacement, hit_info):
+		var collision_normal = hit_info.get_normal()
+		# checking if ther's no problem w floor at the top of us to hit us
+		# previously you would just noclip in it
+		
+		# upd: no it's not
+		if collision_normal.y > cos(floor_max_angle):
+			return
+
+		# it's more of automatic but number is still hard coded
+		var step_height := 0.0
+		var max_possible_step := 2.0
+		var step_increment := 0.05
+		var found_top := false
+		var test_transform = global_transform
+
+		while step_height < max_possible_step:
+			step_height += step_increment
+			var upward_transform = global_transform.translated(Vector3(0.0, step_height, 0.0))
+			
+			if not test_move(upward_transform, step_displacement):
+				test_transform = upward_transform
+				found_top = true
+				break
+
+		if found_top:
+			var forward_tgt = test_transform.translated(step_displacement)
+			var drop_sweep = Vector3(0.0, -step_height, 0.0)
+			var ground_hit = KinematicCollision3D.new()
+			
+			if test_move(forward_tgt, drop_sweep, ground_hit):
+				var drop_dist = ground_hit.get_travel().y
+				var final_step_height = step_height + drop_dist
+				
+				if final_step_height > 0.01:
+					global_position.y += final_step_height
+					step_visual_offset -= final_step_height
+					
+					if player:
+						player.position.y -= final_step_height
+						
+					force_update_transform()
+	else:
+		# step down handling
+		var forward_tgt = global_transform.translated(step_displacement)
+		var max_possible_step_down := 2.0
+		var down_sweep = Vector3(0.0, -max_possible_step_down, 0.0)
+		var ground_hit = KinematicCollision3D.new()
+		
+		if test_move(forward_tgt, down_sweep, ground_hit):
+			var drop_dist = ground_hit.get_travel().y
+			
+			if drop_dist < -0.01:
+				global_position.y += drop_dist
+				step_visual_offset -= drop_dist
+				
+				if player:
+					player.position.y -= drop_dist
+					
+				force_update_transform()
 
 func _process(_delta: float) -> void:
 	if Health <= 0:
