@@ -55,8 +55,8 @@ func _ready():
 		return
 	
 	if curr_version != latest_version:
-		version.add_theme_color_override(\"font_color\",Color(1,0,0))
 		version.text = \"v%s is outdated! latest version: v%s\" % [curr_version, latest_version]
+		version.add_theme_color_override(\"font_color\",Color(1,0,0))
 	else:
 		version.text = \"v\" + curr_version + \" (latest) \"
 	version.text = '[url=https://github.com/GameabillityOnYt/obbying-revival-project/releases][u]%s[/u][/url]' % version.text
@@ -210,7 +210,7 @@ offset_left = 550.0
 offset_top = 50.0
 offset_right = 591.0
 offset_bottom = 91.0
-tooltip_text = "Open levels folder"
+tooltip_text = "Refresh levels"
 icon = ExtResource("6_2nypq")
 expand_icon = true
 script = SubResource("GDScript_7la6k")

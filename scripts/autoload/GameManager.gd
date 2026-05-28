@@ -16,7 +16,7 @@ signal CharacterAdded(Player)
 signal VersionLoaded
 
 var version_latest:String   #  This is the latest version from github - danki
-var version:String          #  The current version - danki
+const version:String = "0.5.2"        #  The current version - danki
 
 # Setup
 
@@ -45,9 +45,6 @@ func _ready():
 		OS.create_instance(["--rendering-method",data.renderer])
 		get_tree().quit(0)
 	
-	var open = FileAccess.open("res://version.txt",FileAccess.READ)
-	version = open.get_as_text()
-	open.close()
 	var request = HTTPRequest.new()
 	add_child(request)
 	request.request_completed.connect(func(result: int, _response_code: int, _headers: PackedStringArray, body: PackedByteArray):
