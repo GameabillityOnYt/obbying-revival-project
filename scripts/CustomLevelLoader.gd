@@ -29,7 +29,7 @@ func load_level(path):
 	return json.data
 
 func addCheckpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_transform: Transform3D, shiftlock: bool):
-	if GameManager.alljump:
+	if GameManager.practice:
 		var newcheckpoint = checkpoint.instantiate()
 		newcheckpoint.set_meta("saved_velocity", vel)
 		

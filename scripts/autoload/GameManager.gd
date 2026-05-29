@@ -8,7 +8,7 @@ const TARGETRATIO = 16.0/9.0
 @export var currentLevel:String
 @export var Camera:CamStuff
 @export var shiftlocked:bool = false
-@export var alljump:bool = false
+@export var practice:bool = false
 @export var RToggle:bool = false
 
 signal DataLoaded

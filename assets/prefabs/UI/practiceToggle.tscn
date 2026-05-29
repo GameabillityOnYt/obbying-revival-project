@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://buyvpgvyi0uoh"]
 
-[ext_resource type="Script" uid="uid://ua2ohq1i1urw" path="res://scripts/gui/alljump_toggle.gd" id="1_hjxjx"]
+[ext_resource type="Script" uid="uid://ua2ohq1i1urw" path="res://scripts/gui/practice_toggle.gd" id="1_hjxjx"]
 
 [node name="AlljumpToggle" type="CheckButton" unique_id=118282012]
 text = "Alljump"

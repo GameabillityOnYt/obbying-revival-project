@@ -83,7 +83,7 @@ func playing(level_path:String):
 	var diff = data.get("Difficulty", "Unknown")
 	var creator = data.get("Creator", "Unknown")
 
-	var details = ("All Jumping " + name) if GameManager.alljump else ("Playing " + name)
+	var details = ("All Jumping " + name) if GameManager.practice else ("Playing " + name)
 	# i hate that state is a gray text right ot timer and not actualy rpc state
 	var state = "Tier " + str(diff) + " by " + creator
 

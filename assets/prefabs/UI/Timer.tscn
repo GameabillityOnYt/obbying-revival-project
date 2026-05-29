@@ -40,9 +40,20 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="Panel" unique_id=548071741]
 layout_mode = 0
-offset_left = 10.0
-offset_right = 74.0
-offset_bottom = 23.0
+offset_left = 9.75
+offset_right = 264.75
+offset_bottom = 88.0
 scale = Vector2(0.118, 0.45)
 theme_override_font_sizes/font_size = 64
 text = "00:00:00"
+
+[node name="Indicator" type="Label" parent="Panel" unique_id=932516622]
+visible = false
+layout_mode = 0
+offset_left = -1.5
+offset_top = -7.0
+offset_right = 21.5
+offset_bottom = 16.0
+scale = Vector2(0.295, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "•"

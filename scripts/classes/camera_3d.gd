@@ -7,6 +7,14 @@ class_name CamStuff
 @export var zoom_speed := 2.0
 @export var smooth_speed := 40
 
+@export var freecam_speed := 40.0
+@export var freecam_acceleration := 8.0
+@export var freecam_rotation_smoothing := 15.0
+var freecam_active := false
+var freecam_pos := Vector3.ZERO
+var target_yaw := 0.0
+var target_pitch := 0.0
+
 var snapping := false
 const step := PI / 4.0
 var yaw := 0.0
@@ -40,6 +48,14 @@ func _ready():
 # whoever reads this please add camera shader caching it lags so hard on first zoom
 
 func _input(event):
+	if freecam_active:
+		if event is InputEventMouseMotion:
+			var aspect = get_viewport().size.x / get_viewport().size.y
+			target_yaw -= event.screen_relative.x * aspect * GameManager.data.sensitivity / 200.0
+			target_pitch -= event.screen_relative.y * GameManager.data.sensitivity / 200.0
+			target_pitch = clamp(target_pitch, -1.5, 1.5)
+		return
+	
 	if Input.is_action_just_pressed("left_align"):
 		var step_index = round(yaw / step)
 		step_index += 1
@@ -72,6 +88,25 @@ func _input(event):
 func _process(delta):
 	if target == null:
 		return
+
+	if freecam_active:
+		yaw = lerp_angle(yaw, target_yaw, freecam_rotation_smoothing * delta)
+		pitch = lerp(pitch, target_pitch, freecam_rotation_smoothing * delta)
+		global_transform.basis = Basis.from_euler(Vector3(pitch, yaw, 0))
+		
+		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		var forward = -global_transform.basis.z.normalized()
+		var right = global_transform.basis.x.normalized()
+		var target_move = (right * input_dir.x) + (forward * input_dir.y)
+		
+		if Input.is_action_pressed("ui_accept"): 
+			target_move.y += 1.0
+			
+		freecam_pos = freecam_pos.lerp(freecam_pos + target_move, freecam_acceleration * delta)
+		global_position += freecam_pos * freecam_speed * delta
+		freecam_pos = freecam_pos.lerp(Vector3.ZERO, freecam_acceleration * delta)
+		return
+
 	if not snapping:
 		yaw += Input.get_axis("look_left", "look_right") * delta
 	else:
@@ -109,7 +144,6 @@ func _process(delta):
 		distance = 0.0
 		
 	global_position = shifted_focus + (look_basis.z * distance)
-	
 	auto_transparency()
 		
 func sync_angles(target_transform: Transform3D):

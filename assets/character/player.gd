@@ -32,9 +32,8 @@ var took_damage := false
 @export var sensitivity := 0.005
 @export var climb_speed := 10.0
 @export var stick_force := 2.0
-@export var jump_off_force := 18.45 # Jump up and jump off forces updated for roblox parity
-@export var TRUSS_BOUNCE_JUMP := 33.1
-
+@export var jump_off_force := 15.0 
+@export var jump_up_force := 1.1
 var knockback_timer := 0.0
 var step_visual_offset := 0.0
 
@@ -319,7 +318,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ResetAlt") and GameManager.RToggle:
 		reset()
-	
+		
 	if GameManager.practice:
 		if Input.is_action_just_pressed("noclip"):
 			$CollisionShape3D.disabled = not $CollisionShape3D.disabled
@@ -328,43 +327,43 @@ func _physics_process(delta: float) -> void:
 
 		if Input.is_action_just_pressed("freecam"):
 			cam.freecam_active = not cam.freecam_active
-
+				
 		if cam.freecam_active:
 			State = states.Idle
 			update_anim()
 			return
-
+	
 	# noclip functionality
 	# i made it rly close to roblox
 	if GameManager.practice and $CollisionShape3D.disabled:
 		State = states.Idle
 		update_anim()
-
+		
 		rotation.y = cam.yaw + PI
 		rotation.x = -cam.pitch 
-
+		
 		# i hate these action names so much someone make better names
 		if Input.is_action_just_pressed("noclipspeedup"):
 			noclip_speed = min(noclip_speed * 2.0, 500.0)
 		if Input.is_action_just_pressed("noclipspeeddown"):
 			noclip_speed = max(noclip_speed / 2.0, 3.75)
-
+		
 		var fly_dir := Vector3.ZERO
 		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		var cam_basis = cam.global_transform.basis
-
+		
 		fly_dir = (cam_basis.x.normalized() * input_dir.x) + (-cam_basis.z.normalized() * input_dir.y)
-
+		
 		if Input.is_action_pressed("ui_accept"):
 			fly_dir.y += 1.0
-
+			
 		global_position += fly_dir.normalized() * noclip_speed * delta
-
+		
 		is_climbing = false
 		climb_normal = Vector3.ZERO
 		just_jumped_off = false
 		return
-
+		
 	if position.y <= -voidDepth:
 		reset()
 
@@ -410,6 +409,8 @@ func _physics_process(delta: float) -> void:
 
 		if abs(climb_input) > 0.01:
 			climb_input = sign(climb_input)
+		elif h_input != 0:
+			climb_input = 1.0
 
 		velocity.y = climb_input * climb_speed
 		
@@ -435,22 +436,15 @@ func _physics_process(delta: float) -> void:
 			var knockback_dir = -global_transform.basis.z.normalized()
 			
 			# Truss momentum logic
+			if climb_input < -0.01:
+				velocity.x = knockback_dir.x * 43.65
+				velocity.z = knockback_dir.z * 43.65
+				velocity.y = 29.18
+			else:
+				velocity.x = knockback_dir.x * 38.0
+				velocity.z = knockback_dir.z * 38.0
+				velocity.y = 45.3
 			
-			# Jump off down horiz 42.5
-			# Jump off neutral horiz 36.9
-			# Jump off up horiz 31.2
-			
-			velocity.x = knockback_dir.x * jump_off_force * (2.0 - 0.305*climb_input) # If climbing UP: 1.69 (nice)
-			
-			velocity.z = knockback_dir.z * jump_off_force * (2.0 - 0.305*climb_input) # If climbing DOWN: 2.31
-
-			# Jump up force should be 0.72
-			
-			# Jump off down vert 27.5
-			# Jump off neutral vert 33.1
-			# Jump off up vert 44.9
-
-			velocity.y = TRUSS_BOUNCE_JUMP * (0.09*pow(climb_input, 2.0) + 0.26*climb_input + 1) # UP: 1.35 DOWN: 0.83; NEUTRAL: 1
 			global_position += knockback_dir * 0.05
 			
 			is_climbing = false

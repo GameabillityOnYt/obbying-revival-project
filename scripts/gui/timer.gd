@@ -22,3 +22,8 @@ func _physics_process(delta: float) -> void:
 		minutes += seconds / 60.0
 		seconds = seconds % 60
 	label.text = "%02d:%02d:%03d" % [minutes, seconds, milliseconds]
+	
+	if GameManager.practice:
+		$Indicator.visible = true
+	else:
+		$Indicator.visible = false

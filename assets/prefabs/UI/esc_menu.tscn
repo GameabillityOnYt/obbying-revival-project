@@ -31,25 +31,25 @@ color = Color(0.17254902, 0.17254902, 0.17254902, 0.34509805)
 
 [node name="Sensitivity" parent="." unique_id=736337411 instance=ExtResource("1_lxta3")]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 510.0
-offset_right = 526.8485
-offset_bottom = 560.0
+offset_left = 55.0
+offset_top = 120.0
+offset_right = 539.8485
+offset_bottom = 170.0
 step = 0.01
 
 [node name="MaxFps" parent="." unique_id=1734334787 instance=ExtResource("2_ldi25")]
 layout_mode = 0
-offset_left = 286.0
-offset_top = 611.0
-offset_right = 372.5
-offset_bottom = 642.0
+offset_left = 634.0
+offset_top = 197.0
+offset_right = 720.5
+offset_bottom = 228.0
 
 [node name="FOV" parent="." unique_id=575552083 instance=ExtResource("3_dpyxx")]
 layout_mode = 0
-offset_left = 703.0
-offset_top = 494.0
-offset_right = 1187.8485
-offset_bottom = 544.0
+offset_left = 716.0
+offset_top = 120.0
+offset_right = 1200.8485
+offset_bottom = 170.0
 
 [node name="Back" type="Button" parent="." unique_id=819489497]
 layout_mode = 1
@@ -115,3 +115,24 @@ theme_override_fonts/font = ExtResource("5_vgykv")
 theme_override_font_sizes/font_size = 64
 text = "ESC Menu"
 horizontal_alignment = 1
+
+[node name="ControlText" type="Label" parent="." unique_id=887878415]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 254.0
+offset_right = 781.0
+offset_bottom = 615.0
+text = "Normal:
+
+R/Ctrl + R - Reset
+WASD - Walking
+Space - Jump
+
+Practice:
+Shift + P - toggle on/off freecam
+\\ - toggle on/off noclip
+
+Checkpoints:
+F - Place Checkpoint
+V - Remove Checkpoint
+R/Ctrl + R - TP to Checkpoint"
