@@ -1,0 +1,6984 @@
+{
+	"Difficulty": "17",
+	"Data": {
+		"Children": [
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 146,
+						"X": -491.5,
+						"Z": -61.499996185302734
+					},
+					"Size": {
+						"Y": 5,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory - Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.9725490212440491,
+						"G": 0.9725490212440491,
+						"R": 0.9725490212440491
+					},
+					"Position": {
+						"Y": 147.5,
+						"X": -483.04998779296875,
+						"Z": -57
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 132.5,
+						"X": -466,
+						"Z": -59
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 129.5,
+						"X": -503,
+						"Z": -69
+					},
+					"Size": {
+						"Y": 24,
+						"X": 2,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 129.5,
+						"X": -510.70001220703125,
+						"Z": -74.5
+					},
+					"Size": {
+						"Y": 24,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 129,
+						"X": -500,
+						"Z": -82.5
+					},
+					"Size": {
+						"Y": 15,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 129.5,
+						"X": -497,
+						"Z": -69
+					},
+					"Size": {
+						"Y": 24,
+						"X": 2,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 130,
+						"X": -500,
+						"Z": -79
+					},
+					"Size": {
+						"Y": 18,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 129,
+						"X": -495.5,
+						"Z": -83.5
+					},
+					"Size": {
+						"Y": 21,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 134.5,
+						"X": -492,
+						"Z": -69.5
+					},
+					"Size": {
+						"Y": 16,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 133.5,
+						"X": -490.5,
+						"Z": -60.5
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 124,
+						"X": -510.70001220703125,
+						"Z": -74.5
+					},
+					"Size": {
+						"Y": 43,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 142,
+						"X": -492,
+						"Z": -78.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 17,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 133.5,
+						"X": -492,
+						"Z": -78
+					},
+					"Size": {
+						"Y": 16,
+						"X": 16,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.9725490212440491,
+						"G": 0.9725490212440491,
+						"R": 0.9725490212440491
+					},
+					"Position": {
+						"Y": 169,
+						"X": -484.5,
+						"Z": -56.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.21960784494876862,
+						"G": 0.7215686440467834,
+						"R": 0.9372549057006836
+					},
+					"Position": {
+						"Y": 172.5,
+						"X": -484.5,
+						"Z": -56.5
+					},
+					"Size": {
+						"Y": 4,
+						"X": 4,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.9725490212440491,
+						"G": 0.9725490212440491,
+						"R": 0.9725490212440491
+					},
+					"Position": {
+						"Y": 163,
+						"X": -484.5,
+						"Z": -56.5
+					},
+					"Size": {
+						"Y": 7,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 167.5,
+						"X": -484.5,
+						"Z": -56.5
+					},
+					"Size": {
+						"Y": 2,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 130.5,
+						"X": -508,
+						"Z": -73.5
+					},
+					"Size": {
+						"Y": 16,
+						"X": 3,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 128.5,
+						"X": -504,
+						"Z": -70.5
+					},
+					"Size": {
+						"Y": 22,
+						"X": 1,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 121,
+						"X": -506,
+						"Z": -69
+					},
+					"Size": {
+						"Y": 7,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 128.5,
+						"X": -506.5,
+						"Z": -72.5
+					},
+					"Size": {
+						"Y": 22,
+						"X": 5,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 128.5,
+						"X": -495.5,
+						"Z": -70.5
+					},
+					"Size": {
+						"Y": 22,
+						"X": 1,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 121.49999237060547,
+						"X": -508,
+						"Z": -73
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 110,
+						"X": -500,
+						"Z": -68.3499984741211
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 129.5,
+						"X": -500,
+						"Z": -69
+					},
+					"Size": {
+						"Y": 24,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 119.99999237060547,
+						"X": -500,
+						"Z": -79
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 125.99999237060547,
+						"X": -492,
+						"Z": -66.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 7,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 121,
+						"X": -494,
+						"Z": -69
+					},
+					"Size": {
+						"Y": 7,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 129,
+						"X": -495,
+						"Z": -79
+					},
+					"Size": {
+						"Y": 15,
+						"X": 2,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 119.5,
+						"X": -492,
+						"Z": -62.5
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 128.5,
+						"X": -489,
+						"Z": -59.5
+					},
+					"Size": {
+						"Y": 4,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 118.99999237060547,
+						"X": -492,
+						"Z": -74.5
+					},
+					"Size": {
+						"Y": 13,
+						"X": 23,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 127.5,
+						"X": -492.5,
+						"Z": -87.5
+					},
+					"Size": {
+						"Y": 30,
+						"X": 1,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 106.5,
+						"X": -491,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 16,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 136,
+						"X": -477.5,
+						"Z": -57
+					},
+					"Size": {
+						"Y": 1,
+						"X": 6,
+						"Z": 25
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 127,
+						"X": -481.5,
+						"Z": -59.5
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 126.5,
+						"X": -485,
+						"Z": -56
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 130,
+						"X": -485,
+						"Z": -58
+					},
+					"Size": {
+						"Y": 11,
+						"X": 4,
+						"Z": 6
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 138,
+						"X": -477.5,
+						"Z": -57
+					},
+					"Size": {
+						"Y": 3,
+						"X": 6,
+						"Z": 25
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 85,
+						"X": -478,
+						"Z": -59.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 26,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 153.5,
+						"X": -472,
+						"Z": -60.04999923706055
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 107.5,
+						"X": -488,
+						"Z": -92.5
+					},
+					"Size": {
+						"Y": 20,
+						"X": 2,
+						"Z": 7
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 117,
+						"X": -489.5,
+						"Z": -91
+					},
+					"Size": {
+						"Y": 5,
+						"X": 7,
+						"Z": 6
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -490.25,
+						"Z": -90.5
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 110,
+						"X": -487,
+						"Z": -96.5
+					},
+					"Size": {
+						"Y": 17,
+						"X": 6,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 106.5,
+						"X": -488,
+						"Z": -104
+					},
+					"Size": {
+						"Y": 18,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -488,
+						"Z": -103
+					},
+					"Size": {
+						"Y": 20,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -484,
+						"Z": -90.89999389648438
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 114.5,
+						"X": -488,
+						"Z": -98
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 104.5,
+						"X": -488,
+						"Z": -100
+					},
+					"Size": {
+						"Y": 22,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 112,
+						"X": -485.5,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -488,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 14,
+						"X": 4,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 144.5,
+						"X": -481.5,
+						"Z": -57.5
+					},
+					"Size": {
+						"Y": 10,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 99.5,
+						"X": -488,
+						"Z": -97
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 106,
+						"X": -489.5,
+						"Z": -91
+					},
+					"Size": {
+						"Y": 17,
+						"X": 1,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 104.5,
+						"X": -488,
+						"Z": -98.5
+					},
+					"Size": {
+						"Y": 16,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 107.5,
+						"X": -488,
+						"Z": -97
+					},
+					"Size": {
+						"Y": 14,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 93.5,
+						"X": -470,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -477,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 123,
+						"X": -476,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 5,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 126,
+						"X": -474.5,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 1,
+						"X": 16,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 139.5,
+						"X": -475.5,
+						"Z": -56.5
+					},
+					"Size": {
+						"Y": 2,
+						"X": 7,
+						"Z": 7
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 127,
+						"X": -472.5,
+						"Z": -58.5
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 129.5,
+						"X": -472.5,
+						"Z": -57.5
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 127,
+						"X": -476.5,
+						"Z": -59.5
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 129,
+						"X": -479,
+						"Z": -59
+					},
+					"Size": {
+						"Y": 13,
+						"X": 4,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 106,
+						"X": -479.5,
+						"Z": -94
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -482.4750061035156,
+						"Z": -97.5
+					},
+					"Size": {
+						"Y": 14,
+						"X": 0.949999988079071,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -481,
+						"Z": -92.10000610351562
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -477.5,
+						"Z": -94
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 8
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -483.5,
+						"Z": -94
+					},
+					"Size": {
+						"Y": 14,
+						"X": 7,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 133.5,
+						"X": -478,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 14,
+						"X": 24,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 112,
+						"X": -476,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -481.5,
+						"Z": -83.45000457763672
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.9725490212440491,
+						"G": 0.9725490212440491,
+						"R": 0.9725490212440491
+					},
+					"Position": {
+						"Y": 162,
+						"X": -478.75,
+						"Z": -57.5
+					},
+					"Size": {
+						"Y": 5,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 154.5,
+						"X": -479,
+						"Z": -57.5
+					},
+					"Size": {
+						"Y": 10,
+						"X": 5,
+						"Z": 10
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 145.5,
+						"X": -475.5,
+						"Z": -56.5
+					},
+					"Size": {
+						"Y": 10,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -481,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 14,
+						"X": 8,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -481.5,
+						"Z": -86.45000457763672
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 118,
+						"X": -468,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 15,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 130,
+						"X": -470,
+						"Z": -57.5
+					},
+					"Size": {
+						"Y": 11,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 127,
+						"X": -469,
+						"Z": -57.5
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 130.5,
+						"X": -472.5,
+						"Z": -59.5
+					},
+					"Size": {
+						"Y": 10,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 150.5,
+						"X": -472.5,
+						"Z": -58.5
+					},
+					"Size": {
+						"Y": 2,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.9725490212440491,
+						"G": 0.9725490212440491,
+						"R": 0.9725490212440491
+					},
+					"Position": {
+						"Y": 149,
+						"X": -472.5,
+						"Z": -58.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.9725490212440491,
+						"G": 0.9725490212440491,
+						"R": 0.9725490212440491
+					},
+					"Position": {
+						"Y": 155,
+						"X": -472.5,
+						"Z": -58.5
+					},
+					"Size": {
+						"Y": 7,
+						"X": 5,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -469.5,
+						"Z": -87.5
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -480,
+						"Z": -97.5
+					},
+					"Size": {
+						"Y": 14,
+						"X": 4,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 113,
+						"X": -488,
+						"Z": -98.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 106.5,
+						"X": -488,
+						"Z": -104
+					},
+					"Size": {
+						"Y": 48,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 134.5,
+						"X": -466,
+						"Z": -59
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 129,
+						"X": -467.5,
+						"Z": -59
+					},
+					"Size": {
+						"Y": 13,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -470.5,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 14,
+						"X": 9,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 133.5,
+						"X": -465.5,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 126.99999237060547,
+						"X": -492,
+						"Z": -86.5
+					},
+					"Size": {
+						"Y": 29,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 129.5,
+						"X": -500,
+						"Z": -68.3499984741211
+					},
+					"Size": {
+						"Y": 25,
+						"X": 2,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 106,
+						"X": -488,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 41,
+						"X": 3,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 106,
+						"X": -483,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 41,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 106,
+						"X": -485,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 41,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 99,
+						"X": -485.5,
+						"Z": -89.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 99.5,
+						"X": -479,
+						"Z": -94
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 106,
+						"X": -464.5,
+						"Z": -61.5
+					},
+					"Size": {
+						"Y": 5,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 136.5,
+						"X": -464.5,
+						"Z": -61.5
+					},
+					"Size": {
+						"Y": 18,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 149,
+						"X": -464.5,
+						"Z": -61.5
+					},
+					"Size": {
+						"Y": 7,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 95.5,
+						"X": -500,
+						"Z": -68.3499984741211
+					},
+					"Size": {
+						"Y": 15,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 141,
+						"X": -487.5,
+						"Z": -57.5
+					},
+					"Size": {
+						"Y": 3,
+						"X": 3,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 104,
+						"X": -491.5,
+						"Z": -61.5
+					},
+					"Size": {
+						"Y": 79,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 82.5,
+						"X": -486.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 98.99999237060547,
+						"X": -488.5,
+						"Z": -76.25
+					},
+					"Size": {
+						"Y": 95,
+						"X": 3,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 82,
+						"X": -480,
+						"Z": -68.5
+					},
+					"Size": {
+						"Y": 10,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 82.5,
+						"X": -483.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 98.99999237060547,
+						"X": -484.5,
+						"Z": -80.25
+					},
+					"Size": {
+						"Y": 73,
+						"X": 3,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 98.99999237060547,
+						"X": -488,
+						"Z": -79.75
+					},
+					"Size": {
+						"Y": 85,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 92.5,
+						"X": -478.5,
+						"Z": -62.5
+					},
+					"Size": {
+						"Y": 10,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 79.5,
+						"X": -482.5,
+						"Z": -68.5
+					},
+					"Size": {
+						"Y": 17,
+						"X": 3,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 82.5,
+						"X": -480.5,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2.5,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 81.5,
+						"X": -479.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 99,
+						"X": -484,
+						"Z": -87.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 86.5,
+						"X": -483,
+						"Z": -64
+					},
+					"Size": {
+						"Y": 1,
+						"X": 8,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 81.5,
+						"X": -483.5,
+						"Z": -64
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 91.5,
+						"X": -478.5,
+						"Z": -61.5
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 91.5,
+						"X": -478,
+						"Z": -65
+					},
+					"Size": {
+						"Y": 8,
+						"X": 2,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 82.5,
+						"X": -469,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2.5,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 82.5,
+						"X": -471.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 82.5,
+						"X": -476.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 3,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 90.5,
+						"X": -470.5,
+						"Z": -60.5
+					},
+					"Size": {
+						"Y": 10,
+						"X": 11,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 82,
+						"X": -478,
+						"Z": -73.5
+					},
+					"Size": {
+						"Y": 11,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 81,
+						"X": -476.5,
+						"Z": -62.5
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 90,
+						"X": -472,
+						"Z": -62
+					},
+					"Size": {
+						"Y": 15,
+						"X": 2,
+						"Z": 12
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 85.75,
+						"X": -473,
+						"Z": -63.5
+					},
+					"Size": {
+						"Y": 21.5,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.25,
+						"X": -476.5,
+						"Z": -67
+					},
+					"Size": {
+						"Y": 20.5,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 82,
+						"X": -478,
+						"Z": -71.5
+					},
+					"Size": {
+						"Y": 11,
+						"X": 2,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 99,
+						"X": -479,
+						"Z": -87.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -467,
+						"Z": -62
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 119.49999237060547,
+						"X": -508,
+						"Z": -73
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 90,
+						"X": -474.5,
+						"Z": -67
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 98.99999237060547,
+						"X": -472.5,
+						"Z": -78
+					},
+					"Size": {
+						"Y": 79,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 98.99999237060547,
+						"X": -472.5,
+						"Z": -74.5
+					},
+					"Size": {
+						"Y": 85,
+						"X": 3,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 100,
+						"X": -464,
+						"Z": -64.5
+					},
+					"Size": {
+						"Y": 3,
+						"X": 3,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 88.5,
+						"X": -469.5,
+						"Z": -63
+					},
+					"Size": {
+						"Y": 16,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 91.5,
+						"X": -464,
+						"Z": -62.5
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 82,
+						"X": -464,
+						"Z": -69.5
+					},
+					"Size": {
+						"Y": 5,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 81.5,
+						"X": -464,
+						"Z": -70.99999237060547
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 127,
+						"X": -464.5,
+						"Z": -88.5
+					},
+					"Size": {
+						"Y": 15,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 100,
+						"X": -450.45001220703125,
+						"Z": -86.50000762939453
+					},
+					"Size": {
+						"Y": 41,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 84,
+						"X": -462.5,
+						"Z": -81.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 7
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 90.5,
+						"X": -462.5,
+						"Z": -82
+					},
+					"Size": {
+						"Y": 12,
+						"X": 1,
+						"Z": 6
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 102.5,
+						"X": -463,
+						"Z": -83
+					},
+					"Size": {
+						"Y": 12,
+						"X": 2,
+						"Z": 8
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 96,
+						"X": -462.5,
+						"Z": -75.5
+					},
+					"Size": {
+						"Y": 21,
+						"X": 1,
+						"Z": 5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 91,
+						"X": -464,
+						"Z": -75
+					},
+					"Size": {
+						"Y": 13,
+						"X": 24,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 97.5,
+						"X": -470,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 105.5,
+						"X": -465.5,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 91.5,
+						"X": -464.5,
+						"Z": -87.5
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 95.5,
+						"X": -463,
+						"Z": -86
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 83.5,
+						"X": -464,
+						"Z": -70.99999237060547
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 84.5,
+						"X": -464.5,
+						"Z": -88.5
+					},
+					"Size": {
+						"Y": 70,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 97,
+						"X": -463,
+						"Z": -87.5
+					},
+					"Size": {
+						"Y": 25,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 92,
+						"X": -467,
+						"Z": -85
+					},
+					"Size": {
+						"Y": 11,
+						"X": 4,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 92,
+						"X": -466.5,
+						"Z": -83
+					},
+					"Size": {
+						"Y": 9,
+						"X": 3,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 92,
+						"X": -466,
+						"Z": -81.5
+					},
+					"Size": {
+						"Y": 7,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 91,
+						"X": -466,
+						"Z": -72
+					},
+					"Size": {
+						"Y": 9,
+						"X": 3,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 91,
+						"X": -466.5,
+						"Z": -74.5
+					},
+					"Size": {
+						"Y": 11,
+						"X": 1,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 96,
+						"X": -457.5,
+						"Z": -79
+					},
+					"Size": {
+						"Y": 21,
+						"X": 1,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 86,
+						"X": -453.5,
+						"Z": -83.8499984741211
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 96.5,
+						"X": -460.5,
+						"Z": -82.5
+					},
+					"Size": {
+						"Y": 22,
+						"X": 3,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 102,
+						"X": -463,
+						"Z": -78.5
+					},
+					"Size": {
+						"Y": 9,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 96,
+						"X": -461.5,
+						"Z": -75.5
+					},
+					"Size": {
+						"Y": 19,
+						"X": 1,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 96,
+						"X": -455,
+						"Z": -85
+					},
+					"Size": {
+						"Y": 21,
+						"X": 2,
+						"Z": 6
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 96,
+						"X": -455,
+						"Z": -81.5
+					},
+					"Size": {
+						"Y": 19,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 96,
+						"X": -453.5,
+						"Z": -86.5
+					},
+					"Size": {
+						"Y": 21,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 89,
+						"X": -453.5,
+						"Z": -87.5
+					},
+					"Size": {
+						"Y": 7,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 100,
+						"X": -450.95001220703125,
+						"Z": -86.5
+					},
+					"Size": {
+						"Y": 11,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 77.5,
+						"X": -490.5,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 72.5,
+						"X": -486.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -484.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -487.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -488.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 5,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 79,
+						"X": -488.5,
+						"Z": -64
+					},
+					"Size": {
+						"Y": 17,
+						"X": 3,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 67.5,
+						"X": -487,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 74.5,
+						"X": -488.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 4,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 69.5,
+						"X": -487,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 76.5,
+						"X": -486.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 74.5,
+						"X": -486.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 73.5,
+						"X": -485.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80,
+						"X": -477.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 4,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 78.5,
+						"X": -483.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 72.5,
+						"X": -482.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 71.5,
+						"X": -480,
+						"Z": -68.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 79,
+						"X": -478,
+						"Z": -66
+					},
+					"Size": {
+						"Y": 17,
+						"X": 2,
+						"Z": 8
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 77.5,
+						"X": -478,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 14,
+						"X": 24,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -482.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 79,
+						"X": -479.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80,
+						"X": -481.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 4,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 74.5,
+						"X": -480.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 76.5,
+						"X": -479.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 74.5,
+						"X": -478.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 74,
+						"X": -477.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 4,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -480,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1.5,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 74.5,
+						"X": -484.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 5,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 72.5,
+						"X": -479.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 76.5,
+						"X": -476.5,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2.5,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 79,
+						"X": -467.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 81.5,
+						"X": -467.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -468.5,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1.5,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80,
+						"X": -469.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 4,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 78.5,
+						"X": -471.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -472.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -473.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 5,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80,
+						"X": -474.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 4,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -476.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 3,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 76.5,
+						"X": -476.5,
+						"Z": -62
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 70.5,
+						"X": -478,
+						"Z": -69.5
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 73,
+						"X": -472.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 74.5,
+						"X": -476,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1.5,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 73,
+						"X": -475.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 76,
+						"X": -471.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 74.5,
+						"X": -472.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 75.5,
+						"X": -475.25,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 76,
+						"X": -473.75,
+						"Z": -59.974998474121094
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 0.05000000074505806
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 77.5,
+						"X": -465.5,
+						"Z": -61
+					},
+					"Size": {
+						"Y": 14,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 78.5,
+						"X": -476.5,
+						"Z": -62
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 76.5,
+						"X": -473,
+						"Z": -67
+					},
+					"Size": {
+						"Y": 40,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 80.5,
+						"X": -464.5,
+						"Z": -61.5
+					},
+					"Size": {
+						"Y": 46,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 58.5,
+						"X": -495.5,
+						"Z": -53.500003814697266
+					},
+					"Size": {
+						"Y": 4,
+						"X": 4,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "SpawnLocation",
+				"ClassName": "Spawn",
+				"Properties": {
+					"Rotation": {
+						"Y": -90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 60.04999923706055,
+						"X": -495.5,
+						"Z": -53.500003814697266
+					},
+					"Size": {
+						"Y": 1,
+						"X": 3,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 57,
+						"X": -491.5,
+						"Z": -61.5
+					},
+					"Size": {
+						"Y": 15,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 42,
+						"X": -464.5,
+						"Z": -88.5
+					},
+					"Size": {
+						"Y": 15,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 52.5,
+						"X": -495.5,
+						"Z": -53.500003814697266
+					},
+					"Size": {
+						"Y": 8,
+						"X": 3,
+						"Z": 3
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 42.5,
+						"X": -495.5,
+						"Z": -53.500003814697266
+					},
+					"Size": {
+						"Y": 12,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 50,
+						"X": -464.5,
+						"Z": -61.5
+					},
+					"Size": {
+						"Y": 15,
+						"X": 0.5,
+						"Z": 0.5
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 130,
+						"X": -475.5,
+						"Z": -58.5
+					},
+					"Size": {
+						"Y": 11,
+						"X": 3,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 109,
+						"X": -463,
+						"Z": -82.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 9
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 107,
+						"X": -462.5,
+						"Z": -75
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 6
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 98,
+						"X": -464,
+						"Z": -75
+					},
+					"Size": {
+						"Y": 1,
+						"X": 2,
+						"Z": 24
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 96,
+						"X": -462.5,
+						"Z": -72.5
+					},
+					"Size": {
+						"Y": 21,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 82,
+						"X": -467,
+						"Z": -62.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 108,
+						"X": -490.25,
+						"Z": -90.5
+					},
+					"Size": {
+						"Y": 3,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 98,
+						"X": -478.4000244140625,
+						"Z": -87.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 96,
+						"X": -473,
+						"Z": -65.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 90,
+						"X": -462.5,
+						"Z": -78.5
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 84,
+						"X": -463.5,
+						"Z": -82
+					},
+					"Size": {
+						"Y": 1,
+						"X": 1,
+						"Z": 6
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Truss",
+				"ClassName": "Truss",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 95.5,
+						"X": -470,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 2,
+						"X": 2,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 95,
+						"X": -468.5,
+						"Z": -88.5
+					},
+					"Size": {
+						"Y": 7,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 180,
+						"Z": 180
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 95,
+						"X": -471.5,
+						"Z": -89
+					},
+					"Size": {
+						"Y": 7,
+						"X": 1,
+						"Z": 2
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 96,
+						"X": -455.5,
+						"Z": -88.5
+					},
+					"Size": {
+						"Y": 21,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.2078431397676468,
+						"G": 0.16470588743686676,
+						"R": 0.10588235408067703
+					},
+					"Position": {
+						"Y": 107.5,
+						"X": -462.5,
+						"Z": -78.5
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 0,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 107.5,
+						"X": -463.5,
+						"Z": -78.5
+					},
+					"Size": {
+						"Y": 2,
+						"X": 1,
+						"Z": 1
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			},
+			{
+				"Name": "Part",
+				"ClassName": "Part",
+				"Properties": {
+					"Rotation": {
+						"Y": 90,
+						"X": 0,
+						"Z": 0
+					},
+					"Color": {
+						"B": 0.3843137323856354,
+						"G": 0.37254902720451355,
+						"R": 0.38823530077934265
+					},
+					"Position": {
+						"Y": 141.5,
+						"X": -467,
+						"Z": -58
+					},
+					"Size": {
+						"Y": 4,
+						"X": 4,
+						"Z": 4
+					}
+				},
+				"ObbyName": "Former Glory \u2014 Spectrum 86%",
+				"Children": []
+			}
+		],
+		"Name": "Obby",
+		"ObbyName": "Former Glory \u2014 Spectrum 86%",
+		"ClassName": "Folder"
+	},
+	"ObbyName": "Former Glory \u2014 Spectrum 86%",
+	"Creator": "Nicoo"
+}
