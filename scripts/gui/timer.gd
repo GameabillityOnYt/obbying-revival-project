@@ -23,7 +23,13 @@ func _physics_process(delta: float) -> void:
 		seconds = seconds % 60
 	label.text = "%02d:%02d:%03d" % [minutes, seconds, milliseconds]
 	
-	if GameManager.practice:
+	if GameManager.nfToggle:
 		$Indicator.visible = true
+		$Indicator.add_theme_color_override("font_color", Color.RED)
+
+	elif GameManager.alljump:
+		$Indicator.visible = true
+		$Indicator.add_theme_color_override("font_color", Color.YELLOW)
+
 	else:
 		$Indicator.visible = false

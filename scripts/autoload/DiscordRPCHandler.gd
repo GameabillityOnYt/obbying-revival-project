@@ -6,6 +6,10 @@ var enabled:bool = true
 var start_time:int
 var last_sync_time:float = 0.0
 var sync_interval:float = 1.5
+var is_afk = false
+
+var current_details = "In Menu"
+var current_state = ""
 
 func _ready():
 	start_time = int(Time.get_unix_time_from_system())
@@ -16,6 +20,18 @@ func _ready():
 	if enabled:
 		init()
 		menu()
+
+func _notification(what):
+	if not enabled:
+		return
+		
+	match what:
+		NOTIFICATION_APPLICATION_FOCUS_OUT:
+			is_afk = true
+			_update_discord_rpc()
+		NOTIFICATION_APPLICATION_FOCUS_IN:
+			is_afk = false
+			_update_discord_rpc()
 
 func init():
 
@@ -48,12 +64,21 @@ func disable():
 # i don't really like how much it overwrites but ok
 
 func apply(details:String, state:String = ""):
-
+	current_details = details
+	current_state = state
+	
 	if !enabled:
 		return
 
-	DiscordRPC.details = details
-	DiscordRPC.state = state
+	_update_discord_rpc()
+	
+func _update_discord_rpc():
+	if is_afk:
+		DiscordRPC.details = "[AFK] " + current_details
+	else:
+		DiscordRPC.details = current_details
+		
+	DiscordRPC.state = current_state
 	DiscordRPC.refresh()
 	
 # preset functions

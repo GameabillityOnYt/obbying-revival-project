@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://assets/prefabs/UI/FOV.tscn" id="6_826wr"]
 [ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
 [ext_resource type="Texture2D" uid="uid://cm7xmpucganbp" path="res://assets/images/UI/Discord.png" id="8_8vx4p"]
-[ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/practiceToggle.tscn" id="8_mipys"]
+[ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/toggles/practiceToggle.tscn" id="8_mipys"]
 [ext_resource type="Script" uid="uid://4mp0toaekq5u" path="res://scenes/texture_button.gd" id="9_tdapf"]
 [ext_resource type="Texture2D" uid="uid://qfb15y132847" path="res://assets/images/UI/Youtube.png" id="10_7shrw"]
 [ext_resource type="Script" uid="uid://ywm0qwb34xhy" path="res://scripts/gui/renderer_switcher.gd" id="11_ptake"]
@@ -21,8 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="12_bky6r"]
 [ext_resource type="Script" uid="uid://blhv505opx1ra" path="res://scenes/github.gd" id="12_yovvs"]
 [ext_resource type="Script" uid="uid://ct0434tmo8n1a" path="res://scenes/itch.gd" id="13_viowm"]
-[ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/RPCToggle.tscn" id="14_5faoh"]
-[ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/RToggle.tscn" id="14_ptake"]
+[ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/toggles/RPCToggle.tscn" id="14_5faoh"]
+[ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
+[ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
+[ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
+[ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
 
 [sub_resource type="GDScript" id="GDScript_2nypq"]
 resource_name = "Location"
@@ -130,6 +133,41 @@ func _process(delta: float) -> void:
 	var mat = material as ShaderMaterial
 	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yovvs"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrgne"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+expand_margin_left = 8.0
+expand_margin_top = 32.0
+expand_margin_right = 8.0
+expand_margin_bottom = 7.0
+shadow_size = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2axsc"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 8
+border_width_right = 5
+border_width_bottom = 15
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_detail = 20
+
+[sub_resource type="Theme" id="Theme_yovvs"]
+AcceptDialog/styles/embedded_border = SubResource("StyleBoxFlat_yovvs")
+AcceptDialog/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_wrgne")
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_2axsc")
 
 [node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar", "body_parts")]
 position = Vector2(-27, 103)
@@ -378,9 +416,9 @@ step = 0.01
 tick_count = 30
 
 [node name="MaxFps" parent="Settings" unique_id=1734334787 instance=ExtResource("7_ucygd")]
-offset_left = -373.0
+offset_left = -367.0
 offset_top = 60.0
-offset_right = -286.5
+offset_right = -280.5
 offset_bottom = 91.0
 
 [node name="Back" type="Button" parent="Settings" unique_id=1445670015]
@@ -438,19 +476,69 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AcceptDialog" type="AcceptDialog" parent="Settings/RendererSwitcher" unique_id=651435297]
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Settings/RendererSwitcher" unique_id=1382372006]
 oversampling_override = 1.0
-title = "Notification"
+title = "Restart Required"
 initial_position = 2
-size = Vector2i(300, 150)
-dialog_text = "Restart to apply changes"
+size = Vector2i(341, 160)
+transient_to_focused = true
+exclusive = false
+unresizable = true
+unfocusable = true
+theme = SubResource("Theme_yovvs")
+ok_button_text = "Restart Now"
+dialog_text = "Changing the renderer requires a restart to take effect"
+dialog_autowrap = true
+cancel_button_text = "Restart Later"
 
-[node name="PracticeToggle" parent="." unique_id=118282012 instance=ExtResource("8_mipys")]
-offset_left = 1057.0
+[node name="StudSwitcher" type="OptionButton" parent="Settings" unique_id=346597648]
+offset_left = 135.0
+offset_top = -64.0
+offset_right = 271.0
+offset_bottom = -33.0
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "ORP Style"
+popup/item_0/id = 0
+popup/item_1/text = "Roblox Style"
+popup/item_1/id = 1
+script = ExtResource("20_hm0al")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/StudSwitcher" unique_id=1897413756]
+layout_mode = 0
+offset_left = -101.04348
+offset_top = 2.0
+offset_bottom = 30.0
+text = "Stud Type"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlljumpToggle" parent="Settings" unique_id=1785432083 instance=ExtResource("8_mipys")]
+offset_left = -243.0
 offset_top = 52.0
-offset_right = 1165.0
+offset_right = -133.0
 offset_bottom = 91.0
-text = "Practice"
+
+[node name="RPCToggle" parent="Settings" unique_id=214793037 instance=ExtResource("14_5faoh")]
+offset_left = -596.0
+offset_top = 61.0
+offset_right = -455.0
+offset_bottom = 92.0
+
+[node name="RToggle" parent="Settings" unique_id=163921816 instance=ExtResource("14_ptake")]
+offset_left = -596.0
+offset_top = 103.0
+offset_right = -396.0
+offset_bottom = 134.0
+
+[node name="NFToggle" parent="Settings" unique_id=118282012 instance=ExtResource("23_2axsc")]
+offset_left = -335.0
+offset_top = 99.0
+offset_right = -133.0
+offset_bottom = 130.0
+script = ExtResource("24_wrgne")
 
 [node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
 position = Vector2(2539, 0)
@@ -549,7 +637,6 @@ offset_left = 15.0
 offset_top = -48.0
 offset_right = 363.37778
 offset_bottom = 196.0
-stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="AvatarCustom/SubViewportContainer" unique_id=2007702056]
 transparent_bg = true
@@ -566,18 +653,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5819216)
 light_energy = 0.5
 sky_mode = 1
 
-[node name="RPCToggle" parent="." unique_id=214793037 instance=ExtResource("14_5faoh")]
-offset_left = 704.0
-offset_top = 61.0
-offset_right = 845.0
-offset_bottom = 92.0
-
-[node name="RToggle" parent="." unique_id=163921816 instance=ExtResource("14_ptake")]
-offset_left = 704.0
-offset_top = 103.0
-offset_right = 904.0
-offset_bottom = 134.0
-
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
@@ -592,4 +667,5 @@ offset_bottom = 134.0
 [connection signal="pressed" from="Settings/Back" to="." method="_on_return_to_main_pressed"]
 [connection signal="pressed" from="Settings/Avatar" to="." method="_on_avatar_pressed"]
 [connection signal="item_selected" from="Settings/RendererSwitcher" to="Settings/RendererSwitcher" method="_on_item_selected"]
+[connection signal="item_selected" from="Settings/StudSwitcher" to="Settings/StudSwitcher" method="_on_item_selected"]
 [connection signal="pressed" from="AvatarCustom/Back" to="." method="_on_return_to_settings_pressed"]

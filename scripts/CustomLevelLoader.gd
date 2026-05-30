@@ -8,6 +8,8 @@ extends Node3D
 @onready var truss = preload("res://assets/prefabs/building/Parts/Truss.tscn")
 @onready var player = $Player
 
+@onready var default_tile = preload("res://assets/images/textures/Tile2.png")
+@onready var roblox_tile = preload("res://assets/images/textures/RobloxTile.png")
 
 # alljump
 @onready var level = preload("res://custom.tscn")
@@ -29,7 +31,7 @@ func load_level(path):
 	return json.data
 
 func addCheckpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_transform: Transform3D, shiftlock: bool):
-	if GameManager.practice:
+	if GameManager.alljump:
 		var newcheckpoint = checkpoint.instantiate()
 		newcheckpoint.set_meta("saved_velocity", vel)
 		
@@ -92,6 +94,27 @@ func to_color(d):
 		return Color.WHITE
 	return Color(d.get("R", 1), d.get("G", 1), d.get("B", 1))
 
+func texture(mesh_instance: MeshInstance3D):
+	if mesh_instance and mesh_instance.mesh and mesh_instance.mesh.material:
+		mesh_instance.mesh.material = mesh_instance.mesh.material.duplicate()
+		
+		var texture: Texture2D
+		var trans: float
+		var overlay: bool
+		
+		if GameManager.RobloxStuds:
+			texture = roblox_tile
+			trans = 0.0
+			overlay = true
+		else:
+			texture = default_tile
+			trans = 0.9
+			overlay = false 
+		
+		mesh_instance.mesh.material.set_shader_parameter("albedo_texture", texture)
+		mesh_instance.mesh.material.set_shader_parameter("transparency", trans)
+		mesh_instance.mesh.material.set_shader_parameter("use_overlay_mode", overlay)
+
 func addPart(pos, rot_deg, size, classname, color):
 	var newpart = part.instantiate()
 	add_child(newpart)
@@ -118,6 +141,8 @@ func addPart(pos, rot_deg, size, classname, color):
 		if mesh.mesh.material:
 			mesh.mesh.material = mesh.mesh.material.duplicate()
 			mesh.mesh.material.set_shader_parameter("base_color", color)
+			
+			texture(mesh)
 
 	if classname == "Spawn":
 		print("Spawn found at:", pos)
@@ -153,6 +178,7 @@ func addCylinder(pos, rot_deg, size, color):
 		if mesh.mesh.material:
 			mesh.mesh.material = mesh.mesh.material.duplicate()
 			mesh.mesh.material.set_shader_parameter("base_color", color)
+			texture(mesh)
 
 func addWedge(pos, rot_deg, size, color):
 	var newwedge = wedge.instantiate()
@@ -217,6 +243,7 @@ func addWedge(pos, rot_deg, size, color):
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		arr_mesh.surface_set_material(0, wedge_mesh)
 		mesh.mesh = arr_mesh
+		texture(mesh)
 
 func addCornerWedge(pos, rot_deg, size, color):
 	var newcornerwedge = cornerwedge.instantiate()
@@ -280,6 +307,7 @@ func addCornerWedge(pos, rot_deg, size, color):
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		arr_mesh.surface_set_material(0, cornerwedge_mesh)
 		mesh.mesh = arr_mesh
+		texture(mesh)
 	
 func addBall(pos, rot_deg, size, color):
 	var newball = ball.instantiate()
@@ -309,25 +337,38 @@ func addBall(pos, rot_deg, size, color):
 		if mesh.mesh.material:
 			mesh.mesh.material = mesh.mesh.material.duplicate()
 			mesh.mesh.material.set_shader_parameter("base_color", color)
+			texture(mesh)
 
 func addTruss(pos, rot_deg, size, _classname):
-	var newtruss = truss.instantiate()
-	add_child(newtruss)
+	var basis_ = Basis.from_euler(Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z)), EULER_ORDER_XYZ)
+	var seg_h : float = 2.0 
+	
+	for i in range(floor(size.y / seg_h)):
+		var newtruss = truss.instantiate()
+		add_child(newtruss)
+		var seg_coll = newtruss.get_node_or_null("Truss/CollisionShape3D")
+		if seg_coll: seg_coll.queue_free()
+		
+		var local_offset = Vector3(0, -size.y / 2.0 + (i * seg_h) + (seg_h / 2.0), 0)
+		newtruss.position = pos + (basis_ * local_offset)
+		newtruss.transform.basis = basis_
+		
+		var mesh_node = newtruss.get_node_or_null("Truss/trusss")
+		if mesh_node: mesh_node.scale = Vector3.ONE
 
-	var _mesh = newtruss.get_node("Truss/trusss")
-	var coll = newtruss.get_node("Truss/CollisionShape3D")
-	newtruss.position = pos
-	var rot_rad = Vector3(
-		deg_to_rad(rot_deg.x),
-		deg_to_rad(rot_deg.y),
-		deg_to_rad(rot_deg.z)
-	)
-	newtruss.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
-	if coll.shape:
-		coll.shape = coll.shape.duplicate()
-		var shape = coll.shape as BoxShape3D
-		if shape:
-			shape.size = size
+	var physical_collider = StaticBody3D.new()
+	var collision_shape = CollisionShape3D.new()
+	var box_shape = BoxShape3D.new()
+	
+	box_shape.size = size
+	collision_shape.shape = box_shape
+	
+	physical_collider.add_child(collision_shape)
+	physical_collider.add_to_group("climbable")
+	add_child(physical_collider)
+	
+	physical_collider.position = pos
+	physical_collider.transform.basis = basis_
 
 func spawn_node(node_data):
 	var classname = node_data.get("ClassName", "")

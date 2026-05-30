@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lmy5axxbv241"]
 
-[ext_resource type="Script" uid="uid://dqgoq85g62jan" path="res://scripts/gui/R_toggle.gd" id="1_5je7g"]
+[ext_resource type="Script" uid="uid://dqgoq85g62jan" path="res://scripts/gui/toggles/R_toggle.gd" id="1_5je7g"]
 
 [node name="RToggle" type="CheckButton" unique_id=118282012]
 text = "R instead of Ctrl + R"

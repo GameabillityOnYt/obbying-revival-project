@@ -206,7 +206,7 @@ func reset():
 			cam.global_transform = spawn.get_meta("camera_transform")
 			
 			cam.sync_angles(cam.global_transform)
-		if not GameManager.practice:
+		if not GameManager.alljump:
 			timer.get_node("Panel").resetTime()
 		
 
@@ -319,7 +319,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ResetAlt") and GameManager.RToggle:
 		reset()
 		
-	if GameManager.practice:
+	if GameManager.nfToggle:
 		if Input.is_action_just_pressed("noclip"):
 			$CollisionShape3D.disabled = not $CollisionShape3D.disabled
 			if $CollisionShape3D.disabled:
@@ -335,7 +335,7 @@ func _physics_process(delta: float) -> void:
 	
 	# noclip functionality
 	# i made it rly close to roblox
-	if GameManager.practice and $CollisionShape3D.disabled:
+	if GameManager.nfToggle and $CollisionShape3D.disabled:
 		State = states.Idle
 		update_anim()
 		

@@ -5,7 +5,34 @@ func toggle_paused():
 	
 	var paused = get_tree().paused
 	
-	$ControlText.text = "Shift + P - Toggle on/off freecam\n1 - Toggle on/off noclip\n\nCheckpoints:\nF - Place Checkpoint\nV - Remove Checkpoint\nR/Ctrl + R - TP to Checkpoint" if GameManager.practice else "R/Ctrl + R - Reset\nWASD - Walking\nSpace - Jump"
+	$ControlText.text = "WASD - Walking\nSpace - Jump"
+
+	if GameManager.alljump and GameManager.nfToggle:
+		$ControlText.text += """\n
+	Checkpoints:
+	F - Place Checkpoint
+	V - Remove Checkpoint
+	R/Ctrl + R - TP to Checkpoint
+
+	Shift + P - Toggle on/off freecam
+	1 - Toggle on/off noclip"""
+
+	elif GameManager.alljump:
+		$ControlText.text += """\n
+	Checkpoints:
+	F - Place Checkpoint
+	V - Remove Checkpoint
+	R/Ctrl + R - TP to Checkpoint"""
+
+	elif GameManager.nfToggle:
+		$ControlText.text += """
+	R/Ctrl + R - Reset to Spawn
+
+	Shift + P - Toggle on/off freecam
+	1 - Toggle on/off noclip"""
+
+	else:
+		$ControlText.text += "\nR/Ctrl + R - Reset to Spawn"
 	
 	var intween = create_tween()
 	intween.set_ease(Tween.EASE_IN_OUT)
@@ -33,7 +60,8 @@ func _ready():
 	$Menu.pressed.connect(func():
 		get_tree().call_deferred("change_scene_to_file","res://scenes/MainMenu.tscn") # changes scene to menu
 		get_tree().paused = false # turns off paused
-		GameManager.practice = false # turns off alljump when u go out of the game
+		GameManager.alljump = false # turns off alljump when u go out of the game
+		GameManager.nfToggle = false # turns off alljump when u go out of the game
 		pass)
 	
 	$Quit.pressed.connect(func():
