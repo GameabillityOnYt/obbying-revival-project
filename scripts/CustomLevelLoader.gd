@@ -17,6 +17,10 @@ extends Node3D
 var checkpoints = []
 var spawn_point: Node3D = null
 
+var _spawn_parent: Node3D = self
+var _material_cache = {}
+
+
 func load_level(path):
 	var file = FileAccess.open(path, FileAccess.READ)
 	if file == null:
@@ -29,6 +33,7 @@ func load_level(path):
 		return null
 
 	return json.data
+
 
 func addCheckpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_transform: Transform3D, shiftlock: bool):
 	if GameManager.alljump:
@@ -49,6 +54,7 @@ func addCheckpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_
 		player.spawn = newcheckpoint
 		print("Player spawn successfully updated to checkpoint!")
 
+
 func removeCheckpoints():
 	for cp in checkpoints:
 		if is_instance_valid(cp):
@@ -60,6 +66,7 @@ func removeCheckpoints():
 	if original_spawn:
 		spawn_point = original_spawn
 		player.spawn = original_spawn
+
 
 func removeLastCheckpoint():
 	if checkpoints.is_empty():
@@ -83,6 +90,7 @@ func removeLastCheckpoint():
 		if player != null:
 			player.spawn = original_spawn
 
+
 func to_vec3(d):
 	if d == null:
 		return Vector3.ZERO
@@ -94,30 +102,40 @@ func to_color(d):
 		return Color.WHITE
 	return Color(d.get("R", 1), d.get("G", 1), d.get("B", 1))
 
-func texture(mesh_instance: MeshInstance3D):
-	if mesh_instance and mesh_instance.mesh and mesh_instance.mesh.material:
-		mesh_instance.mesh.material = mesh_instance.mesh.material.duplicate()
-		
-		var texture: Texture2D
-		var trans: float
-		var overlay: bool
-		
-		if GameManager.RobloxStuds:
-			texture = roblox_tile
-			trans = 0.0
-			overlay = true
+
+func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material):
+	if mesh_instance and base_mat:
+		var key = str(color) + "_" + str(GameManager.RobloxStuds)
+		if _material_cache.has(key):
+			mesh_instance.material_override = _material_cache[key]
 		else:
-			texture = default_tile
-			trans = 0.9
-			overlay = false 
-		
-		mesh_instance.mesh.material.set_shader_parameter("albedo_texture", texture)
-		mesh_instance.mesh.material.set_shader_parameter("transparency", trans)
-		mesh_instance.mesh.material.set_shader_parameter("use_overlay_mode", overlay)
+			var mat = base_mat.duplicate()
+			
+			var texture: Texture2D
+			var trans: float
+			var overlay: bool
+			
+			if GameManager.RobloxStuds:
+				texture = roblox_tile
+				trans = 0.0
+				overlay = true
+			else:
+				texture = default_tile
+				trans = 0.9
+				overlay = false 
+			
+			mat.set_shader_parameter("albedo_texture", texture)
+			mat.set_shader_parameter("transparency", trans)
+			mat.set_shader_parameter("use_overlay_mode", overlay)
+			mat.set_shader_parameter("base_color", color)
+			
+			_material_cache[key] = mat
+			mesh_instance.material_override = mat
+
 
 func addPart(pos, rot_deg, size, classname, color):
 	var newpart = part.instantiate()
-	add_child(newpart)
+	_spawn_parent.add_child(newpart)
 	var mesh = newpart.get_node("MeshInstance3D") as MeshInstance3D
 	var coll = newpart.get_node("CollisionShape3D")
 	newpart.position = pos
@@ -139,19 +157,17 @@ func addPart(pos, rot_deg, size, classname, color):
 			box_mesh.size = size
 			
 		if mesh.mesh.material:
-			mesh.mesh.material = mesh.mesh.material.duplicate()
-			mesh.mesh.material.set_shader_parameter("base_color", color)
-			
-			texture(mesh)
+			texture(mesh, color, mesh.mesh.material)
 
 	if classname == "Spawn":
 		print("Spawn found at:", pos)
 		spawn_point = newpart
 		newpart.name = "Spawn"
 
+
 func addCylinder(pos, rot_deg, size, color):
 	var newcyl = cylinder.instantiate()
-	add_child(newcyl)
+	_spawn_parent.add_child(newcyl)
 	var mesh = newcyl.get_node("MeshInstance3D") as MeshInstance3D
 	var coll = newcyl.get_node("CollisionShape3D")
 	newcyl.position = pos
@@ -176,13 +192,12 @@ func addCylinder(pos, rot_deg, size, color):
 			cyl_mesh.height 		= size.x
 			
 		if mesh.mesh.material:
-			mesh.mesh.material = mesh.mesh.material.duplicate()
-			mesh.mesh.material.set_shader_parameter("base_color", color)
-			texture(mesh)
+			texture(mesh, color, mesh.mesh.material)
+
 
 func addWedge(pos, rot_deg, size, color):
 	var newwedge = wedge.instantiate()
-	add_child(newwedge)
+	_spawn_parent.add_child(newwedge)
 	var mesh = newwedge.get_node("MeshInstance3D") as MeshInstance3D
 	var coll = newwedge.get_node("CollisionShape3D")
 	newwedge.position = pos
@@ -236,18 +251,16 @@ func addWedge(pos, rot_deg, size, color):
 	arrays[Mesh.ARRAY_NORMAL] = normals
 	
 	if mesh.mesh.material:
-		var wedge_mesh = mesh.mesh.material.duplicate() as ShaderMaterial
-		wedge_mesh.set_shader_parameter("base_color", color)
-		
+		var base_mat = mesh.mesh.material
 		var arr_mesh = ArrayMesh.new()
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
-		arr_mesh.surface_set_material(0, wedge_mesh)
 		mesh.mesh = arr_mesh
-		texture(mesh)
+		texture(mesh, color, base_mat)
+
 
 func addCornerWedge(pos, rot_deg, size, color):
 	var newcornerwedge = cornerwedge.instantiate()
-	add_child(newcornerwedge)
+	_spawn_parent.add_child(newcornerwedge)
 	var mesh = newcornerwedge.get_node("MeshInstance3D") as MeshInstance3D
 	var coll = newcornerwedge.get_node("CollisionShape3D")
 	newcornerwedge.position = pos
@@ -300,18 +313,16 @@ func addCornerWedge(pos, rot_deg, size, color):
 	arrays[Mesh.ARRAY_NORMAL] = normals
 	
 	if mesh.mesh.material:
-		var cornerwedge_mesh = mesh.mesh.material.duplicate() as ShaderMaterial
-		cornerwedge_mesh.set_shader_parameter("base_color", color)
-		
+		var base_mat = mesh.mesh.material
 		var arr_mesh = ArrayMesh.new()
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
-		arr_mesh.surface_set_material(0, cornerwedge_mesh)
 		mesh.mesh = arr_mesh
-		texture(mesh)
+		texture(mesh, color, base_mat)
 	
+
 func addBall(pos, rot_deg, size, color):
 	var newball = ball.instantiate()
-	add_child(newball)
+	_spawn_parent.add_child(newball)
 	var mesh = newball.get_node("MeshInstance3D") as MeshInstance3D
 	var coll = newball.get_node("CollisionShape3D")
 	newball.position = pos
@@ -335,9 +346,8 @@ func addBall(pos, rot_deg, size, color):
 			ball_mesh.height = ball_mesh.radius * 2
 				
 		if mesh.mesh.material:
-			mesh.mesh.material = mesh.mesh.material.duplicate()
-			mesh.mesh.material.set_shader_parameter("base_color", color)
-			texture(mesh)
+			texture(mesh, color, mesh.mesh.material)
+
 
 func addTruss(pos, rot_deg, size, _classname):
 	var basis_ = Basis.from_euler(Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z)), EULER_ORDER_XYZ)
@@ -356,7 +366,7 @@ func addTruss(pos, rot_deg, size, _classname):
 	var num_segments: int = floor(max_length / seg_h)
 	for i in range(num_segments):
 		var newtruss = truss.instantiate()
-		add_child(newtruss)
+		_spawn_parent.add_child(newtruss)
 		
 		var seg_coll = newtruss.get_node_or_null("Truss/CollisionShape3D")
 		if seg_coll: seg_coll.queue_free()
@@ -384,10 +394,11 @@ func addTruss(pos, rot_deg, size, _classname):
 	
 	physical_collider.add_child(collision_shape)
 	physical_collider.add_to_group("climbable")
-	add_child(physical_collider)
+	_spawn_parent.add_child(physical_collider)
 	
 	physical_collider.position = pos
 	physical_collider.transform.basis = basis_
+
 
 func spawn_node(node_data):
 	var classname = node_data.get("ClassName", "")
@@ -455,11 +466,13 @@ func spawn_node(node_data):
 	for child in node_data.get("Children", []):
 		spawn_node(child)
 
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("addCheckpoint"):
 		addCheckpoint(player.position, player.rotation, player.velocity, player.cam.mode, player.cam.global_transform, GameManager.shiftlocked)
 	if Input.is_action_just_pressed("removeCheckpoint"):
 		removeLastCheckpoint()
+
 
 func loadstuff(data):
 	spawn_point = null
@@ -470,19 +483,34 @@ func loadstuff(data):
 		push_error("Missing 'Data' key inside JSON!")
 		return
 	var parts_list = main_folder.get("Children", [])
+	
+	_material_cache.clear()
+	var container = Node3D.new()
+	container.name = "LevelParts"
+	_spawn_parent = container
+	
 	for child in parts_list:
 		spawn_node(child)
 
+	add_child(container)
+	_spawn_parent = self
+
 	print("Level loaded. Spawn =", spawn_point)
 
+
 func _ready() -> void:
-	var leveldata = load_level(GameManager.currentLevel)
+	WorkerThreadPool.add_task(func():
+		var leveldata = load_level(GameManager.currentLevel)
 
-	if leveldata == null:
-		return
+		if leveldata == null:
+			return
 
+		call_deferred("_finalize_loading", leveldata)
+	)
+
+
+func _finalize_loading(leveldata):
 	loadstuff(leveldata)
-
 
 	if spawn_point != null:
 		player.spawn = spawn_point

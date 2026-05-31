@@ -29,7 +29,8 @@ func toggle_paused():
 	R/Ctrl + R - Reset to Spawn
 
 	Shift + P - Toggle on/off freecam
-	1 - Toggle on/off noclip"""
+	1 - Toggle on/off noclip
+	Q/E - Change speed of Noclip"""
 
 	else:
 		$ControlText.text += "\nR/Ctrl + R - Reset to Spawn"
@@ -61,7 +62,7 @@ func _ready():
 		get_tree().call_deferred("change_scene_to_file","res://scenes/MainMenu.tscn") # changes scene to menu
 		get_tree().paused = false # turns off paused
 		GameManager.alljump = false # turns off alljump when u go out of the game
-		GameManager.nfToggle = false # turns off alljump when u go out of the game
+		GameManager.currentLevel = ""
 		pass)
 	
 	$Quit.pressed.connect(func():

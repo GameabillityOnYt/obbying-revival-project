@@ -57,6 +57,7 @@ var just_jumped_off := false
 # truss rays
 
 @onready var ray = $TrussRay
+@onready var ray2 = $TrussRay2
 @onready var topray = $GlideRay
 @onready var glidetop = $GlideTop
 @onready var glidebottom = $GlideBottom
@@ -238,19 +239,20 @@ func _physics_process(delta: float) -> void:
 			update_health_bar()
 	
 	# truss logic
+	# truss logic
 	if jump_lock <= 0.0:
 		var touching_truss := false
-
 		var active_ray = null
 
 		if ray.is_colliding():
 			active_ray = ray
+		elif ray2.is_colliding():
+			active_ray = ray2
 		elif topray.is_colliding():
 			active_ray = topray
 
 		if active_ray:
 			var collider = active_ray.get_collider()
-			# this should be changed to work with parts later
 			if collider and collider.is_in_group("climbable"):
 				var normal = active_ray.get_collision_normal()
 				
@@ -269,6 +271,19 @@ func _physics_process(delta: float) -> void:
 					climb_grace = 0.08
 					truss_timer = 0.0
 					truss_used = false
+
+		if not touching_truss and is_climbing:
+			for i in range(get_slide_collision_count()):
+				var collision = get_slide_collision(i)
+				var collider = collision.get_collider()
+				if collider and collider.is_in_group("climbable"):
+					touching_truss = true
+					climb_normal = collision.get_normal()
+					last_truss_point = collision.get_position()
+					climb_grace = 0.08
+					truss_timer = 0.0
+					truss_used = false
+					break
 
 		if touching_truss:
 			is_climbing = true
@@ -436,15 +451,13 @@ func _physics_process(delta: float) -> void:
 			var knockback_dir = -global_transform.basis.z.normalized()
 			
 			# Truss momentum logic
-			if climb_input < -0.01:
-				velocity.x = knockback_dir.x * 43.65
-				velocity.z = knockback_dir.z * 43.65
-				velocity.y = 29.18
-			else:
-				velocity.x = knockback_dir.x * 38.0
-				velocity.z = knockback_dir.z * 38.0
-				velocity.y = 45.3
 			
+			# Quadratic formulas based off craws implementation
+			velocity.x = knockback_dir.x * ((2.285 * pow(climb_input, 2)) - (2.825 * climb_input) + 38 )
+			
+			velocity.z = knockback_dir.z * ((2.285 * pow(climb_input, 2)) - (2.825 * climb_input) + 38)
+
+			velocity.y = (-8.06 * pow(climb_input, 2)) + (8.06 * climb_input) + 45.3
 			global_position += knockback_dir * 0.05
 			
 			is_climbing = false

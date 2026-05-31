@@ -24,7 +24,10 @@ script = ExtResource("2_j3eqw")
 target = NodePath("..")
 
 [node name="TrussRay" type="RayCast3D" parent="." unique_id=212384371]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.1027017, 0.427)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.0727006, 0.427)
+
+[node name="TrussRay2" type="RayCast3D" parent="." unique_id=760436377]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.9529234, 0.427)
 
 [node name="GlideRay" type="RayCast3D" parent="." unique_id=370163608]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.5, 0.427)

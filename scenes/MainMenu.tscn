@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/toggles/RPCToggle.tscn" id="14_5faoh"]
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
 [ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
+[ext_resource type="Theme" uid="uid://xrauqfunapst" path="res://assets/prefabs/themes/main.tres" id="20_i7r3k"]
 [ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
 [ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
 
@@ -134,53 +135,10 @@ func _process(delta: float) -> void:
 	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yovvs"]
-bg_color = Color(0, 0, 0, 0)
-border_color = Color(0, 0, 0, 1)
-corner_detail = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrgne"]
-bg_color = Color(0, 0, 0, 0)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 20
-expand_margin_left = 8.0
-expand_margin_top = 32.0
-expand_margin_right = 8.0
-expand_margin_bottom = 7.0
-shadow_size = 6
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2axsc"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 5
-border_width_top = 8
-border_width_right = 5
-border_width_bottom = 15
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_detail = 20
-
-[sub_resource type="Theme" id="Theme_yovvs"]
-AcceptDialog/styles/embedded_border = SubResource("StyleBoxFlat_yovvs")
-AcceptDialog/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_wrgne")
-AcceptDialog/styles/panel = SubResource("StyleBoxFlat_2axsc")
-
-[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar", "body_parts")]
+[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar")]
 position = Vector2(-27, 103)
 script = ExtResource("1_ow34m")
 menu_avatar = NodePath("AvatarCustom/SubViewportContainer/SubViewport/CharacterAvatar")
-body_parts = {
-NodePath("AvatarCustom/VBoxContainer/HeadRow/head"): "head",
-NodePath("AvatarCustom/VBoxContainer/TorsoRow/torso"): "torso",
-NodePath("AvatarCustom/VBoxContainer/LeftArmRow/left_arm"): "left_arm",
-NodePath("AvatarCustom/VBoxContainer/RightArmRow/right_arm"): "right_arm",
-NodePath("AvatarCustom/VBoxContainer/LeftLegRow/left_leg"): "left_leg",
-NodePath("AvatarCustom/VBoxContainer/RightLegRow/right_leg"): "right_leg"
-}
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1544198342]
 position_smoothing_enabled = true
@@ -485,7 +443,7 @@ transient_to_focused = true
 exclusive = false
 unresizable = true
 unfocusable = true
-theme = SubResource("Theme_yovvs")
+theme = ExtResource("20_i7r3k")
 ok_button_text = "Restart Now"
 dialog_text = "Changing the renderer requires a restart to take effect"
 dialog_autowrap = true
@@ -515,12 +473,6 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AlljumpToggle" parent="Settings" unique_id=1785432083 instance=ExtResource("8_mipys")]
-offset_left = -243.0
-offset_top = 52.0
-offset_right = -133.0
-offset_bottom = 91.0
-
 [node name="RPCToggle" parent="Settings" unique_id=214793037 instance=ExtResource("14_5faoh")]
 offset_left = -596.0
 offset_top = 61.0
@@ -534,11 +486,17 @@ offset_right = -396.0
 offset_bottom = 134.0
 
 [node name="NFToggle" parent="Settings" unique_id=118282012 instance=ExtResource("23_2axsc")]
-offset_left = -335.0
-offset_top = 99.0
-offset_right = -133.0
-offset_bottom = 130.0
+offset_left = -338.0
+offset_top = 103.0
+offset_right = -136.0
+offset_bottom = 134.0
 script = ExtResource("24_wrgne")
+
+[node name="AlljumpToggle" parent="Settings" unique_id=366619103 instance=ExtResource("8_mipys")]
+offset_left = -244.0
+offset_top = 61.0
+offset_right = -136.0
+offset_bottom = 92.0
 
 [node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
 position = Vector2(2539, 0)
@@ -653,6 +611,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5819216)
 light_energy = 0.5
 sky_mode = 1
 
+[node name="SearchBar" type="LineEdit" parent="." unique_id=179523255]
+offset_left = -639.0
+offset_top = -420.0
+offset_right = -216.0
+offset_bottom = -385.0
+placeholder_text = "search bar do not delete (not supposed to be shown!)"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+virtual_keyboard_enabled = false
+
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
@@ -669,3 +640,4 @@ sky_mode = 1
 [connection signal="item_selected" from="Settings/RendererSwitcher" to="Settings/RendererSwitcher" method="_on_item_selected"]
 [connection signal="item_selected" from="Settings/StudSwitcher" to="Settings/StudSwitcher" method="_on_item_selected"]
 [connection signal="pressed" from="AvatarCustom/Back" to="." method="_on_return_to_settings_pressed"]
+[connection signal="text_changed" from="SearchBar" to="." method="_on_search_bar_text_changed"]
