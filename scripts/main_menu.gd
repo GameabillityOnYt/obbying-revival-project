@@ -12,6 +12,10 @@ var button = preload("res://assets/prefabs/UI/LevelCard.tscn")
 @onready var desc = $Main/Desc/Label2
 @onready var list = $Main/Panel/ScrollContainer/VBoxContainer
 @onready var version = $Main/Version
+@onready var search = $SearchBar
+@onready var orig: Array
+@onready var sorted: Array
+var searchTerm = ""
 
 @export var menu_avatar: CharacterAvatarMesh
 @export var body_parts: Dictionary[ColorPickerButton, String]
@@ -27,7 +31,10 @@ func _ready():
 		picker.color_changed.connect(func(c): _send_color_to_player(part_name, c))
 		picker.color = GameManager.data.body_colors.get(part_name, Color.WHITE)
 	
-# 
+	# -- Grab input for search -- #
+	search.draw_control_chars = false
+	search.grab_focus(true)
+
 func _send_color_to_player(part: String, color: Color):
 	GameManager.data.body_colors[part] = color
 	
@@ -74,9 +81,22 @@ func load_level(path): # loads level data and returns it
 		return
 	var data = json.data
 	return data
+	
+func clear_selected_level():
+	GameManager.currentLevel = ""
+	title.text = "Select a level"
+	desc.text = ""
+
+func select_level(path: String, obby_name, difficulty, creator):
+	GameManager.currentLevel = path
+	title.text = "Selected: %s" % [obby_name]
+	desc.text = "Tier: %s\nBy: %s" % [difficulty, creator]
 
 ## Loads all levels in the folder and then adds it to the level list
 func load_all_levels():
+	
+	orig.clear()
+	sorted.clear()
 	for x in list.get_children():
 		x.call_deferred("queue_free")
 
@@ -98,10 +118,12 @@ func load_all_levels():
 		list.add_child(buttonthing)
 		
 		buttonthing.pressed.connect(func():
-			GameManager.currentLevel = i
-			title.text = "Selected: %s" % [obby_name]
-			desc.text = "Tier: %s\nBy: %s" % [difficulty, creator]
+			select_level(i, obby_name, difficulty, creator)
 		)
+	orig = list.get_children()
+	sorted = orig.duplicate()
+
+
 
 ## Gets a list of ur levels
 func fetch_levels():
@@ -123,6 +145,76 @@ func fetch_levels():
 	dir.list_dir_end()
 	return levels
 
+func search_for_string_that_contains(str: String, arr: Array):
+	for item: String in arr:
+		if item.contains(str):
+			return item
+	print("Couldn't be found")
+	return arr[0]
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if !event.is_action_pressed("Escape"):
+			search.grab_focus(true)
+		
+		if event.is_action_pressed("Escape"):
+			clear_selected_level()
+			search.text = ""
+			searchTerm = ""
+			sort_levels()
+			search.release_focus()
+			
+		if event.is_action_pressed("Enter"):
+			if GameManager.currentLevel == "":
+				var level_files = fetch_levels()
+				var button: Button = list.get_child(0)
+				print(list.get_child(0).text)
+				var selected_level_path = search_for_string_that_contains(button.text, level_files)
+				print(selected_level_path)
+				var loaded_level = load_level(selected_level_path)
+				
+				select_level(
+					selected_level_path,
+					loaded_level.get("ObbyName", "Undefined Level"),
+					loaded_level.get("Difficulty", "Unknown"),
+					loaded_level.get("Creator", "Unknown Creator")
+				)
+			else:
+				_on_play_pressed()
+
+
+
+
+# Searching
+func sort_levels():	
+	if searchTerm != "":
+		orig = list.get_children()
+		sorted = orig.duplicate()
+		
+		sorted.sort_custom(
+			func(a: Button, b: Button): 
+				var is_a = searchTerm.to_lower() in a.text.to_lower()
+				var is_b = searchTerm.to_lower() in b.text.to_lower()
+				
+				if is_a != is_b:
+					return is_a
+				
+				return a.text.to_lower().similarity(searchTerm.to_lower()) > b.text.to_lower().similarity(searchTerm.to_lower())
+		)
+		
+		orig.sort_custom(
+			func(a: Button, b: Button):
+				return a.text.to_lower() < b.text.to_lower()
+		)
+		
+		for item: Button in orig:
+			list.move_child(item, sorted.find(item))
+
+	else:
+		
+		
+		for item: Button in orig:
+			list.move_child(item, orig.find(item))
 
 # -- Switching between "pages" -- #
 
@@ -147,3 +239,8 @@ func _on_avatar_pressed() -> void:
 
 func _on_help_pressed() -> void:
 	cam.global_position = Help.global_position
+
+
+func _on_search_bar_text_changed(text) -> void:
+	searchTerm = search.text
+	sort_levels()
