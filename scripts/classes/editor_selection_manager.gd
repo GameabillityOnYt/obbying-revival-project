@@ -3,7 +3,8 @@ extends RefCounted
 
 var camera: Camera3D
 var transform_gizmo: Node3D
-var selected_object: Node3D = null
+# to make shift selecting multiple objects via array tracking
+var selected_objects: Array[Node3D] = []
 
 func _init(p_camera: Camera3D, p_gizmo: Node3D) -> void:
 	camera = p_camera
@@ -17,10 +18,21 @@ func handle_input(event: InputEvent) -> void:
 		if transform_gizmo and (transform_gizmo.hovering or transform_gizmo.editing):
 			return
 			
-		perform_selection()
+		var is_shifting = Input.is_key_pressed(KEY_SHIFT)
+		perform_selection(is_shifting)
+		return
+		
+	if event is InputEventKey and event.pressed and not event.is_echo():
+		if event.keycode == KEY_BACKSPACE:
+			if not selected_objects.is_empty():
+				print("Deleting %d selected instances" % selected_objects.size())
+				for obj in selected_objects:
+					if is_instance_valid(obj):
+						obj.queue_free()
+				deselect_all()
 
 # handles raycast + gizmo
-func perform_selection() -> void:
+func perform_selection(keep_existing: bool) -> void:
 	var mouse_pos = camera.get_viewport().get_mouse_position()
 	
 	var ray_start = camera.project_ray_origin(mouse_pos)
@@ -39,15 +51,25 @@ func perform_selection() -> void:
 			var actual_part = hit_node
 			while actual_part.get_parent() and actual_part.get_parent().name != "Instances":
 				actual_part = actual_part.get_parent()
-				
-			selected_object = actual_part
-			print("Selected: ", selected_object.name)
 			
-			# clear old and select new
-			if transform_gizmo:
-				transform_gizmo.clear_selection()
-				transform_gizmo.select(selected_object)
-			return 
+			if not selected_objects.has(actual_part):
+				selected_objects.append(actual_part)
+				print("Added to selection: ", actual_part.name)
+				
+				if transform_gizmo:
+					if transform_gizmo.has_method("select_targets"):
+						transform_gizmo.select_targets(selected_objects)
+					else:
+						transform_gizmo.select(actual_part)
+			else:
+				if keep_existing:
+					selected_objects.erase(actual_part)
+					print("Removed from selection: ", actual_part.name)
+					if transform_gizmo:
+						transform_gizmo.select_targets(selected_objects)
+						if selected_objects.is_empty():
+							transform_gizmo.clear_selection()
+			return
 				
 	# check if there's a current gizmo when pressing void
 	if transform_gizmo and (transform_gizmo.hovering or transform_gizmo.editing):
@@ -59,7 +81,7 @@ func perform_selection() -> void:
 func deselect_all() -> void:
 	if transform_gizmo:
 		transform_gizmo.clear_selection()
-	selected_object = null
+	selected_objects.clear()
 
 # helper function
 func is_part_of_instances(node: Node) -> bool:

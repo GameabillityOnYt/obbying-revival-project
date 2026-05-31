@@ -4,7 +4,12 @@
 [ext_resource type="Script" uid="uid://b8hff3jfgojdm" path="res://scripts/gui/editor.gd" id="2_fuk7f"]
 [ext_resource type="Script" uid="uid://e3f1ox6y6cvg" path="res://addons/Gizmo3DScript/gizmo3D.gd" id="2_mukei"]
 
+[sub_resource type="Environment" id="Environment_mukei"]
+
 [node name="Editor" type="Node3D" unique_id=2393671]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1461498179]
+environment = SubResource("Environment_mukei")
 
 [node name="MainCamera" type="Camera3D" parent="." unique_id=943693682]
 script = ExtResource("1_3igts")
