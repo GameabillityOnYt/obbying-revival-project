@@ -13,10 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://cm7xmpucganbp" path="res://assets/images/UI/Discord.png" id="8_8vx4p"]
 [ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/toggles/practiceToggle.tscn" id="8_mipys"]
 [ext_resource type="Script" uid="uid://4mp0toaekq5u" path="res://scenes/texture_button.gd" id="9_tdapf"]
+[ext_resource type="Script" path="res://scenes/texture_button.gd" id="9_tdapf"]
 [ext_resource type="Texture2D" uid="uid://qfb15y132847" path="res://assets/images/UI/Youtube.png" id="10_7shrw"]
 [ext_resource type="Script" uid="uid://ywm0qwb34xhy" path="res://scripts/gui/renderer_switcher.gd" id="11_ptake"]
 [ext_resource type="Texture2D" uid="uid://bc1ndnhomeu3p" path="res://assets/images/UI/github.png" id="11_viowm"]
-[ext_resource type="Script" uid="uid://c3yvaobcwnxb" path="res://scenes/youtube.gd" id="11_yovvs"]
+[ext_resource type="Script" path="res://scenes/youtube.gd" id="11_yovvs"]
 [ext_resource type="Texture2D" uid="uid://g62uv3pegogh" path="res://assets/images/UI/itch.png" id="12_1n6yq"]
 [ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="12_bky6r"]
 [ext_resource type="Script" uid="uid://blhv505opx1ra" path="res://scenes/github.gd" id="12_yovvs"]
@@ -27,6 +28,10 @@
 [ext_resource type="Theme" uid="uid://xrauqfunapst" path="res://assets/prefabs/themes/main.tres" id="20_i7r3k"]
 [ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
 [ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
+[ext_resource type="Script" path="res://scenes/github.gd" id="12_yovvs"]
+[ext_resource type="Script" path="res://scenes/itch.gd" id="13_viowm"]
+[ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/RPCToggle.tscn" id="14_5faoh"]
+[ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/RToggle.tscn" id="14_ptake"]
 
 [sub_resource type="GDScript" id="GDScript_2nypq"]
 resource_name = "Location"
@@ -139,14 +144,6 @@ func _process(delta: float) -> void:
 position = Vector2(-27, 103)
 script = ExtResource("1_ow34m")
 menu_avatar = NodePath("AvatarCustom/SubViewportContainer/SubViewport/CharacterAvatar")
-body_parts = {
-NodePath("AvatarCustom/VBoxContainer/HeadRow/head"): "head",
-NodePath("AvatarCustom/VBoxContainer/TorsoRow/torso"): "torso",
-NodePath("AvatarCustom/VBoxContainer/LeftArmRow/left_arm"): "left_arm",
-NodePath("AvatarCustom/VBoxContainer/RightArmRow/right_arm"): "right_arm",
-NodePath("AvatarCustom/VBoxContainer/LeftLegRow/left_leg"): "left_leg",
-NodePath("AvatarCustom/VBoxContainer/RightLegRow/right_leg"): "right_leg"
-}
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1544198342]
 position_smoothing_enabled = true
@@ -481,31 +478,6 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AlljumpToggle" parent="Settings" unique_id=1785432083 instance=ExtResource("8_mipys")]
-offset_left = -243.0
-offset_top = 52.0
-offset_right = -133.0
-offset_bottom = 91.0
-
-[node name="RPCToggle" parent="Settings" unique_id=214793037 instance=ExtResource("14_5faoh")]
-offset_left = -596.0
-offset_top = 61.0
-offset_right = -455.0
-offset_bottom = 92.0
-
-[node name="RToggle" parent="Settings" unique_id=163921816 instance=ExtResource("14_ptake")]
-offset_left = -596.0
-offset_top = 103.0
-offset_right = -396.0
-offset_bottom = 134.0
-
-[node name="NFToggle" parent="Settings" unique_id=118282012 instance=ExtResource("23_2axsc")]
-offset_left = -335.0
-offset_top = 99.0
-offset_right = -133.0
-offset_bottom = 130.0
-script = ExtResource("24_wrgne")
-
 [node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
 position = Vector2(2539, 0)
 
@@ -619,6 +591,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5819216)
 light_energy = 0.5
 sky_mode = 1
 
+[node name="RPCToggle" parent="." unique_id=214793037 instance=ExtResource("14_5faoh")]
+offset_left = 704.0
+offset_top = 61.0
+offset_right = 845.0
+offset_bottom = 92.0
+
+[node name="RToggle" parent="." unique_id=163921816 instance=ExtResource("14_ptake")]
+offset_left = 704.0
+offset_top = 103.0
+offset_right = 904.0
+offset_bottom = 134.0
+
+[node name="SearchBar" type="LineEdit" parent="." unique_id=179523255]
+offset_left = -639.0
+offset_top = -420.0
+offset_right = -216.0
+offset_bottom = -385.0
+placeholder_text = "search bar do not delete (not supposed to be shown!)"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+virtual_keyboard_enabled = false
+
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
@@ -635,3 +632,4 @@ sky_mode = 1
 [connection signal="item_selected" from="Settings/RendererSwitcher" to="Settings/RendererSwitcher" method="_on_item_selected"]
 [connection signal="item_selected" from="Settings/StudSwitcher" to="Settings/StudSwitcher" method="_on_item_selected"]
 [connection signal="pressed" from="AvatarCustom/Back" to="." method="_on_return_to_settings_pressed"]
+[connection signal="text_changed" from="SearchBar" to="." method="_on_search_bar_text_changed"]

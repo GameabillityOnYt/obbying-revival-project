@@ -437,15 +437,13 @@ func _physics_process(delta: float) -> void:
 			var knockback_dir = -global_transform.basis.z.normalized()
 			
 			# Truss momentum logic
-			if climb_input < -0.01:
-				velocity.x = knockback_dir.x * 43.65
-				velocity.z = knockback_dir.z * 43.65
-				velocity.y = 29.18
-			else:
-				velocity.x = knockback_dir.x * 38.0
-				velocity.z = knockback_dir.z * 38.0
-				velocity.y = 45.3
 			
+			# Quadratic formulas based off craws implementation
+			velocity.x = knockback_dir.x * ((2.285 * pow(climb_input, 2)) - (2.825 * climb_input) + 38 )
+			
+			velocity.z = knockback_dir.z * ((2.285 * pow(climb_input, 2)) - (2.825 * climb_input) + 38)
+
+			velocity.y = (-8.06 * pow(climb_input, 2)) + (8.06 * climb_input) + 45.3
 			global_position += knockback_dir * 0.05
 			
 			is_climbing = false
