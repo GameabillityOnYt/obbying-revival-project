@@ -206,7 +206,7 @@ func reset():
 			cam.global_transform = spawn.get_meta("camera_transform")
 			
 			cam.sync_angles(cam.global_transform)
-		if not GameManager.practice:
+		if not GameManager.alljump:
 			timer.get_node("Panel").resetTime()
 		
 
@@ -319,7 +319,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ResetAlt") and GameManager.RToggle:
 		reset()
 		
-	if GameManager.practice:
+	if GameManager.nfToggle:
 		if Input.is_action_just_pressed("noclip"):
 			$CollisionShape3D.disabled = not $CollisionShape3D.disabled
 			if $CollisionShape3D.disabled:
@@ -335,7 +335,7 @@ func _physics_process(delta: float) -> void:
 	
 	# noclip functionality
 	# i made it rly close to roblox
-	if GameManager.practice and $CollisionShape3D.disabled:
+	if GameManager.nfToggle and $CollisionShape3D.disabled:
 		State = states.Idle
 		update_anim()
 		
@@ -499,7 +499,7 @@ func _physics_process(delta: float) -> void:
 	just_jumped_off = false
 	
 func _step_climbing() -> void:
-	if is_climbing or not is_on_floor():
+	if is_climbing:
 		return
 
 	var horizontal_vel := Vector3(velocity.x, 0.0, velocity.z)
@@ -552,7 +552,7 @@ func _step_climbing() -> void:
 						player.position.y -= final_step_height
 						
 					force_update_transform()
-	else:
+	elif is_on_floor():
 		# step down handling
 		var forward_tgt = global_transform.translated(step_displacement)
 		var max_possible_step_down := 2.0

@@ -18,7 +18,7 @@ func handle_input(event: InputEvent) -> void:
 		if transform_gizmo and (transform_gizmo.hovering or transform_gizmo.editing):
 			return
 			
-		var is_shifting = Input.is_key_pressed(KEY_SHIFT)
+		var is_shifting = Input.is_physical_key_pressed(KEY_SHIFT)
 		perform_selection(is_shifting)
 		return
 		
@@ -49,8 +49,11 @@ func perform_selection(keep_existing: bool) -> void:
 		# until parent is "Instances"
 		if is_part_of_instances(hit_node):
 			var actual_part = hit_node
-			while actual_part.get_parent() and actual_part.get_parent().name != "Instances":
+			while actual_part.get_parent().name != "Instances":
 				actual_part = actual_part.get_parent()
+			
+			if not keep_existing:
+				deselect_all()
 			
 			if not selected_objects.has(actual_part):
 				selected_objects.append(actual_part)
@@ -61,14 +64,6 @@ func perform_selection(keep_existing: bool) -> void:
 						transform_gizmo.select_targets(selected_objects)
 					else:
 						transform_gizmo.select(actual_part)
-			else:
-				if keep_existing:
-					selected_objects.erase(actual_part)
-					print("Removed from selection: ", actual_part.name)
-					if transform_gizmo:
-						transform_gizmo.select_targets(selected_objects)
-						if selected_objects.is_empty():
-							transform_gizmo.clear_selection()
 			return
 				
 	# check if there's a current gizmo when pressing void

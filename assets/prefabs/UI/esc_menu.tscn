@@ -27,7 +27,7 @@ offset_top = -378.0
 offset_right = 1999.0
 offset_bottom = 720.0
 mouse_filter = 2
-color = Color(0.17254902, 0.17254902, 0.17254902, 0.34509805)
+color = Color(0, 0, 0, 0.34509805)
 
 [node name="Sensitivity" parent="." unique_id=736337411 instance=ExtResource("1_lxta3")]
 layout_mode = 0
@@ -122,9 +122,7 @@ offset_left = 537.0
 offset_top = 254.0
 offset_right = 781.0
 offset_bottom = 615.0
-text = "Normal:
-
-R/Ctrl + R - Reset
+text = "R/Ctrl + R - Reset
 WASD - Walking
 Space - Jump
 
