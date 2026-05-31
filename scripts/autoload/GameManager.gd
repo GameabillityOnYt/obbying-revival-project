@@ -10,6 +10,7 @@ const TARGETRATIO = 16.0/9.0
 @export var shiftlocked:bool = false
 @export var practice:bool = false
 @export var RToggle:bool = false
+@export var editor_rotating:bool = false
 
 signal DataLoaded
 signal CharacterAdded(Player)

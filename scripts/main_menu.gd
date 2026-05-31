@@ -61,6 +61,8 @@ func _on_play_pressed() -> void: # when you press play
 		if DiscordRPCManager != null:
 			DiscordRPCManager.playing(GameManager.currentLevel)
 
+func _on_edit_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Editor/EditorMenu.tscn")
 
 func load_level(path): # loads level data and returns it
 	var file = FileAccess.open(path,FileAccess.READ)

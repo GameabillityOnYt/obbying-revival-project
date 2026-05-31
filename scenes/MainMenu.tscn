@@ -188,6 +188,18 @@ theme_override_font_sizes/font_size = 80
 text = "Play"
 alignment = 0
 
+[node name="Edit" type="Button" parent="Main" unique_id=412360616]
+z_as_relative = false
+offset_left = -363.0
+offset_top = -72.0
+offset_right = -194.0
+offset_bottom = 32.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 80
+text = "Edit"
+alignment = 0
+
 [node name="Panel" type="Panel" parent="Main" unique_id=1075196788]
 offset_top = -120.0
 offset_right = 525.0
@@ -581,6 +593,7 @@ offset_bottom = 134.0
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main/Edit" to="." method="_on_edit_pressed"]
 [connection signal="pressed" from="Main/Panel/Open Location" to="Main/Panel/Open Location" method="_on_pressed"]
 [connection signal="pressed" from="Main/Panel/Reload" to="Main/Panel/Reload" method="_on_pressed"]
 [connection signal="meta_clicked" from="Main/Version" to="Main/Version" method="_on_meta_clicked"]

@@ -34,12 +34,13 @@ func _process(delta: float) -> void:
 	
 	if GameManager.Camera:
 		is_first_person = (GameManager.Camera.mode == GameManager.Camera.CameraMode.FIRSTPERSON)
-		rotating = GameManager.Camera.rotating
+		rotating = GameManager.Camera.rotating or GameManager.editor_rotating
 		
 		if Input.is_action_just_pressed("shift_lock"):
 			GameManager.shiftlocked = !GameManager.shiftlocked
 	else:
 		GameManager.shiftlocked = false
+		rotating = GameManager.editor_rotating
 	
 	if rotating and !last_rotating:
 		last_pos = mouse_pos
