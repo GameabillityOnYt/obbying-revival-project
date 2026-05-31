@@ -34,6 +34,7 @@ func _ready():
 		get_tree().call_deferred("change_scene_to_file","res://scenes/MainMenu.tscn") # changes scene to menu
 		get_tree().paused = false # turns off paused
 		GameManager.practice = false # turns off alljump when u go out of the game
+		GameManager.currentLevel = ""
 		pass)
 	
 	$Quit.pressed.connect(func():
