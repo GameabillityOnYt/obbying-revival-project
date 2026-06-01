@@ -10,9 +10,16 @@ var rotation_locked:bool :
 
 @export var HealthBar: ProgressBar
 
+@export var max_step_height: float = 2.0
+@export var step_check_distance: float = 0.5
+@export var step_up_boost: float = 150.0
+
 var grounded = false
 var ground_dist:float = 0
-var ground_pos
+var ground_pos'
+var step_raycast: RayCast3D
+var can_step_up: bool = false
+var step_up_timer: float = 0.0
 
 @onready var anim_tree = $Character/AnimationTree["parameters/playback"]
 
@@ -30,6 +37,11 @@ func update_health_bar():
 func _ready():
 	GameManager.CharacterAdded.emit(self)
 	$Camera3D.top_level = true
+	step_raycast = RayCast3D.new()
+	step_raycast.enabled = true
+	add_child(step_raycast)
+	step_raycast.position = Vector3(0, 0.5, 0)
+	step_raycast.target_position = Vector3.FORWARD * step_check_distance
 
 func _ground_check():
 	var shortest = INF
@@ -64,6 +76,28 @@ func _ground_check():
 	ground_dist = shortest if shortest != INF else 9999
 	ground_pos = closest_pos
 
+func _check_for_step_up() -> bool:
+	# casting forward for obstacle detection
+	step_raycast.target_position = global_transform.basis.z * -step_check_distance\
+
+	if step_raycast.is_colliding():
+		var collision_point = step_raycast.get_collision_point()
+		var obstacle_height = collision_point.y - global_position.y
+
+		if 0 < obstacle_height and obstacle_height <= max_step_height
+			return true
+
+	return false
+
+func _apply_step_up():
+	# give upwards velocity when u step up.
+	linear_velocity.y = step_up_boost
+	can_step_up = false
+
 func _physics_process(_delta: float) -> void:
 	_ground_check()
+
+	if grounded and linear_velocity.length() > 0.5:
+		if _check_for_step_up():
+			_apply_step_up()
 	
