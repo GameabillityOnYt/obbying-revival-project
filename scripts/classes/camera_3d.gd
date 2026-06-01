@@ -56,7 +56,7 @@ func _input(event):
 			target_pitch = clamp(target_pitch, -1.5, 1.5)
 		return
 	
-	if Input.is_action_just_pressed("left_align"):
+	if Input.is_action_just_pressed("left_align") :
 		var step_index = round(yaw / step)
 		step_index += 1
 		yaw = wrapf(step_index * step, -PI, PI)
@@ -108,7 +108,7 @@ func _process(delta):
 		return
 
 	if not snapping:
-		yaw += Input.get_axis("look_left", "look_right") * delta
+		yaw += Input.get_axis("look_left", "look_right") * delta * 2
 	else:
 		snapping = false
 	var look_basis = Basis.from_euler(Vector3(pitch, yaw, 0))
