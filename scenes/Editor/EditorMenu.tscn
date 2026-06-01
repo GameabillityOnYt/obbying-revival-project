@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://cfyidrooggsqt"]
+
+[ext_resource type="Script" uid="uid://bo12j8ga02hpx" path="res://scripts/editor_menu.gd" id="1_7kinb"]
+[ext_resource type="Theme" uid="uid://dyn87lf4436y3" path="res://assets/resources/ui_styles/MainMenuButton.tres" id="1_7ynjg"]
+[ext_resource type="FontFile" uid="uid://bb74yqfgngijg" path="res://assets/fonts/AlteHaasGroteskBold.ttf" id="2_7kinb"]
+
+[sub_resource type="Shader" id="Shader_8a8k8"]
+code = "shader_type canvas_item;
+
+uniform float star_density : hint_range(0.01, 1.0) = 1;
+uniform float elapsed_time;
+uniform vec2 direction = vec2(-1.0, 0.0); // Allow diagonal movement
+
+float rand(vec2 uv) {
+    return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+void fragment() {
+    // 1. Use TIME multiplied by speed for movement.
+    // Wrap it using fract() if you want to keep TIME values small,
+    // though for simple UV scrolling, TIME is usually fine.
+    vec2 movement = direction * elapsed_time * .0125;
+    vec2 uv = UV + movement;
+    
+    // 2. Scale the grid (increase 50.0 for smaller/more stars)
+    vec2 grid_uv = fract(uv * 360.0); 
+    vec2 grid_id = floor(uv * 360.0);
+    
+    // 3. Randomness for placement and \"twinkle\"
+    float r = rand(grid_id);
+    float star = 0.0;
+    
+    if (r > (1.0 - star_density * 0.1)) {
+        // Create a circular dot
+        float dist = distance(grid_uv, vec2(0.5));
+        
+        // 4. Frame-independent twinkling:
+        // We use sin(TIME) but offset it by our random value 'r' 
+        // so all stars don't blink at the exact same time.
+        float twinkle = sin(elapsed_time * 6.0 + r * 100.0) * 0.5 + 0.5;
+        
+        star = smoothstep(0.1, 0.02, dist) * twinkle;
+    }
+    
+    // Output white stars on a transparent/black background
+    COLOR = vec4(vec3(star), 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rcpi4"]
+shader = SubResource("Shader_8a8k8")
+shader_parameter/star_density = 0.5
+shader_parameter/elapsed_time = 16.937500000000163
+shader_parameter/direction = Vector2(-1, 0)
+
+[sub_resource type="GDScript" id="GDScript_y5q5f"]
+script/source = "extends ColorRect
+var elapsed_time:float
+
+func _process(delta: float) -> void:
+	elapsed_time += delta
+	var mat = material as ShaderMaterial
+	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
+"
+
+[sub_resource type="Theme" id="Theme_7ynjg"]
+Button/colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0.4)
+
+[node name="EditorMenu" type="Node2D" unique_id=1689416541]
+script = ExtResource("1_7kinb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1995223285]
+position_smoothing_enabled = true
+
+[node name="Main" type="Node2D" parent="." unique_id=884815364]
+
+[node name="Panel" type="Panel" parent="Main" unique_id=1651677822]
+offset_top = -120.0
+offset_right = 525.0
+offset_bottom = 250.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main/Panel" unique_id=1592962183]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 370.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Panel/ScrollContainer" unique_id=1371601290]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Edit" type="Button" parent="Main" unique_id=312552381]
+z_as_relative = false
+offset_left = -555.0
+offset_top = -176.0
+offset_right = -386.0
+offset_bottom = -72.0
+theme = ExtResource("1_7ynjg")
+theme_override_fonts/font = ExtResource("2_7kinb")
+theme_override_font_sizes/font_size = 80
+text = "Edit"
+alignment = 0
+
+[node name="BG" type="Control" parent="Main" unique_id=2118460055]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 635.0
+offset_top = 339.0
+offset_right = 635.0
+offset_bottom = 339.0
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="Main/BG" unique_id=1954850127]
+z_index = -10
+material = SubResource("ShaderMaterial_rcpi4")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7079.0
+offset_top = -3089.0
+offset_right = 5721.0
+offset_bottom = 4111.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = SubResource("GDScript_y5q5f")
+metadata/_edit_lock_ = true
+
+[node name="Desc" type="Panel" parent="Main" unique_id=1179921277]
+offset_top = -351.0
+offset_right = 525.0
+offset_bottom = -144.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Main/Desc" unique_id=1176351859]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_7kinb")
+theme_override_font_sizes/font_size = 30
+text = "Edit a level"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Main/Desc" unique_id=1513429755]
+layout_mode = 0
+offset_top = 95.0
+offset_right = 525.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("2_7kinb")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+clip_text = true
+
+[node name="Button" type="Button" parent="Main" unique_id=1430127709]
+offset_left = 2.0
+offset_top = 266.0
+offset_right = 527.0
+offset_bottom = 336.0
+theme = SubResource("Theme_7ynjg")
+theme_override_fonts/font = ExtResource("2_7kinb")
+theme_override_font_sizes/font_size = 60
+text = "+"
+
+[connection signal="pressed" from="Main/Edit" to="." method="_on_edit_button_pressed"]

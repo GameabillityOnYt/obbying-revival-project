@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b8q02e5g57tx4"]
+
+[ext_resource type="Script" uid="uid://ypneyahtpnck" path="res://assets/character/player.gd" id="1_monf5"]
+[ext_resource type="Script" uid="uid://5pbiggcq3lln" path="res://scripts/classes/camera_3d.gd" id="2_j3eqw"]
+[ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="3_j3eqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aypkh"]
+size = Vector3(0.4, 2.4252687, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhoun"]
+size = Vector3(0.8, 1.14, 0.2)
+
+[node name="Player" type="CharacterBody3D" unique_id=1574667455]
+floor_max_angle = 1.553343
+script = ExtResource("1_monf5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=430059723]
+transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 5, 0, 1, 0)
+shape = SubResource("BoxShape3D_aypkh")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=335641631 node_paths=PackedStringArray("target")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.1, 1, 0.1)
+script = ExtResource("2_j3eqw")
+target = NodePath("..")
+
+[node name="TrussRay" type="RayCast3D" parent="." unique_id=212384371]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.1027017, 0.427)
+
+[node name="GlideRay" type="RayCast3D" parent="." unique_id=370163608]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.5, 0.427)
+
+[node name="GlideTop" type="RayCast3D" parent="." unique_id=2125235834]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3, 0)
+target_position = Vector3(0, -2, 0)
+
+[node name="GlideBottom" type="RayCast3D" parent="." unique_id=310619601]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.7, 0)
+target_position = Vector3(0, -2, 0)
+
+[node name="Shiftlock" type="Node3D" parent="." unique_id=1753339858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.90000004, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1539000716]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1311409622]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0.25)
+shape = SubResource("BoxShape3D_hhoun")
+
+[node name="flickRay" type="RayCast3D" parent="." unique_id=1153203733]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4091824, 0.1)
+target_position = Vector3(0, -0.4, 1.4)
+
+[node name="flickRay2" type="RayCast3D" parent="." unique_id=1694837158]
+transform = Transform3D(-2, 0, -8.742278e-08, 0, 1, 0, 1.7484555e-07, 0, -1, -1.7484556e-08, -0.4091824, -0.1)
+target_position = Vector3(0, -0.4, 1.4)
+
+[node name="flickRay3" type="RayCast3D" parent="." unique_id=364928567]
+transform = Transform3D(1.1920929e-07, 0, -0.99999994, 0, 1, 0, 1.9999999, 0, 5.9604645e-08, -8.742278e-09, -0.4091824, 0)
+target_position = Vector3(0, -0.4, 1.4)
+
+[node name="flickRay4" type="RayCast3D" parent="." unique_id=1295963090]
+transform = Transform3D(-2.9802322e-07, 0, 1, 0, 1, 0, -2, 0, -1.4901161e-07, -8.742278e-09, -0.4091824, 0)
+target_position = Vector3(0, -0.4, 1.4)
+
+[node name="Focus" type="Marker3D" parent="." unique_id=1516191581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6812663, 0)
+
+[node name="ray" type="RayCast3D" parent="Focus" unique_id=2092944358]
+target_position = Vector3(0, 0, -100)
+
+[node name="Character" parent="." unique_id=65602991 instance=ExtResource("3_j3eqw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.5, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

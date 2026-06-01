@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bo85mnqo5n13f"]
+
+[ext_resource type="Script" uid="uid://dxt7ubnjbiwi1" path="res://scripts/editor_camera.gd" id="1_3igts"]
+[ext_resource type="Script" uid="uid://b8hff3jfgojdm" path="res://scripts/gui/editor.gd" id="2_fuk7f"]
+[ext_resource type="Script" uid="uid://e3f1ox6y6cvg" path="res://addons/Gizmo3DScript/gizmo3D.gd" id="2_mukei"]
+
+[sub_resource type="Environment" id="Environment_mukei"]
+
+[node name="Editor" type="Node3D" unique_id=2393671]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1461498179]
+environment = SubResource("Environment_mukei")
+
+[node name="MainCamera" type="Camera3D" parent="." unique_id=943693682]
+script = ExtResource("1_3igts")
+
+[node name="Gizmo3D" type="Node3D" parent="." unique_id=148053845]
+script = ExtResource("2_mukei")
+metadata/_custom_type_script = "uid://e3f1ox6y6cvg"
+
+[node name="Instances" type="Node3D" parent="." unique_id=924840122]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=502305614]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=695971913]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_fuk7f")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control" unique_id=1179392358]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 200.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/ScrollContainer" unique_id=521655894]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/ScrollContainer/PanelContainer" unique_id=1631828416]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = -200
+columns = 2
+
+[node name="Part" type="Button" parent="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer" unique_id=352569527]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "part"
+
+[node name="cylinder" type="Button" parent="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer" unique_id=1795497076]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "cylinder"
+
+[node name="truss" type="Button" parent="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer" unique_id=833594660]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Truss"
+
+[node name="sphere" type="Button" parent="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer" unique_id=1285704161]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "sphere"
+
+[node name="wedge" type="Button" parent="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer" unique_id=2096246805]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "wedge"
+
+[node name="cornerwedge" type="Button" parent="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer" unique_id=183152984]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "cornerwedge"
+
+[connection signal="pressed" from="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer/Part" to="CanvasLayer/Control" method="_on_part_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer/cylinder" to="CanvasLayer/Control" method="_on_cylinder_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer/truss" to="CanvasLayer/Control" method="_on_truss_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer/sphere" to="CanvasLayer/Control" method="_on_sphere_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer/wedge" to="CanvasLayer/Control" method="_on_wedge_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ScrollContainer/PanelContainer/GridContainer/cornerwedge" to="CanvasLayer/Control" method="_on_cornerwedge_pressed"]

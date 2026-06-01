@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://fuehl670w3lw"]
+
+[ext_resource type="Script" uid="uid://rpn42b373ch7" path="res://scripts/gui/timer.gd" id="1_0jqax"]
+[ext_resource type="Texture2D" uid="uid://dc47pf48oq0pg" path="res://assets/images/UI/timer-icon-14.png" id="1_xc1va"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jqax"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Timer" type="Control" unique_id=1938707771]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1156010431]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(4, 1)
+pivot_offset = Vector2(20, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jqax")
+script = ExtResource("1_0jqax")
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=766740528]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 41.0
+offset_bottom = 44.0
+scale = Vector2(0.2, 0.7958132)
+texture = ExtResource("1_xc1va")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=548071741]
+layout_mode = 0
+offset_left = 9.75
+offset_right = 264.75
+offset_bottom = 88.0
+scale = Vector2(0.118, 0.45)
+theme_override_font_sizes/font_size = 64
+text = "00:00:00"
+
+[node name="Indicator" type="Label" parent="Panel" unique_id=932516622]
+visible = false
+layout_mode = 0
+offset_left = -1.5
+offset_top = -7.0
+offset_right = 21.5
+offset_bottom = 16.0
+scale = Vector2(0.295, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "•"

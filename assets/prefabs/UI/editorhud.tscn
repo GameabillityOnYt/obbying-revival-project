@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dn6n3bwoca1ur"]
+
+[ext_resource type="Script" uid="uid://bw7pfhsbjiclh" path="res://scripts/gui/selecting.gd" id="1_ovgvq"]
+
+[node name="Editorhud" type="Control" unique_id=1301252983]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="selecting" type="Label" parent="." unique_id=61387438]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ur selecting: "
+script = ExtResource("1_ovgvq")

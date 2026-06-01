@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ct0p00aubml1x"]
+
+[ext_resource type="Texture2D" uid="uid://n57bufw4xuqm" path="res://assets/skyboxes/citrus_orchard_road_puresky_4k.exr" id="1_esb7u"]
+[ext_resource type="Script" uid="uid://b07seoxhluvhp" path="res://scripts/CustomLevelLoader.gd" id="1_o3jt7"]
+[ext_resource type="PackedScene" uid="uid://b35nds8m0c77l" path="res://assets/prefabs/UI/shiftlockIcon.tscn" id="2_o1hpr"]
+[ext_resource type="PackedScene" uid="uid://21fflrxp85y2" path="res://assets/prefabs/UI/Health.tscn" id="3_j68um"]
+[ext_resource type="PackedScene" uid="uid://bhgjl8nsom23c" path="res://assets/prefabs/UI/fps.tscn" id="4_wj2ro"]
+[ext_resource type="PackedScene" uid="uid://r7idkhhne3c0" path="res://assets/prefabs/UI/esc_menu.tscn" id="11_bdh7s"]
+[ext_resource type="PackedScene" uid="uid://fuehl670w3lw" path="res://assets/prefabs/UI/Timer.tscn" id="12_fgt82"]
+[ext_resource type="PackedScene" uid="uid://b8q02e5g57tx4" path="res://assets/character/player.tscn" id="13_ye4bg"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0b4ue"]
+panorama = ExtResource("1_esb7u")
+
+[sub_resource type="Sky" id="Sky_f2txt"]
+sky_material = SubResource("PanoramaSkyMaterial_0b4ue")
+
+[sub_resource type="Environment" id="Environment_1ainy"]
+background_mode = 2
+background_energy_multiplier = 0.6
+sky = SubResource("Sky_f2txt")
+
+[node name="Node3D" type="Node3D" unique_id=489380727]
+script = ExtResource("1_o3jt7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1117970329]
+environment = SubResource("Environment_1ainy")
+
+[node name="ShiftlockIcon" parent="." unique_id=598571543 instance=ExtResource("2_o1hpr")]
+visible = false
+
+[node name="Health" parent="." unique_id=1544686410 instance=ExtResource("3_j68um")]
+offset_left = -237.0
+offset_top = 9.0
+offset_right = -12.0
+offset_bottom = 36.0
+
+[node name="Fps" parent="." unique_id=174923971 instance=ExtResource("4_wj2ro")]
+
+[node name="EscMenu" parent="." unique_id=1769971828 instance=ExtResource("11_bdh7s")]
+offset_left = -22.0
+offset_right = -22.0
+
+[node name="Timer" parent="." unique_id=1938707771 instance=ExtResource("12_fgt82")]
+mouse_filter = 2
+
+[node name="Player" parent="." unique_id=1574667455 node_paths=PackedStringArray("shiftlockLogo", "timer", "HealthBar") instance=ExtResource("13_ye4bg")]
+shiftlockLogo = NodePath("../ShiftlockIcon")
+timer = NodePath("../Timer")
+HealthBar = NodePath("../Health")

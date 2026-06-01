@@ -1,70 +1,221 @@
 [gd_scene format=3 uid="uid://duax0jx5fck1u"]
 
 [ext_resource type="Script" uid="uid://clflyp4upy643" path="res://scripts/main_menu.gd" id="1_ow34m"]
-[ext_resource type="Texture2D" uid="uid://bff45kdw0wpbe" path="res://assets/images/aa.png" id="1_yqorp"]
 [ext_resource type="FontFile" uid="uid://bb74yqfgngijg" path="res://assets/fonts/AlteHaasGroteskBold.ttf" id="2_0ykhv"]
-[ext_resource type="Texture2D" uid="uid://wec8jyru71tj" path="res://assets/images/Obby Revival Project.svg" id="3_mipys"]
-[ext_resource type="Theme" uid="uid://dyn87lf4436y3" path="res://resources/MainMenuButton.tres" id="4_l72w3"]
-[ext_resource type="PackedScene" uid="uid://bwlmhgmpfqdjh" path="res://GUI/Scenes/sensitivity.tscn" id="5_l72w3"]
-[ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://GUI/Scenes/FOV.tscn" id="6_826wr"]
-[ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://GUI/Scenes/maxFPS.tscn" id="7_ucygd"]
+[ext_resource type="Texture2D" uid="uid://wec8jyru71tj" path="res://assets/images/UI/Obby Revival Project.svg" id="3_mipys"]
+[ext_resource type="Theme" uid="uid://dyn87lf4436y3" path="res://assets/resources/ui_styles/MainMenuButton.tres" id="4_l72w3"]
+[ext_resource type="Texture2D" uid="uid://bkxrsp8epmuhv" path="res://assets/images/UI/file.png" id="5_7la6k"]
+[ext_resource type="Texture2D" uid="uid://rak76vqkkuum" path="res://assets/goog.jpg" id="5_8a8k8"]
+[ext_resource type="PackedScene" uid="uid://bwlmhgmpfqdjh" path="res://assets/prefabs/UI/sensitivity.tscn" id="5_l72w3"]
+[ext_resource type="Texture2D" uid="uid://ctlrovtarcx8" path="res://assets/images/UI/refresh.png" id="6_2nypq"]
+[ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://assets/prefabs/UI/FOV.tscn" id="6_826wr"]
+[ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
+[ext_resource type="Texture2D" uid="uid://cm7xmpucganbp" path="res://assets/images/UI/Discord.png" id="8_8vx4p"]
+[ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/toggles/practiceToggle.tscn" id="8_mipys"]
+[ext_resource type="Script" uid="uid://4mp0toaekq5u" path="res://scenes/texture_button.gd" id="9_tdapf"]
+[ext_resource type="Texture2D" uid="uid://qfb15y132847" path="res://assets/images/UI/Youtube.png" id="10_7shrw"]
+[ext_resource type="Script" uid="uid://ywm0qwb34xhy" path="res://scripts/gui/renderer_switcher.gd" id="11_ptake"]
+[ext_resource type="Texture2D" uid="uid://bc1ndnhomeu3p" path="res://assets/images/UI/github.png" id="11_viowm"]
+[ext_resource type="Script" uid="uid://c3yvaobcwnxb" path="res://scenes/youtube.gd" id="11_yovvs"]
+[ext_resource type="Texture2D" uid="uid://g62uv3pegogh" path="res://assets/images/UI/itch.png" id="12_1n6yq"]
+[ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="12_bky6r"]
+[ext_resource type="Script" uid="uid://blhv505opx1ra" path="res://scenes/github.gd" id="12_yovvs"]
+[ext_resource type="Script" uid="uid://ct0434tmo8n1a" path="res://scenes/itch.gd" id="13_viowm"]
+[ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/toggles/RPCToggle.tscn" id="14_5faoh"]
+[ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
+[ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
+[ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
+[ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
 
-[sub_resource type="GDScript" id="GDScript_yqorp"]
-resource_name = "Rotating"
-script/source = "extends Sprite2D
+[sub_resource type="GDScript" id="GDScript_2nypq"]
+resource_name = "Location"
+script/source = "extends Button
 
-var rot_speed = 5
-var target_rot_speed = 5
-var hovering = false
-const initial_scale = Vector2(.7,.7)
-
-func _process(dt:float):
-	rot_speed = move_toward(rot_speed,target_rot_speed,dt*50)
-	if !hovering: target_rot_speed = 5
-	if hovering and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		rot_speed = 150
-		scale = scale.move_toward(Vector2(2,2),2.5*dt)
-	else:
-		scale = scale.move_toward(initial_scale,2.5*dt)
-	rotation_degrees += rot_speed*dt
-
-func _on_hover():
-	target_rot_speed = 50
-	rot_speed = 50
-	hovering = true
-
-func _leave_hover():
-	hovering = false
+func _on_pressed() -> void:
+	OS.shell_show_in_file_manager(ProjectSettings.globalize_path(\"user://levels\"),true)
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yqorp"]
-radius = 50.0
+[sub_resource type="GDScript" id="GDScript_7la6k"]
+resource_name = "Reload"
+script/source = "extends Button
 
-[node name="MainMenu" type="Node2D" unique_id=361961899]
+func _on_pressed() -> void:
+	owner.load_all_levels()
+"
+
+[sub_resource type="Theme" id="Theme_ptake"]
+
+[sub_resource type="GDScript" id="GDScript_hubol"]
+resource_name = "ClickThing"
+script/source = "extends RichTextLabel
+
+var version = self
+var whitespace_remover = RegEx.new()
+
+func _ready():	
+	# -- Version Checking -- #
+	if GameManager.version_latest == \"\": await GameManager.VersionLoaded
+	whitespace_remover.compile(\"\\\\s+\")
+	
+	var curr_version = whitespace_remover.sub(GameManager.version,\"\",true)
+	var latest_version = whitespace_remover.sub(GameManager.version_latest,\"\",true)
+	
+	if latest_version == \"\":
+		version.text = \"Failed to fetch latest version!\"
+		version.add_theme_color_override(\"font_color\",Color(1,0,0))
+		return
+	
+	if curr_version != latest_version:
+		version.text = \"v%s is outdated! latest version: v%s\" % [curr_version, latest_version]
+		version.add_theme_color_override(\"font_color\",Color(1,0,0))
+	else:
+		version.text = \"v\" + curr_version + \" (latest) \"
+	version.text = '[url=https://github.com/GameabillityOnYt/obbying-revival-project/releases][u]%s[/u][/url]' % version.text
+
+func _on_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(meta)
+"
+
+[sub_resource type="Shader" id="Shader_8a8k8"]
+code = "shader_type canvas_item;
+
+uniform float star_density : hint_range(0.01, 1.0) = 1;
+uniform float elapsed_time;
+uniform vec2 direction = vec2(-1.0, 0.0); // Allow diagonal movement
+
+float rand(vec2 uv) {
+    return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+void fragment() {
+    // 1. Use TIME multiplied by speed for movement.
+    // Wrap it using fract() if you want to keep TIME values small,
+    // though for simple UV scrolling, TIME is usually fine.
+    vec2 movement = direction * elapsed_time * .0125;
+    vec2 uv = UV + movement;
+    
+    // 2. Scale the grid (increase 50.0 for smaller/more stars)
+    vec2 grid_uv = fract(uv * 360.0); 
+    vec2 grid_id = floor(uv * 360.0);
+    
+    // 3. Randomness for placement and \"twinkle\"
+    float r = rand(grid_id);
+    float star = 0.0;
+    
+    if (r > (1.0 - star_density * 0.1)) {
+        // Create a circular dot
+        float dist = distance(grid_uv, vec2(0.5));
+        
+        // 4. Frame-independent twinkling:
+        // We use sin(TIME) but offset it by our random value 'r' 
+        // so all stars don't blink at the exact same time.
+        float twinkle = sin(elapsed_time * 6.0 + r * 100.0) * 0.5 + 0.5;
+        
+        star = smoothstep(0.1, 0.02, dist) * twinkle;
+    }
+    
+    // Output white stars on a transparent/black background
+    COLOR = vec4(vec3(star), 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
+shader = SubResource("Shader_8a8k8")
+shader_parameter/star_density = 0.5
+shader_parameter/elapsed_time = 16.937500000000163
+shader_parameter/direction = Vector2(-1, 0)
+
+[sub_resource type="GDScript" id="GDScript_ucygd"]
+script/source = "extends ColorRect
+var elapsed_time:float
+
+func _process(delta: float) -> void:
+	elapsed_time += delta
+	var mat = material as ShaderMaterial
+	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yovvs"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrgne"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+expand_margin_left = 8.0
+expand_margin_top = 32.0
+expand_margin_right = 8.0
+expand_margin_bottom = 7.0
+shadow_size = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2axsc"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 8
+border_width_right = 5
+border_width_bottom = 15
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_detail = 20
+
+[sub_resource type="Theme" id="Theme_yovvs"]
+AcceptDialog/styles/embedded_border = SubResource("StyleBoxFlat_yovvs")
+AcceptDialog/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_wrgne")
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_2axsc")
+
+[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar", "body_parts")]
+position = Vector2(-27, 103)
 script = ExtResource("1_ow34m")
+menu_avatar = NodePath("AvatarCustom/SubViewportContainer/SubViewport/CharacterAvatar")
+body_parts = {
+NodePath("AvatarCustom/VBoxContainer/HeadRow/head"): "head",
+NodePath("AvatarCustom/VBoxContainer/TorsoRow/torso"): "torso",
+NodePath("AvatarCustom/VBoxContainer/LeftArmRow/left_arm"): "left_arm",
+NodePath("AvatarCustom/VBoxContainer/RightArmRow/right_arm"): "right_arm",
+NodePath("AvatarCustom/VBoxContainer/LeftLegRow/left_leg"): "left_leg",
+NodePath("AvatarCustom/VBoxContainer/RightLegRow/right_leg"): "right_leg"
+}
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1544198342]
 position_smoothing_enabled = true
 
 [node name="Main" type="Node2D" parent="." unique_id=1987126305]
 
-[node name="Aa" type="Sprite2D" parent="Main" unique_id=1352393718]
-position = Vector2(-485.75, -219)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_yqorp")
-script = SubResource("GDScript_yqorp")
-
-[node name="Area2D" type="Area2D" parent="Main/Aa" unique_id=492410129]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/Aa/Area2D" unique_id=985516899]
-shape = SubResource("CircleShape2D_yqorp")
-
 [node name="Aa2" type="Sprite2D" parent="Main" unique_id=1400207787]
 position = Vector2(-303.75, -219)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_mipys")
 
+[node name="Settings" type="Button" parent="Main" unique_id=221492115]
+offset_left = -578.0
+offset_top = 36.0
+offset_right = -264.0
+offset_bottom = 140.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+alignment = 0
+
+[node name="Help" type="Button" parent="Main" unique_id=395185412]
+offset_left = -578.0
+offset_top = 158.0
+offset_right = -380.0
+offset_bottom = 262.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 80
+text = "Help"
+alignment = 0
+
 [node name="Play" type="Button" parent="Main" unique_id=1896613640]
+z_as_relative = false
 offset_left = -578.0
 offset_top = -82.0
 offset_right = -409.0
@@ -73,16 +224,168 @@ theme = ExtResource("4_l72w3")
 theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 80
 text = "Play"
+alignment = 0
 
-[node name="Settings" type="Button" parent="Main" unique_id=221492115]
-offset_left = -578.0
-offset_top = 22.0
-offset_right = -409.0
-offset_bottom = 126.0
+[node name="Edit" type="Button" parent="Main" unique_id=412360616]
+z_as_relative = false
+offset_left = -363.0
+offset_top = -72.0
+offset_right = -194.0
+offset_bottom = 32.0
 theme = ExtResource("4_l72w3")
 theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 80
-text = "Settings"
+text = "Edit"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="Main" unique_id=1075196788]
+offset_top = -120.0
+offset_right = 525.0
+offset_bottom = 350.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main/Panel" unique_id=714695751]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 470.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Panel/ScrollContainer" unique_id=680865465 groups=["level_list"]]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Open Location" type="Button" parent="Main/Panel" unique_id=1431265062]
+layout_mode = 0
+offset_left = 550.0
+offset_right = 591.0
+offset_bottom = 41.0
+tooltip_text = "Open levels folder"
+icon = ExtResource("5_7la6k")
+expand_icon = true
+script = SubResource("GDScript_2nypq")
+
+[node name="Reload" type="Button" parent="Main/Panel" unique_id=1005983237]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 50.0
+offset_right = 591.0
+offset_bottom = 91.0
+tooltip_text = "Refresh levels"
+icon = ExtResource("6_2nypq")
+expand_icon = true
+script = SubResource("GDScript_7la6k")
+
+[node name="Goog" type="Sprite2D" parent="Main" unique_id=219827493]
+position = Vector2(2355, -71)
+scale = Vector2(0.20777778, 0.20777778)
+texture = ExtResource("5_8a8k8")
+
+[node name="Desc" type="Panel" parent="Main" unique_id=2044121970]
+offset_top = -351.0
+offset_right = 525.0
+offset_bottom = -144.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Main/Desc" unique_id=1568104838]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 30
+text = "Select a level"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Main/Desc" unique_id=463695962]
+layout_mode = 0
+offset_top = 95.0
+offset_right = 525.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+clip_text = true
+
+[node name="Version" type="RichTextLabel" parent="Main" unique_id=1096078958]
+offset_left = -641.0
+offset_top = 339.0
+offset_right = -331.0
+offset_bottom = 370.0
+focus_behavior_recursive = 2
+mouse_behavior_recursive = 2
+theme = SubResource("Theme_ptake")
+bbcode_enabled = true
+text = "[u]Version[/u]"
+script = SubResource("GDScript_hubol")
+
+[node name="Help" type="Node2D" parent="." unique_id=804611237]
+position = Vector2(0, 769)
+
+[node name="Discord" type="TextureButton" parent="Help" unique_id=2137532036]
+offset_left = -630.0
+offset_top = 269.99997
+offset_right = 69.0
+offset_bottom = 970.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("8_8vx4p")
+script = ExtResource("9_tdapf")
+
+[node name="Youtube" type="TextureButton" parent="Help" unique_id=2113147729]
+offset_left = -540.0
+offset_top = 269.99997
+offset_right = 160.0
+offset_bottom = 970.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("10_7shrw")
+script = ExtResource("11_yovvs")
+
+[node name="Github" type="TextureButton" parent="Help" unique_id=2042230335]
+offset_left = -450.0
+offset_top = 269.99997
+offset_right = 249.0
+offset_bottom = 970.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("11_viowm")
+script = ExtResource("12_yovvs")
+
+[node name="Itch" type="TextureButton" parent="Help" unique_id=282229088]
+offset_left = -360.0
+offset_top = 269.99997
+offset_right = 339.0
+offset_bottom = 970.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("12_1n6yq")
+script = ExtResource("13_viowm")
+
+[node name="Label" type="Label" parent="Help" unique_id=604142904]
+offset_left = -633.0
+offset_top = -361.0
+offset_right = 562.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 32
+text = "In-Game FAQ
+
+Q: How do I add custom levels?
+A: Just drag the .json file into the menu!
+Q: What are the All-Jump controls?
+A: Press F to place a checkpoint, V to remove, R to go back to most recent one
+Q: How do I get custom levels?
+A: Through the discord below! Go to #custom-levels
+Q: What is the goal of this game?
+A: There isn't really an end goal, just play obbies as much as you want and 
+improve your skills as much as you desire! and remember to have fun!
+Q: Can I support the game?
+A: Not yet..."
+
+[node name="Back2" type="Button" parent="Help" unique_id=2071367575]
+offset_left = 487.0
+offset_top = -358.0
+offset_right = 608.0
+offset_bottom = -298.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+alignment = 0
 
 [node name="BG" type="Control" parent="." unique_id=500703345]
 layout_mode = 3
@@ -95,20 +398,22 @@ metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="BG" unique_id=1184771097]
 z_index = -10
+material = SubResource("ShaderMaterial_7la6k")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1280.0
-offset_top = -720.0
-offset_right = 11520.0
-offset_bottom = 6480.0
+offset_left = -7079.0
+offset_top = -3089.0
+offset_right = 5721.0
+offset_bottom = 4111.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+script = SubResource("GDScript_ucygd")
 metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node2D" parent="." unique_id=132079008]
@@ -119,18 +424,20 @@ offset_left = -617.0
 offset_top = -41.0
 offset_right = -132.15149
 offset_bottom = 9.0
+step = 0.01
+tick_count = 30
 
 [node name="MaxFps" parent="Settings" unique_id=1734334787 instance=ExtResource("7_ucygd")]
-offset_left = -373.0
+offset_left = -367.0
 offset_top = 60.0
-offset_right = -286.5
+offset_right = -280.5
 offset_bottom = 91.0
 
 [node name="Back" type="Button" parent="Settings" unique_id=1445670015]
-offset_left = -640.0
-offset_top = -360.0
-offset_right = -519.0
-offset_bottom = -300.0
+offset_left = -558.0
+offset_top = -355.0
+offset_right = -437.0
+offset_bottom = -295.0
 theme = ExtResource("4_l72w3")
 theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 50
@@ -138,12 +445,240 @@ text = "Back"
 alignment = 0
 
 [node name="FOV" parent="Settings" unique_id=432107997 instance=ExtResource("6_826wr")]
-offset_left = 44.0
-offset_right = 528.8485
-max_value = 80.0
+offset_left = -617.0
+offset_top = -120.0
+offset_right = -132.15149
+offset_bottom = -70.0
+tick_count = 16
 
-[connection signal="mouse_entered" from="Main/Aa/Area2D" to="Main/Aa" method="_on_hover"]
-[connection signal="mouse_exited" from="Main/Aa/Area2D" to="Main/Aa" method="_leave_hover"]
-[connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
+[node name="Avatar" type="Button" parent="Settings" unique_id=1635049905]
+offset_left = -494.0
+offset_top = 152.0
+offset_right = -243.0
+offset_bottom = 189.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 30
+text = "Customize avatar"
+alignment = 0
+
+[node name="RendererSwitcher" type="OptionButton" parent="Settings" unique_id=1316471072]
+offset_left = 135.0
+offset_top = -111.0
+offset_right = 271.0
+offset_bottom = -80.0
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Forward+"
+popup/item_0/id = 0
+popup/item_1/text = "Mobile"
+popup/item_1/id = 1
+popup/item_2/text = "Compatibility"
+popup/item_2/id = 2
+script = ExtResource("11_ptake")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/RendererSwitcher" unique_id=1393853769]
+layout_mode = 0
+offset_left = -101.04348
+offset_top = 2.0
+offset_bottom = 30.0
+text = "Rendering"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Settings/RendererSwitcher" unique_id=1382372006]
+oversampling_override = 1.0
+title = "Restart Required"
+initial_position = 2
+size = Vector2i(341, 160)
+transient_to_focused = true
+exclusive = false
+unresizable = true
+unfocusable = true
+theme = SubResource("Theme_yovvs")
+ok_button_text = "Restart Now"
+dialog_text = "Changing the renderer requires a restart to take effect"
+dialog_autowrap = true
+cancel_button_text = "Restart Later"
+
+[node name="StudSwitcher" type="OptionButton" parent="Settings" unique_id=346597648]
+offset_left = 135.0
+offset_top = -64.0
+offset_right = 271.0
+offset_bottom = -33.0
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "ORP Style"
+popup/item_0/id = 0
+popup/item_1/text = "Roblox Style"
+popup/item_1/id = 1
+script = ExtResource("20_hm0al")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/StudSwitcher" unique_id=1897413756]
+layout_mode = 0
+offset_left = -101.04348
+offset_top = 2.0
+offset_bottom = 30.0
+text = "Stud Type"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlljumpToggle" parent="Settings" unique_id=1785432083 instance=ExtResource("8_mipys")]
+offset_left = -243.0
+offset_top = 52.0
+offset_right = -133.0
+offset_bottom = 91.0
+
+[node name="RPCToggle" parent="Settings" unique_id=214793037 instance=ExtResource("14_5faoh")]
+offset_left = -596.0
+offset_top = 61.0
+offset_right = -455.0
+offset_bottom = 92.0
+
+[node name="RToggle" parent="Settings" unique_id=163921816 instance=ExtResource("14_ptake")]
+offset_left = -596.0
+offset_top = 103.0
+offset_right = -396.0
+offset_bottom = 134.0
+
+[node name="NFToggle" parent="Settings" unique_id=118282012 instance=ExtResource("23_2axsc")]
+offset_left = -335.0
+offset_top = 99.0
+offset_right = -133.0
+offset_bottom = 130.0
+script = ExtResource("24_wrgne")
+
+[node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
+position = Vector2(2539, 0)
+
+[node name="Back" type="Button" parent="AvatarCustom" unique_id=1981547515]
+offset_left = -570.0
+offset_top = -355.0
+offset_right = -449.0
+offset_bottom = -295.0
+theme = ExtResource("4_l72w3")
+theme_override_fonts/font = ExtResource("2_0ykhv")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+alignment = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AvatarCustom" unique_id=519592603]
+offset_top = -269.0
+offset_right = 417.0
+offset_bottom = 505.0
+
+[node name="HeadRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=141435309]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/HeadRow" unique_id=1364609920]
+layout_mode = 2
+text = "Head color:"
+
+[node name="head" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/HeadRow" unique_id=2101495266]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="TorsoRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=220887813]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/TorsoRow" unique_id=122244041]
+layout_mode = 2
+text = "Torso color:"
+
+[node name="torso" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/TorsoRow" unique_id=1800295999]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="LeftArmRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=1534101169]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/LeftArmRow" unique_id=1195080106]
+layout_mode = 2
+text = "Left Arm color:"
+
+[node name="left_arm" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/LeftArmRow" unique_id=1161515155]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="RightArmRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=427476715]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/RightArmRow" unique_id=640877830]
+layout_mode = 2
+text = "Right Arm color:"
+
+[node name="right_arm" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/RightArmRow" unique_id=660041187]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="LeftLegRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=521700655]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/LeftLegRow" unique_id=231310304]
+layout_mode = 2
+text = "Left Leg color:"
+
+[node name="left_leg" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/LeftLegRow" unique_id=1848019659]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="RightLegRow" type="HBoxContainer" parent="AvatarCustom/VBoxContainer" unique_id=92480307]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AvatarCustom/VBoxContainer/RightLegRow" unique_id=427697439]
+layout_mode = 2
+text = "Right Leg color:"
+
+[node name="right_leg" type="ColorPickerButton" parent="AvatarCustom/VBoxContainer/RightLegRow" unique_id=1491178475]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="AvatarCustom" unique_id=1384360897]
+offset_left = 15.0
+offset_top = -48.0
+offset_right = 363.37778
+offset_bottom = 196.0
+
+[node name="SubViewport" type="SubViewport" parent="AvatarCustom/SubViewportContainer" unique_id=2007702056]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(348, 244)
+render_target_update_mode = 4
+
+[node name="CharacterAvatar" parent="AvatarCustom/SubViewportContainer/SubViewport" unique_id=65602991 instance=ExtResource("12_bky6r")]
+
+[node name="Camera3D" type="Camera3D" parent="AvatarCustom/SubViewportContainer/SubViewport" unique_id=1926858213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5819216)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="AvatarCustom/SubViewportContainer/SubViewport" unique_id=823543101]
+light_energy = 0.5
+sky_mode = 1
+
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Main/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main/Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="Main/Panel/Open Location" to="Main/Panel/Open Location" method="_on_pressed"]
+[connection signal="pressed" from="Main/Panel/Reload" to="Main/Panel/Reload" method="_on_pressed"]
+[connection signal="meta_clicked" from="Main/Version" to="Main/Version" method="_on_meta_clicked"]
+[connection signal="pressed" from="Help/Discord" to="Help/Discord" method="_on_pressed"]
+[connection signal="pressed" from="Help/Youtube" to="Help/Youtube" method="_on_pressed"]
+[connection signal="pressed" from="Help/Github" to="Help/Github" method="_on_pressed"]
+[connection signal="pressed" from="Help/Itch" to="Help/Itch" method="_on_pressed"]
+[connection signal="pressed" from="Help/Back2" to="." method="_on_return_to_main_pressed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_return_to_main_pressed"]
+[connection signal="pressed" from="Settings/Avatar" to="." method="_on_avatar_pressed"]
+[connection signal="item_selected" from="Settings/RendererSwitcher" to="Settings/RendererSwitcher" method="_on_item_selected"]
+[connection signal="item_selected" from="Settings/StudSwitcher" to="Settings/StudSwitcher" method="_on_item_selected"]
+[connection signal="pressed" from="AvatarCustom/Back" to="." method="_on_return_to_settings_pressed"]

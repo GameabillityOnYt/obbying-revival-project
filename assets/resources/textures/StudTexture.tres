@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bhjjorrv2iufc"]
+
+[ext_resource type="Shader" uid="uid://b85tmyn414mvx" path="res://assets/resources/shaders/TextureRepeating.gdshader" id="1_v7nkk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_v7nkk")

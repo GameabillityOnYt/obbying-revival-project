@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ds5ohh0dceogp"]
+
+[ext_resource type="Shader" uid="uid://b85tmyn414mvx" path="res://assets/resources/shaders/TextureRepeating.gdshader" id="1_hhwbl"]
+[ext_resource type="Texture2D" uid="uid://b6hgmg04vmj57" path="res://assets/images/textures/Tile2.png" id="2_wljxp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yqgb3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6ld6"]
+render_priority = 0
+shader = ExtResource("1_hhwbl")
+shader_parameter/base_color = Color(0.48962194, 0.48962235, 0.48962206, 1)
+shader_parameter/albedo_texture = ExtResource("2_wljxp")
+shader_parameter/tiling_scale = Vector2(0.5, 0.5)
+shader_parameter/sharpness = 10.000000475
+shader_parameter/transparency = 0.8999999798832
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3nosk"]
+material = SubResource("ShaderMaterial_c6ld6")
+
+[node name="Cylinder" type="RigidBody3D" unique_id=360271298]
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=95344513]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_yqgb3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=663752872]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_3nosk")

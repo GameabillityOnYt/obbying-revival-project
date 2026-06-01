@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c7hfvnl3sa42h"]
+
+[ext_resource type="Shader" uid="uid://b85tmyn414mvx" path="res://assets/resources/shaders/TextureRepeating.gdshader" id="1_hhwbl"]
+[ext_resource type="Texture2D" uid="uid://b6hgmg04vmj57" path="res://assets/images/textures/Tile2.png" id="2_wljxp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qt77s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mtoc4"]
+render_priority = 0
+shader = ExtResource("1_hhwbl")
+shader_parameter/base_color = Color(0.48962194, 0.48962235, 0.48962206, 1)
+shader_parameter/albedo_texture = ExtResource("2_wljxp")
+shader_parameter/tiling_scale = Vector2(0.5, 0.5)
+shader_parameter/sharpness = 10.000000475
+shader_parameter/transparency = 0.8999999798832
+
+[sub_resource type="PrismMesh" id="PrismMesh_2l4am"]
+material = SubResource("ShaderMaterial_mtoc4")
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=649986576]
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1515123851]
+shape = SubResource("ConvexPolygonShape3D_qt77s")
+debug_fill = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1952371112]
+cast_shadow = 0
+mesh = SubResource("PrismMesh_2l4am")

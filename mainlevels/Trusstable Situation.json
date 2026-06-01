@@ -1,0 +1,3008 @@
+{
+    "Difficulty": "8",
+    "Data": {
+        "Children": [
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 5.024900913238525,
+                        "X": -197.9874267578125,
+                        "Z": 376
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 12.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 358.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 7,
+                        "Z": 2.9999871253967285
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 1.5,
+                        "X": -198,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 12,
+                        "Z": 12
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 26.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 13.024901390075684,
+                        "X": -198.0125732421875,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2.9999871253967285
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 9.024901390075684,
+                        "X": -197.9874267578125,
+                        "Z": 376
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 28.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.21960784494876862,
+                        "G": 0.7215686440467834,
+                        "R": 0.9372549057006836
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -194,
+                        "Z": 395.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 4.25,
+                        "X": -203.75,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 0.5,
+                        "X": 0.5,
+                        "Z": 11
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 64.02490234375,
+                        "X": -217,
+                        "Z": 319.875
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 0.9999997615814209,
+                        "X": -197.9874267578125,
+                        "Z": 376
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 37.02490234375,
+                        "X": -218.5,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 21,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 12.565581321716309,
+                        "X": -198.0125732421875,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 3.08135986328125,
+                        "X": 2,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.18039216101169586,
+                        "G": 0.29019609093666077,
+                        "R": 0.3019607961177826
+                    },
+                    "Position": {
+                        "Y": 51.02490234375,
+                        "X": -217,
+                        "Z": 334.5
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.24313725531101227,
+                        "G": 0.4156862795352936,
+                        "R": 0.4117647111415863
+                    },
+                    "Position": {
+                        "Y": 4.5,
+                        "X": -194,
+                        "Z": 395.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 4.25,
+                        "X": -192.25,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 0.5,
+                        "X": 0.5,
+                        "Z": 11
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.3921568691730499,
+                        "G": 0.7843137383460999,
+                        "R": 0.7843137383460999
+                    },
+                    "Position": {
+                        "Y": 48.5254020690918,
+                        "X": -198,
+                        "Z": 332.75
+                    },
+                    "Size": {
+                        "Y": 0.0010000000474974513,
+                        "X": 2,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 3.25,
+                        "X": -203.75,
+                        "Z": 397.25
+                    },
+                    "Size": {
+                        "Y": 2.5,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 57.02490234375,
+                        "X": -216.9874267578125,
+                        "Z": 337
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": -0.5,
+                        "X": -198,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 8,
+                        "Z": 8
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 37.02490234375,
+                        "X": -197,
+                        "Z": 332.5
+                    },
+                    "Size": {
+                        "Y": 23,
+                        "X": 12,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 14.524901390075684,
+                        "X": -198.0125732421875,
+                        "Z": 360.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 0.9999871253967285
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": -0.5000002384185791,
+                        "X": -197.974853515625,
+                        "Z": 376
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.41960784792900085,
+                        "G": 0.6823529601097107,
+                        "R": 0.7058823704719543
+                    },
+                    "Position": {
+                        "Y": 46.27490234375,
+                        "X": -197.9874267578125,
+                        "Z": 348.25
+                    },
+                    "Size": {
+                        "Y": 0.5,
+                        "X": 0.5,
+                        "Z": 1.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 3.25,
+                        "X": -192.25,
+                        "Z": 385.75
+                    },
+                    "Size": {
+                        "Y": 2.5,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 45.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 63.02490234375,
+                        "X": -216.9874267578125,
+                        "Z": 337
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 37.02490234375,
+                        "X": -194,
+                        "Z": 333.5
+                    },
+                    "Size": {
+                        "Y": 23,
+                        "X": 6,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 22.02490234375,
+                        "X": -198,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.24705882370471954,
+                        "G": 0.4000000059604645,
+                        "R": 0.4156862795352936
+                    },
+                    "Position": {
+                        "Y": 30.52490234375,
+                        "X": -198.0125732421875,
+                        "Z": 357.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 4.999993324279785,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.41960784792900085,
+                        "G": 0.6823529601097107,
+                        "R": 0.7058823704719543
+                    },
+                    "Position": {
+                        "Y": 46.27490234375,
+                        "X": -197.9874267578125,
+                        "Z": 350.75
+                    },
+                    "Size": {
+                        "Y": 0.5,
+                        "X": 4,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 44.27490234375,
+                        "X": -210,
+                        "Z": 331.5
+                    },
+                    "Size": {
+                        "Y": 37.5,
+                        "X": 4,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": -1.250000238418579,
+                        "X": -197.974853515625,
+                        "Z": 376
+                    },
+                    "Size": {
+                        "Y": 0.5,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 15.396942138671875,
+                        "X": -194.75,
+                        "Z": 379.25
+                    },
+                    "Size": {
+                        "Y": 2.58135986328125,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 31.02490234375,
+                        "X": -201.0125732421875,
+                        "Z": 357.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999934434890747,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 16.396942138671875,
+                        "X": -198,
+                        "Z": 379.25
+                    },
+                    "Size": {
+                        "Y": 0.58135986328125,
+                        "X": 6,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 37.02490234375,
+                        "X": -214,
+                        "Z": 333.5
+                    },
+                    "Size": {
+                        "Y": 23,
+                        "X": 8,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 32.52490234375,
+                        "X": -198.0125732421875,
+                        "Z": 357.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 4.999993324279785,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 63.02490234375,
+                        "X": -217,
+                        "Z": 313.375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 34.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 63.02490234375,
+                        "X": -217,
+                        "Z": 319.375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 16.396942138671875,
+                        "X": -194.75,
+                        "Z": 376.5
+                    },
+                    "Size": {
+                        "Y": 0.58135986328125,
+                        "X": 0.5,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0,
+                        "G": 0,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 65.02490234375,
+                        "X": -217,
+                        "Z": 313.375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 4,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 44.27490234375,
+                        "X": -205.625,
+                        "Z": 333
+                    },
+                    "Size": {
+                        "Y": 37.5,
+                        "X": 2,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.3921568691730499,
+                        "G": 0.7843137383460999,
+                        "R": 0.7843137383460999
+                    },
+                    "Position": {
+                        "Y": 33.0254020690918,
+                        "X": -198.0125732421875,
+                        "Z": 358.5
+                    },
+                    "Size": {
+                        "Y": 0.0010000000474974513,
+                        "X": 6,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 11.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 358.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6,
+                        "Z": 1.9999871253967285
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 31.02490234375,
+                        "X": -195.0125732421875,
+                        "Z": 357.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999934434890747,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 23.02490234375,
+                        "X": -198.0125732421875,
+                        "Z": 359
+                    },
+                    "Size": {
+                        "Y": 20,
+                        "X": 7,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 21.02490234375,
+                        "X": -195.7625732421875,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 16,
+                        "X": 2.499993324279785,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.41960784792900085,
+                        "G": 0.6823529601097107,
+                        "R": 0.7058823704719543
+                    },
+                    "Position": {
+                        "Y": 46.27490234375,
+                        "X": -197.9874267578125,
+                        "Z": 347.25
+                    },
+                    "Size": {
+                        "Y": 0.5,
+                        "X": 4,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 43.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 349
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 5,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 36.02490234375,
+                        "X": -198,
+                        "Z": 349
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 6.5,
+                        "X": -194,
+                        "Z": 395.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 15.396942138671875,
+                        "X": -201.25,
+                        "Z": 373.75
+                    },
+                    "Size": {
+                        "Y": 2.58135986328125,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 43.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 37.02490234375,
+                        "X": -201,
+                        "Z": 333.5
+                    },
+                    "Size": {
+                        "Y": 23,
+                        "X": 4,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 69.52490234375,
+                        "X": -217,
+                        "Z": 322.3245849609375
+                    },
+                    "Size": {
+                        "Y": 10,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 38.02490234375,
+                        "X": -198,
+                        "Z": 349
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 11.024901390075684,
+                        "X": -198,
+                        "Z": 374.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 15.396942138671875,
+                        "X": -201.25,
+                        "Z": 379.25
+                    },
+                    "Size": {
+                        "Y": 2.58135986328125,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 47.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "SpawnLocation",
+                "ClassName": "Spawn",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.23529411852359772,
+                        "G": 0.4627451002597809,
+                        "R": 0.21960784494876862
+                    },
+                    "Position": {
+                        "Y": 2.5,
+                        "X": -198,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.41960784792900085,
+                        "G": 0.6823529601097107,
+                        "R": 0.7058823704719543
+                    },
+                    "Position": {
+                        "Y": 46.27490234375,
+                        "X": -197.9874267578125,
+                        "Z": 349.25
+                    },
+                    "Size": {
+                        "Y": 0.5,
+                        "X": 4,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 15.396942138671875,
+                        "X": -194.75,
+                        "Z": 373.75
+                    },
+                    "Size": {
+                        "Y": 2.58135986328125,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 4.25,
+                        "X": -198,
+                        "Z": 397.25
+                    },
+                    "Size": {
+                        "Y": 0.5,
+                        "X": 11,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 3.25,
+                        "X": -203.75,
+                        "Z": 385.75
+                    },
+                    "Size": {
+                        "Y": 2.5,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 27.02490234375,
+                        "X": -198.0125732421875,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 1.9999933242797852,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 21.02490234375,
+                        "X": -200.2625732421875,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 16,
+                        "X": 2.499993324279785,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 7.024901390075684,
+                        "X": -197.9874267578125,
+                        "Z": 376
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.24313725531101227,
+                        "G": 0.4156862795352936,
+                        "R": 0.4117647111415863
+                    },
+                    "Position": {
+                        "Y": 4.5,
+                        "X": -202,
+                        "Z": 395.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 37.024898529052734,
+                        "X": -188,
+                        "Z": 333.5
+                    },
+                    "Size": {
+                        "Y": 21,
+                        "X": 6,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 34.02490234375,
+                        "X": -198,
+                        "Z": 349
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 6.5,
+                        "X": -202,
+                        "Z": 395.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 43.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 349
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 6,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 24.02490234375,
+                        "X": -198,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 36.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 13.024901390075684,
+                        "X": -198,
+                        "Z": 374.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 12.065581321716309,
+                        "X": -195.75,
+                        "Z": 376.5
+                    },
+                    "Size": {
+                        "Y": 4.08135986328125,
+                        "X": 2.5,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 11.524901390075684,
+                        "X": -198.0125732421875,
+                        "Z": 361
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 2.9999871253967285
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 59.02490234375,
+                        "X": -217,
+                        "Z": 334.5
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 20.02490234375,
+                        "X": -198,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.3921568691730499,
+                        "G": 0.7843137383460999,
+                        "R": 0.7843137383460999
+                    },
+                    "Position": {
+                        "Y": 48.5254020690918,
+                        "X": -214,
+                        "Z": 333.5
+                    },
+                    "Size": {
+                        "Y": 0.0010000000474974513,
+                        "X": 7,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 12.065581321716309,
+                        "X": -200.2625732421875,
+                        "Z": 376.5
+                    },
+                    "Size": {
+                        "Y": 4.08135986328125,
+                        "X": 2.5,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 16.396942138671875,
+                        "X": -201.25,
+                        "Z": 376.5
+                    },
+                    "Size": {
+                        "Y": 0.58135986328125,
+                        "X": 0.5,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 41.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 38.02490234375,
+                        "X": -198,
+                        "Z": 333.75
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 3.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 61.02490234375,
+                        "X": -216.9874267578125,
+                        "Z": 337
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.3921568691730499,
+                        "G": 0.7843137383460999,
+                        "R": 0.7843137383460999
+                    },
+                    "Position": {
+                        "Y": 14.10676097869873,
+                        "X": -198,
+                        "Z": 376.5
+                    },
+                    "Size": {
+                        "Y": 0.0010000000474974513,
+                        "X": 5,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 40.02490234375,
+                        "X": -198,
+                        "Z": 349
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 45.02490234375,
+                        "X": -208.5,
+                        "Z": 335.5
+                    },
+                    "Size": {
+                        "Y": 39,
+                        "X": 19,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.21960784494876862,
+                        "G": 0.7215686440467834,
+                        "R": 0.9372549057006836
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -202,
+                        "Z": 395.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 0.5,
+                        "X": -198,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 10,
+                        "Z": 10
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 3.25,
+                        "X": -192.25,
+                        "Z": 397.25
+                    },
+                    "Size": {
+                        "Y": 2.5,
+                        "X": 0.5,
+                        "Z": 0.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 59.02490234375,
+                        "X": -216.9874267578125,
+                        "Z": 337
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 32.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 2.999999761581421,
+                        "X": -197.9874267578125,
+                        "Z": 376
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 30.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 64.02490234375,
+                        "X": -217,
+                        "Z": 313.375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.3921568691730499,
+                        "G": 0.7843137383460999,
+                        "R": 0.7843137383460999
+                    },
+                    "Position": {
+                        "Y": 48.5254020690918,
+                        "X": -194.25,
+                        "Z": 333.5
+                    },
+                    "Size": {
+                        "Y": 0.0010000000474974513,
+                        "X": 5.5,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 14.02490234375,
+                        "X": -198,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.3921568691730499,
+                        "G": 0.7843137383460999,
+                        "R": 0.7843137383460999
+                    },
+                    "Position": {
+                        "Y": 48.5254020690918,
+                        "X": -200.75,
+                        "Z": 333.5
+                    },
+                    "Size": {
+                        "Y": 0.0010000000474974513,
+                        "X": 3.5,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 10.534194946289062,
+                        "X": -198,
+                        "Z": 377.25
+                    },
+                    "Size": {
+                        "Y": 0.9814128875732422,
+                        "X": 7,
+                        "Z": 4.5
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.3921568691730499,
+                        "G": 0.7843137383460999,
+                        "R": 0.7843137383460999
+                    },
+                    "Position": {
+                        "Y": 2.000499963760376,
+                        "X": -198,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 0.0010000000474974513,
+                        "X": 9,
+                        "Z": 9
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.5764706134796143,
+                        "G": 0.9411764740943909,
+                        "R": 0.9686274528503418
+                    },
+                    "Position": {
+                        "Y": 75.02490234375,
+                        "X": -217,
+                        "Z": 322.3245849609375
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 16.02490234375,
+                        "X": -198,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 39.52490234375,
+                        "X": -197.9874267578125,
+                        "Z": 334
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 18.02490234375,
+                        "X": -198,
+                        "Z": 358
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2.0251502990722656,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Trusstable Situation",
+                "Children": []
+            }
+        ],
+        "Name": "Obby",
+        "ObbyName": "Trusstable Situation",
+        "ClassName": "Folder"
+    },
+    "ObbyName": "Trusstable Situation",
+    "Creator": "Gameabillity"
+}

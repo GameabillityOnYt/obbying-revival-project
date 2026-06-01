@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dsdlq7h2hl07f"]
-
-[ext_resource type="PackedScene" uid="uid://bnmpwwl2t8vuh" path="res://assets/models/spawn.glb" id="1_yox4t"]
-
-[node name="SpawnLocation" type="Node3D" unique_id=1382143773 groups=["SpawnLocation", "enabled"]]
-
-[node name="spawn" parent="." unique_id=729049416 groups=["enabled"] instance=ExtResource("1_yox4t")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

@@ -1,0 +1,4 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://b1t88d5tljepx"]
+
+[resource]
+bus/0/mute = true

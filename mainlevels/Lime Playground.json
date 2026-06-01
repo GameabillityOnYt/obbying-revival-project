@@ -1,0 +1,4156 @@
+{
+    "Difficulty": "1",
+    "Data": {
+        "Children": [
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -154.5,
+                        "Z": 279.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0,
+                        "G": 0,
+                        "R": 1
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -157.5,
+                        "Z": 271.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6.999996185302734,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -154.5,
+                        "Z": 281.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -154.5,
+                        "Z": 283.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 41.5,
+                        "X": -157.5,
+                        "Z": 271.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 14.999996185302734,
+                        "Z": 15
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 46.5,
+                        "X": -154.5,
+                        "Z": 282.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6.999996185302734,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -154.5,
+                        "Z": 285.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 45.5,
+                        "X": -154.5,
+                        "Z": 286.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -154.5,
+                        "Z": 286.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44.5,
+                        "X": -154.5,
+                        "Z": 288
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -154.5,
+                        "Z": 288.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -154.5,
+                        "Z": 290.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -154.5,
+                        "Z": 292.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -154.5,
+                        "Z": 294.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -154.5,
+                        "Z": 296.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.18431372940540314,
+                        "G": 0.3843137323856354,
+                        "R": 0.0313725508749485
+                    },
+                    "Position": {
+                        "Y": 2.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 19,
+                        "Z": 19
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.23529411852359772,
+                        "G": 0.47843137383461,
+                        "R": 0.03921568766236305
+                    },
+                    "Position": {
+                        "Y": 3.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 17,
+                        "Z": 17
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 6,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 15,
+                        "Z": 15
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 7.5,
+                        "X": -195,
+                        "Z": 389.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6,
+                        "Z": 9
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 8.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 9,
+                        "Z": 9
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 15,
+                        "X": -192.5,
+                        "Z": 404.5
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 21.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 9,
+                        "Z": 9
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 22.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 7,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 23.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 24.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 25.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 15,
+                        "X": -192.5,
+                        "Z": 398.5
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 15,
+                        "X": -198.5,
+                        "Z": 398.5
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 15,
+                        "X": -198.5,
+                        "Z": 404.5
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 7.5,
+                        "X": -195.5,
+                        "Z": 378
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 8
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 13.5,
+                        "X": -195.5,
+                        "Z": 374.5
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.22745098173618317,
+                        "G": 0.47058823704719543,
+                        "R": 0.03921568766236305
+                    },
+                    "Position": {
+                        "Y": 20.5,
+                        "X": -195.5,
+                        "Z": 374.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.2980392277240753,
+                        "G": 0.6039215922355652,
+                        "R": 0.05098039284348488
+                    },
+                    "Position": {
+                        "Y": 19.5,
+                        "X": -195.5,
+                        "Z": 374.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 7.5,
+                        "X": -187,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 4.999992370605469,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 8.5,
+                        "X": -186.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9.5,
+                        "X": -186,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 12.5,
+                        "X": -192.5,
+                        "Z": 389.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 9
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 10,
+                        "X": -192.5,
+                        "Z": 385.5
+                    },
+                    "Size": {
+                        "Y": 6,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 10,
+                        "X": -192.5,
+                        "Z": 393.5
+                    },
+                    "Size": {
+                        "Y": 6,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9.5,
+                        "X": -192.5,
+                        "Z": 387.5
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9.5,
+                        "X": -192.5,
+                        "Z": 389.5
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9.5,
+                        "X": -192.5,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 12.5,
+                        "X": -197.5,
+                        "Z": 389.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 9
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 10,
+                        "X": -197.5,
+                        "Z": 393.5
+                    },
+                    "Size": {
+                        "Y": 6,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9.5,
+                        "X": -197.5,
+                        "Z": 391.5
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9.5,
+                        "X": -197.5,
+                        "Z": 389.5
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 10,
+                        "X": -197.5,
+                        "Z": 385.5
+                    },
+                    "Size": {
+                        "Y": 6,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9.5,
+                        "X": -197.5,
+                        "Z": 387.5
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9,
+                        "X": -178.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 5,
+                        "Z": 14
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 18,
+                        "X": -182,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.18431372940540314,
+                        "G": 0.3843137323856354,
+                        "R": 0.0313725508749485
+                    },
+                    "Position": {
+                        "Y": 1.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 15,
+                        "Z": 15
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 12,
+                        "X": -172.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 9,
+                        "X": -172,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 18,
+                        "X": -172.5,
+                        "Z": 375.25
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1.5,
+                        "Z": 1.9999971389770508
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 14,
+                        "X": -172.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 16,
+                        "X": -172.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 22,
+                        "X": -172.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 20,
+                        "X": -172.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 18,
+                        "X": -172.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 24,
+                        "X": -172.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 18,
+                        "X": -172.5,
+                        "Z": 378.75
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1.5,
+                        "Z": 1.9999971389770508
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 16,
+                        "X": -166.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 18,
+                        "X": 4.999996185302734,
+                        "Z": 10.99999713897705
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 32,
+                        "X": -166.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 6.999996185302734,
+                        "Z": 0.9999971389770508
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 13.5,
+                        "X": -155.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 13,
+                        "X": 4.999996185302734,
+                        "Z": 10.99999713897705
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 21.5,
+                        "X": -160.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 4.999996185302734,
+                        "Z": 0.9999971389770508
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 20.5,
+                        "X": -159.5,
+                        "Z": 377
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 4.999996185302734,
+                        "Z": 0.9999971389770508
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 13.5,
+                        "X": -152.5,
+                        "Z": 363.75
+                    },
+                    "Size": {
+                        "Y": 13,
+                        "X": 21.499996185302734,
+                        "Z": 4.999997138977051
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 27,
+                        "X": -152.5,
+                        "Z": 363
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 0.9999961853027344,
+                        "Z": 4.999997138977051
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 21,
+                        "X": -152.5,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 25,
+                        "X": -152.5,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 23,
+                        "X": -152.5,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 27,
+                        "X": -152.5,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 29,
+                        "X": -152.5,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 31,
+                        "X": -152.5,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 33,
+                        "X": -152.5,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 27,
+                        "X": -150.75,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1.9999961853027344,
+                        "Z": 1.4999916553497314
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 27,
+                        "X": -154.25,
+                        "Z": 361.5
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1.9999961853027344,
+                        "Z": 1.4999916553497314
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -152.5,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 46,
+                        "X": -152.5,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 48,
+                        "X": -152.5,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -152.5,
+                        "Z": 353.5
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 0.9999961853027344,
+                        "Z": 4.999997138977051
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 40,
+                        "X": -152.5,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -152.5,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -154.25003051757812,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1.9999961853027344,
+                        "Z": 1.4999916553497314
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -150.74996948242188,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1.9999961853027344,
+                        "Z": 1.4999916553497314
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 38,
+                        "X": -152.5,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 180
+                    },
+                    "Color": {
+                        "B": 0.4117647111415863,
+                        "G": 0.364705890417099,
+                        "R": 0.35686275362968445
+                    },
+                    "Position": {
+                        "Y": 36,
+                        "X": -152.5,
+                        "Z": 355
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 27.5,
+                        "X": -152.5,
+                        "Z": 354.5
+                    },
+                    "Size": {
+                        "Y": 15,
+                        "X": 2.9999961853027344,
+                        "Z": 4.999997138977051
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 21.5,
+                        "X": -152.5,
+                        "Z": 346
+                    },
+                    "Size": {
+                        "Y": 29,
+                        "X": 13.999996185302734,
+                        "Z": 4.999997138977051
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 34.5,
+                        "X": -149.5,
+                        "Z": 347.5
+                    },
+                    "Size": {
+                        "Y": 55,
+                        "X": 16.99999237060547,
+                        "Z": 0.9999973773956299
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 34.5,
+                        "X": -155.50003051757812,
+                        "Z": 347.5
+                    },
+                    "Size": {
+                        "Y": 55,
+                        "X": 16.99999237060547,
+                        "Z": 0.9999973773956299
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 60.5,
+                        "X": -152.5,
+                        "Z": 347.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 16.99999237060547,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 37.5,
+                        "X": -152.50001525878906,
+                        "Z": 346.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 49.999996185302734,
+                        "X": -152.50001525878906,
+                        "Z": 341.5000305175781
+                    },
+                    "Size": {
+                        "Y": 18,
+                        "X": 4.999965667724609,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 50.5,
+                        "X": -152.50001525878906,
+                        "Z": 350.0000305175781
+                    },
+                    "Size": {
+                        "Y": 17,
+                        "X": 1.9999961853027344,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 21.5,
+                        "X": -152.5,
+                        "Z": 332
+                    },
+                    "Size": {
+                        "Y": 29,
+                        "X": 13.999996185302734,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 43,
+                        "X": -152.5,
+                        "Z": 331.5
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1.9999961853027344,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 37.5,
+                        "X": -152.5,
+                        "Z": 326.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 2.9999961853027344,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 24.5,
+                        "X": -152.5,
+                        "Z": 319.5
+                    },
+                    "Size": {
+                        "Y": 35,
+                        "X": 2.9999961853027344,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 24.5,
+                        "X": -157.5,
+                        "Z": 311.5
+                    },
+                    "Size": {
+                        "Y": 35,
+                        "X": 2.9999961853027344,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 48.5,
+                        "X": -157.5,
+                        "Z": 312.5
+                    },
+                    "Size": {
+                        "Y": 13,
+                        "X": 0.9999961853027344,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 41.5,
+                        "X": -157.5,
+                        "Z": 306.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6.999996185302734,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 40.5,
+                        "X": -157.5,
+                        "Z": 301
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3.9999961853027344,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 39.5,
+                        "X": -157.5,
+                        "Z": 294.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 8.999996185302734,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 41.5,
+                        "X": -159.5,
+                        "Z": 310.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 41.5,
+                        "X": -155.5,
+                        "Z": 310.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 40.5,
+                        "X": -157.5,
+                        "Z": 288
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3.9999961853027344,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 41.5,
+                        "X": -157.5,
+                        "Z": 282.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6.999996185302734,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 46.5,
+                        "X": -160.5,
+                        "Z": 282.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6.999996185302734,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -160.5,
+                        "Z": 279.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -160.5,
+                        "Z": 281.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -160.5,
+                        "Z": 283.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -160.5,
+                        "Z": 285.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -160.5,
+                        "Z": 296.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44.5,
+                        "X": -160.5,
+                        "Z": 294.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 8.999996185302734,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -160.5,
+                        "Z": 292.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -160.5,
+                        "Z": 294.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -160.5,
+                        "Z": 290.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -160.5,
+                        "Z": 298.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -160.5,
+                        "Z": 288.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -160.5,
+                        "Z": 286.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44.5,
+                        "X": -160.5,
+                        "Z": 288
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 45.5,
+                        "X": -160.5,
+                        "Z": 286.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44.5,
+                        "X": -160.5,
+                        "Z": 301
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -160.5,
+                        "Z": 302.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -160.5,
+                        "Z": 300.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 46.5,
+                        "X": -160.5,
+                        "Z": 306.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6.999996185302734,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -160.5,
+                        "Z": 303.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -160.5,
+                        "Z": 305.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -160.5,
+                        "Z": 307.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -160.5,
+                        "Z": 309.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 45.5,
+                        "X": -160.5,
+                        "Z": 302.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -154.5,
+                        "Z": 309.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 46.5,
+                        "X": -154.5,
+                        "Z": 306.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6.999996185302734,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -154.5,
+                        "Z": 307.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -154.5,
+                        "Z": 305.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44,
+                        "X": -154.5,
+                        "Z": 303.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 45.5,
+                        "X": -154.5,
+                        "Z": 302.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44.5,
+                        "X": -154.5,
+                        "Z": 301
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -154.5,
+                        "Z": 302.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42.5,
+                        "X": -154.5,
+                        "Z": 300.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 44.5,
+                        "X": -154.5,
+                        "Z": 294.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 8.999996185302734,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.4274509847164154,
+                        "G": 0.8392156958580017,
+                        "R": 0.07058823853731155
+                    },
+                    "Position": {
+                        "Y": 42,
+                        "X": -154.5,
+                        "Z": 298.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 0.9999961853027344,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.18431372940540314,
+                        "G": 0.3843137323856354,
+                        "R": 0.0313725508749485
+                    },
+                    "Position": {
+                        "Y": 0.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 13,
+                        "Z": 13
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.18431372940540314,
+                        "G": 0.3843137323856354,
+                        "R": 0.0313725508749485
+                    },
+                    "Position": {
+                        "Y": -4,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 9,
+                        "Z": 9
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.18431372940540314,
+                        "G": 0.3843137323856354,
+                        "R": 0.0313725508749485
+                    },
+                    "Position": {
+                        "Y": -12,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 4,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.18431372940540314,
+                        "G": 0.3843137323856354,
+                        "R": 0.0313725508749485
+                    },
+                    "Position": {
+                        "Y": -20,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            },
+            {
+                "Name": "SpawnLocation",
+                "ClassName": "Spawn",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.23529411852359772,
+                        "G": 0.4627451002597809,
+                        "R": 0.21960784494876862
+                    },
+                    "Position": {
+                        "Y": 9.5,
+                        "X": -195.5,
+                        "Z": 401.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Lime Playground",
+                "Children": []
+            }
+        ],
+        "Name": "Obby",
+        "ObbyName": "Lime Playground",
+        "ClassName": "Folder"
+    },
+    "ObbyName": "Lime Playground",
+    "Creator": "Gameabillity"
+}

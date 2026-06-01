@@ -1,0 +1,3596 @@
+{
+    "Difficulty": "5",
+    "Data": {
+        "Children": [
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -191,
+                        "Z": 470.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 6,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 17.5,
+                        "X": -173,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 8,
+                        "Z": 8
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -2,
+                        "X": -181,
+                        "Z": 444
+                    },
+                    "Size": {
+                        "Y": 24,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -214,
+                        "Z": 449.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 11,
+                        "X": -190.5,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 18,
+                        "X": 4,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 2.5,
+                        "X": -214.5,
+                        "Z": 424
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -1.5000014305114746,
+                        "X": -191.5,
+                        "Z": 468
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -192.5,
+                        "Z": 447.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -1.0000014305114746,
+                        "X": -199,
+                        "Z": 466.5
+                    },
+                    "Size": {
+                        "Y": 26,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 5,
+                        "X": -189,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 19,
+                        "X": -181,
+                        "Z": 438
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -26.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 45,
+                        "Z": 45
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -202.5,
+                        "Z": 444
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 11,
+                        "X": -181,
+                        "Z": 438
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 1.500004768371582,
+                        "X": -184.5,
+                        "Z": 471.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -198.5,
+                        "Z": 468.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 89.94400024414062,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -192.5,
+                        "Z": 437
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 2.9999990463256836,
+                        "X": -191.5,
+                        "Z": 464.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 1,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 17,
+                        "X": -181,
+                        "Z": 438
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -6,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 16,
+                        "X": 7,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -8.5,
+                        "X": -196,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -5,
+                        "X": -203.5,
+                        "Z": 436.5
+                    },
+                    "Size": {
+                        "Y": 18,
+                        "X": 1,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -39.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 15,
+                        "X": 43,
+                        "Z": 43
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 9,
+                        "X": -189,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 13,
+                        "X": -181,
+                        "Z": 438
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 15,
+                        "X": -181,
+                        "Z": 438
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 11.499998092651367,
+                        "X": -199,
+                        "Z": 468.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 83.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 23,
+                        "X": 39,
+                        "Z": 39
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -174.50003051757812,
+                        "Z": 473
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 6.5,
+                        "X": -193,
+                        "Z": 439.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 4,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 18.500003814697266,
+                        "X": -208.5,
+                        "Z": 454.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 12.5,
+                        "X": -170.5,
+                        "Z": 450.5
+                    },
+                    "Size": {
+                        "Y": 9,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 2.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 7,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -201.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 5,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -203.5,
+                        "Z": 460.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 1,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 13,
+                        "X": -194,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 4,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -3.000000476837158,
+                        "X": -199,
+                        "Z": 472
+                    },
+                    "Size": {
+                        "Y": 22,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -3.5,
+                        "X": -173,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 21,
+                        "X": 8,
+                        "Z": 8
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 8.000004768371582,
+                        "X": -200,
+                        "Z": 460
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 89.88300323486328,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -10,
+                        "X": -185.5,
+                        "Z": 453.5
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -3.5,
+                        "X": -212.00001525878906,
+                        "Z": 457.5
+                    },
+                    "Size": {
+                        "Y": 21,
+                        "X": 2,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -204,
+                        "Z": 425
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 12.499998092651367,
+                        "X": -199,
+                        "Z": 468.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -198.5,
+                        "Z": 458.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 1,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 18.5,
+                        "X": -208.5,
+                        "Z": 458.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 1,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 4,
+                        "X": -210.5,
+                        "Z": 425
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 3,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 6.000004768371582,
+                        "X": -202,
+                        "Z": 460
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -207,
+                        "Z": 425
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -184.5,
+                        "Z": 469.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 3,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 89.88300323486328,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -6.5,
+                        "X": -185.5,
+                        "Z": 452
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 7,
+                        "X": -181,
+                        "Z": 438
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -196.5,
+                        "Z": 461.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -183.5,
+                        "Z": 437.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -8.5,
+                        "X": -197.5,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 12.5,
+                        "X": -175.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 9,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 7,
+                        "X": -185.5,
+                        "Z": 452
+                    },
+                    "Size": {
+                        "Y": 26,
+                        "X": 1,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -210.5,
+                        "Z": 474.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 7.000000953674316,
+                        "X": -191,
+                        "Z": 472
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 4.5,
+                        "X": -203.5,
+                        "Z": 436.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 17,
+                        "X": -189,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 7,
+                        "X": -189,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -4,
+                        "X": -193,
+                        "Z": 439.5
+                    },
+                    "Size": {
+                        "Y": 20,
+                        "X": 1,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 9,
+                        "X": -181,
+                        "Z": 438
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 23.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 7,
+                        "X": 47,
+                        "Z": 47
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -8.000001907348633,
+                        "X": -191.5,
+                        "Z": 468
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 13,
+                        "X": -182.5,
+                        "Z": 438.5
+                    },
+                    "Size": {
+                        "Y": 14,
+                        "X": 1,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -185.5,
+                        "Z": 456.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 1,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 8.000004768371582,
+                        "X": -202,
+                        "Z": 460
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -174.5,
+                        "Z": 443.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -17.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 7,
+                        "X": 47,
+                        "Z": 47
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -211,
+                        "Z": 449.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3.0000009536743164,
+                        "X": -181,
+                        "Z": 445.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -3.9999990463256836,
+                        "X": -191,
+                        "Z": 472
+                    },
+                    "Size": {
+                        "Y": 20,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 89.88300323486328,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -185.5,
+                        "Z": 452
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -2.5,
+                        "X": -196,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -1,
+                        "X": -184.5,
+                        "Z": 471.5
+                    },
+                    "Size": {
+                        "Y": 4,
+                        "X": 3,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 11,
+                        "X": -189,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 18.5,
+                        "X": -208.5,
+                        "Z": 462.5
+                    },
+                    "Size": {
+                        "Y": 3,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -207.5,
+                        "Z": 447.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 1,
+                        "Z": 7
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -189,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -193,
+                        "Z": 472
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 45.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 15,
+                        "X": 43,
+                        "Z": 43
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 15,
+                        "X": -189,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 12.5,
+                        "X": -175.5,
+                        "Z": 450.5
+                    },
+                    "Size": {
+                        "Y": 9,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 4.5,
+                        "X": -208.5,
+                        "Z": 446
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -172.5,
+                        "Z": 436
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 62.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 19,
+                        "X": 41,
+                        "Z": 41
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 12.5,
+                        "X": -170.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 9,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -184.5,
+                        "Z": 475.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -11.5,
+                        "X": -197.5,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 5,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -210.50001525878906,
+                        "Z": 465
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": -89.91400146484375,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -205.50003051757812,
+                        "Z": 457
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -5,
+                        "X": -208.5,
+                        "Z": 446
+                    },
+                    "Size": {
+                        "Y": 18,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -203,
+                        "Z": 439
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 4,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 10,
+                        "X": -189,
+                        "Z": 433.5
+                    },
+                    "Size": {
+                        "Y": 16,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "SpawnLocation",
+                "ClassName": "Spawn",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.23529411852359772,
+                        "G": 0.4627451002597809,
+                        "R": 0.21960784494876862
+                    },
+                    "Position": {
+                        "Y": 3.5,
+                        "X": -191.50001525878906,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 5,
+                        "Z": 5
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -209.5,
+                        "Z": 449.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -201.49996948242188,
+                        "Z": 475.0000305175781
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 16.499998092651367,
+                        "X": -199,
+                        "Z": 468.5
+                    },
+                    "Size": {
+                        "Y": 7,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 6.000004768371582,
+                        "X": -200,
+                        "Z": 460
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 7.000007629394531,
+                        "X": -202.10000610351562,
+                        "Z": 457.5
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -193.5,
+                        "Z": 449.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 17,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -183.5,
+                        "Z": 462
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 8.5,
+                        "X": -199,
+                        "Z": 472
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Truss",
+                "ClassName": "Truss",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 13,
+                        "X": -189,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 7.5,
+                        "X": -212.00001525878906,
+                        "Z": 457.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -210.5,
+                        "Z": 437
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 14,
+                        "X": -191,
+                        "Z": 472
+                    },
+                    "Size": {
+                        "Y": 12,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 19.5,
+                        "X": -173,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 4,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -56.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 19,
+                        "X": 41,
+                        "Z": 41
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 180,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 32.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 11,
+                        "X": 45,
+                        "Z": 45
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -1.0000014305114746,
+                        "X": -199,
+                        "Z": 470.5
+                    },
+                    "Size": {
+                        "Y": 26,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -170.50001525878906,
+                        "Z": 463.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.0117647061124444,
+                        "G": 0.8509804010391235,
+                        "R": 1
+                    },
+                    "Position": {
+                        "Y": 8.5,
+                        "X": -173,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 4,
+                        "Z": 4
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 2.999999523162842,
+                        "X": -196,
+                        "Z": 476.5
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 2,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -77.5,
+                        "X": -191.5,
+                        "Z": 455.5
+                    },
+                    "Size": {
+                        "Y": 23,
+                        "X": 39,
+                        "Z": 39
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 10.5,
+                        "X": -181,
+                        "Z": 444
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 18.5,
+                        "X": -173,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 6,
+                        "Z": 6
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 89.88300323486328,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -182,
+                        "Z": 448.5
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -189,
+                        "Z": 472
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 2,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": -2.4999914169311523,
+                        "X": -201,
+                        "Z": 457.5
+                    },
+                    "Size": {
+                        "Y": 23,
+                        "X": 4,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -13.5,
+                        "X": -175.5,
+                        "Z": 459
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 3,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 7.5,
+                        "X": -173,
+                        "Z": 453
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 8,
+                        "Z": 8
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 19,
+                        "X": -188.5,
+                        "Z": 435
+                    },
+                    "Size": {
+                        "Y": 2,
+                        "X": 4,
+                        "Z": 3
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": 2.500999927520752,
+                        "X": -214.5,
+                        "Z": 427
+                    },
+                    "Size": {
+                        "Y": 1,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 90,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 10,
+                        "X": -189,
+                        "Z": 436.5
+                    },
+                    "Size": {
+                        "Y": 16,
+                        "X": 1,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 89.88300323486328,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.007843137718737125,
+                        "G": 0.4588235318660736,
+                        "R": 0.7372549176216125
+                    },
+                    "Position": {
+                        "Y": -10,
+                        "X": -185.5,
+                        "Z": 450.5
+                    },
+                    "Size": {
+                        "Y": 8,
+                        "X": 1,
+                        "Z": 1
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            },
+            {
+                "Name": "Part",
+                "ClassName": "Part",
+                "Properties": {
+                    "Rotation": {
+                        "Y": 0,
+                        "X": 0,
+                        "Z": 0
+                    },
+                    "Color": {
+                        "B": 0.239215686917305,
+                        "G": 0.2078431397676468,
+                        "R": 0.2078431397676468
+                    },
+                    "Position": {
+                        "Y": 3,
+                        "X": -203.5,
+                        "Z": 434
+                    },
+                    "Size": {
+                        "Y": 34,
+                        "X": 5,
+                        "Z": 2
+                    }
+                },
+                "ObbyName": "Greenockite",
+                "Children": []
+            }
+        ],
+        "Name": "Obby",
+        "ObbyName": "Greenockite",
+        "ClassName": "Folder"
+    },
+    "ObbyName": "Greenockite",
+    "Creator": "Theorem"
+}

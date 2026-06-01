@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://duj8uanvn1sqi"]
+
+[ext_resource type="PackedScene" uid="uid://bqn7xr4afyk5h" path="res://assets/character/Character.glb" id="1_glpr6"]
+[ext_resource type="Script" uid="uid://cpxi2640mxigo" path="res://scripts/classes/character.gd" id="2_h6hlt"]
+[ext_resource type="Texture2D" uid="uid://dxitsjcobuqey" path="res://assets/character/Character_Untitled40_20260419183040.png" id="3_lgbou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjt0s"]
+transparency = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omiko"]
+resource_name = "Material.009"
+render_priority = 50
+cull_mode = 2
+albedo_texture = ExtResource("3_lgbou")
+roughness = 0.5
+
+[node name="Character" unique_id=65602991 instance=ExtResource("1_glpr6")]
+script = ExtResource("2_h6hlt")
+
+[node name="Torso" parent="ObbyAvatar/Skeleton3D/torso" parent_id_path=PackedInt32Array(1111552086) index="0" unique_id=1881819433]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="Head" parent="ObbyAvatar/Skeleton3D/head" parent_id_path=PackedInt32Array(1246475223) index="0" unique_id=1045372864]
+sorting_offset = 1.0
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+surface_material_override/1 = SubResource("StandardMaterial3D_omiko")
+
+[node name="LeftArm" parent="ObbyAvatar/Skeleton3D/leftarm" parent_id_path=PackedInt32Array(941088544) index="0" unique_id=930751540]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="RightArm" parent="ObbyAvatar/Skeleton3D/rightarm" parent_id_path=PackedInt32Array(1849489596) index="0" unique_id=738354241]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="LeftLeg" parent="ObbyAvatar/Skeleton3D/leftleg" parent_id_path=PackedInt32Array(413864969) index="0" unique_id=783537687]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
+
+[node name="RightLeg" parent="ObbyAvatar/Skeleton3D/rightleg" parent_id_path=PackedInt32Array(1772289557) index="0" unique_id=1455576990]
+surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")

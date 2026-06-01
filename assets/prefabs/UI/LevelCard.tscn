@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cy47hln6cml0s"]
+
+[node name="LevelCard" type="Button" unique_id=501888534]
+offset_left = -1.0
+offset_right = 293.0
+offset_bottom = 88.0
+text = "level name
+ difficulty
+creator"
