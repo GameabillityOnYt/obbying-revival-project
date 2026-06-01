@@ -78,7 +78,7 @@ func _ground_check():
 
 func _check_for_step_up() -> bool:
 	# casting forward for obstacle detection
-	step_raycast.target_position = global_transform.basis.z * -step_check_distance\
+	step_raycast.target_position = global_transform.basis.z * -step_check_distance
 
 	if step_raycast.is_colliding():
 		var collision_point = step_raycast.get_collision_point()
