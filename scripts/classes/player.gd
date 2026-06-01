@@ -84,7 +84,7 @@ func _check_for_step_up() -> bool:
 		var collision_point = step_raycast.get_collision_point()
 		var obstacle_height = collision_point.y - global_position.y
 
-		if 0 < obstacle_height and obstacle_height <= max_step_height
+		if 0 < obstacle_height and obstacle_height <= max_step_height:
 			return true
 
 	return false
