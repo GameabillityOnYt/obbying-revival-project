@@ -348,14 +348,16 @@ func addBall(pos, rot_deg, size, color):
 		if mesh.mesh.material:
 			texture(mesh, color, mesh.mesh.material)
 
+func addTruss(pos, rot_deg, size, color):
+	var basis_ = Basis.from_euler(Vector3(
+		deg_to_rad(rot_deg.x),
+		deg_to_rad(rot_deg.y),
+		deg_to_rad(rot_deg.z)), EULER_ORDER_XYZ)
 
-func addTruss(pos, rot_deg, size, _classname):
-	var basis_ = Basis.from_euler(Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z)), EULER_ORDER_XYZ)
-	var seg_h : float = 2.0 
-	
+	var seg_h: float = 2.0
 	var max_length: float = size.y
 	var local_axis: Vector3 = Vector3.UP
-	
+
 	if size.x > size.y && size.x > size.z:
 		max_length = size.x
 		local_axis = Vector3.RIGHT
@@ -363,27 +365,35 @@ func addTruss(pos, rot_deg, size, _classname):
 		max_length = size.z
 		local_axis = Vector3.FORWARD
 
-	var num_segments: int = floor(max_length / seg_h)
+	var num_segments: int = maxi(1, int(floor(max_length / seg_h)))
+
 	for i in range(num_segments):
 		var newtruss = truss.instantiate()
-		_spawn_parent.add_child(newtruss)
-		
-		var seg_coll = newtruss.get_node_or_null("Truss/CollisionShape3D")
-		if seg_coll: seg_coll.queue_free()
-		
+		add_child(newtruss)
+
 		var offset_scalar = -max_length / 2.0 + (i * seg_h) + (seg_h / 2.0)
-		var local_offset = local_axis * offset_scalar
-		
-		newtruss.position = pos + (basis_ * local_offset)
+		newtruss.position = pos + (basis_ * (local_axis * offset_scalar))
 		newtruss.transform.basis = basis_
-		
-		var mesh_node = newtruss.get_node_or_null("Truss/trusss")
-		if mesh_node: 
-			mesh_node.scale = Vector3.ONE
-			if local_axis == Vector3.RIGHT:
-				mesh_node.rotation_degrees = Vector3(0, 0, -90) 
-			elif local_axis == Vector3.FORWARD:
-				mesh_node.rotation_degrees = Vector3(90, 0, 0)
+
+		# resize collision per segment
+		var coll = newtruss.get_node_or_null("CollisionShape3D")
+		if coll and coll.shape:
+			coll.shape = coll.shape.duplicate()
+			var shape = coll.shape as BoxShape3D
+			if shape:
+				# seg_h tall; full width/depth
+				if local_axis == Vector3.UP:
+					shape.size = Vector3(size.x, seg_h, size.z)
+				elif local_axis == Vector3.RIGHT:
+					shape.size = Vector3(seg_h, size.y, size.z)
+				else:
+					shape.size = Vector3(size.x, size.y, seg_h)
+
+		var mesh_node = newtruss.get_node_or_null("Cube_016") as MeshInstance3D
+		if mesh_node and mesh_node.material_override:
+			var mat = mesh_node.material_override.duplicate() as ShaderMaterial
+			mat.set_shader_parameter("base_color", color)
+			mesh_node.material_override = mat
 
 	var physical_collider = StaticBody3D.new()
 	var collision_shape = CollisionShape3D.new()
@@ -399,13 +409,11 @@ func addTruss(pos, rot_deg, size, _classname):
 	physical_collider.position = pos
 	physical_collider.transform.basis = basis_
 
-
 func spawn_node(node_data):
 	var classname = node_data.get("ClassName", "")
 
 	if classname == "Part":
 		var p = node_data.get("Properties", {})
-		# main repo note: modify the exporter so it stores the shape of the object
 		var shape = node_data.get("Shape", "Block")
 
 		if shape == "Cylinder":
@@ -460,7 +468,7 @@ func spawn_node(node_data):
 			to_vec3(p.get("Position")),
 			to_vec3(p.get("Rotation")),
 			to_vec3(p.get("Size")),
-			"Truss"
+			to_color(p.get("Color"))
 		)
 
 	for child in node_data.get("Children", []):

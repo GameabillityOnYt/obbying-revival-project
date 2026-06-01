@@ -512,7 +512,7 @@ func _physics_process(delta: float) -> void:
 	just_jumped_off = false
 	
 func _step_climbing() -> void:
-	if is_climbing or not is_on_floor():
+	if is_climbing:
 		return
 
 	var horizontal_vel := Vector3(velocity.x, 0.0, velocity.z)
@@ -565,7 +565,7 @@ func _step_climbing() -> void:
 						player.position.y -= final_step_height
 						
 					force_update_transform()
-	else:
+	elif is_on_floor():
 		# step down handling
 		var forward_tgt = global_transform.translated(step_displacement)
 		var max_possible_step_down := 2.0
