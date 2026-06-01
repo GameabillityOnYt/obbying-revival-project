@@ -16,7 +16,7 @@ var rotation_locked:bool :
 
 var grounded = false
 var ground_dist:float = 0
-var ground_pos'
+var ground_pos
 var step_raycast: RayCast3D
 var can_step_up: bool = false
 var step_up_timer: float = 0.0
