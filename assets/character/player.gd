@@ -564,6 +564,12 @@ func _step_climbing() -> void:
 				force_update_transform()
 
 func _handle_step_up(step_displacement: Vector3, hit_info: KinematicCollision3D) -> void:
+<<<<<<< Updated upstream
+=======
+	if not hit_info or hit_info.get_collision_count() == 0:
+		return
+		
+>>>>>>> Stashed changes
 	var collision_normal = hit_info.get_normal()
 	
 	if collision_normal.y > cos(floor_max_angle):
