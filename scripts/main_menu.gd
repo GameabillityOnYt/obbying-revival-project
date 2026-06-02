@@ -91,7 +91,7 @@ func clear_selected_level():
 func select_level(path: String, obby_name, difficulty, creator):
 	GameManager.currentLevel = path
 	title.text = "Selected: %s" % [obby_name]
-	desc.text = "Tier: %s\nBy: %s" % [difficulty, creator]
+	desc.text = "Tier: %s\nBy: %s\n\nHit enter to play" % [difficulty, creator]
 
 ## Loads all levels in the folder and then adds it to the level list
 func load_all_levels():
