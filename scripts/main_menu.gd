@@ -146,12 +146,17 @@ func fetch_levels():
 	dir.list_dir_end()
 	return levels
 
-func search_for_string_that_contains(str: String, arr: Array):
-	for item: String in arr:
-		if item.contains(str):
-			return item
-	print("Couldn't be found")
-	return arr[0]
+func search_for_string_that_contains(str: String, arr: Array, orig: String = str):
+	if str.length() > 4:
+		for item: String in arr:
+			if item.contains(str):
+				return item
+		return search_for_string_that_contains(str.substr(0, str.length()/2), arr, orig)
+	else:
+		print("Couldn't be found")
+		return arr[0]
+
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
