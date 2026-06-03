@@ -22,11 +22,13 @@ var current_page: String = "main"
 @export var body_parts: Dictionary[ColorPickerButton, String]
 
 func _ready():
+
 	# -- Level Handlers -- #
 	get_window().files_dropped.connect(_file_dragged)
 	load_all_levels()
 	
 	# -- Customization -- #
+	print(body_parts)
 	for picker in body_parts:
 		var part_name: String = body_parts[picker]
 		picker.color_changed.connect(func(c): _send_color_to_player(part_name, c))
@@ -38,7 +40,7 @@ func _ready():
 
 func _send_color_to_player(part: String, color: Color):
 	GameManager.data.body_colors[part] = color
-	
+	print(GameManager.data.body_colors)
 	if menu_avatar:
 		menu_avatar.update_part_color(part, color)
 

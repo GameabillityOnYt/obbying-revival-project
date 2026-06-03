@@ -17,22 +17,22 @@ roughness = 0.5
 [node name="Character" unique_id=65602991 instance=ExtResource("1_glpr6")]
 script = ExtResource("2_h6hlt")
 
-[node name="Torso" parent="ObbyAvatar/Skeleton3D/torso" parent_id_path=PackedInt32Array(1111552086) index="0" unique_id=1881819433]
+[node name="Torso" parent="ObbyAvatar/Skeleton3D/torso" parent_id_path=PackedInt32Array(751140701) index="0" unique_id=650564236]
 surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
 
-[node name="Head" parent="ObbyAvatar/Skeleton3D/head" parent_id_path=PackedInt32Array(1246475223) index="0" unique_id=1045372864]
+[node name="Head" parent="ObbyAvatar/Skeleton3D/head" parent_id_path=PackedInt32Array(1165135934) index="0" unique_id=270976989]
 sorting_offset = 1.0
 surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
 surface_material_override/1 = SubResource("StandardMaterial3D_omiko")
 
-[node name="LeftArm" parent="ObbyAvatar/Skeleton3D/leftarm" parent_id_path=PackedInt32Array(941088544) index="0" unique_id=930751540]
+[node name="LeftArm" parent="ObbyAvatar/Skeleton3D/leftarm" parent_id_path=PackedInt32Array(188863173) index="0" unique_id=1394449152]
 surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
 
-[node name="RightArm" parent="ObbyAvatar/Skeleton3D/rightarm" parent_id_path=PackedInt32Array(1849489596) index="0" unique_id=738354241]
+[node name="RightArm" parent="ObbyAvatar/Skeleton3D/rightarm" parent_id_path=PackedInt32Array(889039835) index="0" unique_id=286384667]
 surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
 
-[node name="LeftLeg" parent="ObbyAvatar/Skeleton3D/leftleg" parent_id_path=PackedInt32Array(413864969) index="0" unique_id=783537687]
+[node name="LeftLeg" parent="ObbyAvatar/Skeleton3D/leftleg" parent_id_path=PackedInt32Array(1555278006) index="0" unique_id=181403815]
 surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
 
-[node name="RightLeg" parent="ObbyAvatar/Skeleton3D/rightleg" parent_id_path=PackedInt32Array(1772289557) index="0" unique_id=1455576990]
+[node name="RightLeg" parent="ObbyAvatar/Skeleton3D/rightleg" parent_id_path=PackedInt32Array(851362376) index="0" unique_id=460347898]
 surface_material_override/0 = SubResource("StandardMaterial3D_pjt0s")
