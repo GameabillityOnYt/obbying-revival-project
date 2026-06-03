@@ -1,12 +1,10 @@
 shader_type spatial;
-render_mode blend_mix, depth_draw_opaque;
 
 uniform vec3 base_color: source_color = vec3(0.0,0.0,0.0);
 uniform sampler2D albedo_texture : source_color, repeat_enable;
 uniform vec2 tiling_scale = vec2(1.0, 1.0); // 1 stud per 1 unit
 uniform float sharpness : hint_range(0.0, 50.0) = 10.0;
 uniform float transparency: hint_range(0.0, 1.0, 0.01) = 0;
-uniform float part_transparency: hint_range(0.0, 1.0) = 0.0;
 uniform bool use_overlay_mode = false;
 
 varying vec3 scale;
@@ -48,6 +46,4 @@ void fragment() {
     } else {
         ALBEDO = mix(stud_rgb, base_color, transparency);
     }
-
-	ALPHA = 1.0 - part_transparency;
 }
