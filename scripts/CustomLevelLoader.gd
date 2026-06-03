@@ -8,7 +8,7 @@ extends Node3D
 @onready var truss = preload("res://assets/prefabs/building/Parts/Truss.tscn")
 @onready var player = $Player
 
-@onready var default_tile = preload("res://assets/images/textures/Tile2.png")
+@onready var default_tile = preload("res://assets/images/textures/orp_brick_updated.png")
 @onready var roblox_tile = preload("res://assets/images/textures/RobloxTile.png")
 
 # alljump
@@ -214,7 +214,7 @@ func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material):
 				overlay = true
 			else:
 				texture = default_tile
-				trans = 0.9
+				trans = 0.75
 				overlay = false 
 			
 			mat.set_shader_parameter("albedo_texture", texture)
