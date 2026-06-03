@@ -12,15 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
 [ext_resource type="Texture2D" uid="uid://cm7xmpucganbp" path="res://assets/images/UI/Discord.png" id="8_8vx4p"]
 [ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/toggles/practiceToggle.tscn" id="8_mipys"]
-[ext_resource type="Script" uid="uid://4mp0toaekq5u" path="res://scenes/texture_button.gd" id="9_tdapf"]
+[ext_resource type="Script" path="res://scenes/texture_button.gd" id="9_tdapf"]
 [ext_resource type="Texture2D" uid="uid://qfb15y132847" path="res://assets/images/UI/Youtube.png" id="10_7shrw"]
 [ext_resource type="Script" uid="uid://ywm0qwb34xhy" path="res://scripts/gui/renderer_switcher.gd" id="11_ptake"]
 [ext_resource type="Texture2D" uid="uid://bc1ndnhomeu3p" path="res://assets/images/UI/github.png" id="11_viowm"]
-[ext_resource type="Script" uid="uid://c3yvaobcwnxb" path="res://scenes/youtube.gd" id="11_yovvs"]
+[ext_resource type="Script" path="res://scenes/youtube.gd" id="11_yovvs"]
 [ext_resource type="Texture2D" uid="uid://g62uv3pegogh" path="res://assets/images/UI/itch.png" id="12_1n6yq"]
 [ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="12_bky6r"]
-[ext_resource type="Script" uid="uid://blhv505opx1ra" path="res://scenes/github.gd" id="12_yovvs"]
-[ext_resource type="Script" uid="uid://ct0434tmo8n1a" path="res://scenes/itch.gd" id="13_viowm"]
+[ext_resource type="Script" path="res://scenes/github.gd" id="12_yovvs"]
+[ext_resource type="Script" path="res://scenes/itch.gd" id="13_viowm"]
 [ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/toggles/RPCToggle.tscn" id="14_5faoh"]
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
 [ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
@@ -185,7 +185,7 @@ text = "Play"
 alignment = 0
 
 [node name="Panel" type="Panel" parent="Main" unique_id=1075196788]
-offset_top = -120.0
+offset_top = -75.0
 offset_right = 525.0
 offset_bottom = 350.0
 
@@ -612,11 +612,10 @@ light_energy = 0.5
 sky_mode = 1
 
 [node name="SearchBar" type="LineEdit" parent="." unique_id=179523255]
-offset_left = -639.0
-offset_top = -420.0
-offset_right = -216.0
-offset_bottom = -385.0
-placeholder_text = "search bar do not delete (not supposed to be shown!)"
+offset_top = -120.0
+offset_right = 525.0
+offset_bottom = -85.0
+placeholder_text = "Type to search for a level; hit enter to select level; hit esc to clear"
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
