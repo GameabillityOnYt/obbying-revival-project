@@ -58,6 +58,9 @@ local function serializeInstance(obj)
 				G = obj.Color.G,
 				B = obj.Color.B
 			},
+
+			Transparency = obj.Transparency,
+			disabled = not obj.CanCollide,
 		}
 	end
 
