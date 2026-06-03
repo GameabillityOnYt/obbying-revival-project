@@ -23,7 +23,7 @@
 [ext_resource type="Script" uid="uid://ct0434tmo8n1a" path="res://scenes/itch.gd" id="13_viowm"]
 [ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/toggles/RPCToggle.tscn" id="14_5faoh"]
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
-[ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
+[ext_resource type="Script" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
 [ext_resource type="Theme" uid="uid://xrauqfunapst" path="res://assets/prefabs/themes/main.tres" id="20_i7r3k"]
 [ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
 [ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
@@ -135,10 +135,18 @@ func _process(delta: float) -> void:
 	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
 "
 
-[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar")]
+[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar", "body_parts")]
 position = Vector2(-27, 103)
 script = ExtResource("1_ow34m")
 menu_avatar = NodePath("AvatarCustom/SubViewportContainer/SubViewport/CharacterAvatar")
+body_parts = {
+NodePath("AvatarCustom/VBoxContainer/HeadRow/head"): "head",
+NodePath("AvatarCustom/VBoxContainer/TorsoRow/torso"): "torso",
+NodePath("AvatarCustom/VBoxContainer/LeftArmRow/left_arm"): "left_arm",
+NodePath("AvatarCustom/VBoxContainer/RightArmRow/right_arm"): "right_arm",
+NodePath("AvatarCustom/VBoxContainer/LeftLegRow/left_leg"): "left_leg",
+NodePath("AvatarCustom/VBoxContainer/RightLegRow/right_leg"): "right_leg"
+}
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1544198342]
 position_smoothing_enabled = true
@@ -185,7 +193,7 @@ text = "Play"
 alignment = 0
 
 [node name="Panel" type="Panel" parent="Main" unique_id=1075196788]
-offset_top = -120.0
+offset_top = -75.0
 offset_right = 525.0
 offset_bottom = 350.0
 
@@ -612,11 +620,10 @@ light_energy = 0.5
 sky_mode = 1
 
 [node name="SearchBar" type="LineEdit" parent="." unique_id=179523255]
-offset_left = -639.0
-offset_top = -420.0
-offset_right = -216.0
-offset_bottom = -385.0
-placeholder_text = "search bar do not delete (not supposed to be shown!)"
+offset_top = -120.0
+offset_right = 525.0
+offset_bottom = -85.0
+placeholder_text = "Type to search for a level; hit enter to select level; hit esc to clear"
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false

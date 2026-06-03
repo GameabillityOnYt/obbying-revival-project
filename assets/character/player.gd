@@ -568,9 +568,10 @@ func _handle_step_up(step_displacement: Vector3, hit_info: KinematicCollision3D)
 		return
 		
 	var collision_normal = hit_info.get_normal()
-	
-	if collision_normal.y > cos(floor_max_angle):
-		return
+	if collision_normal and hit_info.get_collision_count() != 0:
+		if collision_normal.y > cos(floor_max_angle):
+			return
+
 
 	var step_height := 0.0
 	var max_possible_step := 2.0

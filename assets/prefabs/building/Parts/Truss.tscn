@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://bu5ec1ohqmn8f"]
 
 [ext_resource type="Shader" uid="uid://b85tmyn414mvx" path="res://assets/resources/shaders/TextureRepeating.gdshader" id="1_hhwbl"]
-[ext_resource type="Texture2D" uid="uid://b6hgmg04vmj57" path="res://assets/images/textures/Tile2.png" id="2_wljxp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oy6c7"]
 
@@ -9,10 +8,10 @@
 render_priority = 0
 shader = ExtResource("1_hhwbl")
 shader_parameter/base_color = Color(0.48962194, 0.48962235, 0.48962206, 1)
-shader_parameter/albedo_texture = ExtResource("2_wljxp")
 shader_parameter/tiling_scale = Vector2(0.5, 0.5)
 shader_parameter/sharpness = 10.000000475
 shader_parameter/transparency = 0.8999999798832
+shader_parameter/use_overlay_mode = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34qoe"]
 resource_name = "Material"
