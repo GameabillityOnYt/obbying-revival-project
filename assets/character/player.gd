@@ -283,34 +283,33 @@ func _physics_process(delta: float) -> void:
 	if jump_lock <= 0.0:
 		var touching_truss := false
 		var active_ray = null
-
-		if ray.is_colliding():
-			active_ray = ray
-		elif ray2.is_colliding():
-			active_ray = ray2
-		elif topray.is_colliding():
-			active_ray = topray
+		
+		# functions like previous implementation but actually checks if its climbing
+		for r in [ray,ray2,topray]:
+			if r.is_colliding():
+				var col = r.get_collider()
+				if col and col.is_in_group("climbable"):
+					active_ray = r
+					break
 
 		if active_ray:
-			var collider = active_ray.get_collider()
-			if collider and collider.is_in_group("climbable"):
-				var normal = active_ray.get_collision_normal()
-				
-				var input_dir_check := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-				var cam_yaw_check = cam.yaw
-				var forward_check = Vector3(-sin(cam_yaw_check), 0, -cos(cam_yaw_check)).normalized()
-				var right_check = Vector3(cos(cam_yaw_check), 0, -sin(cam_yaw_check)).normalized()
-				var move_dir_check = (right_check * input_dir_check.x + forward_check * input_dir_check.y).normalized()
-				
-				if is_on_floor() and move_dir_check.length() > 0.1 and move_dir_check.dot(normal) > 0.2:
-					touching_truss = false
-				else:
-					touching_truss = true
-					climb_normal = normal
-					last_truss_point = active_ray.get_collision_point()
-					climb_grace = 0.08
-					truss_timer = 0.0
-					truss_used = false
+			var normal = active_ray.get_collision_normal()
+			
+			var input_dir_check := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+			var cam_yaw_check = cam.yaw
+			var forward_check = Vector3(-sin(cam_yaw_check), 0, -cos(cam_yaw_check)).normalized()
+			var right_check = Vector3(cos(cam_yaw_check), 0, -sin(cam_yaw_check)).normalized()
+			var move_dir_check = (right_check * input_dir_check.x + forward_check * input_dir_check.y).normalized()
+			
+			if is_on_floor() and move_dir_check.length() > 0.1 and move_dir_check.dot(normal) > 0.2:
+				touching_truss = false
+			else:
+				touching_truss = true
+				climb_normal = normal
+				last_truss_point = active_ray.get_collision_point()
+				climb_grace = 0.08
+				truss_timer = 0.0
+				truss_used = false
 
 		if not touching_truss and is_climbing:
 			for i in range(get_slide_collision_count()):
@@ -347,6 +346,7 @@ func _physics_process(delta: float) -> void:
 
 	# gravity
 	if not is_on_floor() and not is_climbing and not $CollisionShape3D.disabled:
+		# you need to change this in some way to make it not accumulate velocity while lodging
 		velocity += get_gravity() * delta
 
 	# truss coyote logic
