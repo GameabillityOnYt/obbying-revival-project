@@ -15,11 +15,11 @@ func _physics_process(delta: float) -> void:
 	milliseconds += int(delta * 1000)
 
 	if milliseconds >= 1000:
-		seconds += milliseconds / 1000.0
+		seconds += milliseconds / 1000
 		milliseconds = milliseconds % 1000
 
 	if seconds >= 60:
-		minutes += seconds / 60.0
+		minutes += seconds / 60
 		seconds = seconds % 60
 	label.text = "%02d:%02d:%03d" % [minutes, seconds, milliseconds]
 	
