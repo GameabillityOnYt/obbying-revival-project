@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clflyp4upy643" path="res://scripts/main_menu.gd" id="1_ow34m"]
 [ext_resource type="FontFile" uid="uid://bb74yqfgngijg" path="res://assets/fonts/AlteHaasGroteskBold.ttf" id="2_0ykhv"]
+[ext_resource type="Theme" uid="uid://cowd7eqjqvhua" path="res://assets/prefabs/themes/popup.tres" id="2_os5dr"]
 [ext_resource type="Texture2D" uid="uid://wec8jyru71tj" path="res://assets/images/UI/Obby Revival Project.svg" id="3_mipys"]
 [ext_resource type="Theme" uid="uid://dyn87lf4436y3" path="res://assets/resources/ui_styles/MainMenuButton.tres" id="4_l72w3"]
 [ext_resource type="Texture2D" uid="uid://bkxrsp8epmuhv" path="res://assets/images/UI/file.png" id="5_7la6k"]
@@ -23,7 +24,7 @@
 [ext_resource type="Script" uid="uid://ct0434tmo8n1a" path="res://scenes/itch.gd" id="13_viowm"]
 [ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/toggles/RPCToggle.tscn" id="14_5faoh"]
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
-[ext_resource type="Script" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
+[ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
 [ext_resource type="Theme" uid="uid://xrauqfunapst" path="res://assets/prefabs/themes/main.tres" id="20_i7r3k"]
 [ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
 [ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
@@ -148,6 +149,11 @@ NodePath("AvatarCustom/VBoxContainer/LeftLegRow/left_leg"): "left_leg",
 NodePath("AvatarCustom/VBoxContainer/RightLegRow/right_leg"): "right_leg"
 }
 
+[node name="ContextMenu" type="PopupMenu" parent="." unique_id=73262679]
+oversampling_override = 1.0
+size = Vector2i(124, 95)
+theme = ExtResource("2_os5dr")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1544198342]
 position_smoothing_enabled = true
 
@@ -270,6 +276,18 @@ theme = SubResource("Theme_ptake")
 bbcode_enabled = true
 text = "[u]Version[/u]"
 script = SubResource("GDScript_hubol")
+
+[node name="SearchBar" type="LineEdit" parent="Main" unique_id=179523255]
+offset_top = -120.0
+offset_right = 525.0
+offset_bottom = -85.0
+placeholder_text = "Type to search for a level; hit enter to select level; hit esc to clear"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+virtual_keyboard_enabled = false
 
 [node name="Help" type="Node2D" parent="." unique_id=804611237]
 position = Vector2(0, 769)
@@ -619,24 +637,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5819216)
 light_energy = 0.5
 sky_mode = 1
 
-[node name="SearchBar" type="LineEdit" parent="." unique_id=179523255]
-offset_top = -120.0
-offset_right = 525.0
-offset_bottom = -85.0
-placeholder_text = "Type to search for a level; hit enter to select level; hit esc to clear"
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-virtual_keyboard_enabled = false
-
 [connection signal="pressed" from="Main/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Main/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/Panel/Open Location" to="Main/Panel/Open Location" method="_on_pressed"]
 [connection signal="pressed" from="Main/Panel/Reload" to="Main/Panel/Reload" method="_on_pressed"]
 [connection signal="meta_clicked" from="Main/Version" to="Main/Version" method="_on_meta_clicked"]
+[connection signal="text_changed" from="Main/SearchBar" to="." method="_on_search_bar_text_changed"]
 [connection signal="pressed" from="Help/Discord" to="Help/Discord" method="_on_pressed"]
 [connection signal="pressed" from="Help/Youtube" to="Help/Youtube" method="_on_pressed"]
 [connection signal="pressed" from="Help/Github" to="Help/Github" method="_on_pressed"]
@@ -647,4 +654,3 @@ virtual_keyboard_enabled = false
 [connection signal="item_selected" from="Settings/RendererSwitcher" to="Settings/RendererSwitcher" method="_on_item_selected"]
 [connection signal="item_selected" from="Settings/StudSwitcher" to="Settings/StudSwitcher" method="_on_item_selected"]
 [connection signal="pressed" from="AvatarCustom/Back" to="." method="_on_return_to_settings_pressed"]
-[connection signal="text_changed" from="SearchBar" to="." method="_on_search_bar_text_changed"]

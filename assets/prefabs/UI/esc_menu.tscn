@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bll3e5wwm6qpo" path="res://assets/prefabs/UI/FOV.tscn" id="3_dpyxx"]
 [ext_resource type="Theme" uid="uid://dyn87lf4436y3" path="res://assets/resources/ui_styles/MainMenuButton.tres" id="4_dpyxx"]
 [ext_resource type="FontFile" uid="uid://bb74yqfgngijg" path="res://assets/fonts/AlteHaasGroteskBold.ttf" id="5_vgykv"]
+[ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="7_rn5ir"]
+[ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="8_nsoa4"]
+[ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/toggles/practiceToggle.tscn" id="9_47fxr"]
 
 [node name="EscMenu" type="Control" unique_id=1769971828]
 process_mode = 3
@@ -134,3 +137,18 @@ Checkpoints:
 F - Place Checkpoint
 V - Remove Checkpoint
 R/Ctrl + R - TP to Checkpoint"
+
+[node name="NFToggle" parent="." unique_id=118282012 instance=ExtResource("7_rn5ir")]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 236.0
+offset_right = 1030.0
+offset_bottom = 267.0
+script = ExtResource("8_nsoa4")
+
+[node name="AlljumpToggle" parent="." unique_id=1640153117 instance=ExtResource("9_47fxr")]
+layout_mode = 0
+offset_left = 922.0
+offset_top = 197.0
+offset_right = 1030.0
+offset_bottom = 228.0
