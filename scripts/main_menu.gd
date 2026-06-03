@@ -12,7 +12,7 @@ var button = preload("res://assets/prefabs/UI/LevelCard.tscn")
 @onready var desc = $Main/Desc/Label2
 @onready var list = $Main/Panel/ScrollContainer/VBoxContainer
 @onready var version = $Main/Version
-@onready var search = $SearchBar
+@onready var search = $Main/SearchBar
 @onready var orig: Array
 @onready var sorted: Array
 var searchTerm = ""
@@ -26,8 +26,8 @@ var pinned_levels: Array = []
 var context_level_path: String = ""
 
 func _ready():
-
 	# -- Level Handlers -- #
+	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	get_window().files_dropped.connect(_file_dragged)
 	_load_pinned_levels_from_file()
 	if context_menu:
@@ -293,11 +293,10 @@ func _on_level_card_gui_input(event: InputEvent, path: String):
 		# also it should be dynamic so yeah
 		var is_pinned = path in pinned_levels
 		context_menu.add_item("Unpin Level" if is_pinned else "Pin Level", 0)
-		
 		if is_pinned:
 			context_menu.add_item("Move Up", 1)
 			context_menu.add_item("Move Down", 2)
-			
+		context_menu.add_item("Delete Level",3)
 		context_menu.position = get_viewport().get_mouse_position()
 		context_menu.show()
 
@@ -324,6 +323,11 @@ func _on_context_menu_id_pressed(id: int):
 				pinned_levels[idx + 1] = temp
 				_save_pinned_levels_to_file()
 				load_all_levels()
+		3:
+			print("deleted level: " + context_level_path)
+			DirAccess.remove_absolute(context_level_path)
+			load_all_levels()
+
 
 func _toggle_pin_level(path: String):
 	if path in pinned_levels:
@@ -363,6 +367,7 @@ func _save_pinned_levels_to_file():
 # -- Switching between "pages" -- #
 
 func _on_settings_pressed() -> void: # when you press settings it makes your camera go to the settings area
+	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "settings"
 	GameManager.set_sliders_enabled(true)
 	cam.global_position = Settings.global_position
@@ -371,6 +376,7 @@ func _on_settings_pressed() -> void: # when you press settings it makes your cam
 		DiscordRPCManager.settings() # discordrpc settings thingy
 
 func _on_return_to_main_pressed() -> void:
+	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "main"
 	GameManager.set_sliders_enabled(false)
 	cam.global_position = Main.global_position
@@ -379,16 +385,19 @@ func _on_return_to_main_pressed() -> void:
 		DiscordRPCManager.menu()
 
 func _on_return_to_settings_pressed() -> void:
+	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "settings"
 	GameManager.set_sliders_enabled(true)
 	cam.global_position = Settings.global_position
 
 func _on_avatar_pressed() -> void:
+	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "avatar"
 	GameManager.set_sliders_enabled(false)
 	cam.global_position = AvatarCustom.global_position
 
 func _on_help_pressed() -> void:
+	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "help"
 	GameManager.set_sliders_enabled(false)
 	cam.global_position = Help.global_position

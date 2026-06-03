@@ -24,10 +24,11 @@
 [ext_resource type="Script" uid="uid://ct0434tmo8n1a" path="res://scenes/itch.gd" id="13_viowm"]
 [ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/toggles/RPCToggle.tscn" id="14_5faoh"]
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
-[ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
+[ext_resource type="Script" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
 [ext_resource type="Theme" uid="uid://xrauqfunapst" path="res://assets/prefabs/themes/main.tres" id="20_i7r3k"]
 [ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
 [ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
+[ext_resource type="Script" uid="uid://0lyvkixg3uog" path="res://assets/prefabs/UI/toggles/practice_toggle.gd" id="28_duata"]
 
 [sub_resource type="GDScript" id="GDScript_2nypq"]
 resource_name = "Location"
@@ -151,7 +152,7 @@ NodePath("AvatarCustom/VBoxContainer/RightLegRow/right_leg"): "right_leg"
 
 [node name="ContextMenu" type="PopupMenu" parent="." unique_id=73262679]
 oversampling_override = 1.0
-size = Vector2i(124, 95)
+size = Vector2i(124, 70)
 theme = ExtResource("2_os5dr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1544198342]
@@ -523,6 +524,14 @@ offset_left = -244.0
 offset_top = 61.0
 offset_right = -136.0
 offset_bottom = 92.0
+
+[node name="MenuTransitionToggle" parent="Settings" unique_id=1307507111 instance=ExtResource("8_mipys")]
+offset_left = -271.0
+offset_top = 24.0
+offset_right = -88.0
+offset_bottom = 55.0
+text = "Menu Transitions"
+script = ExtResource("28_duata")
 
 [node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
 position = Vector2(2539, 0)

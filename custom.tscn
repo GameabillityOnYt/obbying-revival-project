@@ -19,6 +19,13 @@ sky_material = SubResource("PanoramaSkyMaterial_0b4ue")
 background_mode = 2
 background_energy_multiplier = 0.6
 sky = SubResource("Sky_f2txt")
+glow_enabled = true
+glow_intensity = 0.65
+glow_bloom = 0.13
+fog_sky_affect = 0.055
+adjustment_enabled = true
+adjustment_brightness = 1.15
+adjustment_saturation = 1.3
 
 [node name="Node3D" type="Node3D" unique_id=489380727]
 script = ExtResource("1_o3jt7")
