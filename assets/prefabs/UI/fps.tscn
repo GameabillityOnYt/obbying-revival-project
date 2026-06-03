@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhgjl8nsom23c"]
 
-[ext_resource type="Script" uid="uid://5n860nl6ayum" path="res://scripts/gui/FPS.gd" id="2_7arvn"]
+[ext_resource type="Script" uid="uid://bkbl2l5c82afd" path="res://assets/prefabs/UI/fps.gd" id="2_b4h4u"]
 [ext_resource type="FontFile" uid="uid://bb74yqfgngijg" path="res://assets/fonts/AlteHaasGroteskBold.ttf" id="2_yal45"]
 
 [sub_resource type="Theme" id="Theme_mlofp"]
@@ -12,7 +12,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme = SubResource("Theme_mlofp")
 text = "FPS: 67 // 1203897129803217"
-script = ExtResource("2_7arvn")
+script = ExtResource("2_b4h4u")
 
 [node name="Fps" type="Control" parent="." unique_id=174923971]
 layout_mode = 1

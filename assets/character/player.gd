@@ -511,6 +511,12 @@ func _physics_process(delta: float) -> void:
 	update_anim()
 	just_jumped_off = false
 	
+func velocity_after_step(v_initial: float, gravity: float, step_height: float) -> float:
+	var discriminant = v_initial * v_initial - 2.0 * gravity * step_height
+	if discriminant < 0.0:
+		return 0.0
+	return sqrt(discriminant)
+	
 func _step_climbing() -> void:
 	if is_climbing:
 		return
@@ -523,50 +529,23 @@ func _step_climbing() -> void:
 	var step_displacement = horizontal_vel * dt
 	var hit_info = KinematicCollision3D.new()
 
+
 	if test_move(global_transform, step_displacement, hit_info):
-		var collision_normal = hit_info.get_normal()
-		# checking if ther's no problem w floor at the top of us to hit us
-		# previously you would just noclip in it
+		_handle_step_up(step_displacement, hit_info)
+	elif not is_on_floor():
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsShapeQueryParameters3D.new()
+		var shape = BoxShape3D.new()
+		shape.size = Vector3(0.4, 2.4, 0.2)
+		query.shape = shape
+		query.transform = global_transform.translated(step_displacement)
 		
-		# upd: no it's not
-		if collision_normal.y > cos(floor_max_angle):
-			return
-
-		# it's more of automatic but number is still hard coded
-		var step_height := 0.0
-		var max_possible_step := 2.0
-		var step_increment := 0.05
-		var found_top := false
-		var test_transform = global_transform
-
-		while step_height < max_possible_step:
-			step_height += step_increment
-			var upward_transform = global_transform.translated(Vector3(0.0, step_height, 0.0))
+		var results = space_state.intersect_shape(query)
+		if results.size() > 0:
+			hit_info = KinematicCollision3D.new()
+			_handle_step_up(step_displacement, hit_info)
 			
-			if not test_move(upward_transform, step_displacement):
-				test_transform = upward_transform
-				found_top = true
-				break
-
-		if found_top:
-			var forward_tgt = test_transform.translated(step_displacement)
-			var drop_sweep = Vector3(0.0, -step_height, 0.0)
-			var ground_hit = KinematicCollision3D.new()
-			
-			if test_move(forward_tgt, drop_sweep, ground_hit):
-				var drop_dist = ground_hit.get_travel().y
-				var final_step_height = step_height + drop_dist
-				
-				if final_step_height > 0.01:
-					global_position.y += final_step_height
-					step_visual_offset -= final_step_height
-					
-					if player:
-						player.position.y -= final_step_height
-						
-					force_update_transform()
-	elif is_on_floor():
-		# step down handling
+	if is_on_floor():
 		var forward_tgt = global_transform.translated(step_displacement)
 		var max_possible_step_down := 2.0
 		var down_sweep = Vector3(0.0, -max_possible_step_down, 0.0)
@@ -582,6 +561,45 @@ func _step_climbing() -> void:
 				if player:
 					player.position.y -= drop_dist
 					
+				force_update_transform()
+
+func _handle_step_up(step_displacement: Vector3, hit_info: KinematicCollision3D) -> void:
+	var collision_normal = hit_info.get_normal()
+	
+	if collision_normal.y > cos(floor_max_angle):
+		return
+
+	var step_height := 0.0
+	var max_possible_step := 2.0
+	var step_increment := 0.05
+	var found_top := false
+	var test_transform = global_transform
+
+	while step_height < max_possible_step:
+		step_height += step_increment
+		var upward_transform = global_transform.translated(Vector3(0.0, step_height, 0.0))
+		
+		if not test_move(upward_transform, step_displacement):
+			test_transform = upward_transform
+			found_top = true
+			break
+
+	if found_top:
+		var forward_tgt = test_transform.translated(step_displacement)
+		var drop_sweep = Vector3(0.0, -step_height, 0.0)
+		var ground_hit = KinematicCollision3D.new()
+		
+		if test_move(forward_tgt, drop_sweep, ground_hit):
+			var drop_dist = ground_hit.get_travel().y
+			var final_step_height = step_height + drop_dist
+			
+			if final_step_height > 0.01 and velocity.y <= 0:
+				global_position.y += final_step_height
+				step_visual_offset -= final_step_height
+				
+				if player:
+					player.position.y -= final_step_height
+				
 				force_update_transform()
 
 func _process(_delta: float) -> void:
