@@ -67,6 +67,9 @@ var just_jumped_off := false
 @onready var player = $Character
 @onready var playerAnims = $Character/AnimationPlayer
 
+var alljump := false
+var nfToggle := false
+
 # test variables to fix truss climbing
 var climb_grace := 0.0
 var last_truss_point := Vector3.ZERO
@@ -170,6 +173,9 @@ func update_state():
 
 func _ready() -> void:
 	reset()
+	
+	alljump = GameManager.alljump
+	nfToggle = GameManager.nfToggle
 
 func is_leg_near_ground() -> bool:
 	return (flickRay.is_colliding() or flickRayBack.is_colliding() or flickRayRight.is_colliding() or flickRayLeft.is_colliding())
@@ -191,6 +197,12 @@ func add_Health(amount: float):
 		update_health_bar()
 
 func reset():
+	if $CollisionShape3D:
+		$CollisionShape3D.disabled = false
+	
+	if cam:
+		cam.freecam_active = false
+
 	if spawn != null:
 		global_position = spawn.global_position
 		global_rotation = spawn.global_rotation
@@ -201,22 +213,29 @@ func reset():
 				knockback_timer = 0.1 
 		else:
 			velocity = Vector3.ZERO
-		if spawn.has_meta("camera_mode"):
+			
+		if spawn.has_meta("camera_mode") and cam:
 			cam.mode = spawn.get_meta("camera_mode")
 			GameManager.shiftlocked = spawn.get_meta("shiftlocked")
 			cam.global_transform = spawn.get_meta("camera_transform")
-			
 			cam.sync_angles(cam.global_transform)
-		if not GameManager.alljump:
+			
+		if not GameManager.alljump and timer and timer.has_node("Panel"):
 			timer.get_node("Panel").resetTime()
-		
+	else:
+		velocity = Vector3.ZERO
 
 	Health = MaxHealth
 	update_health_bar()
+	
 	is_climbing = false
 	climb_normal = Vector3.ZERO
 	knockback_timer = 0.0
-
+	jump_lock = 0.0
+	coyote_timer = 0.0
+	step_visual_offset = 0.0
+	set_char_transparency(1.0)
+	
 func _physics_process(delta: float) -> void:
 	
 	# timers
@@ -237,8 +256,29 @@ func _physics_process(delta: float) -> void:
 			Health += regen_rate * delta
 			Health = min(Health, MaxHealth)
 			update_health_bar()
+			
+	if alljump and not GameManager.alljump:
+		var level_root = get_parent()
+		var original_spawn = level_root.find_child("Spawn", true, false) as Node3D
+		
+		spawn = original_spawn
+		
+		#if there is no spawn game will crash idc
+			
+		reset()
+
+	if nfToggle and not GameManager.nfToggle:
+		reset()
 	
-	# truss logic
+	if alljump and not GameManager.alljump:
+		reset()
+
+	if nfToggle and not GameManager.nfToggle:
+		reset()
+		
+	alljump = GameManager.alljump
+	nfToggle = GameManager.nfToggle
+	
 	# truss logic
 	if jump_lock <= 0.0:
 		var touching_truss := false

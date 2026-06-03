@@ -21,10 +21,17 @@ var current_page: String = "main"
 @export var menu_avatar: CharacterAvatarMesh
 @export var body_parts: Dictionary[ColorPickerButton, String]
 
+@onready var context_menu: PopupMenu = $ContextMenu
+var pinned_levels: Array = []
+var context_level_path: String = ""
+
 func _ready():
 
 	# -- Level Handlers -- #
 	get_window().files_dropped.connect(_file_dragged)
+	_load_pinned_levels_from_file()
+	if context_menu:
+		context_menu.id_pressed.connect(_on_context_menu_id_pressed)
 	load_all_levels()
 	
 	# -- Customization -- #
@@ -35,8 +42,11 @@ func _ready():
 		picker.color = GameManager.data.body_colors.get(part_name, Color.WHITE)
 	
 	# -- Grab input for search -- #
-	search.draw_control_chars = false
-	search.grab_focus(true)
+	if search != null:
+		search.draw_control_chars = false
+		search.grab_focus()
+	else:
+		push_warning("SearchBar node not found at $SearchBar! Check your scene tree hierarchy.")
 
 func _send_color_to_player(part: String, color: Color):
 	GameManager.data.body_colors[part] = color
@@ -117,16 +127,23 @@ func load_all_levels():
 		var creator = level.get("Creator", "Unknown Creator")
 
 		var buttonthing = button.instantiate()
-		buttonthing.text = obby_name
+		var is_pinned = i in pinned_levels
+		buttonthing.text = ("📌 " if is_pinned else "") + obby_name
+		buttonthing.set_meta("level_path", i)
+		
 		list.add_child(buttonthing)
 		
 		buttonthing.pressed.connect(func():
 			select_level(i, obby_name, difficulty, creator)
 		)
+
+		buttonthing.gui_input.connect(func(event):
+			_on_level_card_gui_input(event, i)
+		)
+		
 	orig = list.get_children()
 	sorted = orig.duplicate()
-
-
+	sort_levels()
 
 ## Gets a list of ur levels
 func fetch_levels():
@@ -162,15 +179,17 @@ func search_for_string_that_contains(str: String, arr: Array, orig: String = str
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if !event.is_action_pressed("Escape"):
-			search.grab_focus(true)
+		if search != null and !event.is_action_pressed("Escape"):
+			search.grab_focus()
 		
 		if event.is_action_pressed("Escape"):
 			clear_selected_level()
-			search.text = ""
+			if search != null:
+				search.text = ""
 			searchTerm = ""
 			sort_levels()
-			search.release_focus()
+			if search != null:
+				search.release_focus()
 			
 		if event.is_action_pressed("Enter"):
 			if GameManager.currentLevel == "":
@@ -201,6 +220,17 @@ func sort_levels():
 		
 		sorted.sort_custom(
 			func(a: Button, b: Button): 
+				var path_a = _get_path_for_button(a)
+				var path_b = _get_path_for_button(b)
+				var pin_a = path_a in pinned_levels
+				var pin_b = path_b in pinned_levels
+				
+				if pin_a != pin_b:
+					return pin_a
+				
+				if pin_a and pin_b:
+					return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+				
 				var is_a = searchTerm.to_lower() in a.text.to_lower()
 				var is_b = searchTerm.to_lower() in b.text.to_lower()
 				
@@ -212,6 +242,17 @@ func sort_levels():
 		
 		orig.sort_custom(
 			func(a: Button, b: Button):
+				var path_a = _get_path_for_button(a)
+				var path_b = _get_path_for_button(b)
+				var pin_a = path_a in pinned_levels
+				var pin_b = path_b in pinned_levels
+				
+				if pin_a != pin_b:
+					return pin_a
+				
+				if pin_a and pin_b:
+					return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+
 				return a.text.to_lower() < b.text.to_lower()
 		)
 		
@@ -220,9 +261,104 @@ func sort_levels():
 
 	else:
 		
+		orig.sort_custom(
+			func(a: Button, b: Button):
+				var path_a = _get_path_for_button(a)
+				var path_b = _get_path_for_button(b)
+				var pin_a = path_a in pinned_levels
+				var pin_b = path_b in pinned_levels
+				
+				if pin_a != pin_b:
+					return pin_a
+				
+				if pin_a and pin_b:
+					return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+
+				return orig.find(a) < orig.find(b)
+		)
 		
 		for item: Button in orig:
 			list.move_child(item, orig.find(item))
+
+func _get_path_for_button(btn: Button) -> String:
+	if btn.has_meta("level_path"):
+		return btn.get_meta("level_path")
+	return ""
+
+func _on_level_card_gui_input(event: InputEvent, path: String):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT and context_menu:
+		context_level_path = path
+		context_menu.clear()
+		# i'm doing everything here because idk how to add on context menu
+		# also it should be dynamic so yeah
+		var is_pinned = path in pinned_levels
+		context_menu.add_item("Unpin Level" if is_pinned else "Pin Level", 0)
+		
+		if is_pinned:
+			context_menu.add_item("Move Up", 1)
+			context_menu.add_item("Move Down", 2)
+			
+		context_menu.position = get_viewport().get_mouse_position()
+		context_menu.show()
+
+func _on_context_menu_id_pressed(id: int):
+	if context_level_path == "":
+		return
+	
+	match id:
+		0:
+			_toggle_pin_level(context_level_path)
+		1:
+			var idx = pinned_levels.find(context_level_path)
+			if idx > 0:
+				var temp = pinned_levels[idx]
+				pinned_levels[idx] = pinned_levels[idx - 1]
+				pinned_levels[idx - 1] = temp
+				_save_pinned_levels_to_file()
+				load_all_levels()
+		2:
+			var idx = pinned_levels.find(context_level_path)
+			if idx != -1 and idx < pinned_levels.size() - 1:
+				var temp = pinned_levels[idx]
+				pinned_levels[idx] = pinned_levels[idx + 1]
+				pinned_levels[idx + 1] = temp
+				_save_pinned_levels_to_file()
+				load_all_levels()
+
+func _toggle_pin_level(path: String):
+	if path in pinned_levels:
+		pinned_levels.erase(path)
+	else:
+		pinned_levels.append(path)
+	
+	_save_pinned_levels_to_file()
+	load_all_levels()
+
+func _load_pinned_levels_from_file():
+	if GameManager.data != null and "pinned_levels" in GameManager.data:
+		pinned_levels = GameManager.data.pinned_levels
+		return
+		
+	if FileAccess.file_exists("user://pinned_levels.json"):
+		var file = FileAccess.open("user://pinned_levels.json", FileAccess.READ)
+		if file != null:
+			var text = file.get_as_text()
+			var json = JSON.new()
+			if json.parse(text) == OK:
+				if typeof(json.data) == TYPE_ARRAY:
+					pinned_levels = json.data
+					return
+	pinned_levels = []
+
+func _save_pinned_levels_to_file():
+	if GameManager.data != null and "pinned_levels" in GameManager.data:
+		GameManager.data.pinned_levels = pinned_levels
+		ResourceSaver.save(GameManager.data, "user://data.tres")
+		return
+		
+	var file = FileAccess.open("user://pinned_levels.json", FileAccess.WRITE)
+	if file != null:
+		file.store_string(JSON.stringify(pinned_levels))
 
 # -- Switching between "pages" -- #
 
@@ -259,5 +395,8 @@ func _on_help_pressed() -> void:
 
 
 func _on_search_bar_text_changed(text) -> void:
-	searchTerm = search.text
+	if search != null:
+		searchTerm = search.text
+	else:
+		searchTerm = text
 	sort_levels()

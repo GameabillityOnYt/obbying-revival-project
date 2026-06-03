@@ -16,6 +16,7 @@ extends Node3D
 @onready var checkpoint = preload("res://assets/prefabs/models/checkpoint.tscn")
 var checkpoints = []
 var spawn_point: Node3D = null
+var alljump: bool = false
 
 var _spawn_parent: Node3D = self
 var _material_cache = {}
@@ -507,6 +508,8 @@ func loadstuff(data):
 
 
 func _ready() -> void:
+	alljump = GameManager.alljump
+	
 	WorkerThreadPool.add_task(func():
 		var leveldata = load_level(GameManager.currentLevel)
 
@@ -516,6 +519,11 @@ func _ready() -> void:
 		call_deferred("_finalize_loading", leveldata)
 	)
 
+func _process(_delta: float) -> void:
+	if alljump == true and GameManager.alljump == false:
+		removeCheckpoints()
+		
+	alljump = GameManager.alljump
 
 func _finalize_loading(leveldata):
 	loadstuff(leveldata)
