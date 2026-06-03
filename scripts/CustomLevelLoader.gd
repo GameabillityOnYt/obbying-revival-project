@@ -11,6 +11,9 @@ extends Node3D
 @onready var default_tile = preload("res://assets/images/textures/orp_brick_updated.png")
 @onready var roblox_tile = preload("res://assets/images/textures/RobloxTile.png")
 
+@onready var opaque_shader = preload("res://assets/resources/shaders/TextureRepeating.gdshader")
+@onready var transparent_shader = preload("res://assets/resources/shaders/part_transparent.gdshader")
+
 # alljump
 @onready var level = preload("res://custom.tscn")
 @onready var checkpoint = preload("res://assets/prefabs/models/checkpoint.tscn")
@@ -210,7 +213,11 @@ func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material, tr
 		if _material_cache.has(key):
 			mesh_instance.material_override = _material_cache[key]
 		else:
-			var mat = base_mat.duplicate()
+			var mat = base_mat.duplicate() as ShaderMaterial
+			if transparency > 0.0:
+				mat.shader = transparent_shader
+			else:
+				mat.shader = opaque_shader
 			
 			var texture: Texture2D
 			var trans: float
@@ -500,6 +507,10 @@ func addTruss(pos, rot_deg, size, color, is_disabled, transparency):
 		var mesh_node = newtruss.get_node_or_null("Cube_016") as MeshInstance3D
 		if mesh_node and mesh_node.material_override:
 			var mat = mesh_node.material_override.duplicate() as ShaderMaterial
+			if transparency > 0.0:
+				mat.shader = transparent_shader
+			else:
+				mat.shader = opaque_shader
 			mat.set_shader_parameter("base_color", color)
 			mat.set_shader_parameter("part_transparency", transparency)
 			mesh_node.material_override = mat
