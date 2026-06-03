@@ -94,13 +94,105 @@ func removeLastCheckpoint():
 func to_vec3(d):
 	if d == null:
 		return Vector3.ZERO
-	return Vector3(d.get("X", 0), d.get("Y", 0), d.get("Z", 0))
+	
+	# New format
+	if d is Array and d.size() >= 3:
+		return Vector3(d[0], d[1], d[2])
+		
+	# Old format for compatibility
+	if d is Dictionary:
+		return Vector3(d.get("X", 0.0), d.get("Y", 0.0), d.get("Z", 0.0))
+		
+	return Vector3.ZERO
 
 
 func to_color(d):
 	if d == null:
 		return Color.WHITE
-	return Color(d.get("R", 1), d.get("G", 1), d.get("B", 1))
+		
+	# New format (hex)
+	if d is String:
+		return Color.from_string(d, Color.WHITE)
+		
+	# Old format (dictionary lol holy unoptimized hooollyyyy)
+	if d is Dictionary:
+		return Color(d.get("R", 1.0), d.get("G", 1.0), d.get("B", 1.0))
+		
+	return Color.WHITE
+
+
+func spawn_node(node_data):
+	var classname = node_data.get("ClassName", "")
+	var p = node_data.get("Properties", {})
+	
+	var is_disabled = node_data.get("disabled", p.get("disabled", false))
+
+	if classname == "Part":
+		var shape = node_data.get("Shape", "Block")
+
+		if shape == "Cylinder":
+			addCylinder(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color")),
+				is_disabled
+			)
+		elif shape == "Wedge":
+			addWedge(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color")),
+				is_disabled
+			)
+		elif shape == "CornerWedge":
+			addCornerWedge(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color")),
+				is_disabled
+			)
+		elif shape == "Ball":
+			addBall(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color")),
+				is_disabled
+			)
+		else:
+			addPart(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				"Part",
+				to_color(p.get("Color")),
+				is_disabled
+			)
+
+	elif classname == "Spawn":
+		addPart(
+			to_vec3(p.get("Position")),
+			to_vec3(p.get("Rotation")),
+			to_vec3(p.get("Size")),
+			"Spawn",
+			to_color(p.get("Color")),
+			is_disabled
+		)
+		
+	elif classname == "Truss":
+		addTruss(
+			to_vec3(p.get("Position")),
+			to_vec3(p.get("Rotation")),
+			to_vec3(p.get("Size")),
+			to_color(p.get("Color")),
+			is_disabled
+		)
+
+	for child in node_data.get("Children", []):
+		spawn_node(child)
 
 
 func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material):
@@ -133,7 +225,7 @@ func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material):
 			mesh_instance.material_override = mat
 
 
-func addPart(pos, rot_deg, size, classname, color):
+func addPart(pos, rot_deg, size, classname, color, is_disabled):
 	var newpart = part.instantiate()
 	_spawn_parent.add_child(newpart)
 	var mesh = newpart.get_node("MeshInstance3D") as MeshInstance3D
@@ -148,6 +240,7 @@ func addPart(pos, rot_deg, size, classname, color):
 	if coll.shape:
 		coll.shape = coll.shape.duplicate() 
 		var shape = coll.shape as BoxShape3D
+		coll.disabled = is_disabled
 		if shape:
 			shape.size = size
 	if mesh.mesh:
@@ -165,7 +258,7 @@ func addPart(pos, rot_deg, size, classname, color):
 		newpart.name = "Spawn"
 
 
-func addCylinder(pos, rot_deg, size, color):
+func addCylinder(pos, rot_deg, size, color, is_disabled):
 	var newcyl = cylinder.instantiate()
 	_spawn_parent.add_child(newcyl)
 	var mesh = newcyl.get_node("MeshInstance3D") as MeshInstance3D
@@ -183,6 +276,7 @@ func addCylinder(pos, rot_deg, size, color):
 		if shape:
 			shape.radius = min(size.z, size.y) / 2.0
 			shape.height = size.x
+		coll.disabled = is_disabled
 	if mesh.mesh:
 		mesh.mesh = mesh.mesh.duplicate()
 		var cyl_mesh = mesh.mesh as CylinderMesh
@@ -195,7 +289,7 @@ func addCylinder(pos, rot_deg, size, color):
 			texture(mesh, color, mesh.mesh.material)
 
 
-func addWedge(pos, rot_deg, size, color):
+func addWedge(pos, rot_deg, size, color, is_disabled):
 	var newwedge = wedge.instantiate()
 	_spawn_parent.add_child(newwedge)
 	var mesh = newwedge.get_node("MeshInstance3D") as MeshInstance3D
@@ -236,6 +330,7 @@ func addWedge(pos, rot_deg, size, color):
 		var shape = ConvexPolygonShape3D.new()
 		shape.points = final_vertices
 		coll.shape = shape
+		coll.disabled = is_disabled
 		
 	var normals = PackedVector3Array()
 	for i in range(0, final_vertices.size(), 3):
@@ -258,7 +353,7 @@ func addWedge(pos, rot_deg, size, color):
 		texture(mesh, color, base_mat)
 
 
-func addCornerWedge(pos, rot_deg, size, color):
+func addCornerWedge(pos, rot_deg, size, color, is_disabled):
 	var newcornerwedge = cornerwedge.instantiate()
 	_spawn_parent.add_child(newcornerwedge)
 	var mesh = newcornerwedge.get_node("MeshInstance3D") as MeshInstance3D
@@ -298,6 +393,7 @@ func addCornerWedge(pos, rot_deg, size, color):
 		var shape = ConvexPolygonShape3D.new()
 		shape.points = final_vertices
 		coll.shape = shape
+		coll.disabled = is_disabled
 		
 	var normals = PackedVector3Array()
 	for i in range(0, final_vertices.size(), 3):
@@ -320,7 +416,7 @@ func addCornerWedge(pos, rot_deg, size, color):
 		texture(mesh, color, base_mat)
 	
 
-func addBall(pos, rot_deg, size, color):
+func addBall(pos, rot_deg, size, color, is_disabled):
 	var newball = ball.instantiate()
 	_spawn_parent.add_child(newball)
 	var mesh = newball.get_node("MeshInstance3D") as MeshInstance3D
@@ -338,6 +434,7 @@ func addBall(pos, rot_deg, size, color):
 		if shape:
 			# largest axis of the size divided by 2
 			shape.radius = max(size.x, max(size.y, size.z)) / 2
+		coll.disabled = is_disabled
 	if mesh.mesh:
 		mesh.mesh = mesh.mesh.duplicate()
 		var ball_mesh = mesh.mesh as SphereMesh
@@ -348,7 +445,7 @@ func addBall(pos, rot_deg, size, color):
 		if mesh.mesh.material:
 			texture(mesh, color, mesh.mesh.material)
 
-func addTruss(pos, rot_deg, size, color):
+func addTruss(pos, rot_deg, size, color, is_disabled):
 	var basis_ = Basis.from_euler(Vector3(
 		deg_to_rad(rot_deg.x),
 		deg_to_rad(rot_deg.y),
@@ -388,6 +485,7 @@ func addTruss(pos, rot_deg, size, color):
 					shape.size = Vector3(seg_h, size.y, size.z)
 				else:
 					shape.size = Vector3(size.x, size.y, seg_h)
+			coll.disabled = is_disabled
 
 		var mesh_node = newtruss.get_node_or_null("Cube_016") as MeshInstance3D
 		if mesh_node and mesh_node.material_override:
@@ -408,71 +506,6 @@ func addTruss(pos, rot_deg, size, color):
 	
 	physical_collider.position = pos
 	physical_collider.transform.basis = basis_
-
-func spawn_node(node_data):
-	var classname = node_data.get("ClassName", "")
-
-	if classname == "Part":
-		var p = node_data.get("Properties", {})
-		var shape = node_data.get("Shape", "Block")
-
-		if shape == "Cylinder":
-			addCylinder(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				to_color(p.get("Color"))
-			)
-		elif shape == "Wedge":
-			addWedge(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				to_color(p.get("Color"))
-			)
-		elif shape == "CornerWedge":
-			addCornerWedge(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				to_color(p.get("Color"))
-			)
-		elif shape == "Ball":
-			addBall(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				to_color(p.get("Color"))
-			)
-		else:
-			addPart(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				"Part",
-				to_color(p.get("Color"))
-			)
-
-	elif classname == "Spawn":
-		var p = node_data.get("Properties", {})
-		addPart(
-			to_vec3(p.get("Position")),
-			to_vec3(p.get("Rotation")),
-			to_vec3(p.get("Size")),
-			"Spawn",
-			to_color(p.get("Color"))
-		)
-	elif classname == "Truss":
-		var p = node_data.get("Properties", {})
-		addTruss(
-			to_vec3(p.get("Position")),
-			to_vec3(p.get("Rotation")),
-			to_vec3(p.get("Size")),
-			to_color(p.get("Color"))
-		)
-
-	for child in node_data.get("Children", []):
-		spawn_node(child)
 
 
 func _input(_event: InputEvent) -> void:
