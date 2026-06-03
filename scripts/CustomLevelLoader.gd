@@ -127,6 +127,7 @@ func spawn_node(node_data):
 	var p = node_data.get("Properties", {})
 	
 	var is_disabled = node_data.get("disabled", p.get("disabled", false))
+	var transparency = clamp(node_data.get("Transparency", p.get("Transparency", 0.0)), 0.0, 1.0)
 
 	if classname == "Part":
 		var shape = node_data.get("Shape", "Block")
@@ -137,7 +138,8 @@ func spawn_node(node_data):
 				to_vec3(p.get("Rotation")),
 				to_vec3(p.get("Size")),
 				to_color(p.get("Color")),
-				is_disabled
+				is_disabled,
+				transparency
 			)
 		elif shape == "Wedge":
 			addWedge(
@@ -145,7 +147,8 @@ func spawn_node(node_data):
 				to_vec3(p.get("Rotation")),
 				to_vec3(p.get("Size")),
 				to_color(p.get("Color")),
-				is_disabled
+				is_disabled,
+				transparency
 			)
 		elif shape == "CornerWedge":
 			addCornerWedge(
@@ -153,7 +156,8 @@ func spawn_node(node_data):
 				to_vec3(p.get("Rotation")),
 				to_vec3(p.get("Size")),
 				to_color(p.get("Color")),
-				is_disabled
+				is_disabled,
+				transparency
 			)
 		elif shape == "Ball":
 			addBall(
@@ -161,7 +165,8 @@ func spawn_node(node_data):
 				to_vec3(p.get("Rotation")),
 				to_vec3(p.get("Size")),
 				to_color(p.get("Color")),
-				is_disabled
+				is_disabled,
+				transparency
 			)
 		else:
 			addPart(
@@ -170,7 +175,8 @@ func spawn_node(node_data):
 				to_vec3(p.get("Size")),
 				"Part",
 				to_color(p.get("Color")),
-				is_disabled
+				is_disabled,
+				transparency
 			)
 
 	elif classname == "Spawn":
@@ -180,7 +186,8 @@ func spawn_node(node_data):
 			to_vec3(p.get("Size")),
 			"Spawn",
 			to_color(p.get("Color")),
-			is_disabled
+			is_disabled,
+			transparency
 		)
 		
 	elif classname == "Truss":
@@ -189,16 +196,17 @@ func spawn_node(node_data):
 			to_vec3(p.get("Rotation")),
 			to_vec3(p.get("Size")),
 			to_color(p.get("Color")),
-			is_disabled
+			is_disabled,
+			transparency
 		)
 
 	for child in node_data.get("Children", []):
 		spawn_node(child)
 
 
-func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material):
+func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material, transparency: float = 0.0):
 	if mesh_instance and base_mat:
-		var key = str(color) + "_" + str(GameManager.RobloxStuds)
+		var key = str(color) + "_" + str(GameManager.RobloxStuds) + "_" + str(transparency)
 		if _material_cache.has(key):
 			mesh_instance.material_override = _material_cache[key]
 		else:
@@ -221,12 +229,13 @@ func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material):
 			mat.set_shader_parameter("transparency", trans)
 			mat.set_shader_parameter("use_overlay_mode", overlay)
 			mat.set_shader_parameter("base_color", color)
+			mat.set_shader_parameter("part_transparency", transparency)
 			
 			_material_cache[key] = mat
 			mesh_instance.material_override = mat
 
 
-func addPart(pos, rot_deg, size, classname, color, is_disabled):
+func addPart(pos, rot_deg, size, classname, color, is_disabled, transparency):
 	var newpart = part.instantiate()
 	_spawn_parent.add_child(newpart)
 	var mesh = newpart.get_node("MeshInstance3D") as MeshInstance3D
@@ -251,7 +260,7 @@ func addPart(pos, rot_deg, size, classname, color, is_disabled):
 			box_mesh.size = size
 			
 		if mesh.mesh.material:
-			texture(mesh, color, mesh.mesh.material)
+			texture(mesh, color, mesh.mesh.material, transparency)
 
 	if classname == "Spawn":
 		print("Spawn found at:", pos)
@@ -259,7 +268,7 @@ func addPart(pos, rot_deg, size, classname, color, is_disabled):
 		newpart.name = "Spawn"
 
 
-func addCylinder(pos, rot_deg, size, color, is_disabled):
+func addCylinder(pos, rot_deg, size, color, is_disabled, transparency):
 	var newcyl = cylinder.instantiate()
 	_spawn_parent.add_child(newcyl)
 	var mesh = newcyl.get_node("MeshInstance3D") as MeshInstance3D
@@ -287,10 +296,10 @@ func addCylinder(pos, rot_deg, size, color, is_disabled):
 			cyl_mesh.height 		= size.x
 			
 		if mesh.mesh.material:
-			texture(mesh, color, mesh.mesh.material)
+			texture(mesh, color, mesh.mesh.material, transparency)
 
 
-func addWedge(pos, rot_deg, size, color, is_disabled):
+func addWedge(pos, rot_deg, size, color, is_disabled, transparency):
 	var newwedge = wedge.instantiate()
 	_spawn_parent.add_child(newwedge)
 	var mesh = newwedge.get_node("MeshInstance3D") as MeshInstance3D
@@ -351,10 +360,10 @@ func addWedge(pos, rot_deg, size, color, is_disabled):
 		var arr_mesh = ArrayMesh.new()
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		mesh.mesh = arr_mesh
-		texture(mesh, color, base_mat)
+		texture(mesh, color, base_mat, transparency)
 
 
-func addCornerWedge(pos, rot_deg, size, color, is_disabled):
+func addCornerWedge(pos, rot_deg, size, color, is_disabled, transparency):
 	var newcornerwedge = cornerwedge.instantiate()
 	_spawn_parent.add_child(newcornerwedge)
 	var mesh = newcornerwedge.get_node("MeshInstance3D") as MeshInstance3D
@@ -414,10 +423,10 @@ func addCornerWedge(pos, rot_deg, size, color, is_disabled):
 		var arr_mesh = ArrayMesh.new()
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		mesh.mesh = arr_mesh
-		texture(mesh, color, base_mat)
+		texture(mesh, color, base_mat, transparency)
 	
 
-func addBall(pos, rot_deg, size, color, is_disabled):
+func addBall(pos, rot_deg, size, color, is_disabled, transparency):
 	var newball = ball.instantiate()
 	_spawn_parent.add_child(newball)
 	var mesh = newball.get_node("MeshInstance3D") as MeshInstance3D
@@ -444,9 +453,9 @@ func addBall(pos, rot_deg, size, color, is_disabled):
 			ball_mesh.height = ball_mesh.radius * 2
 				
 		if mesh.mesh.material:
-			texture(mesh, color, mesh.mesh.material)
+			texture(mesh, color, mesh.mesh.material, transparency)
 
-func addTruss(pos, rot_deg, size, color, is_disabled):
+func addTruss(pos, rot_deg, size, color, is_disabled, transparency):
 	var basis_ = Basis.from_euler(Vector3(
 		deg_to_rad(rot_deg.x),
 		deg_to_rad(rot_deg.y),
@@ -492,6 +501,7 @@ func addTruss(pos, rot_deg, size, color, is_disabled):
 		if mesh_node and mesh_node.material_override:
 			var mat = mesh_node.material_override.duplicate() as ShaderMaterial
 			mat.set_shader_parameter("base_color", color)
+			mat.set_shader_parameter("part_transparency", transparency)
 			mesh_node.material_override = mat
 
 	var physical_collider = StaticBody3D.new()
@@ -500,6 +510,7 @@ func addTruss(pos, rot_deg, size, color, is_disabled):
 	
 	box_shape.size = size
 	collision_shape.shape = box_shape
+	collision_shape.disabled = is_disabled
 	
 	physical_collider.add_child(collision_shape)
 	physical_collider.add_to_group("climbable")
