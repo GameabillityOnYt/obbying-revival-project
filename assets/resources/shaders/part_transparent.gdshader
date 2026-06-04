@@ -1,5 +1,4 @@
 shader_type spatial;
-render_mode blend_mix, depth_draw_opaque;
 
 uniform vec3 base_color: source_color = vec3(0.0,0.0,0.0);
 uniform sampler2D albedo_texture : source_color, repeat_enable;
@@ -19,8 +18,7 @@ void vertex() {
         length(MODEL_MATRIX[1].xyz),
         length(MODEL_MATRIX[2].xyz)
     );
-	
-    // center shift fix for it to be like in roblox
+
     local_pos = (VERTEX + vec3(0.5)) * scale;
     local_normal = abs(NORMAL);
 }
