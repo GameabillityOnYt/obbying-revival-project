@@ -5,6 +5,7 @@ uniform sampler2D albedo_texture : source_color, repeat_enable;
 uniform vec2 tiling_scale = vec2(1.0, 1.0); // 1 stud per 1 unit
 uniform float sharpness : hint_range(0.0, 50.0) = 10.0;
 uniform float transparency: hint_range(0.0, 1.0, 0.01) = 0;
+uniform float part_transparency: hint_range(0.0, 1.0) = 0.0;
 uniform bool use_overlay_mode = false;
 
 varying vec3 scale;
@@ -17,8 +18,7 @@ void vertex() {
         length(MODEL_MATRIX[1].xyz),
         length(MODEL_MATRIX[2].xyz)
     );
-	
-    // center shift fix for it to be like in roblox
+
     local_pos = (VERTEX + vec3(0.5)) * scale;
     local_normal = abs(NORMAL);
 }
@@ -46,4 +46,6 @@ void fragment() {
     } else {
         ALBEDO = mix(stud_rgb, base_color, transparency);
     }
+	
+	ALPHA = 1.0 - part_transparency;
 }
