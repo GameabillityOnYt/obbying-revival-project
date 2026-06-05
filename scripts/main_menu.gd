@@ -211,8 +211,6 @@ func search_for_string_that_contains(str: String, arr: Array, orig: String = str
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if search != null and !event.is_action_pressed("Escape"):
-			search.grab_focus()
 		
 		if event.is_action_pressed("Escape"):
 			clear_selected_level()
@@ -224,6 +222,8 @@ func _input(event: InputEvent) -> void:
 				search.release_focus()
 			
 		if event.is_action_pressed("Enter"):
+			if current_page != "main":
+				return
 			if GameManager.currentLevel == "":
 				var level_files = fetch_levels()
 				var button: Button = list.get_child(0)
@@ -412,6 +412,9 @@ func _on_return_to_main_pressed() -> void:
 	current_page = "main"
 	GameManager.set_sliders_enabled(false)
 	cam.global_position = Main.global_position
+	
+	if search != null:
+		search.grab_focus()
 	
 	if DiscordRPCManager != null:
 		DiscordRPCManager.menu()
