@@ -65,6 +65,7 @@ func _ready():
 		GameManager.alljump = false # turns off alljump when u go out of the game
 		GameManager.nfToggle = false # turns off noclip practice when u go out of the game
 		GameManager.currentLevel = ""
+		GameManager.currentLoadedLevel = ""
 		pass)
 	
 	$Quit.pressed.connect(func():

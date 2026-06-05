@@ -100,11 +100,43 @@ func clear_selected_level():
 	title.text = "Select a level"
 	desc.text = ""
 
+func format_playtime(total_seconds: float) -> String:
+	var seconds := int(total_seconds) % 60
+	var minutes := int(total_seconds / 60) % 60
+	var hours := int(total_seconds / 3600) % 24
+	var days := int(total_seconds / 86400)
+	
+	var result = ""
+	
+
+	if days > 0:
+		result += "%dd " % days
+	if hours > 0 or days > 0:
+		result += "%dh " % hours
+	if minutes > 0 or hours > 0 or days > 0:
+		result += "%dm " % minutes
+		
+	# Always show seconds at the end
+	result += "%ds" % seconds
+	
+	return result
+
 func select_level(path: String, obby_name, difficulty, creator):
 	GameManager.currentLevel = path
-	title.text = "Selected: %s" % [obby_name]
-	desc.text = "Tier: %s\nBy: %s\n\nHit enter to play" % [difficulty, creator]
-
+	# lvl info
+	
+	var lvl_name = obby_name 
+	var lvl_time = GameManager.leveldata.level_playtime.get(GameManager.currentLevel, 0.0)
+	var lvl_attempts = GameManager.leveldata.level_attempts.get(GameManager.currentLevel, 0)
+	var formatted_time = format_playtime(lvl_time)
+	
+	title.text = "Selected: %s" % [lvl_name]
+	desc.text = "Tier: %s\nBy: %s\n\nLevel Playtime: %s\nLevel Attempts: %d\n\nHit enter to play" % [
+		difficulty, 
+		creator, 
+		formatted_time,
+		lvl_attempts
+	]
 ## Loads all levels in the folder and then adds it to the level list
 func load_all_levels():
 	
