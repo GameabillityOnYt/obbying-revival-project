@@ -245,7 +245,8 @@ func sort_levels():
 						return pin_a
 					
 					if pin_a and pin_b:
-						return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+						return a.text.substr(1).to_lower().similarity(searchTerm.to_lower()) > b.text.substr(1).to_lower().similarity(searchTerm.to_lower())
+						# return pinned_levels.find(path_a) < pinned_levels.find(path_b)
 				
 				var is_a = searchTerm.to_lower() in a.text.to_lower()
 				var is_b = searchTerm.to_lower() in b.text.to_lower()
