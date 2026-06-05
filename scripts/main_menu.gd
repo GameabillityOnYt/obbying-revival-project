@@ -17,6 +17,9 @@ var button = preload("res://assets/prefabs/UI/LevelCard.tscn")
 @onready var sorted: Array
 var searchTerm = ""
 var current_page: String = "main"
+@onready var pin_button = $Main/SearchBar/PinToggle
+var can_search_pinned = true
+
 
 @export var menu_avatar: CharacterAvatarMesh
 @export var body_parts: Dictionary[ColorPickerButton, String]
@@ -24,6 +27,7 @@ var current_page: String = "main"
 @onready var context_menu: PopupMenu = $ContextMenu
 var pinned_levels: Array = []
 var context_level_path: String = ""
+var current_focus
 
 func _ready():
 	# -- Level Handlers -- #
@@ -41,6 +45,10 @@ func _ready():
 		picker.color_changed.connect(func(c): _send_color_to_player(part_name, c))
 		picker.color = GameManager.data.body_colors.get(part_name, Color.WHITE)
 	
+	# -- Pin toggle stuff -- #
+	pin_button.add_theme_stylebox_override("pressed", pin_button.get_theme_stylebox("normal"))
+	pin_button.add_theme_stylebox_override("normal", pin_button.get_theme_stylebox("hover"))
+	pin_button.button_pressed = false
 	# -- Grab input for search -- #
 	if search != null:
 		search.draw_control_chars = false
@@ -126,13 +134,14 @@ func load_all_levels():
 		var difficulty = level.get("Difficulty", "Unknown")
 		var creator = level.get("Creator", "Unknown Creator")
 
-		var buttonthing = button.instantiate()
+		var buttonthing: Button = button.instantiate()
 		var is_pinned = i in pinned_levels
 		buttonthing.text = ("📌 " if is_pinned else "") + obby_name
+		buttonthing.set_meta("pinned", is_pinned)
 		buttonthing.set_meta("level_path", i)
 		
 		list.add_child(buttonthing)
-		
+
 		buttonthing.pressed.connect(func():
 			select_level(i, obby_name, difficulty, creator)
 		)
@@ -175,28 +184,35 @@ func search_for_string_that_contains(str: String, arr: Array, orig: String = str
 		print("Couldn't be found")
 		return arr[0]
 
-
+func _clear_search():
+	clear_selected_level()
+	if search != null:
+		search.text = ""
+	searchTerm = ""
+	sort_levels()
+	if search != null:
+		search.release_focus()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey:
+	if event is InputEventKey and current_page == "main":
 		if search != null and !event.is_action_pressed("Escape"):
 			search.grab_focus()
 		
+		if event.is_action_pressed("Pin Search"):
+			pin_button.button_pressed = can_search_pinned
+			can_search_pinned = not can_search_pinned
+			_clear_search()
+			
 		if event.is_action_pressed("Escape"):
-			clear_selected_level()
-			if search != null:
-				search.text = ""
-			searchTerm = ""
-			sort_levels()
-			if search != null:
-				search.release_focus()
+			_clear_search()
 			
 		if event.is_action_pressed("Enter"):
 			if GameManager.currentLevel == "":
 				var level_files = fetch_levels()
 				var button: Button = list.get_child(0)
 				print(list.get_child(0).text)
-				var selected_level_path = search_for_string_that_contains(button.text, level_files)
+				button.add_theme_stylebox_override("normal", button.get_theme_stylebox("hover"))
+				var selected_level_path = _get_path_for_button(button)
 				print(selected_level_path)
 				var loaded_level = load_level(selected_level_path)
 				
@@ -224,12 +240,12 @@ func sort_levels():
 				var path_b = _get_path_for_button(b)
 				var pin_a = path_a in pinned_levels
 				var pin_b = path_b in pinned_levels
-				
-				if pin_a != pin_b:
-					return pin_a
-				
-				if pin_a and pin_b:
-					return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+				if can_search_pinned:
+					if pin_a != pin_b:
+						return pin_a
+					
+					if pin_a and pin_b:
+						return pinned_levels.find(path_a) < pinned_levels.find(path_b)
 				
 				var is_a = searchTerm.to_lower() in a.text.to_lower()
 				var is_b = searchTerm.to_lower() in b.text.to_lower()
@@ -246,12 +262,12 @@ func sort_levels():
 				var path_b = _get_path_for_button(b)
 				var pin_a = path_a in pinned_levels
 				var pin_b = path_b in pinned_levels
-				
-				if pin_a != pin_b:
-					return pin_a
-				
-				if pin_a and pin_b:
-					return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+				if can_search_pinned:
+					if pin_a != pin_b:
+						return pin_a
+					
+					if pin_a and pin_b:
+						return pinned_levels.find(path_a) < pinned_levels.find(path_b)
 
 				return a.text.to_lower() < b.text.to_lower()
 		)
@@ -268,11 +284,12 @@ func sort_levels():
 				var pin_a = path_a in pinned_levels
 				var pin_b = path_b in pinned_levels
 				
-				if pin_a != pin_b:
-					return pin_a
-				
-				if pin_a and pin_b:
-					return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+				if can_search_pinned:
+					if pin_a != pin_b:
+						return pin_a
+					
+					if pin_a and pin_b:
+						return pinned_levels.find(path_a) < pinned_levels.find(path_b)
 
 				return orig.find(a) < orig.find(b)
 		)
@@ -409,3 +426,6 @@ func _on_search_bar_text_changed(text) -> void:
 	else:
 		searchTerm = text
 	sort_levels()
+
+func _on_pin_toggle_toggled(toggled_on: bool) -> void:
+	can_search_pinned = toggled_on
