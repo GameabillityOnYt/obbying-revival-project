@@ -200,9 +200,7 @@ func _input(event: InputEvent) -> void:
 		
 		if event.is_action_pressed("Pin Search"):
 			pin_button.button_pressed = can_search_pinned
-			can_search_pinned = not can_search_pinned
-			_clear_search()
-			
+
 		if event.is_action_pressed("Escape"):
 			_clear_search()
 			
@@ -429,4 +427,5 @@ func _on_search_bar_text_changed(text) -> void:
 	sort_levels()
 
 func _on_pin_toggle_toggled(toggled_on: bool) -> void:
-	can_search_pinned = toggled_on
+	can_search_pinned = not can_search_pinned
+	_clear_search()
