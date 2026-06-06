@@ -235,7 +235,11 @@ func reset():
 	coyote_timer = 0.0
 	step_visual_offset = 0.0
 	set_char_transparency(1.0)
-	
+	GameManager.leveldata.total_attempts += 1
+	if GameManager.currentLoadedLevel and GameManager.currentLoadedLevel != "":
+			if not GameManager.leveldata.level_attempts.has(GameManager.currentLoadedLevel):
+				GameManager.leveldata.level_attempts[GameManager.currentLoadedLevel] = 0
+			GameManager.leveldata.level_attempts[GameManager.currentLoadedLevel] += 1
 func _physics_process(delta: float) -> void:
 	
 	# timers
