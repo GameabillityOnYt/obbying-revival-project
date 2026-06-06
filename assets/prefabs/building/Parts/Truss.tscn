@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bu5ec1ohqmn8f"]
 
 [ext_resource type="Shader" uid="uid://b85tmyn414mvx" path="res://assets/resources/shaders/TextureRepeating.gdshader" id="1_hhwbl"]
+[ext_resource type="ArrayOccluder3D" uid="uid://l085xvh1jsr2" path="res://assets/prefabs/building/Occluder/Truss.occ" id="2_4ys1r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oy6c7"]
 
@@ -64,3 +65,6 @@ transform = Transform3D(9.536743e-08, 1.1920929e-08, 0.1, -0.8, 1.4210855e-15, 1
 material_override = SubResource("ShaderMaterial_truss")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_dj5c8")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1876602268]
+occluder = ExtResource("2_4ys1r")

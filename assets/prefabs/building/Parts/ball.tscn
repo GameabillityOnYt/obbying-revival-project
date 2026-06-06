@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://b85tmyn414mvx" path="res://assets/resources/shaders/TextureRepeating.gdshader" id="1_hhwbl"]
 [ext_resource type="Texture2D" uid="uid://b6hgmg04vmj57" path="res://assets/images/textures/Tile2.png" id="2_wljxp"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dku1c401ifkek" path="res://assets/prefabs/building/Occluder/ball.occ" id="3_2khbb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_v8hwf"]
 
@@ -13,6 +14,7 @@ shader_parameter/albedo_texture = ExtResource("2_wljxp")
 shader_parameter/tiling_scale = Vector2(0.5, 0.5)
 shader_parameter/sharpness = 10.000000475
 shader_parameter/transparency = 0.8999999798832
+shader_parameter/use_overlay_mode = false
 
 [sub_resource type="SphereMesh" id="SphereMesh_jahdi"]
 material = SubResource("ShaderMaterial_w23m8")
@@ -26,3 +28,6 @@ shape = SubResource("SphereShape3D_v8hwf")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1573000514]
 cast_shadow = 0
 mesh = SubResource("SphereMesh_jahdi")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1803087137]
+occluder = ExtResource("3_2khbb")

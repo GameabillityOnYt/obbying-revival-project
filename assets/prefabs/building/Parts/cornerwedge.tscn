@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://b85tmyn414mvx" path="res://assets/resources/shaders/TextureRepeating.gdshader" id="1_rpltl"]
 [ext_resource type="Texture2D" uid="uid://b6hgmg04vmj57" path="res://assets/images/textures/Tile2.png" id="2_wljxp"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cf6y6jjpb5cpn" path="res://assets/prefabs/building/Occluder/cornerwedge.occ" id="3_mvpgy"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hv26k"]
 
@@ -13,6 +14,7 @@ shader_parameter/albedo_texture = ExtResource("2_wljxp")
 shader_parameter/tiling_scale = Vector2(0.5, 0.5)
 shader_parameter/sharpness = 10.000000475
 shader_parameter/transparency = 0.8999999798832
+shader_parameter/use_overlay_mode = false
 
 [sub_resource type="PrismMesh" id="PrismMesh_gn3ad"]
 material = SubResource("ShaderMaterial_tqoxi")
@@ -27,3 +29,6 @@ debug_fill = false
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1543830062]
 cast_shadow = 0
 mesh = SubResource("PrismMesh_gn3ad")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1464077044]
+occluder = ExtResource("3_mvpgy")

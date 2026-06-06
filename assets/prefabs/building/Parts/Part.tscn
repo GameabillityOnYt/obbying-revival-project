@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsern6kcs1k5t"]
 
-[ext_resource type="Shader" uid="uid://b35qw48vmqolq" path="res://assets/resources/shaders/part_transparent.gdshader" id="1_rxqix"]
+[ext_resource type="Shader" path="res://assets/resources/shaders/part_transparent.gdshader" id="1_rxqix"]
 [ext_resource type="Texture2D" uid="uid://c13kfsjqmtytl" path="res://assets/images/textures/Tile1.png" id="2_rxqix"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fpvxl"]
@@ -19,6 +19,8 @@ shader_parameter/use_overlay_mode = false
 [sub_resource type="BoxMesh" id="BoxMesh_iuq8f"]
 material = SubResource("ShaderMaterial_wljxp")
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_rxqix"]
+
 [node name="Part2" type="RigidBody3D" unique_id=1081425028]
 freeze = true
 
@@ -28,3 +30,6 @@ shape = SubResource("BoxShape3D_fpvxl")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1760716609]
 cast_shadow = 0
 mesh = SubResource("BoxMesh_iuq8f")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=550955835]
+occluder = SubResource("BoxOccluder3D_rxqix")
