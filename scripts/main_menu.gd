@@ -18,7 +18,7 @@ var button = preload("res://assets/prefabs/UI/LevelCard.tscn")
 var searchTerm = ""
 var current_page: String = "main"
 @onready var pin_button = $Main/SearchBar/PinToggle
-var can_search_pinned = true
+var can_search_pinned = false
 
 
 @export var menu_avatar: CharacterAvatarMesh
@@ -46,9 +46,7 @@ func _ready():
 		picker.color = GameManager.data.body_colors.get(part_name, Color.WHITE)
 	
 	# -- Pin toggle stuff -- #
-	pin_button.add_theme_stylebox_override("pressed", pin_button.get_theme_stylebox("normal"))
-	pin_button.add_theme_stylebox_override("normal", pin_button.get_theme_stylebox("hover"))
-	pin_button.button_pressed = false
+	pin_button.add_theme_stylebox_override("pressed", pin_button.get_theme_stylebox("hover"))
 	# -- Grab input for search -- #
 	if search != null:
 		search.draw_control_chars = false
@@ -231,7 +229,7 @@ func _input(event: InputEvent) -> void:
 			search.grab_focus()
 		
 		if event.is_action_pressed("Pin Search"):
-			pin_button.button_pressed = can_search_pinned
+			pin_button.button_pressed = !can_search_pinned
 
 		if event.is_action_pressed("Escape"):
 			_clear_search()
@@ -293,12 +291,12 @@ func sort_levels():
 				var path_b = _get_path_for_button(b)
 				var pin_a = path_a in pinned_levels
 				var pin_b = path_b in pinned_levels
-				if can_search_pinned:
-					if pin_a != pin_b:
-						return pin_a
-					
-					if pin_a and pin_b:
-						return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+
+				if pin_a != pin_b:
+					return pin_a
+				
+				if pin_a and pin_b:
+					return pinned_levels.find(path_a) < pinned_levels.find(path_b)
 
 				return a.text.to_lower() < b.text.to_lower()
 		)
@@ -315,12 +313,12 @@ func sort_levels():
 				var pin_a = path_a in pinned_levels
 				var pin_b = path_b in pinned_levels
 				
-				if can_search_pinned:
-					if pin_a != pin_b:
-						return pin_a
-					
-					if pin_a and pin_b:
-						return pinned_levels.find(path_a) < pinned_levels.find(path_b)
+
+				if pin_a != pin_b:
+					return pin_a
+				
+				if pin_a and pin_b:
+					return pinned_levels.find(path_a) < pinned_levels.find(path_b)
 
 				return orig.find(a) < orig.find(b)
 		)
