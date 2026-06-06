@@ -244,9 +244,9 @@ jolt_physics_3d/collisions/collision_margin_fraction=0.18245
 
 [rendering]
 
+occlusion_culling/bvh_build_quality=0
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 textures/decals/filter=0
+occlusion_culling/occlusion_rays_per_thread=16

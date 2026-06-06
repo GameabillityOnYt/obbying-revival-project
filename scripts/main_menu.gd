@@ -235,6 +235,8 @@ func _input(event: InputEvent) -> void:
 			_clear_search()
 			
 		if event.is_action_pressed("Enter"):
+			if current_page != "main":
+				return
 			if GameManager.currentLevel == "":
 				var level_files = fetch_levels()
 				var button: Button = list.get_child(0)
@@ -426,6 +428,9 @@ func _on_return_to_main_pressed() -> void:
 	current_page = "main"
 	GameManager.set_sliders_enabled(false)
 	cam.global_position = Main.global_position
+	
+	if search != null:
+		search.grab_focus()
 	
 	if DiscordRPCManager != null:
 		DiscordRPCManager.menu()

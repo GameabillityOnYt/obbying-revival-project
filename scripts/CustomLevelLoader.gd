@@ -244,8 +244,10 @@ func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material, tr
 func addPart(pos, rot_deg, size, classname, color, is_disabled, transparency):
 	var newpart = part.instantiate()
 	_spawn_parent.add_child(newpart)
+	
 	var mesh = newpart.get_node("MeshInstance3D") as MeshInstance3D
 	var coll = newpart.get_node("CollisionShape3D")
+	
 	newpart.position = pos
 	var rot_rad = Vector3(
 		deg_to_rad(rot_deg.x),
@@ -253,20 +255,12 @@ func addPart(pos, rot_deg, size, classname, color, is_disabled, transparency):
 		deg_to_rad(rot_deg.z)
 	)
 	newpart.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
-	if coll.shape:
-		coll.shape = coll.shape.duplicate() 
-		var shape = coll.shape as BoxShape3D
+	# performance fix; scale instead of duplicating since we are using the same .tscn
+	newpart.scale = size
+	if coll:
 		coll.disabled = is_disabled
-		if shape:
-			shape.size = size
-	if mesh.mesh:
-		mesh.mesh = mesh.mesh.duplicate()
-		var box_mesh = mesh.mesh as BoxMesh
-		if box_mesh:
-			box_mesh.size = size
-			
-		if mesh.mesh.material:
-			texture(mesh, color, mesh.mesh.material, transparency)
+	if mesh and mesh.mesh and mesh.mesh.material:
+		texture(mesh, color, mesh.mesh.material, transparency)
 
 	if classname == "Spawn":
 		print("Spawn found at:", pos)
@@ -278,32 +272,29 @@ func addCylinder(pos, rot_deg, size, color, is_disabled, transparency):
 	var newcyl = cylinder.instantiate()
 	_spawn_parent.add_child(newcyl)
 	var mesh = newcyl.get_node("MeshInstance3D") as MeshInstance3D
-	var coll = newcyl.get_node("CollisionShape3D")
+	var coll = newcyl.get_node("CollisionShape3D") as CollisionShape3D
+	
 	newcyl.position = pos
-	var rot_rad = Vector3(
-		deg_to_rad(rot_deg.x),
-		deg_to_rad(rot_deg.y),
-		deg_to_rad(rot_deg.z)
-	)
+	var rot_rad = Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z))
 	newcyl.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
-	if coll.shape:
-		coll.shape = coll.shape.duplicate()
-		var shape = coll.shape as CylinderShape3D
-		if shape:
-			shape.radius = min(size.z, size.y) / 2.0
-			shape.height = size.x
+	
+	newcyl.scale = Vector3.ONE
+	
+	var length = size.x
+	var radius = min(size.z, size.y) / 2.0
+	
+	# scale only mesh to avoid jolt physics error 
+	if mesh:
+		mesh.scale = Vector3(radius * 2.0, length / 2.0, radius * 2.0)
+	
+	if coll and coll.shape:
+		coll.shape = coll.shape.duplicate() # only duplicate coll shape
+		coll.shape.radius = radius
+		coll.shape.height = length
 		coll.disabled = is_disabled
-	if mesh.mesh:
-		mesh.mesh = mesh.mesh.duplicate()
-		var cyl_mesh = mesh.mesh as CylinderMesh
-		if cyl_mesh:
-			cyl_mesh.top_radius 	= min(size.z, size.y) / 2.0
-			cyl_mesh.bottom_radius  = min(size.z, size.y) / 2.0
-			cyl_mesh.height 		= size.x
-			
-		if mesh.mesh.material:
-			texture(mesh, color, mesh.mesh.material, transparency)
-
+		
+	if mesh and mesh.mesh and mesh.mesh.material:
+		texture(mesh, color, mesh.mesh.material, transparency)
 
 func addWedge(pos, rot_deg, size, color, is_disabled, transparency):
 	var newwedge = wedge.instantiate()
@@ -437,6 +428,7 @@ func addBall(pos, rot_deg, size, color, is_disabled, transparency):
 	_spawn_parent.add_child(newball)
 	var mesh = newball.get_node("MeshInstance3D") as MeshInstance3D
 	var coll = newball.get_node("CollisionShape3D")
+	
 	newball.position = pos
 	var rot_rad = Vector3(
 		deg_to_rad(rot_deg.x),
@@ -444,21 +436,19 @@ func addBall(pos, rot_deg, size, color, is_disabled, transparency):
 		deg_to_rad(rot_deg.z)
 	)
 	newball.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
-	if coll.shape:
+	
+	if coll and coll.shape:
 		coll.shape = coll.shape.duplicate()
 		var shape = coll.shape as SphereShape3D
 		if shape:
-			# largest axis of the size divided by 2
-			shape.radius = max(size.x, max(size.y, size.z)) / 2
+			shape.radius = max(size.x, max(size.y, size.z)) / 2.0
 		coll.disabled = is_disabled
-	if mesh.mesh:
-		mesh.mesh = mesh.mesh.duplicate()
-		var ball_mesh = mesh.mesh as SphereMesh
-		if ball_mesh:
-			ball_mesh.radius = max(size.x, max(size.y, size.z)) / 2
-			ball_mesh.height = ball_mesh.radius * 2
+	if mesh:
+		var ball_radius = max(size.x, max(size.y, size.z)) / 2.0
+		var ball_diameter = ball_radius * 2.0
+		mesh.scale = Vector3(ball_diameter, ball_diameter, ball_diameter)
 				
-		if mesh.mesh.material:
+		if mesh.mesh and mesh.mesh.material:
 			texture(mesh, color, mesh.mesh.material, transparency)
 
 func addTruss(pos, rot_deg, size, color, is_disabled, transparency):
