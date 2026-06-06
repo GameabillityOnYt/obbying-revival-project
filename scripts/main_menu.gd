@@ -464,3 +464,7 @@ func _on_search_bar_text_changed(text) -> void:
 func _on_pin_toggle_toggled(toggled_on: bool) -> void:
 	can_search_pinned = not can_search_pinned
 	_clear_search()
+
+
+func _on_controls_pressed() -> void:
+	pass # Replace with function body.
