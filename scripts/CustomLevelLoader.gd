@@ -206,7 +206,6 @@ func spawn_node(node_data):
 	for child in node_data.get("Children", []):
 		spawn_node(child)
 
-
 func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material, transparency: float = 0.0):
 	if mesh_instance and base_mat:
 		var key = str(color) + "_" + str(GameManager.RobloxStuds) + "_" + str(transparency)
@@ -567,7 +566,7 @@ func _ready() -> void:
 	
 	WorkerThreadPool.add_task(func():
 		var leveldata = load_level(GameManager.currentLevel)
-
+		GameManager.currentLoadedLevel = GameManager.currentLevel
 		if leveldata == null:
 			return
 

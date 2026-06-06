@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Obbying Revival Project"
-config/version="0.6.0"
+config/version="0.7.0"
 run/main_scene="uid://de5w0bnvhc3wn"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
@@ -229,11 +229,6 @@ Escape={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
-"Pin Search"={
-"deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
-}
 
 [physics]
 
@@ -248,4 +243,5 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 textures/decals/filter=0

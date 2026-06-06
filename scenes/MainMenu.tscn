@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
 [ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
 [ext_resource type="Script" uid="uid://0lyvkixg3uog" path="res://assets/prefabs/UI/toggles/practice_toggle.gd" id="28_duata"]
+[ext_resource type="Script" uid="uid://dbdi5jum6klnw" path="res://scenes/stats.gd" id="29_lw0hr"]
 
 [sub_resource type="GDScript" id="GDScript_2nypq"]
 resource_name = "Location"
@@ -258,7 +259,7 @@ autowrap_mode = 1
 
 [node name="Label2" type="Label" parent="Main/Desc" unique_id=463695962]
 layout_mode = 0
-offset_top = 95.0
+offset_top = 53.0
 offset_right = 525.0
 offset_bottom = 207.0
 theme_override_fonts/font = ExtResource("2_0ykhv")
@@ -544,6 +545,33 @@ offset_right = -88.0
 offset_bottom = 55.0
 text = "Menu Transitions"
 script = ExtResource("28_duata")
+
+[node name="Stats" type="Panel" parent="Settings" unique_id=1517122689]
+offset_left = -341.0
+offset_top = -340.0
+offset_right = 330.0
+offset_bottom = -119.0
+script = ExtResource("29_lw0hr")
+
+[node name="Label" type="Label" parent="Settings/Stats" unique_id=697621103]
+layout_mode = 0
+offset_right = 672.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 24
+text = "Stats"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Settings/Stats" unique_id=84446492]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 672.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 24
+text = "Total Playtime
+Total attempts"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
 position = Vector2(2539, 0)
