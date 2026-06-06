@@ -249,4 +249,3 @@ rendering_device/driver.windows="d3d12"
 textures/vram_compression/import_etc2_astc=true
 textures/decals/filter=0
 occlusion_culling/occlusion_rays_per_thread=64
-occlusion_culling/use_occlusion_culling=true
