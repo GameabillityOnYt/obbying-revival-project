@@ -39,7 +39,7 @@ func _ready():
 	load_all_levels()
 	
 	# -- Customization -- #
-	print(body_parts)
+	print_debug(body_parts)
 	for picker in body_parts:
 		var part_name: String = body_parts[picker]
 		picker.color_changed.connect(func(c): _send_color_to_player(part_name, c))
@@ -56,7 +56,7 @@ func _ready():
 
 func _send_color_to_player(part: String, color: Color):
 	GameManager.data.body_colors[part] = color
-	print(GameManager.data.body_colors)
+	print_debug(GameManager.data.body_colors)
 	if menu_avatar:
 		menu_avatar.update_part_color(part, color)
 
@@ -67,7 +67,7 @@ func _file_dragged(files:PackedStringArray):
 	for x in files:
 		if x.ends_with(".json"):
 			var file_name = x.get_file()
-			print(file_name + " has been dragged into the game!")
+			print_debug(file_name + " has been dragged into the game!")
 			var dest = "user://levels/"+file_name
 			
 			if FileAccess.file_exists(dest):
@@ -91,12 +91,12 @@ func _on_play_pressed() -> void: # when you press play
 func load_level(path): # loads level data and returns it
 	var file = FileAccess.open(path,FileAccess.READ)
 	if file == null:
-		print("failed to open file " + path)
+		print_debug("failed to open file " + path)
 		return
 	var text = file.get_as_text()
 	var json = JSON.new()
 	if json.parse(text) != OK:
-		print("invalid json ", path)
+		print_debug("invalid json ", path)
 		return
 	var data = json.data
 	return data
@@ -190,7 +190,7 @@ func fetch_levels():
 	var dir = DirAccess.open("user://levels")
 	
 	if dir == null:
-		print("no levels folder gng")
+		print_debug("no levels folder gng")
 		return levels
 	
 	dir.list_dir_begin()
@@ -204,14 +204,14 @@ func fetch_levels():
 	dir.list_dir_end()
 	return levels
 
-func search_for_string_that_contains(str: String, arr: Array, orig: String = str):
-	if str.length() > 4:
+func search_for_string_that_contains(text: String, arr: Array, original_text: String = text):
+	if text.length() > 4:
 		for item: String in arr:
-			if item.contains(str):
+			if item.contains(text):
 				return item
-		return search_for_string_that_contains(str.substr(0, str.length()/2), arr, orig)
+		return search_for_string_that_contains(text.substr(0, text.length()/2), arr, original_text)
 	else:
-		print("Couldn't be found")
+		print_debug("Couldn't be found")
 		return arr[0]
 
 func _clear_search():
@@ -238,12 +238,12 @@ func _input(event: InputEvent) -> void:
 			if current_page != "main":
 				return
 			if GameManager.currentLevel == "":
-				var level_files = fetch_levels()
-				var button: Button = list.get_child(0)
-				print(list.get_child(0).text)
-				button.add_theme_stylebox_override("normal", button.get_theme_stylebox("hover"))
-				var selected_level_path = _get_path_for_button(button)
-				print(selected_level_path)
+				var _level_files = fetch_levels()
+				var enter_button: Button = list.get_child(0)
+				print_debug(list.get_child(0).text)
+				button.add_theme_stylebox_override("normal", enter_button.get_theme_stylebox("hover"))
+				var selected_level_path = _get_path_for_button(enter_button)
+				print_debug(selected_level_path)
 				var loaded_level = load_level(selected_level_path)
 				
 				select_level(
@@ -372,7 +372,7 @@ func _on_context_menu_id_pressed(id: int):
 				_save_pinned_levels_to_file()
 				load_all_levels()
 		3:
-			print("deleted level: " + context_level_path)
+			print_debug("deleted level: " + context_level_path)
 			DirAccess.remove_absolute(context_level_path)
 			load_all_levels()
 
@@ -461,6 +461,6 @@ func _on_search_bar_text_changed(text) -> void:
 		searchTerm = text
 	sort_levels()
 
-func _on_pin_toggle_toggled(toggled_on: bool) -> void:
+func _on_pin_toggle_toggled(_toggled_on: bool) -> void:
 	can_search_pinned = not can_search_pinned
 	_clear_search()

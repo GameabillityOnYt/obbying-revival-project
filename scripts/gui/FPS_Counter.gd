@@ -5,6 +5,6 @@ func _process(_delta: float) -> void:
 	text = "FPS: %d // %d" % [Engine.get_frames_per_second(), counter]
 
 func _ready():
-	GameManager.CharacterAdded.connect(func(new):
-		print("hello i was spawned")
+	GameManager.CharacterAdded.connect(func(_new):
+		print_debug("hello i was spawned")
 		pass)
