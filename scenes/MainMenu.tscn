@@ -13,23 +13,25 @@
 [ext_resource type="PackedScene" uid="uid://b5gciitoxxw3j" path="res://assets/prefabs/UI/maxFPS.tscn" id="7_ucygd"]
 [ext_resource type="Texture2D" uid="uid://cm7xmpucganbp" path="res://assets/images/UI/Discord.png" id="8_8vx4p"]
 [ext_resource type="PackedScene" uid="uid://buyvpgvyi0uoh" path="res://assets/prefabs/UI/toggles/practiceToggle.tscn" id="8_mipys"]
-[ext_resource type="Script" path="res://scenes/texture_button.gd" id="9_tdapf"]
+[ext_resource type="Script" uid="uid://4mp0toaekq5u" path="res://scenes/texture_button.gd" id="9_tdapf"]
 [ext_resource type="Texture2D" uid="uid://qfb15y132847" path="res://assets/images/UI/Youtube.png" id="10_7shrw"]
 [ext_resource type="Script" uid="uid://ywm0qwb34xhy" path="res://scripts/gui/renderer_switcher.gd" id="11_ptake"]
 [ext_resource type="Texture2D" uid="uid://bc1ndnhomeu3p" path="res://assets/images/UI/github.png" id="11_viowm"]
-[ext_resource type="Script" path="res://scenes/youtube.gd" id="11_yovvs"]
+[ext_resource type="Script" uid="uid://c3yvaobcwnxb" path="res://scenes/youtube.gd" id="11_yovvs"]
 [ext_resource type="Texture2D" uid="uid://g62uv3pegogh" path="res://assets/images/UI/itch.png" id="12_1n6yq"]
 [ext_resource type="PackedScene" uid="uid://duj8uanvn1sqi" path="res://assets/prefabs/models/character.tscn" id="12_bky6r"]
-[ext_resource type="Script" path="res://scenes/github.gd" id="12_yovvs"]
-[ext_resource type="Script" path="res://scenes/itch.gd" id="13_viowm"]
+[ext_resource type="Script" uid="uid://blhv505opx1ra" path="res://scenes/github.gd" id="12_yovvs"]
+[ext_resource type="Script" uid="uid://ct0434tmo8n1a" path="res://scenes/itch.gd" id="13_viowm"]
 [ext_resource type="PackedScene" uid="uid://dy2sb60hk1gd2" path="res://assets/prefabs/UI/toggles/RPCToggle.tscn" id="14_5faoh"]
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
 [ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
 [ext_resource type="Theme" uid="uid://xrauqfunapst" path="res://assets/prefabs/themes/main.tres" id="20_i7r3k"]
 [ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
 [ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
-[ext_resource type="Script" uid="uid://0lyvkixg3uog" path="res://assets/prefabs/UI/toggles/practice_toggle.gd" id="28_duata"]
+[ext_resource type="Script" uid="uid://5slnbm0unoqv" path="res://scripts/gui/TransitionScript.gd" id="29_gnvml"]
 [ext_resource type="Script" uid="uid://dbdi5jum6klnw" path="res://scenes/stats.gd" id="29_lw0hr"]
+[ext_resource type="PackedScene" uid="uid://d0cuo25kel32v" path="res://assets/prefabs/UI/TransitionSpeed.tscn" id="30_gnvml"]
+[ext_resource type="Script" uid="uid://fx2hmg5bjdtn" path="res://scripts/gui/TransitionToggle.gd" id="31_d3xvo"]
 
 [sub_resource type="GDScript" id="GDScript_2nypq"]
 resource_name = "Location"
@@ -138,18 +140,10 @@ func _process(delta: float) -> void:
 	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
 "
 
-[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar", "body_parts")]
+[node name="MainMenu" type="Node2D" unique_id=361961899 node_paths=PackedStringArray("menu_avatar")]
 position = Vector2(-27, 103)
 script = ExtResource("1_ow34m")
 menu_avatar = NodePath("AvatarCustom/SubViewportContainer/SubViewport/CharacterAvatar")
-body_parts = {
-NodePath("AvatarCustom/VBoxContainer/HeadRow/head"): "head",
-NodePath("AvatarCustom/VBoxContainer/TorsoRow/torso"): "torso",
-NodePath("AvatarCustom/VBoxContainer/LeftArmRow/left_arm"): "left_arm",
-NodePath("AvatarCustom/VBoxContainer/RightArmRow/right_arm"): "right_arm",
-NodePath("AvatarCustom/VBoxContainer/LeftLegRow/left_leg"): "left_leg",
-NodePath("AvatarCustom/VBoxContainer/RightLegRow/right_leg"): "right_leg"
-}
 
 [node name="ContextMenu" type="PopupMenu" parent="." unique_id=73262679]
 oversampling_override = 1.0
@@ -538,14 +532,6 @@ offset_top = 61.0
 offset_right = -136.0
 offset_bottom = 92.0
 
-[node name="MenuTransitionToggle" parent="Settings" unique_id=1307507111 instance=ExtResource("8_mipys")]
-offset_left = -271.0
-offset_top = 24.0
-offset_right = -88.0
-offset_bottom = 55.0
-text = "Menu Transitions"
-script = ExtResource("28_duata")
-
 [node name="Stats" type="Panel" parent="Settings" unique_id=1517122689]
 offset_left = -341.0
 offset_top = -340.0
@@ -572,6 +558,39 @@ text = "Total Playtime
 Total attempts"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TransitionFrame" type="Panel" parent="Settings" unique_id=10888243]
+visible = false
+offset_left = -130.0
+offset_top = 85.0
+offset_right = 189.0
+offset_bottom = 241.0
+script = ExtResource("29_gnvml")
+
+[node name="DoA360" type="CheckButton" parent="Settings/TransitionFrame" unique_id=436273522]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 96.0
+offset_right = 315.0
+offset_bottom = 150.0
+text = "Rotate 360° (don't click during 
+spin, buggy)"
+
+[node name="TranstionSpeed" parent="Settings/TransitionFrame" unique_id=260363675 instance=ExtResource("30_gnvml")]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 309.0
+offset_bottom = 68.0
+max_value = 10.0
+
+[node name="TransitionToggle" type="Button" parent="Settings" unique_id=1343501745]
+offset_left = -304.0
+offset_top = 210.0
+offset_right = -143.0
+offset_bottom = 241.0
+text = "Menu Transitions ▾"
+script = ExtResource("31_d3xvo")
 
 [node name="AvatarCustom" type="Node2D" parent="." unique_id=1786122237]
 position = Vector2(2539, 0)
