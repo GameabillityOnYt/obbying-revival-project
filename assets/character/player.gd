@@ -475,8 +475,8 @@ func _sync_gamemanager_toggles() -> void:
 	alljump = GameManager.alljump
 	nfToggle = GameManager.nfToggle
 	
-	if Input.is_action_just_pressed("Reset") and not GameManager.RToggle: reset()
-	if Input.is_action_just_pressed("ResetAlt") and GameManager.RToggle: reset()
+	if Input.is_action_just_pressed("Reset") and not GameManager.data.RToggle: reset()
+	if Input.is_action_just_pressed("ResetAlt") and GameManager.data.RToggle: reset()
 
 	if GameManager.nfToggle:
 		if Input.is_action_just_pressed("noclip"):
