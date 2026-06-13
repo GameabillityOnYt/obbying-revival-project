@@ -129,10 +129,10 @@ func _physics_process(delta: float) -> void:
 	alljump = GameManager.alljump
 	nfToggle = GameManager.nfToggle
 	
-	if Input.is_action_just_pressed("Reset") and !GameManager.RToggle:
+	if Input.is_action_just_pressed("Reset") and !GameManager.data.RToggle:
 		reset()
 
-	if Input.is_action_just_pressed("ResetAlt") and GameManager.RToggle:
+	if Input.is_action_just_pressed("ResetAlt") and GameManager.data.RToggle:
 		reset()
 		
 	if GameManager.nfToggle:
@@ -604,7 +604,7 @@ func reset():
 
 	if spawn != null:
 		global_position = spawn.global_position
-		global_rotation = spawn.global_rotation
+		global_rotation = Vector3(0, spawn.global_rotation.y, 0)
 		
 		if spawn.has_meta("saved_velocity"):
 			velocity = spawn.get_meta("saved_velocity")
