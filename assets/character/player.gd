@@ -110,7 +110,44 @@ func _physics_process(delta: float) -> void:
 	# environment and status setting
 	_process_timers(delta)
 	_process_health_regeneration(delta)
-	_sync_gamemanager_toggles()
+	
+	if alljump and not GameManager.alljump:
+		var level_root = get_parent()
+		var original_spawn = level_root.find_child("Spawn", true, false) as Node3D
+		spawn = original_spawn
+		reset()
+
+	if nfToggle and not GameManager.nfToggle:
+		reset()
+	
+	if alljump and not GameManager.alljump:
+		reset()
+
+	if nfToggle and not GameManager.nfToggle:
+		reset()
+		
+	alljump = GameManager.alljump
+	nfToggle = GameManager.nfToggle
+	
+	if Input.is_action_just_pressed("Reset") and !GameManager.RToggle:
+		reset()
+
+	if Input.is_action_just_pressed("ResetAlt") and GameManager.RToggle:
+		reset()
+		
+	if GameManager.nfToggle:
+		if Input.is_action_just_pressed("noclip"):
+			$CollisionShape3D.disabled = not $CollisionShape3D.disabled
+			if $CollisionShape3D.disabled:
+				velocity = Vector3.ZERO 
+
+		if Input.is_action_just_pressed("freecam"):
+			cam.freecam_active = not cam.freecam_active
+				
+		if cam.freecam_active:
+			State = states.Idle
+			update_anim()
+			return
 	
 	if position.y <= -voidDepth:
 		reset()
@@ -176,7 +213,6 @@ func _handle_standard_movement(delta: float) -> void:
 
 	if not $CollisionShape3D.disabled:
 		rotation.x = 0.0
-		rotation.z = 0.0
 		if rotation_locked:
 			rotation.y = cam.yaw + PI
 		elif direction.length() > 0.001 and not is_climbing:
@@ -465,26 +501,6 @@ func _process_health_regeneration(delta: float) -> void:
 			Health += regen_rate * delta
 			Health = min(Health, MaxHealth)
 			update_health_bar()
-
-func _sync_gamemanager_toggles() -> void:
-	if (alljump and not GameManager.alljump) or (nfToggle and not GameManager.nfToggle):
-		var level_root = get_parent()
-		var original_spawn = level_root.find_child("Spawn", true, false) as Node3D
-		if original_spawn: spawn = original_spawn
-		reset()
-		
-	alljump = GameManager.alljump
-	nfToggle = GameManager.nfToggle
-	
-	if Input.is_action_just_pressed("Reset") and not GameManager.data.RToggle: reset()
-	if Input.is_action_just_pressed("ResetAlt") and GameManager.data.RToggle: reset()
-
-	if GameManager.nfToggle:
-		if Input.is_action_just_pressed("noclip"):
-			$CollisionShape3D.disabled = not $CollisionShape3D.disabled
-			if $CollisionShape3D.disabled: velocity = Vector3.ZERO 
-		if Input.is_action_just_pressed("freecam"):
-			cam.freecam_active = not cam.freecam_active
 
 func is_leg_near_ground() -> bool:
 	return (flickRay.is_colliding() or flickRayBack.is_colliding() or flickRayRight.is_colliding() or flickRayLeft.is_colliding())
