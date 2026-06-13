@@ -589,7 +589,6 @@ func reset():
 
 	if spawn != null:
 		global_position = spawn.global_position
-		global_rotation = spawn.global_rotation
 		
 		if spawn.has_meta("saved_velocity"):
 			velocity = spawn.get_meta("saved_velocity")
