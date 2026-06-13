@@ -500,10 +500,8 @@ func set_char_transparency(alpha: float) -> void:
 		return
 	last_alpha = alpha
 
-	# Micro-optimization: Pre-determine the transparency mode outside the loop
 	var mode := BaseMaterial3D.TRANSPARENCY_DISABLED if alpha >= 1.0 else BaseMaterial3D.Transparency.TRANSPARENCY_ALPHA_DEPTH_PRE_PASS
 
-	# Pure linear loop—no recursion, no type-checking, no duplicates at runtime!
 	for material in cached_character_materials:
 		material.albedo_color.a = alpha
 		material.transparency = mode
