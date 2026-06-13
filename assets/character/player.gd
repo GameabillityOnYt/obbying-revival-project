@@ -176,6 +176,7 @@ func _handle_standard_movement(delta: float) -> void:
 
 	if not $CollisionShape3D.disabled:
 		rotation.x = 0.0
+		rotation.z = 0.0
 		if rotation_locked:
 			rotation.y = cam.yaw + PI
 		elif direction.length() > 0.001 and not is_climbing:
@@ -587,6 +588,7 @@ func reset():
 
 	if spawn != null:
 		global_position = spawn.global_position
+		global_rotation = spawn.global_rotation
 		
 		if spawn.has_meta("saved_velocity"):
 			velocity = spawn.get_meta("saved_velocity")
