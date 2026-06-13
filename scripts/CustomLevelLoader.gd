@@ -82,7 +82,7 @@ func remove_checkpoints():
 			
 	checkpoints.clear()
 	
-	var original_spawn = get_node_or_null("Spawn") 
+	var original_spawn = get_node_or_null("LevelParts/Spawn") 
 	if original_spawn:
 		spawn_point = original_spawn
 		player.spawn = original_spawn
@@ -104,7 +104,7 @@ func remove_last_checkpoint():
 		if player != null:
 			player.spawn = previous_checkpoint
 	else:
-		var original_spawn = get_node_or_null("Spawn")
+		var original_spawn = get_node_or_null("LevelParts/Spawn")
 		spawn_point = original_spawn
 		
 		if player != null:
