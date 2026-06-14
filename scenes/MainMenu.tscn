@@ -26,8 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
 [ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
 [ext_resource type="Theme" uid="uid://xrauqfunapst" path="res://assets/prefabs/themes/main.tres" id="20_i7r3k"]
-[ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
-[ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
 [ext_resource type="Script" uid="uid://0lyvkixg3uog" path="res://assets/prefabs/UI/toggles/practice_toggle.gd" id="28_duata"]
 [ext_resource type="Script" uid="uid://dbdi5jum6klnw" path="res://scenes/stats.gd" id="29_lw0hr"]
 
@@ -524,19 +522,6 @@ offset_left = -596.0
 offset_top = 103.0
 offset_right = -396.0
 offset_bottom = 134.0
-
-[node name="NFToggle" parent="Settings" unique_id=118282012 instance=ExtResource("23_2axsc")]
-offset_left = -338.0
-offset_top = 103.0
-offset_right = -136.0
-offset_bottom = 134.0
-script = ExtResource("24_wrgne")
-
-[node name="AlljumpToggle" parent="Settings" unique_id=366619103 instance=ExtResource("8_mipys")]
-offset_left = -244.0
-offset_top = 61.0
-offset_right = -136.0
-offset_bottom = 92.0
 
 [node name="MenuTransitionToggle" parent="Settings" unique_id=1307507111 instance=ExtResource("8_mipys")]
 offset_left = -271.0
