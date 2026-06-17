@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsern6kcs1k5t"]
 
-[ext_resource type="Shader" path="res://assets/resources/shaders/part_transparent.gdshader" id="1_rxqix"]
+[ext_resource type="Shader" uid="uid://b35qw48vmqolq" path="res://assets/resources/shaders/part_transparent.gdshader" id="1_rxqix"]
 [ext_resource type="Texture2D" uid="uid://c13kfsjqmtytl" path="res://assets/images/textures/Tile1.png" id="2_rxqix"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fpvxl"]

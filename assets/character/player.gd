@@ -395,6 +395,28 @@ func _process_ground_air_velocity(delta: float, direction: Vector3) -> void:
 # ==========================================
 # Step climbing logic
 # ==========================================
+				velocity.x = 0
+				velocity.z = 0
+	if not $CollisionShape3D.disabled:
+		rotation.x = 0.0
+		if rotation_locked:
+			rotation.y = cam.yaw + PI
+		elif direction.length() > 0.001 and not is_climbing:
+			var target_angle = atan2(-direction.x, -direction.z)
+			rotation.y = lerp_angle(rotation.y, target_angle + PI, 10.0 * min(delta, 0.1))
+			
+			
+	_step_climbing()
+	move_and_slide()
+	
+	if is_on_wall() and not is_on_floor() and velocity.y < 0:
+		if get_real_velocity().y >= -0.1:
+			velocity.y = 0.0
+
+	update_state()
+	update_anim()
+	just_jumped_off = false
+	
 func velocity_after_step(v_initial: float, gravity: float, step_height: float) -> float:
 	var discriminant = v_initial * v_initial - 2.0 * gravity * step_height
 	if discriminant < 0.0:
