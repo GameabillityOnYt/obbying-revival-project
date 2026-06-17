@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://lmy5axxbv241" path="res://assets/prefabs/UI/toggles/RToggle.tscn" id="14_ptake"]
 [ext_resource type="Script" uid="uid://24mab5chvxqt" path="res://scripts/gui/stud_switcher.gd" id="20_hm0al"]
 [ext_resource type="Theme" uid="uid://xrauqfunapst" path="res://assets/prefabs/themes/main.tres" id="20_i7r3k"]
-[ext_resource type="Script" uid="uid://0lyvkixg3uog" path="res://assets/prefabs/UI/toggles/practice_toggle.gd" id="28_duata"]
 [ext_resource type="PackedScene" uid="uid://tlywd3fwrydm" path="res://assets/prefabs/UI/toggles/nfToggle.tscn" id="23_2axsc"]
 [ext_resource type="Script" uid="uid://dxu5nchp1ofpk" path="res://scripts/gui/toggles/NF_toggle.gd" id="24_wrgne"]
 [ext_resource type="Script" uid="uid://5slnbm0unoqv" path="res://scripts/gui/TransitionScript.gd" id="29_gnvml"]
@@ -203,7 +202,7 @@ offset_bottom = 350.0
 [node name="ScrollContainer" type="ScrollContainer" parent="Main/Panel" unique_id=714695751]
 layout_mode = 0
 offset_right = 525.0
-offset_bottom = 420.0
+offset_bottom = 470.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main/Panel/ScrollContainer" unique_id=680865465 groups=["level_list"]]
 layout_mode = 2
@@ -520,13 +519,6 @@ offset_top = 103.0
 offset_right = -396.0
 offset_bottom = 134.0
 
-[node name="MenuTransitionToggle" parent="Settings" unique_id=1307507111 instance=ExtResource("8_mipys")]
-offset_left = -271.0
-offset_top = 24.0
-offset_right = -88.0
-offset_bottom = 55.0
-text = "Menu Transitions"
-script = ExtResource("28_duata")
 [node name="NFToggle" parent="Settings" unique_id=118282012 instance=ExtResource("23_2axsc")]
 offset_left = -338.0
 offset_top = 103.0

@@ -66,4 +66,4 @@ func _ground_check():
 
 func _physics_process(_delta: float) -> void:
 	_ground_check()
-	print_debug("I'm useful")
+	print("I'm useful")

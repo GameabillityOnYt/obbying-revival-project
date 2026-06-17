@@ -24,38 +24,22 @@ var alljump: bool = false
 var _spawn_parent: Node3D = self
 var _material_cache = {}
 
-# ==========================================
-# Core engine loops
-# ==========================================
-func _ready() -> void:
-	alljump = GameManager.alljump
-	
-	WorkerThreadPool.add_task(func():
-		var leveldata = load_level(GameManager.currentLevel)
-		GameManager.currentLoadedLevel = GameManager.currentLevel
-		if leveldata == null:
-			return
 
-		call_deferred("_finalize_loading", leveldata)
-	)
+func load_level(path):
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		print("failed to open file:", path)
+		return null
 
-func _process(_delta: float) -> void:
-	if alljump == true and GameManager.alljump == false:
-		remove_checkpoints()
-		
-	alljump = GameManager.alljump
+	var json = JSON.new()
+	if json.parse(file.get_as_text()) != OK:
+		print("invalid json:", path)
+		return null
 
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("addCheckpoint"):
-		add_checkpoint(player.position, player.rotation, player.velocity, player.cam.mode, player.cam.global_transform, GameManager.shiftlocked)
-	if Input.is_action_just_pressed("removeCheckpoint"):
-		remove_last_checkpoint()
+	return json.data
 
-# ==========================================
-# Checkpoint handling
-# ==========================================
 
-func add_checkpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_transform: Transform3D, shiftlock: bool):
+func addCheckpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_transform: Transform3D, shiftlock: bool):
 	if GameManager.alljump:
 		var newcheckpoint = checkpoint.instantiate()
 		newcheckpoint.set_meta("saved_velocity", vel)
@@ -72,23 +56,23 @@ func add_checkpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam
 		
 		if player == null: await GameManager.CharacterAdded
 		player.spawn = newcheckpoint
-		print_debug("Player spawn successfully updated to checkpoint!")
+		print("Player spawn successfully updated to checkpoint!")
 
 
-func remove_checkpoints():
+func removeCheckpoints():
 	for cp in checkpoints:
 		if is_instance_valid(cp):
 			cp.queue_free()
 			
 	checkpoints.clear()
 	
-	var original_spawn = get_node_or_null("LevelParts/Spawn") 
+	var original_spawn = get_node_or_null("Spawn") 
 	if original_spawn:
 		spawn_point = original_spawn
 		player.spawn = original_spawn
 
 
-func remove_last_checkpoint():
+func removeLastCheckpoint():
 	if checkpoints.is_empty():
 		return
 
@@ -104,17 +88,125 @@ func remove_last_checkpoint():
 		if player != null:
 			player.spawn = previous_checkpoint
 	else:
-		var original_spawn = get_node_or_null("LevelParts/Spawn")
+		var original_spawn = get_node_or_null("Spawn")
 		spawn_point = original_spawn
 		
 		if player != null:
 			player.spawn = original_spawn
 
-# ==========================================
-# Part specifications
-# ==========================================
 
-func stud_texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material, transparency: float = 0.0):
+func to_vec3(d):
+	if d == null:
+		return Vector3.ZERO
+	
+	# New format
+	if d is Array and d.size() >= 3:
+		return Vector3(d[0], d[1], d[2])
+		
+	# Old format for compatibility
+	if d is Dictionary:
+		return Vector3(d.get("X", 0.0), d.get("Y", 0.0), d.get("Z", 0.0))
+		
+	return Vector3.ZERO
+
+
+func to_color(d):
+	if d == null:
+		return Color.WHITE
+		
+	# New format (hex)
+	if d is String:
+		return Color.from_string(d, Color.WHITE)
+		
+	# Old format (dictionary lol holy unoptimized hooollyyyy)
+	if d is Dictionary:
+		return Color(d.get("R", 1.0), d.get("G", 1.0), d.get("B", 1.0))
+		
+	return Color.WHITE
+
+
+func spawn_node(node_data):
+	var classname = node_data.get("ClassName", "")
+	var p = node_data.get("Properties", {})
+	
+	var is_disabled = node_data.get("disabled", p.get("disabled", false))
+	var transparency = clamp(node_data.get("Transparency", p.get("Transparency", 0.0)), 0.0, 1.0)
+
+	if classname == "Part":
+		var shape = node_data.get("Shape", "Block")
+
+		if shape == "Cylinder":
+			addCylinder(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color")),
+				is_disabled,
+				transparency
+			)
+		elif shape == "Wedge":
+			addWedge(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color")),
+				is_disabled,
+				transparency
+			)
+		elif shape == "CornerWedge":
+			addCornerWedge(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color")),
+				is_disabled,
+				transparency
+			)
+		elif shape == "Ball":
+			addBall(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				to_color(p.get("Color")),
+				is_disabled,
+				transparency
+			)
+		else:
+			addPart(
+				to_vec3(p.get("Position")),
+				to_vec3(p.get("Rotation")),
+				to_vec3(p.get("Size")),
+				"Part",
+				to_color(p.get("Color")),
+				is_disabled,
+				transparency
+			)
+
+	elif classname == "Spawn":
+		addPart(
+			to_vec3(p.get("Position")),
+			to_vec3(p.get("Rotation")),
+			to_vec3(p.get("Size")),
+			"Spawn",
+			to_color(p.get("Color")),
+			is_disabled,
+			transparency
+		)
+		
+	elif classname == "Truss":
+		addTruss(
+			to_vec3(p.get("Position")),
+			to_vec3(p.get("Rotation")),
+			to_vec3(p.get("Size")),
+			to_color(p.get("Color")),
+			is_disabled,
+			transparency
+		)
+
+	for child in node_data.get("Children", []):
+		spawn_node(child)
+
+func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material, transparency: float = 0.0):
 	if mesh_instance and base_mat:
 		var key = str(color) + "_" + str(GameManager.RobloxStuds) + "_" + str(transparency)
 		if _material_cache.has(key):
@@ -149,7 +241,7 @@ func stud_texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Materia
 			mesh_instance.material_override = mat
 
 
-func add_part(pos, rot_deg, size, classname, color, is_disabled, transparency):
+func addPart(pos, rot_deg, size, classname, color, is_disabled, transparency):
 	var newpart = part.instantiate()
 	_spawn_parent.add_child(newpart)
 	
@@ -168,15 +260,15 @@ func add_part(pos, rot_deg, size, classname, color, is_disabled, transparency):
 	if coll:
 		coll.disabled = is_disabled
 	if mesh and mesh.mesh and mesh.mesh.material:
-		stud_texture(mesh, color, mesh.mesh.material, transparency)
+		texture(mesh, color, mesh.mesh.material, transparency)
 
 	if classname == "Spawn":
-		print_debug("Spawn found at:", pos)
+		print("Spawn found at:", pos)
 		spawn_point = newpart
 		newpart.name = "Spawn"
 
 
-func add_cylinder(pos, rot_deg, size, color, is_disabled, transparency):
+func addCylinder(pos, rot_deg, size, color, is_disabled, transparency):
 	var newcyl = cylinder.instantiate()
 	_spawn_parent.add_child(newcyl)
 	var mesh = newcyl.get_node("MeshInstance3D") as MeshInstance3D
@@ -202,9 +294,9 @@ func add_cylinder(pos, rot_deg, size, color, is_disabled, transparency):
 		coll.disabled = is_disabled
 		
 	if mesh and mesh.mesh and mesh.mesh.material:
-		stud_texture(mesh, color, mesh.mesh.material, transparency)
+		texture(mesh, color, mesh.mesh.material, transparency)
 
-func add_wedge(pos, rot_deg, size, color, is_disabled, transparency):
+func addWedge(pos, rot_deg, size, color, is_disabled, transparency):
 	var newwedge = wedge.instantiate()
 	_spawn_parent.add_child(newwedge)
 	var mesh = newwedge.get_node("MeshInstance3D") as MeshInstance3D
@@ -265,10 +357,10 @@ func add_wedge(pos, rot_deg, size, color, is_disabled, transparency):
 		var arr_mesh = ArrayMesh.new()
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		mesh.mesh = arr_mesh
-		stud_texture(mesh, color, base_mat, transparency)
+		texture(mesh, color, base_mat, transparency)
 
 
-func add_corner_wedge(pos, rot_deg, size, color, is_disabled, transparency):
+func addCornerWedge(pos, rot_deg, size, color, is_disabled, transparency):
 	var newcornerwedge = cornerwedge.instantiate()
 	_spawn_parent.add_child(newcornerwedge)
 	var mesh = newcornerwedge.get_node("MeshInstance3D") as MeshInstance3D
@@ -328,10 +420,10 @@ func add_corner_wedge(pos, rot_deg, size, color, is_disabled, transparency):
 		var arr_mesh = ArrayMesh.new()
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		mesh.mesh = arr_mesh
-		stud_texture(mesh, color, base_mat, transparency)
+		texture(mesh, color, base_mat, transparency)
 	
 
-func add_ball(pos, rot_deg, size, color, is_disabled, transparency):
+func addBall(pos, rot_deg, size, color, is_disabled, transparency):
 	var newball = ball.instantiate()
 	_spawn_parent.add_child(newball)
 	var mesh = newball.get_node("MeshInstance3D") as MeshInstance3D
@@ -357,9 +449,9 @@ func add_ball(pos, rot_deg, size, color, is_disabled, transparency):
 		mesh.scale = Vector3(ball_diameter, ball_diameter, ball_diameter)
 				
 		if mesh.mesh and mesh.mesh.material:
-			stud_texture(mesh, color, mesh.mesh.material, transparency)
+			texture(mesh, color, mesh.mesh.material, transparency)
 
-func add_truss(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
+func addTruss(pos, rot_deg, size, color, is_disabled, transparency):
 	var basis_ = Basis.from_euler(Vector3(
 		deg_to_rad(rot_deg.x),
 		deg_to_rad(rot_deg.y),
@@ -378,79 +470,67 @@ func add_truss(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_d
 
 	var num_segments: int = maxi(1, int(floor(max_length / seg_h)))
 
-	# Make one single invisible collision parent for the entire truss
-	var truss_root = StaticBody3D.new()
-	truss_root.position = pos
-	truss_root.transform.basis = basis_
-	truss_root.add_to_group("climbable")
-	_spawn_parent.add_child(truss_root)
+	for i in range(num_segments):
+		var newtruss = truss.instantiate()
+		add_child(newtruss)
 
+		var offset_scalar = -max_length / 2.0 + (i * seg_h) + (seg_h / 2.0)
+		newtruss.position = pos + (basis_ * (local_axis * offset_scalar))
+		newtruss.transform.basis = basis_
+
+		# resize collision per segment
+		var coll = newtruss.get_node_or_null("CollisionShape3D")
+		if coll and coll.shape:
+			coll.shape = coll.shape.duplicate()
+			var shape = coll.shape as BoxShape3D
+			if shape:
+				# seg_h tall; full width/depth
+				if local_axis == Vector3.UP:
+					shape.size = Vector3(size.x, seg_h, size.z)
+				elif local_axis == Vector3.RIGHT:
+					shape.size = Vector3(seg_h, size.y, size.z)
+				else:
+					shape.size = Vector3(size.x, size.y, seg_h)
+			coll.disabled = is_disabled
+
+		var mesh_node = newtruss.get_node_or_null("Cube_016") as MeshInstance3D
+		if mesh_node and mesh_node.material_override:
+			var mat = mesh_node.material_override.duplicate() as ShaderMaterial
+			if transparency > 0.0:
+				mat.shader = transparent_shader
+			else:
+				mat.shader = opaque_shader
+			mat.set_shader_parameter("base_color", color)
+			mat.set_shader_parameter("part_transparency", transparency)
+			mesh_node.material_override = mat
+
+	var physical_collider = StaticBody3D.new()
 	var collision_shape = CollisionShape3D.new()
 	var box_shape = BoxShape3D.new()
+	
 	box_shape.size = size
 	collision_shape.shape = box_shape
 	collision_shape.disabled = is_disabled
-	truss_root.add_child(collision_shape)
-
-	var dummy = truss.instantiate()
-	var mesh_node = dummy.get_node_or_null("Cube_016") as MeshInstance3D
-	if not mesh_node:
-		dummy.queue_free()
-		return
-		
-	var base_mesh = mesh_node.mesh
-	var mesh_internal_transform = mesh_node.transform 
-	var base_mat = mesh_node.material_override.duplicate() as ShaderMaterial
 	
-	if base_mat:
-		if transparency > 0.0:
-			base_mat.shader = transparent_shader
-		else:
-			base_mat.shader = opaque_shader
-		base_mat.set_shader_parameter("base_color", color)
-		base_mat.set_shader_parameter("part_transparency", transparency)
+	physical_collider.add_child(collision_shape)
+	physical_collider.add_to_group("climbable")
+	_spawn_parent.add_child(physical_collider)
 	
-	dummy.queue_free()
+	physical_collider.position = pos
+	physical_collider.transform.basis = basis_
 
-	# Set up a MultiMesh instance so the computer can draw all segments in one single batch
-	var multimesh_instance = MultiMeshInstance3D.new()
-	var mm = MultiMesh.new()
-	mm.transform_format = MultiMesh.TRANSFORM_3D
-	mm.mesh = base_mesh
-	mm.instance_count = num_segments
-	
-	multimesh_instance.multimesh = mm
-	multimesh_instance.material_override = base_mat
-	truss_root.add_child(multimesh_instance)
 
-	for i in range(num_segments):
-		var offset_scalar = -max_length / 2.0 + (i * seg_h) + (seg_h / 2.0)
-		var local_pos = local_axis * offset_scalar
-		
-		var segment_transform = Transform3D(Basis.IDENTITY, local_pos) * mesh_internal_transform
-		mm.set_instance_transform(i, segment_transform)
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("addCheckpoint"):
+		addCheckpoint(player.position, player.rotation, player.velocity, player.cam.mode, player.cam.global_transform, GameManager.shiftlocked)
+	if Input.is_action_just_pressed("removeCheckpoint"):
+		removeLastCheckpoint()
 
-# ==========================================
-# Loading handling
-# ==========================================
 
-func load_level(path):
-	var file = FileAccess.open(path, FileAccess.READ)
-	if file == null:
-		print_debug("failed to open file:", path)
-		return null
-
-	var json = JSON.new()
-	if json.parse(file.get_as_text()) != OK:
-		print_debug("invalid json:", path)
-		return null
-
-	return json.data
-
-func load_stuff(data):
+func loadstuff(data):
 	spawn_point = null
 
-	print_debug("Loading level...")
+	print("Loading level...")
 	var main_folder = data.get("Data")
 	if main_folder == null:
 		push_error("Missing 'Data' key inside JSON!")
@@ -468,85 +548,32 @@ func load_stuff(data):
 	add_child(container)
 	_spawn_parent = self
 
-	print_debug("Level loaded. Spawn =", spawn_point)
+	print("Level loaded. Spawn =", spawn_point)
+
+
+func _ready() -> void:
+	alljump = GameManager.alljump
 	
+	WorkerThreadPool.add_task(func():
+		var leveldata = load_level(GameManager.currentLevel)
+		GameManager.currentLoadedLevel = GameManager.currentLevel
+		if leveldata == null:
+			return
+
+		call_deferred("_finalize_loading", leveldata)
+	)
+
+func _process(_delta: float) -> void:
+	if alljump == true and GameManager.alljump == false:
+		removeCheckpoints()
+		
+	alljump = GameManager.alljump
+
 func _finalize_loading(leveldata):
-	load_stuff(leveldata)
+	loadstuff(leveldata)
 
 	if spawn_point != null:
 		player.spawn = spawn_point
 		player.reset()
 	else:
 		push_warning("NO SPAWN FOUND IN LEVEL")
-
-# ==========================================
-# Helper functions
-# ==========================================
-
-func to_vec3(d):
-	if d == null:
-		return Vector3.ZERO
-	
-	# New format
-	if d is Array and d.size() >= 3:
-		return Vector3(d[0], d[1], d[2])
-		
-	# Old format for compatibility
-	if d is Dictionary:
-		return Vector3(d.get("X", 0.0), d.get("Y", 0.0), d.get("Z", 0.0))
-		
-	return Vector3.ZERO
-
-func to_color(d):
-	if d == null:
-		return Color.WHITE
-		
-	# New format (hex)
-	if d is String:
-		return Color.from_string(d, Color.WHITE)
-		
-	# Old format (dictionary lol holy unoptimized hooollyyyy)
-	if d is Dictionary:
-		return Color(d.get("R", 1.0), d.get("G", 1.0), d.get("B", 1.0))
-		
-	return Color.WHITE
-
-
-func spawn_node(node_data):
-	var classname : String = node_data.get("ClassName", "")
-	var p : Dictionary = node_data.get("Properties", {})
-	
-	var is_disabled : bool = node_data.get("disabled", p.get("disabled", false))
-	var transparency : float = clamp(node_data.get("Transparency", p.get("Transparency", 0.0)), 0.0, 1.0)
-	
-	var pos = to_vec3(p.get("Position"))
-	var rot = to_vec3(p.get("Rotation"))
-	var size = to_vec3(p.get("Size"))
-	var color = to_color(p.get("Color"))
-	
-	if classname == "Part":
-		var shape: String = node_data.get("Shape", "Block")
-		if shape == "Block":
-			add_part(pos, rot, size, "Part", color, is_disabled, transparency)
-		elif shape == "Cylinder":
-			add_cylinder(pos, rot, size, color, is_disabled, transparency)
-		elif shape == "Wedge":
-			add_wedge(pos, rot, size, color, is_disabled, transparency)
-		elif shape == "CornerWedge":
-			add_corner_wedge(pos, rot, size, color, is_disabled, transparency)
-		elif shape == "Ball":
-			add_ball(pos, rot, size, color, is_disabled, transparency)
-		else:
-			add_part(pos, rot, size, "Part", color, is_disabled, transparency)
-			
-	elif classname == "Spawn":
-		add_part(pos, rot, size, "Spawn", color, is_disabled, transparency)
-		
-	elif classname == "Truss":
-		add_truss(pos, rot, size, color, is_disabled, transparency)
-			
-	var children: Array = node_data.get("Children", [])
-	if not children.is_empty():
-		for child in children:
-			if child is Dictionary:
-				spawn_node(child)

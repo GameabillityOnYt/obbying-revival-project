@@ -29,7 +29,7 @@ func _enable_plugin() -> void:
 	restart_window.connect("confirmed", save_no_restart)
 	restart_window.connect("canceled", save_and_restart)
 	get_editor_interface().popup_dialog_centered(restart_window)
-	print_debug("IGNORE RED ERROR MESSAGES BEFORE THE SECOND RESTART!")
+	print("IGNORE RED ERROR MESSAGES BEFORE THE SECOND RESTART!")
 
 func _disable_plugin() -> void:
 	remove_autoload_singleton("DiscordRPCLoader")
