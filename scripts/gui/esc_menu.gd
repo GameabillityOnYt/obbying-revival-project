@@ -34,16 +34,19 @@ func toggle_paused():
 
 	else:
 		$ControlText.text += "\nR/Ctrl + R - Reset to Spawn"
-	if GameManager.data.menuTransitions:
+		
+	var speed = GameManager.menuSpeed
+
+	if speed > 0.0:
+		var duration = speed * 0.25
+		
 		var intween = create_tween()
-		intween.set_ease(Tween.EASE_IN_OUT)
-		intween.set_trans(Tween.TRANS_CUBIC)
+		intween.set_ease(Tween.EASE_OUT)
+		intween.set_trans(Tween.TRANS_QUAD)
 		intween.bind_node(self)
-		intween.tween_property(self,"position",Vector2.ZERO if paused else Vector2(0,-720),.5)
+		intween.tween_property(self, "position", Vector2.ZERO if paused else Vector2(0, -720), duration)
 	else:
-		position = Vector2.ZERO if paused else Vector2(0,-720)
-	if !get_tree().paused:
-		get_viewport().gui_release_focus()
+		position = Vector2.ZERO if paused else Vector2(0, -720)
 
 func _input(event: InputEvent) -> void: # lets u like press esc l enter to leave
 	if event is InputEventKey:
