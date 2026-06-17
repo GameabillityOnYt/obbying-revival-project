@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dsern6kcs1k5t"]
 
-[ext_resource type="Shader" path="res://assets/resources/shaders/part_transparent.gdshader" id="1_rxqix"]
+[ext_resource type="Script" uid="uid://dm30ao2mfqpgw" path="res://assets/prefabs/building/Parts/part.gd" id="1_4srl5"]
+[ext_resource type="Shader" uid="uid://b35qw48vmqolq" path="res://assets/resources/shaders/part_transparent.gdshader" id="1_rxqix"]
 [ext_resource type="Texture2D" uid="uid://c13kfsjqmtytl" path="res://assets/images/textures/Tile1.png" id="2_rxqix"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fpvxl"]
@@ -23,6 +24,7 @@ material = SubResource("ShaderMaterial_wljxp")
 
 [node name="Part2" type="RigidBody3D" unique_id=1081425028]
 freeze = true
+script = ExtResource("1_4srl5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1030342702]
 shape = SubResource("BoxShape3D_fpvxl")
