@@ -408,11 +408,6 @@ func _process_ground_air_velocity(delta: float, direction: Vector3) -> void:
 			
 	_step_climbing()
 	move_and_slide()
-	
-	if is_on_wall() and not is_on_floor() and velocity.y < 0:
-		if get_real_velocity().y >= -0.1:
-			velocity.y = 0.0
-
 	update_state()
 	update_anim()
 	just_jumped_off = false
