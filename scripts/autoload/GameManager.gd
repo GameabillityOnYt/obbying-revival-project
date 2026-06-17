@@ -13,8 +13,11 @@ const TARGETRATIO = 16.0/9.0
 @export var alljump:bool = false
 @export var nfToggle:bool = false
 @export var RToggle:bool = false
-@export var menuTransitions:bool = true
 @export var RobloxStuds:bool = false # should be a string later for more material if needed
+
+# transition variables
+@export var menuSpeed:float = 1.0
+@export var menu360:bool = false
 
 signal DataLoaded
 signal CharacterAdded(Player)

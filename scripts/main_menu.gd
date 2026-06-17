@@ -31,7 +31,6 @@ var current_focus
 
 func _ready():
 	# -- Level Handlers -- #
-	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	get_window().files_dropped.connect(_file_dragged)
 	_load_pinned_levels_from_file()
 	if context_menu:
@@ -177,7 +176,12 @@ func load_all_levels():
 		)
 
 		buttonthing.gui_input.connect(func(event):
-			_on_level_card_gui_input(event, i)
+			if event is InputEventMouseButton \
+			and event.button_index == MOUSE_BUTTON_LEFT \
+			and event.double_click:
+
+				select_level(i, obby_name, difficulty, creator)
+				_on_play_pressed()
 		)
 		
 	orig = list.get_children()
@@ -414,20 +418,59 @@ func _save_pinned_levels_to_file():
 
 # -- Switching between "pages" -- #
 
+var _spin_tween: Tween
+
+func change_page_position(target: Node2D):
+	var target_pos = target.global_position
+	var spd = GameManager.menuSpeed
+
+	if _spin_tween:
+		_spin_tween.kill()
+
+		if GameManager.menu360:
+			rotation = 0.0
+
+	if spd <= 0.0:
+		cam.position_smoothing_enabled = false
+		cam.global_position = target_pos
+		rotation = 0.0
+		return
+
+	var duration = spd * 0.25
+
+	if GameManager.menu360:
+		duration *= 3.5
+		cam.position_smoothing_enabled = false
+		
+		rotation = 0.0
+		cam.global_position = cam.global_position
+	else:
+		cam.position_smoothing_enabled = true
+		cam.position_smoothing_speed = 5.0 / spd
+		rotation = 0.0
+
+	_spin_tween = create_tween()
+	_spin_tween.set_parallel(true)
+	_spin_tween.set_trans(Tween.TRANS_QUAD)
+	_spin_tween.set_ease(Tween.EASE_OUT)
+
+	_spin_tween.tween_property(cam, "global_position", target_pos, duration)
+
+	if GameManager.menu360:
+		_spin_tween.tween_property(self, "rotation", TAU, duration)
+
 func _on_settings_pressed() -> void: # when you press settings it makes your camera go to the settings area
-	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "settings"
 	GameManager.set_sliders_enabled(true)
-	cam.global_position = Settings.global_position
+	change_page_position(Settings)
 	
 	if DiscordRPCManager != null:
 		DiscordRPCManager.settings() # discordrpc settings thingy
 
 func _on_return_to_main_pressed() -> void:
-	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "main"
 	GameManager.set_sliders_enabled(false)
-	cam.global_position = Main.global_position
+	change_page_position(Main)
 	
 	if search != null:
 		search.grab_focus()
@@ -436,22 +479,19 @@ func _on_return_to_main_pressed() -> void:
 		DiscordRPCManager.menu()
 
 func _on_return_to_settings_pressed() -> void:
-	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "settings"
 	GameManager.set_sliders_enabled(true)
-	cam.global_position = Settings.global_position
+	change_page_position(Settings)
 
 func _on_avatar_pressed() -> void:
-	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "avatar"
 	GameManager.set_sliders_enabled(false)
-	cam.global_position = AvatarCustom.global_position
+	change_page_position(AvatarCustom)
 
 func _on_help_pressed() -> void:
-	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "help"
 	GameManager.set_sliders_enabled(false)
-	cam.global_position = Help.global_position
+	change_page_position(Help)
 
 
 func _on_search_bar_text_changed(text) -> void:
