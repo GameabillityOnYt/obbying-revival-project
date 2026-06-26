@@ -36,7 +36,7 @@ var took_damage := false
 @export var jump_up_force := 1.1
 var knockback_timer := 0.0
 var step_visual_offset := 0.0
-
+var is_ledge_climbing := false
 
 var just_jumped_off := false
 @export var shiftlockLogo: TextureRect
@@ -49,7 +49,9 @@ var just_jumped_off := false
 @onready var flickRayBack = $flickRay2
 @onready var flickRayRight = $flickRay3
 @onready var flickRayLeft = $flickRay4
-
+@onready var ledgegrabray = $LedgeGrabRay
+@onready var ledgegrabray2 = $LedgeGrabRay2
+@onready var ledgegrabray3 = $LedgeGrabRay3
 # camera 
 
 @onready var cam: CamStuff = $Camera3D
@@ -283,18 +285,23 @@ func _physics_process(delta: float) -> void:
 	alljump = GameManager.alljump
 	nfToggle = GameManager.nfToggle
 	
-	# truss logic
+# truss logic
 	if jump_lock <= 0.0:
 		var touching_truss := false
 		var active_ray = null
+		is_ledge_climbing = false
 		
-		# functions like previous implementation but actually checks if its climbing
-		for r in [ray,ray2,topray]:
+		for r in [ray, ray2, topray]:
 			if r.is_colliding():
 				var col = r.get_collider()
 				if col and col.is_in_group("climbable"):
 					active_ray = r
 					break
+		
+		if not active_ray:
+			if (ray.is_colliding() or ray2.is_colliding()) and not ledgegrabray.is_colliding() and ledgegrabray2.is_colliding() and not ledgegrabray3.is_colliding():
+				active_ray = ray if ray.is_colliding() else ray2
+				is_ledge_climbing = true
 
 		if active_ray:
 			var normal = active_ray.get_collision_normal()

@@ -24,10 +24,22 @@ script = ExtResource("2_j3eqw")
 target = NodePath("..")
 
 [node name="TrussRay" type="RayCast3D" parent="." unique_id=212384371]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.0727006, 0.427)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.28508806, 0.427)
 
 [node name="TrussRay2" type="RayCast3D" parent="." unique_id=760436377]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.9529234, 0.427)
+
+[node name="LedgeGrabRay" type="RayCast3D" parent="." unique_id=467875725]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.8602593, 0.427)
+debug_shape_custom_color = Color(0.6678365, 1.853034e-06, 4.813075e-07, 1)
+
+[node name="LedgeGrabRay2" type="RayCast3D" parent="." unique_id=502923743]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.3758577, 0.427)
+debug_shape_custom_color = Color(3.008172e-07, 0.42538303, 1.4439225e-06, 1)
+
+[node name="LedgeGrabRay3" type="RayCast3D" parent="." unique_id=370961036]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.4491197, 0.427)
+debug_shape_custom_color = Color(3.008172e-07, 0.42538303, 1.4439225e-06, 1)
 
 [node name="GlideRay" type="RayCast3D" parent="." unique_id=370163608]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.5, 0.427)
