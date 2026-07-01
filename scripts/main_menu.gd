@@ -417,7 +417,6 @@ func _save_pinned_levels_to_file():
 func _on_settings_pressed() -> void: # when you press settings it makes your camera go to the settings area
 	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "settings"
-	GameManager.set_sliders_enabled(true)
 	cam.global_position = Settings.global_position
 	
 	if DiscordRPCManager != null:
