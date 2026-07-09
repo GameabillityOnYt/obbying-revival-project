@@ -117,7 +117,6 @@ func _ready():
 
 func _process(delta: float) -> void:
 
-	leveldata.total_playtime += delta
 	if currentLoadedLevel and currentLoadedLevel != "":
 		if not leveldata.level_playtime.has(currentLoadedLevel):
 			leveldata.level_playtime[currentLoadedLevel] = 0.0
