@@ -5,4 +5,4 @@ extends HSlider
 
 func _on_value_changed(value: float) -> void:
 	Player.sensitivity = value / 1000
-	print(Player.sensitivity)
+	print_debug(Player.sensitivity)

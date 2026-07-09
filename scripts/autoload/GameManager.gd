@@ -35,7 +35,7 @@ func autosave():
 			
 		var save_data_status = ResourceSaver.save(data, "user://data.tres")
 		var save_level_status = ResourceSaver.save(leveldata, "user://level_stats.tres")
-		print("Autosaved! Data: ", save_data_status, " | Level: ", save_level_status)
+		print_debug("Autosaved! Data: ", save_data_status, " | Level: ", save_level_status)
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -45,7 +45,7 @@ func _notification(what: int) -> void:
 				leveldata.level_playtime[level] = roundf(leveldata.level_playtime[level])
 				
 			autosave()
-			print("Saved successfully on exit!")
+			print_debug("Saved successfully on exit!")
 		get_tree().quit()
 
 func _input(event):
@@ -54,7 +54,7 @@ func _input(event):
 			toggle_fullscreen()
 
 func _ready():
-	print(RenderingServer.get_current_rendering_method())
+	print_debug(RenderingServer.get_current_rendering_method())
 	# Loading playerdata
 	if FileAccess.file_exists("user://data.tres"):
 		data = ResourceLoader.load("user://data.tres")
@@ -122,7 +122,8 @@ func _process(delta: float) -> void:
 		if not leveldata.level_playtime.has(currentLoadedLevel):
 			leveldata.level_playtime[currentLoadedLevel] = 0.0
 		leveldata.level_playtime[currentLoadedLevel] += delta
-
+		leveldata.total_playtime += delta
+		
 # yeo
 
 func toggle_fullscreen():
@@ -134,7 +135,7 @@ func toggle_fullscreen():
 func copy_default_levels():
 	var source_dir = DirAccess.open("res://mainlevels")
 	if source_dir == null:
-		print("Failed to open res://mainlevels")
+		print_debug("Failed to open res://mainlevels")
 		return
 
 	source_dir.list_dir_begin()
@@ -166,7 +167,7 @@ func copy_default_levels():
 
 		target_file.store_buffer(lvl_data)
 
-		print("Copied level:", file_name)
+		print_debug("Copied level:", file_name)
 
 	source_dir.list_dir_end()
 

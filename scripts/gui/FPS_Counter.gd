@@ -6,5 +6,5 @@ func _process(_delta: float) -> void:
 
 func _ready():
 	GameManager.CharacterAdded.connect(func(new):
-		print("hello i was spawned")
+		print_debug("hello i was spawned")
 		pass)

@@ -28,12 +28,12 @@ var _material_cache = {}
 func load_level(path):
 	var file = FileAccess.open(path, FileAccess.READ)
 	if file == null:
-		print("failed to open file:", path)
+		print_debug("failed to open file:", path)
 		return null
 
 	var json = JSON.new()
 	if json.parse(file.get_as_text()) != OK:
-		print("invalid json:", path)
+		print_debug("invalid json:", path)
 		return null
 
 	return json.data
@@ -56,7 +56,7 @@ func addCheckpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_
 		
 		if player == null: await GameManager.CharacterAdded
 		player.spawn = newcheckpoint
-		print("Player spawn successfully updated to checkpoint!")
+		print_debug("Player spawn successfully updated to checkpoint!")
 
 
 func removeCheckpoints():
@@ -66,7 +66,7 @@ func removeCheckpoints():
 			
 	checkpoints.clear()
 	
-	var original_spawn = get_node_or_null("Spawn") 
+	var original_spawn = get_node_or_null("LevelParts/Spawn") 
 	if original_spawn:
 		spawn_point = original_spawn
 		player.spawn = original_spawn
@@ -88,7 +88,7 @@ func removeLastCheckpoint():
 		if player != null:
 			player.spawn = previous_checkpoint
 	else:
-		var original_spawn = get_node_or_null("Spawn")
+		var original_spawn = get_node_or_null("LevelParts/Spawn")
 		spawn_point = original_spawn
 		
 		if player != null:
@@ -263,7 +263,7 @@ func addPart(pos, rot_deg, size, classname, color, is_disabled, transparency):
 		texture(mesh, color, mesh.mesh.material, transparency)
 
 	if classname == "Spawn":
-		print("Spawn found at:", pos)
+		print_debug("Spawn found at:", pos)
 		spawn_point = newpart
 		newpart.name = "Spawn"
 
@@ -530,7 +530,7 @@ func _input(_event: InputEvent) -> void:
 func loadstuff(data):
 	spawn_point = null
 
-	print("Loading level...")
+	print_debug("Loading level...")
 	var main_folder = data.get("Data")
 	if main_folder == null:
 		push_error("Missing 'Data' key inside JSON!")
@@ -548,7 +548,7 @@ func loadstuff(data):
 	add_child(container)
 	_spawn_parent = self
 
-	print("Level loaded. Spawn =", spawn_point)
+	print_debug("Level loaded. Spawn =", spawn_point)
 
 
 func _ready() -> void:

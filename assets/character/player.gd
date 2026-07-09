@@ -95,7 +95,7 @@ var climb_normal := Vector3.ZERO
 func set_char_transparency(alpha: float): # for ghost mode etc
 	var charNode = $Character
 	if not charNode:
-		print("char not found :(")
+		print_debug("char not found :(")
 		return
 		
 	_apply_transparency_recursive(charNode, alpha)
@@ -207,7 +207,7 @@ func reset():
 
 	if spawn != null:
 		global_position = spawn.global_position
-		global_rotation = spawn.global_rotation
+		global_rotation = Vector3(0, spawn.global_rotation.y, 0)
 		
 		if spawn.has_meta("saved_velocity"):
 			velocity = spawn.get_meta("saved_velocity")
@@ -300,7 +300,8 @@ func _physics_process(delta: float) -> void:
 		
 		if not active_ray:
 			if (ray.is_colliding() or ray2.is_colliding()) and not ledgegrabray.is_colliding() and ledgegrabray2.is_colliding() and not ledgegrabray3.is_colliding():
-				active_ray = ray if ray.is_colliding() else ray2
+				active_ray = topray if ray.is_colliding() else ray2
+				print_debug(active_ray.name)
 				is_ledge_climbing = true
 
 		if active_ray:
@@ -379,10 +380,10 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			coyote_timer = 0
 			
-	if Input.is_action_just_pressed("Reset") and !GameManager.RToggle:
+	if Input.is_action_just_pressed("Reset") and !GameManager.data.RToggle:
 		reset()
 
-	if Input.is_action_just_pressed("ResetAlt") and GameManager.RToggle:
+	if Input.is_action_just_pressed("ResetAlt") and GameManager.data.RToggle:
 		reset()
 		
 	if GameManager.nfToggle:
