@@ -65,7 +65,7 @@ func _send_color_to_player(part: String, color: Color):
 
 func _file_dragged(files:PackedStringArray):
 	for x in files:
-		if x.ends_with(".json"):
+		if x.ends_with(".json") or x.ends_with(".bin"):
 			var file_name = x.get_file()
 			print_debug(file_name + " has been dragged into the game!")
 			var dest = "user://levels/"+file_name
@@ -89,17 +89,59 @@ func _on_play_pressed() -> void: # when you press play
 
 
 func load_level(path): # loads level data and returns it
-	var file = FileAccess.open(path,FileAccess.READ)
-	if file == null:
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file == null or file.get_length() == 0:
 		print_debug("failed to open file " + path)
 		return
-	var text = file.get_as_text()
-	var json = JSON.new()
-	if json.parse(text) != OK:
-		print_debug("invalid json ", path)
-		return
-	var data = json.data
-	return data
+	
+	# checks if it's JSON or Binary
+	var first_byte = file.get_8()
+	file.seek(0)
+	
+	if first_byte == 123 or first_byte == 91: # '{' or '['
+		var text = file.get_as_text()
+		var json = JSON.new()
+		if json.parse(text) != OK:
+			print_debug("invalid json ", path)
+			return
+		return json.data
+	else: 
+		var sp = StreamPeerBuffer.new()
+		sp.data_array = file.get_buffer(file.get_length())
+		
+		# Unpack strings like CustomLevelLoader.gd
+		var obby_name = read_menu_binary_string(sp)
+		var obby_diff = read_menu_binary_string(sp)
+		var obby_creator = read_menu_binary_string(sp)
+		
+		# Return a dictionary format so the rest of the script doesn't break
+		return {
+			"ObbyName": obby_name,
+			"Difficulty": obby_diff,
+			"Creator": obby_creator
+		}
+
+# Helper function to read strings from your binary stream format
+func read_menu_binary_string(sp: StreamPeerBuffer) -> String:
+	if sp.get_available_bytes() < 1: 
+		return ""
+	var length = sp.get_u8()
+	if length == 0: 
+		return ""
+	
+	# 300 character limit on names
+	if length > 300:
+		push_error("String length is too large")
+		return ""
+		
+	if sp.get_available_bytes() < length:
+		push_error("File ended before string could be fully read.")
+		return ""
+		
+	var string_bytes = sp.get_data(length)
+	if string_bytes[0] != OK:
+		return ""
+	return (string_bytes[1] as PackedByteArray).get_string_from_utf8()
 	
 func clear_selected_level():
 	GameManager.currentLevel = ""
@@ -197,13 +239,14 @@ func fetch_levels():
 	var file = dir.get_next()
 	
 	while file != "":
-		if file.ends_with(".json"):
+		if file.ends_with(".json") or file.ends_with(".bin"):
 			levels.append("user://levels/" + file)
 		file = dir.get_next()
 	
 	dir.list_dir_end()
 	return levels
 
+# this isn't even used pretty sure
 func search_for_string_that_contains(str: String, arr: Array, orig: String = str):
 	if str.length() > 4:
 		for item: String in arr:
@@ -461,7 +504,7 @@ func _on_search_bar_text_changed(text) -> void:
 		searchTerm = text
 	sort_levels()
 
-func _on_pin_toggle_toggled(toggled_on: bool) -> void:
+func _on_pin_toggle_toggled(_toggled_on: bool) -> void:
 	can_search_pinned = not can_search_pinned
 	_clear_search()
 

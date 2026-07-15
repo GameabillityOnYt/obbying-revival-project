@@ -1,11 +1,13 @@
 extends Node3D
 
-@onready var part = preload("res://assets/prefabs/building/Parts/Part.tscn")
-@onready var cylinder = preload("res://assets/prefabs/building/Parts/cylinder.tscn")
-@onready var wedge = preload("res://assets/prefabs/building/Parts/wedge.tscn")
-@onready var cornerwedge = preload("res://assets/prefabs/building/Parts/cornerwedge.tscn")
-@onready var ball = preload("res://assets/prefabs/building/Parts/ball.tscn")
-@onready var truss = preload("res://assets/prefabs/building/Parts/Truss.tscn")
+@onready var part_prefab = preload("res://assets/prefabs/building/Parts/Part.tscn")
+@onready var cylinder_prefab = preload("res://assets/prefabs/building/Parts/cylinder.tscn")
+@onready var wedge_prefab = preload("res://assets/prefabs/building/Parts/wedge.tscn")
+@onready var cornerwedge_prefab = preload("res://assets/prefabs/building/Parts/cornerwedge.tscn")
+@onready var ball_prefab = preload("res://assets/prefabs/building/Parts/ball.tscn")
+@onready var truss_prefab = preload("res://assets/prefabs/building/Parts/Truss.tscn")
+@onready var checkpoint_prefab = preload("res://assets/prefabs/models/checkpoint.tscn")
+
 @onready var player = $Player
 
 @onready var default_tile = preload("res://assets/images/textures/orp_brick_updated.png")
@@ -14,502 +16,425 @@ extends Node3D
 @onready var opaque_shader = preload("res://assets/resources/shaders/TextureRepeating.gdshader")
 @onready var transparent_shader = preload("res://assets/resources/shaders/part_transparent.gdshader")
 
-# alljump
-@onready var level = preload("res://custom.tscn")
-@onready var checkpoint = preload("res://assets/prefabs/models/checkpoint.tscn")
-var checkpoints = []
+var checkpoints: Array = []
 var spawn_point: Node3D = null
 var alljump: bool = false
 
 var _spawn_parent: Node3D = self
-var _material_cache = {}
+var _material_cache: Dictionary = {}
+
+var roblox_studs: bool:
+	get: return GameManager.RobloxStuds
+var shiftlocked: bool:
+	get: return GameManager.shiftlocked
+var current_level: String:
+	get: return GameManager.currentLevel
+var game_manager_alljump: bool:
+	get: return GameManager.alljump
 
 
-func load_level(path):
-	var file = FileAccess.open(path, FileAccess.READ)
-	if file == null:
-		print_debug("failed to open file:", path)
-		return null
-
-	var json = JSON.new()
-	if json.parse(file.get_as_text()) != OK:
-		print_debug("invalid json:", path)
-		return null
-
-	return json.data
-
-
-func addCheckpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_transform: Transform3D, shiftlock: bool):
-	if GameManager.alljump:
-		var newcheckpoint = checkpoint.instantiate()
-		newcheckpoint.set_meta("saved_velocity", vel)
-		
-		newcheckpoint.set_meta("camera_mode", cam_mode)
-		newcheckpoint.set_meta("camera_transform", cam_transform)
-		newcheckpoint.set_meta("shiftlocked", shiftlock)
-		
-		add_child(newcheckpoint)
-		newcheckpoint.position = pos
-		newcheckpoint.rotation = rot
-		checkpoints.append(newcheckpoint)
-		spawn_point = newcheckpoint
-		
-		if player == null: await GameManager.CharacterAdded
-		player.spawn = newcheckpoint
-		print_debug("Player spawn successfully updated to checkpoint!")
-
-
-func removeCheckpoints():
-	for cp in checkpoints:
-		if is_instance_valid(cp):
-			cp.queue_free()
-			
-	checkpoints.clear()
+func _ready() -> void:
+	_spawn_parent = self
+	alljump = game_manager_alljump
 	
-	var original_spawn = get_node_or_null("LevelParts/Spawn") 
-	if original_spawn:
-		spawn_point = original_spawn
-		player.spawn = original_spawn
+	WorkerThreadPool.add_task(func():
+		_load_level_file_async(current_level)
+	)
+
+func _process(_delta: float) -> void:
+	if alljump == true and game_manager_alljump == false:
+		remove_checkpoints()
+	alljump = game_manager_alljump
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("addCheckpoint"):
+		add_checkpoint(player.position, player.rotation, player.velocity, player.cam.mode, player.cam.global_transform, shiftlocked)
+	if Input.is_action_just_pressed("removeCheckpoint"):
+		remove_checkpoints()
 
 
-func removeLastCheckpoint():
-	if checkpoints.is_empty():
+func _load_level_file_async(path: String) -> void:
+	if not FileAccess.file_exists(path):
+		print_debug("failed to open file: ", path)
 		return
-
-	var last_checkpoint = checkpoints.pop_back() 
-
-	if is_instance_valid(last_checkpoint):
-		last_checkpoint.queue_free()
-
-	if not checkpoints.is_empty():
-		var previous_checkpoint = checkpoints[-1] 
-		spawn_point = previous_checkpoint
-		
-		if player != null:
-			player.spawn = previous_checkpoint
-	else:
-		var original_spawn = get_node_or_null("LevelParts/Spawn")
-		spawn_point = original_spawn
-		
-		if player != null:
-			player.spawn = original_spawn
-
-
-func to_vec3(d):
-	if d == null:
-		return Vector3.ZERO
 	
-	# New format
-	if d is Array and d.size() >= 3:
-		return Vector3(d[0], d[1], d[2])
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file == null or file.get_length() == 0:
+		return
 		
-	# Old format for compatibility
-	if d is Dictionary:
-		return Vector3(d.get("X", 0.0), d.get("Y", 0.0), d.get("Z", 0.0))
-		
-	return Vector3.ZERO
+	var first_byte = file.get_8()
+	file.seek(0)
+	
+	if first_byte == 123 or first_byte == 91: # '{' or '['
+		print_debug("Detected format: JSON")
+		var json_text = file.get_as_text()
+		var json = JSON.new()
+		if json.parse(json_text) == OK:
+			call_deferred("_level_from_json", json.data)
+	else:
+		print_debug("Detected format: binary buffer")
+		var raw_bytes = file.get_buffer(file.get_length())
+		call_deferred("_level_from_binary", raw_bytes)
+	
+	GameManager.call_deferred("set", "currentLoadedLevel", path)
 
 
-func to_color(d):
-	if d == null:
-		return Color.WHITE
-		
-	# New format (hex)
-	if d is String:
-		return Color.from_string(d, Color.WHITE)
-		
-	# Old format (dictionary lol holy unoptimized hooollyyyy)
-	if d is Dictionary:
-		return Color(d.get("R", 1.0), d.get("G", 1.0), d.get("B", 1.0))
-		
-	return Color.WHITE
+func _level_from_json(data: Dictionary) -> void:
+	_reset_loader_context()
 
+	var main_folder = data.get("Data")
+	if main_folder == null:
+		push_error("Missing 'Data' key inside JSON!")
+		return
+		
+	var parts_list = main_folder.get("Children", [])
+	
+	var container = Node3D.new()
+	container.name = "LevelParts"
+	_spawn_parent = container
+	
+	for child in parts_list:
+		_spawn_node_json(child)
 
-func spawn_node(node_data):
+	add_child(container)
+	_spawn_parent = self
+	_finalize_spawn_and_reset()
+
+func _spawn_node_json(node_data: Dictionary) -> void:
 	var classname = node_data.get("ClassName", "")
 	var p = node_data.get("Properties", {})
 	
 	var is_disabled = node_data.get("disabled", p.get("disabled", false))
-	var transparency = clamp(node_data.get("Transparency", p.get("Transparency", 0.0)), 0.0, 1.0)
+	var transparency = clamp(float(node_data.get("Transparency", p.get("Transparency", 0.0))), 0.0, 1.0)
+	
+	var pos = _json_to_vector3(p.get("Position"))
+	var rot = _json_to_vector3(p.get("Rotation"))
+	var size = _json_to_vector3(p.get("Size"))
+	var color = _json_to_color(p.get("Color"))
 
 	if classname == "Part":
 		var shape = node_data.get("Shape", "Block")
-
-		if shape == "Cylinder":
-			addCylinder(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				to_color(p.get("Color")),
-				is_disabled,
-				transparency
-			)
-		elif shape == "Wedge":
-			addWedge(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				to_color(p.get("Color")),
-				is_disabled,
-				transparency
-			)
-		elif shape == "CornerWedge":
-			addCornerWedge(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				to_color(p.get("Color")),
-				is_disabled,
-				transparency
-			)
-		elif shape == "Ball":
-			addBall(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				to_color(p.get("Color")),
-				is_disabled,
-				transparency
-			)
-		else:
-			addPart(
-				to_vec3(p.get("Position")),
-				to_vec3(p.get("Rotation")),
-				to_vec3(p.get("Size")),
-				"Part",
-				to_color(p.get("Color")),
-				is_disabled,
-				transparency
-			)
-
+		_build_primitive_parts(shape, pos, rot, size, color, is_disabled, transparency)
 	elif classname == "Spawn":
-		addPart(
-			to_vec3(p.get("Position")),
-			to_vec3(p.get("Rotation")),
-			to_vec3(p.get("Size")),
-			"Spawn",
-			to_color(p.get("Color")),
-			is_disabled,
-			transparency
-		)
-		
+		add_part(pos, rot, size, "Spawn", color, is_disabled, transparency)
 	elif classname == "Truss":
-		addTruss(
-			to_vec3(p.get("Position")),
-			to_vec3(p.get("Rotation")),
-			to_vec3(p.get("Size")),
-			to_color(p.get("Color")),
-			is_disabled,
-			transparency
-		)
+		add_truss(pos, rot, size, color, is_disabled, transparency)
 
-	for child in node_data.get("Children", []):
-		spawn_node(child)
-
-func texture(mesh_instance: MeshInstance3D, color: Color, base_mat: Material, transparency: float = 0.0):
-	if mesh_instance and base_mat:
-		var key = str(color) + "_" + str(GameManager.RobloxStuds) + "_" + str(transparency)
-		if _material_cache.has(key):
-			mesh_instance.material_override = _material_cache[key]
-		else:
-			var mat = base_mat.duplicate() as ShaderMaterial
-			if transparency > 0.0:
-				mat.shader = transparent_shader
-			else:
-				mat.shader = opaque_shader
-			
-			var texture: Texture2D
-			var trans: float
-			var overlay: bool
-			
-			if GameManager.RobloxStuds:
-				texture = roblox_tile
-				trans = 0.0
-				overlay = true
-			else:
-				texture = default_tile
-				trans = 0.75
-				overlay = false 
-			
-			mat.set_shader_parameter("albedo_texture", texture)
-			mat.set_shader_parameter("transparency", trans)
-			mat.set_shader_parameter("use_overlay_mode", overlay)
-			mat.set_shader_parameter("base_color", color)
-			mat.set_shader_parameter("part_transparency", transparency)
-			
-			_material_cache[key] = mat
-			mesh_instance.material_override = mat
+	var children = node_data.get("Children", [])
+	for child in children:
+		_spawn_node_json(child)
 
 
-func addPart(pos, rot_deg, size, classname, color, is_disabled, transparency):
-	var newpart = part.instantiate()
-	_spawn_parent.add_child(newpart)
+func _level_from_binary(raw_bytes: PackedByteArray) -> void:
+	_reset_loader_context()
 	
-	var mesh = newpart.get_node("MeshInstance3D") as MeshInstance3D
-	var coll = newpart.get_node("CollisionShape3D")
+	var sp = StreamPeerBuffer.new()
+	sp.data_array = raw_bytes
 	
-	newpart.position = pos
-	var rot_rad = Vector3(
-		deg_to_rad(rot_deg.x),
-		deg_to_rad(rot_deg.y),
-		deg_to_rad(rot_deg.z)
-	)
-	newpart.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
-	# performance fix; scale instead of duplicating since we are using the same .tscn
-	newpart.scale = size
-	if coll:
-		coll.disabled = is_disabled
-	if mesh and mesh.mesh and mesh.mesh.material:
-		texture(mesh, color, mesh.mesh.material, transparency)
-
-	if classname == "Spawn":
-		print_debug("Spawn found at:", pos)
-		spawn_point = newpart
-		newpart.name = "Spawn"
-
-
-func addCylinder(pos, rot_deg, size, color, is_disabled, transparency):
-	var newcyl = cylinder.instantiate()
-	_spawn_parent.add_child(newcyl)
-	var mesh = newcyl.get_node("MeshInstance3D") as MeshInstance3D
-	var coll = newcyl.get_node("CollisionShape3D") as CollisionShape3D
+	var _obby_name = _read_binary_string(sp)
+	var _obby_diff = _read_binary_string(sp)
+	var _obby_creator = _read_binary_string(sp)
 	
-	newcyl.position = pos
+	print_debug("Binary buffer loading: ", _obby_name, " by ", _obby_creator)
+	
+	var _total_instances = sp.get_u32()
+	
+	var container = Node3D.new()
+	container.name = "LevelParts"
+	_spawn_parent = container
+	
+	var spawned_count = 0
+	var MAX_SAFE_INSTANCES = 10000
+	
+	while sp.get_available_bytes() > 0:
+		if spawned_count >= MAX_SAFE_INSTANCES:
+			push_error("Reached maximum safe instance limit (", MAX_SAFE_INSTANCES, ")")
+			break
+			
+		if sp.get_available_bytes() < 1:
+			push_warning("Parser warning: truncated file stream reading flags")
+			break
+		# do not move around these unless you restructure the exporter (this follows the order of the exporter layout)
+		var flags = sp.get_u8()
+		var is_base_part = (flags & 1) != 0
+		var is_not_collidable = (flags & 2) != 0
+		var has_shape = (flags & 4) != 0
+		
+		var obj_name = _read_binary_string(sp)
+		var classname = _read_binary_string(sp)
+		var shape = _read_binary_string(sp) if has_shape else "Block"
+		
+		var transparency: float = 0.0
+		var pos = Vector3.ZERO
+		var size = Vector3.ONE
+		var rot = Vector3.ZERO
+		var color = Color.WHITE
+		
+		if is_base_part:
+				
+			transparency = sp.get_u8() / 255.0
+			pos = _read_binary_vector3(sp)
+			size = _read_binary_vector3(sp)
+			rot = _read_binary_vector3(sp)
+			color = _read_binary_color(sp)
+		
+		if classname == "Part":
+			_build_primitive_parts(shape, pos, rot, size, color, is_not_collidable, transparency)
+			spawned_count += 1
+		elif classname == "Spawn":
+			add_part(pos, rot, size, "Spawn", color, is_not_collidable, transparency)
+			spawned_count += 1
+		elif classname == "Truss":
+			add_truss(pos, rot, size, color, is_not_collidable, transparency)
+			spawned_count += 1
+
+	add_child(container)
+	_spawn_parent = self
+	_finalize_spawn_and_reset()
+
+
+# --- CORE PRIMITIVE SPARK HANDLER ---
+func _build_primitive_parts(shape: String, pos: Vector3, rot: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
+	match shape:
+		"Cylinder":
+			add_cylinder(pos, rot, size, color, is_disabled, transparency)
+		"Wedge":
+			add_wedge(pos, rot, size, color, is_disabled, transparency)
+		"CornerWedge":
+			add_cornerwedge(pos, rot, size, color, is_disabled, transparency)
+		"Ball":
+			add_ball(pos, rot, size, color, is_disabled, transparency)
+		_:
+			add_part(pos, rot, size, "Part", color, is_disabled, transparency)
+
+
+# --- INSTANCE BUILDING BLOCKS METHODS ---
+func add_part(pos: Vector3, rot_deg: Vector3, size: Vector3, classname: String, color: Color, is_disabled: bool, transparency: float) -> void:
+	if part_prefab == null: return
+	var new_part = part_prefab.instantiate()
+	_spawn_parent.add_child(new_part)
+	
+	var mesh = new_part.get_node_or_null("MeshInstance3D")
+	var coll = new_part.get_node_or_null("CollisionShape3D")
+	
+	new_part.position = pos
 	var rot_rad = Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z))
-	newcyl.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	new_part.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	new_part.scale = size
 	
-	newcyl.scale = Vector3.ONE
+	if coll: coll.disabled = is_disabled
+	if mesh: texture(mesh, color, transparency)
+		
+	if classname == "Spawn":
+		print("Spawn found at: ", pos)
+		spawn_point = new_part
+		new_part.name = "Spawn"
+
+func add_cylinder(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
+	if cylinder_prefab == null: return
+	var new_cyl = cylinder_prefab.instantiate()
+	_spawn_parent.add_child(new_cyl)
+	
+	var mesh = new_cyl.get_node_or_null("MeshInstance3D")
+	var coll = new_cyl.get_node_or_null("CollisionShape3D")
+	
+	new_cyl.position = pos
+	var rot_rad = Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z))
+	new_cyl.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	new_cyl.scale = Vector3.ONE
 	
 	var length = size.x
 	var radius = min(size.z, size.y) / 2.0
 	
-	# scale only mesh to avoid jolt physics error 
-	if mesh:
-		mesh.scale = Vector3(radius * 2.0, length / 2.0, radius * 2.0)
-	
-	if coll and coll.shape:
-		coll.shape = coll.shape.duplicate() # only duplicate coll shape
-		coll.shape.radius = radius
-		coll.shape.height = length
+	if mesh: mesh.scale = Vector3(radius * 2.0, length / 2.0, radius * 2.0)
+		
+	if coll and coll.shape is CylinderShape3D:
+		var dup_shape = coll.shape.duplicate()
+		dup_shape.radius = radius
+		dup_shape.height = length
+		coll.shape = dup_shape
 		coll.disabled = is_disabled
 		
-	if mesh and mesh.mesh and mesh.mesh.material:
-		texture(mesh, color, mesh.mesh.material, transparency)
+	if mesh: texture(mesh, color, transparency)
 
-func addWedge(pos, rot_deg, size, color, is_disabled, transparency):
-	var newwedge = wedge.instantiate()
-	_spawn_parent.add_child(newwedge)
-	var mesh = newwedge.get_node("MeshInstance3D") as MeshInstance3D
-	var coll = newwedge.get_node("CollisionShape3D")
-	newwedge.position = pos
-	var rot_rad = Vector3(
-		deg_to_rad(rot_deg.x),
-		deg_to_rad(rot_deg.y),
-		deg_to_rad(rot_deg.z)
-	)
-	# transforming the vertices of the origin to the player's vertices
-	var basis_ = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
-
+func add_wedge(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
+	if wedge_prefab == null: return
+	var new_wedge = wedge_prefab.instantiate()
+	_spawn_parent.add_child(new_wedge)
+	
+	var mesh = new_wedge.get_node_or_null("MeshInstance3D")
+	var coll = new_wedge.get_node_or_null("CollisionShape3D")
+	
+	new_wedge.position = pos
+	var rot_rad = Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z))
+	var basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	
 	var h = max(size.y, 0.001)
 	var w = max(size.x, 0.001)
 	var l = max(size.z, 0.001)
-	# need this to map each of the vertices individually
+	
 	var origin_vertices = PackedVector3Array([
-		# bottom face
 		Vector3(-w/2, -h/2, l/2), Vector3(w/2, -h/2, l/2), Vector3(w/2, -h/2, -l/2),
 		Vector3(-w/2, -h/2, l/2), Vector3(w/2, -h/2, -l/2), Vector3(-w/2, -h/2, -l/2),
-		# back face
 		Vector3(-w/2, -h/2, l/2), Vector3(w/2, h/2, l/2), Vector3(w/2, -h/2, l/2),
 		Vector3(-w/2, -h/2, l/2), Vector3(-w/2, h/2, l/2), Vector3(w/2, h/2, l/2),
-		# slope face
 		Vector3(-w/2, -h/2, -l/2), Vector3(w/2, h/2, l/2), Vector3(-w/2, h/2, l/2),
 		Vector3(-w/2, -h/2, -l/2), Vector3(w/2, -h/2, -l/2), Vector3(w/2, h/2, l/2),
-		# left face
 		Vector3(-w/2, -h/2, l/2), Vector3(-w/2, -h/2, -l/2), Vector3(-w/2, h/2, l/2),
-		# right face
-		Vector3(w/2, -h/2, l/2), Vector3(w/2, h/2, l/2), Vector3(w/2, -h/2, -l/2),
+		Vector3(w/2, -h/2, l/2), Vector3(w/2, h/2, l/2), Vector3(w/2, -h/2, -l/2)
 	])
+	
 	var final_vertices = PackedVector3Array()
-	for vert in origin_vertices:
-		final_vertices.append(basis_ * vert)
+	for v in origin_vertices:
+		final_vertices.append(basis * v)
 		
-	if coll.shape:
+	if coll:
 		var shape = ConvexPolygonShape3D.new()
 		shape.points = final_vertices
 		coll.shape = shape
 		coll.disabled = is_disabled
 		
-	var normals = PackedVector3Array()
-	for i in range(0, final_vertices.size(), 3):
-		var n = (final_vertices[i + 2] - final_vertices[i]).cross(
-			final_vertices[i + 1] - final_vertices[i]).normalized()
-		normals.append(n)
-		normals.append(n)
-		normals.append(n)
+	if mesh and mesh.mesh:
+		var normals = PackedVector3Array()
+		for i in range(0, final_vertices.size(), 3):
+			var n = (final_vertices[i+2] - final_vertices[i]).cross(final_vertices[i+1] - final_vertices[i]).normalized()
+			normals.append(n); normals.append(n); normals.append(n)
+			
+		var arrays = []
+		arrays.resize(Mesh.ARRAY_MAX)
+		arrays[Mesh.ARRAY_VERTEX] = final_vertices
+		arrays[Mesh.ARRAY_NORMAL] = normals
 		
-	var arrays = []
-	arrays.resize(Mesh.ARRAY_MAX)
-	arrays[Mesh.ARRAY_VERTEX] = final_vertices
-	arrays[Mesh.ARRAY_NORMAL] = normals
-	
-	if mesh.mesh.material:
-		var base_mat = mesh.mesh.material
 		var arr_mesh = ArrayMesh.new()
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		mesh.mesh = arr_mesh
-		texture(mesh, color, base_mat, transparency)
+		texture(mesh, color, transparency)
 
-
-func addCornerWedge(pos, rot_deg, size, color, is_disabled, transparency):
-	var newcornerwedge = cornerwedge.instantiate()
-	_spawn_parent.add_child(newcornerwedge)
-	var mesh = newcornerwedge.get_node("MeshInstance3D") as MeshInstance3D
-	var coll = newcornerwedge.get_node("CollisionShape3D")
-	newcornerwedge.position = pos
+func add_cornerwedge(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
+	if cornerwedge_prefab == null: return
+	var new_corner = cornerwedge_prefab.instantiate()
+	_spawn_parent.add_child(new_corner)
 	
-	var rot_rad = Vector3(
-		deg_to_rad(rot_deg.x),
-		deg_to_rad(rot_deg.y),
-		deg_to_rad(rot_deg.z)
-	)
-	# transforming the vertices of the origin to the player's vertices
-	var basis_ = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	var mesh = new_corner.get_node_or_null("MeshInstance3D")
+	var coll = new_corner.get_node_or_null("CollisionShape3D")
+	
+	new_corner.position = pos
+	var rot_rad = Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z))
+	var basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
 	
 	var h = max(size.y, 0.001)
 	var w = max(size.x, 0.001)
 	var l = max(size.z, 0.001)
-	# need this to map each of the vertices individually
+	
 	var origin_vertices = PackedVector3Array([
-		# bottom face
 		Vector3(-w/2, -h/2,  l/2), Vector3( w/2, -h/2,  l/2), Vector3( w/2, -h/2, -l/2),
 		Vector3(-w/2, -h/2,  l/2), Vector3( w/2, -h/2, -l/2), Vector3(-w/2, -h/2, -l/2),
-		# back face
 		Vector3(-w/2, -h/2, -l/2), Vector3( w/2, -h/2, -l/2), Vector3( w/2,  h/2, -l/2),
-		# left face
 		Vector3(-w/2, -h/2,  l/2), Vector3(-w/2, -h/2, -l/2), Vector3( w/2,  h/2, -l/2),
-		# slope face
 		Vector3(-w/2, -h/2,  l/2), Vector3( w/2,  h/2, -l/2), Vector3( w/2, -h/2,  l/2),
-		# right face
-		Vector3( w/2, -h/2,  l/2), Vector3( w/2,  h/2, -l/2), Vector3( w/2, -h/2, -l/2),
+		Vector3( w/2, -h/2,  l/2), Vector3( w/2,  h/2, -l/2), Vector3( w/2, -h/2, -l/2)
 	])
-	var final_vertices = PackedVector3Array()
-	for vert in origin_vertices:
-		final_vertices.append(basis_ * vert)
 	
-	if coll.shape:
+	var final_vertices = PackedVector3Array()
+	for v in origin_vertices:
+		final_vertices.append(basis * v)
+		
+	if coll:
 		var shape = ConvexPolygonShape3D.new()
 		shape.points = final_vertices
 		coll.shape = shape
 		coll.disabled = is_disabled
 		
-	var normals = PackedVector3Array()
-	for i in range(0, final_vertices.size(), 3):
-		var n = (final_vertices[i + 2] - final_vertices[i]).cross(
-			final_vertices[i + 1] - final_vertices[i]).normalized()
-		normals.append(n)
-		normals.append(n)
-		normals.append(n)
+	if mesh and mesh.mesh:
+		var normals = PackedVector3Array()
+		for i in range(0, final_vertices.size(), 3):
+			var n = (final_vertices[i+2] - final_vertices[i]).cross(final_vertices[i+1] - final_vertices[i]).normalized()
+			normals.append(n); normals.append(n); normals.append(n)
+			
+		var arrays = []
+		arrays.resize(Mesh.ARRAY_MAX)
+		arrays[Mesh.ARRAY_VERTEX] = final_vertices
+		arrays[Mesh.ARRAY_NORMAL] = normals
 		
-	var arrays = []
-	arrays.resize(Mesh.ARRAY_MAX)
-	arrays[Mesh.ARRAY_VERTEX] = final_vertices
-	arrays[Mesh.ARRAY_NORMAL] = normals
-	
-	if mesh.mesh.material:
-		var base_mat = mesh.mesh.material
 		var arr_mesh = ArrayMesh.new()
 		arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		mesh.mesh = arr_mesh
-		texture(mesh, color, base_mat, transparency)
-	
+		texture(mesh, color, transparency)
 
-func addBall(pos, rot_deg, size, color, is_disabled, transparency):
-	var newball = ball.instantiate()
-	_spawn_parent.add_child(newball)
-	var mesh = newball.get_node("MeshInstance3D") as MeshInstance3D
-	var coll = newball.get_node("CollisionShape3D")
+func add_ball(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
+	if ball_prefab == null: return
+	var new_ball = ball_prefab.instantiate()
+	_spawn_parent.add_child(new_ball)
 	
-	newball.position = pos
-	var rot_rad = Vector3(
-		deg_to_rad(rot_deg.x),
-		deg_to_rad(rot_deg.y),
-		deg_to_rad(rot_deg.z)
-	)
-	newball.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	var mesh = new_ball.get_node_or_null("MeshInstance3D")
+	var coll = new_ball.get_node_or_null("CollisionShape3D")
 	
-	if coll and coll.shape:
-		coll.shape = coll.shape.duplicate()
-		var shape = coll.shape as SphereShape3D
-		if shape:
-			shape.radius = max(size.x, max(size.y, size.z)) / 2.0
+	new_ball.position = pos
+	var rot_rad = Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z))
+	new_ball.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	
+	var radius = max(size.x, max(size.y, size.z)) / 2.0
+	
+	if coll and coll.shape is SphereShape3D:
+		var dup_shape = coll.shape.duplicate()
+		dup_shape.radius = radius
+		coll.shape = dup_shape
 		coll.disabled = is_disabled
+		
 	if mesh:
-		var ball_radius = max(size.x, max(size.y, size.z)) / 2.0
-		var ball_diameter = ball_radius * 2.0
-		mesh.scale = Vector3(ball_diameter, ball_diameter, ball_diameter)
-				
-		if mesh.mesh and mesh.mesh.material:
-			texture(mesh, color, mesh.mesh.material, transparency)
+		var diameter = radius * 2.0
+		mesh.scale = Vector3(diameter, diameter, diameter)
+		texture(mesh, color, transparency)
 
-func addTruss(pos, rot_deg, size, color, is_disabled, transparency):
-	var basis_ = Basis.from_euler(Vector3(
-		deg_to_rad(rot_deg.x),
-		deg_to_rad(rot_deg.y),
-		deg_to_rad(rot_deg.z)), EULER_ORDER_XYZ)
-
-	var seg_h: float = 2.0
-	var max_length: float = size.y
-	var local_axis: Vector3 = Vector3.UP
-
-	if size.x > size.y && size.x > size.z:
+func add_truss(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
+	if truss_prefab == null: return
+	var rot_rad = Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z))
+	var basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	
+	var seg_h = 2.0
+	var max_length = size.y
+	var local_axis = Vector3.UP
+	
+	if size.x > size.y and size.x > size.z:
 		max_length = size.x
 		local_axis = Vector3.RIGHT
-	elif size.z > size.y && size.z > size.x:
+	elif size.z > size.y and size.z > size.x:
 		max_length = size.z
 		local_axis = Vector3.FORWARD
-
-	var num_segments: int = maxi(1, int(floor(max_length / seg_h)))
-
+		
+	var num_segments = max(1, int(floor(max_length / seg_h)))
+	
 	for i in range(num_segments):
-		var newtruss = truss.instantiate()
-		add_child(newtruss)
-
+		var new_truss = truss_prefab.instantiate()
+		add_child(new_truss)
+		
 		var offset_scalar = -max_length / 2.0 + (i * seg_h) + (seg_h / 2.0)
-		newtruss.position = pos + (basis_ * (local_axis * offset_scalar))
-		newtruss.transform.basis = basis_
-
-		# resize collision per segment
-		var coll = newtruss.get_node_or_null("CollisionShape3D")
-		if coll and coll.shape:
-			coll.shape = coll.shape.duplicate()
-			var shape = coll.shape as BoxShape3D
-			if shape:
-				# seg_h tall; full width/depth
-				if local_axis == Vector3.UP:
-					shape.size = Vector3(size.x, seg_h, size.z)
-				elif local_axis == Vector3.RIGHT:
-					shape.size = Vector3(seg_h, size.y, size.z)
-				else:
-					shape.size = Vector3(size.x, size.y, seg_h)
+		new_truss.position = pos + (basis * (local_axis * offset_scalar))
+		new_truss.transform.basis = basis
+		
+		var coll = new_truss.get_node_or_null("CollisionShape3D")
+		if coll and coll.shape is BoxShape3D:
+			var dup_shape = coll.shape.duplicate()
+			if local_axis == Vector3.UP: dup_shape.size = Vector3(size.x, seg_h, size.z)
+			elif local_axis == Vector3.RIGHT: dup_shape.size = Vector3(seg_h, size.y, size.z)
+			else: dup_shape.size = Vector3(size.x, size.y, seg_h)
+			coll.shape = dup_shape
 			coll.disabled = is_disabled
-
-		var mesh_node = newtruss.get_node_or_null("Cube_016") as MeshInstance3D
-		if mesh_node and mesh_node.material_override:
-			var mat = mesh_node.material_override.duplicate() as ShaderMaterial
-			if transparency > 0.0:
-				mat.shader = transparent_shader
-			else:
-				mat.shader = opaque_shader
+			
+		var mesh_node = new_truss.get_node_or_null("Cube_016")
+		if mesh_node and opaque_shader != null:
+			var mat = ShaderMaterial.new()
+			mat.shader = transparent_shader if transparency > 0.0 else opaque_shader
 			mat.set_shader_parameter("base_color", color)
 			mat.set_shader_parameter("part_transparency", transparency)
 			mesh_node.material_override = mat
 
 	var physical_collider = StaticBody3D.new()
 	var collision_shape = CollisionShape3D.new()
-	var box_shape = BoxShape3D.new()
+	var box_shape_volume = BoxShape3D.new()
+	box_shape_volume.size = size
 	
-	box_shape.size = size
-	collision_shape.shape = box_shape
+	collision_shape.shape = box_shape_volume
 	collision_shape.disabled = is_disabled
 	
 	physical_collider.add_child(collision_shape)
@@ -517,63 +442,137 @@ func addTruss(pos, rot_deg, size, color, is_disabled, transparency):
 	_spawn_parent.add_child(physical_collider)
 	
 	physical_collider.position = pos
-	physical_collider.transform.basis = basis_
+	physical_collider.transform.basis = basis
 
-
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("addCheckpoint"):
-		addCheckpoint(player.position, player.rotation, player.velocity, player.cam.mode, player.cam.global_transform, GameManager.shiftlocked)
-	if Input.is_action_just_pressed("removeCheckpoint"):
-		removeLastCheckpoint()
-
-
-func loadstuff(data):
-	spawn_point = null
-
-	print_debug("Loading level...")
-	var main_folder = data.get("Data")
-	if main_folder == null:
-		push_error("Missing 'Data' key inside JSON!")
-		return
-	var parts_list = main_folder.get("Children", [])
+func texture(mesh_instance: MeshInstance3D, color: Color, transparency: float = 0.0) -> void:
+	if mesh_instance == null: return
 	
-	_material_cache.clear()
-	var container = Node3D.new()
-	container.name = "LevelParts"
-	_spawn_parent = container
-	
-	for child in parts_list:
-		spawn_node(child)
-
-	add_child(container)
-	_spawn_parent = self
-
-	print_debug("Level loaded. Spawn =", spawn_point)
-
-
-func _ready() -> void:
-	alljump = GameManager.alljump
-	
-	WorkerThreadPool.add_task(func():
-		var leveldata = load_level(GameManager.currentLevel)
-		GameManager.currentLoadedLevel = GameManager.currentLevel
-		if leveldata == null:
-			return
-
-		call_deferred("_finalize_loading", leveldata)
-	)
-
-func _process(_delta: float) -> void:
-	if alljump == true and GameManager.alljump == false:
-		removeCheckpoints()
+	var key = str(color) + "_" + str(roblox_studs) + "_" + str(transparency)
+	if _material_cache.has(key):
+		mesh_instance.material_override = _material_cache[key]
+	else:
+		var mat = ShaderMaterial.new()
+		mat.shader = transparent_shader if transparency > 0.0 else opaque_shader
 		
-	alljump = GameManager.alljump
+		var texture = roblox_tile if roblox_studs else default_tile
+		var trans_value = 0.0 if roblox_studs else 0.75
+		var overlay_mode = roblox_studs
+		
+		mat.set_shader_parameter("albedo_texture", texture)
+		mat.set_shader_parameter("transparency", trans_value)
+		mat.set_shader_parameter("use_overlay_mode", overlay_mode)
+		mat.set_shader_parameter("base_color", color)
+		mat.set_shader_parameter("part_transparency", transparency)
+		
+		_material_cache[key] = mat
+		mesh_instance.material_override = mat
 
-func _finalize_loading(leveldata):
-	loadstuff(leveldata)
+# binary conversions
+func _read_binary_string(sp: StreamPeerBuffer) -> String:
+	if sp.get_available_bytes() < 1: # stops if stream empty
+		push_warning("Parser warning : unexpected end of file reading string length.")
+		return ""
+		
+	var length = sp.get_u8() # gets the first byte
+	if length == 0: 
+		return ""
+	
+	# max 300 character limit for names
+	if length > 300:
+		push_error("String length is too large")
+		return ""
+	
+	if sp.get_available_bytes() < length:
+		push_error("File ended before string could be fully read.")
+		return ""
+	
+	var string_bytes = sp.get_data(length) # gets the string length in bytes
+	if string_bytes[0] != OK:
+		return ""
+	
+	return (string_bytes[1] as PackedByteArray).get_string_from_utf8() # converts the string bytes into letters
 
+func _read_binary_vector3(sp: StreamPeerBuffer) -> Vector3:
+	if sp.get_available_bytes() < 12:
+		push_error("Not enough bytes left to parse Vector3.")
+		return Vector3.ZERO
+		
+	var x = sp.get_float()
+	var y = sp.get_float()
+	var z = sp.get_float()
+	return Vector3(x, y, z)
+
+func _read_binary_color(sp: StreamPeerBuffer) -> Color:
+	var r = sp.get_u8() / 255.0
+	var g = sp.get_u8() / 255.0
+	var b = sp.get_u8() / 255.0
+	return Color(r, g, b)
+
+
+# JSON conversions
+func _json_to_vector3(d: Variant) -> Vector3:
+	if typeof(d) == TYPE_ARRAY and d.size() >= 3:
+		return Vector3(float(d[0]), float(d[1]), float(d[2]))
+	elif typeof(d) == TYPE_DICTIONARY:
+		var x = float(d.get("X", 0.0))
+		var y = float(d.get("Y", 0.0))
+		var z = float(d.get("Z", 0.0))
+		return Vector3(x, y, z)
+	return Vector3.ZERO
+
+func _json_to_color(d: Variant) -> Color:
+	if typeof(d) == TYPE_STRING:
+		return Color.from_string(d, Color.WHITE)
+	elif typeof(d) == TYPE_DICTIONARY:
+		var r = float(d.get("R", 1.0))
+		var g = float(d.get("G", 1.0))
+		var b = float(d.get("B", 1.0))
+		return Color(r, g, b)
+	return Color.WHITE
+
+
+# --- CHECKPOINT HANDLING---
+func _reset_loader_context() -> void:
+	spawn_point = null
+	_material_cache.clear()
+
+func _finalize_spawn_and_reset() -> void:
+	print_debug("Level loaded. Spawn = ", spawn_point)
 	if spawn_point != null:
-		player.spawn = spawn_point
-		player.reset()
+		if player:
+			player.set("spawn", spawn_point)
+			if player.has_method("reset"):
+				player.call("reset")
 	else:
 		push_warning("NO SPAWN FOUND IN LEVEL")
+
+func add_checkpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam_transform: Transform3D, shiftlock: bool) -> void:
+	if game_manager_alljump:
+		if checkpoint_prefab == null: return
+		var new_cp = checkpoint_prefab.instantiate()
+		new_cp.set_meta("saved_velocity", vel)
+		new_cp.set_meta("camera_mode", cam_mode)
+		new_cp.set_meta("camera_transform", cam_transform)
+		new_cp.set_meta("shiftlocked", shiftlock)
+		
+		add_child(new_cp)
+		new_cp.position = pos
+		new_cp.rotation = rot
+		checkpoints.append(new_cp)
+		spawn_point = new_cp
+		
+		if player:
+			player.set("spawn", new_cp)
+		print_debug("Player spawn successfully updated to checkpoint!")
+
+func remove_checkpoints() -> void:
+	for cp in checkpoints:
+		if is_instance_valid(cp):
+			cp.queue_free()
+	checkpoints.clear()
+	
+	var original_spawn = get_node_or_null("LevelParts/Spawn")
+	if original_spawn != null:
+		spawn_point = original_spawn
+		if player:
+			player.set("spawn", original_spawn)
