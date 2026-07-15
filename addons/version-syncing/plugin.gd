@@ -10,4 +10,4 @@ func _export_begin(features, is_debug, path, flags):
 		var version = file.get_as_text().strip_edges()
 		ProjectSettings.set_setting("application/config/version", version)
 		ProjectSettings.save()
-		print("VersionSync: set version to ", version)
+		print_debug("VersionSync: set version to ", version)
