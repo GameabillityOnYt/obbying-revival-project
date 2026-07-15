@@ -13,7 +13,7 @@ extends Node
 ##     # Application ID
 ##     DiscordRPC.app_id = 1099618430065324082
 ##     # this is boolean if everything worked
-##     print("Discord working: " + str(DiscordRPC.get_is_discord_working()))
+##     print_debug("Discord working: " + str(DiscordRPC.get_is_discord_working()))
 ##     # Set the first custom text row of the activity here
 ##     DiscordRPC.details = "A demo activity by vaporvee#1231"
 ##     # Set the second custom text row of the activity here
