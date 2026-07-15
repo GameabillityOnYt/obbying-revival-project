@@ -672,3 +672,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		remove_Health(ouch)
 	elif body.is_in_group("instakills"):
 		remove_Health(instakills)
+
+func teleport_to(target_pos: Vector3, target_rot: Vector3 = Vector3.ZERO) -> void:
+	global_position = target_pos
+	global_rotation = Vector3(0, target_rot.y, 0)
+	velocity = Vector3.ZERO
+	
+	step_visual_offset = 0.0 
+	is_climbing = false 
+	climb_normal = Vector3.ZERO 
+	knockback_timer = 0.0 
