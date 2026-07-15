@@ -159,7 +159,7 @@ func _level_from_binary(raw_bytes: PackedByteArray) -> void:
 		if sp.get_available_bytes() < 1:
 			push_warning("Parser warning: truncated file stream reading flags")
 			break
-			
+		# do not move around these unless you restructure the exporter (this follows the order of the exporter layout)
 		var flags = sp.get_u8()
 		var is_base_part = (flags & 1) != 0
 		var is_not_collidable = (flags & 2) != 0
