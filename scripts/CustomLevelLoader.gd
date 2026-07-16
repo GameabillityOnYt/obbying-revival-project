@@ -16,6 +16,8 @@ extends Node3D
 @onready var opaque_shader = preload("res://assets/resources/shaders/TextureRepeating.gdshader")
 @onready var transparent_shader = preload("res://assets/resources/shaders/part_transparent.gdshader")
 
+@onready var destinations: Dictionary = {} # Key: tp_id (String) -> Value: Node3D (Destination)
+
 var checkpoints: Array = []
 var spawn_point: Node3D = null
 var alljump: bool = false
@@ -119,7 +121,10 @@ func _spawn_node_json(node_data: Dictionary) -> void:
 		add_part(pos, rot, size, "Spawn", color, is_disabled, transparency)
 	elif classname == "Truss":
 		add_truss(pos, rot, size, color, is_disabled, transparency)
-
+	elif classname == "Teleporter" or classname == "Destination":
+		var tp_id = node_data.get("tpID", "")
+		add_part(pos, rot, size, classname, color, is_disabled, transparency, tp_id)
+		
 	var children = node_data.get("Children", [])
 	for child in children:
 		_spawn_node_json(child)
@@ -159,10 +164,12 @@ func _level_from_binary(raw_bytes: PackedByteArray) -> void:
 		var is_base_part = (flags & 1) != 0
 		var is_not_collidable = (flags & 2) != 0
 		var has_shape = (flags & 4) != 0
+		var is_teleporter = (flags & 8) != 0
 		
 		var obj_name = _read_binary_string(sp)
 		var classname = _read_binary_string(sp)
 		var shape = _read_binary_string(sp) if has_shape else "Block"
+		var tp_id = _read_binary_string(sp) if is_teleporter else ""
 		
 		var transparency: float = 0.0
 		var pos = Vector3.ZERO
@@ -171,7 +178,6 @@ func _level_from_binary(raw_bytes: PackedByteArray) -> void:
 		var color = Color.WHITE
 		
 		if is_base_part:
-				
 			transparency = sp.get_u8() / 255.0
 			pos = _read_binary_vector3(sp)
 			size = _read_binary_vector3(sp)
@@ -187,13 +193,14 @@ func _level_from_binary(raw_bytes: PackedByteArray) -> void:
 		elif classname == "Truss":
 			add_truss(pos, rot, size, color, is_not_collidable, transparency)
 			spawned_count += 1
+		elif classname == "Teleporter" or classname == "Destination":
+			add_part(pos, rot, size, classname, color, is_not_collidable, transparency, tp_id)
+			spawned_count += 1
 
 	add_child(container)
 	_spawn_parent = self
 	_finalize_spawn_and_reset()
 
-
-# --- CORE PRIMITIVE SPARK HANDLER ---
 func _build_primitive_parts(shape: String, pos: Vector3, rot: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
 	match shape:
 		"Cylinder":
@@ -207,9 +214,7 @@ func _build_primitive_parts(shape: String, pos: Vector3, rot: Vector3, size: Vec
 		_:
 			add_part(pos, rot, size, "Part", color, is_disabled, transparency)
 
-
-# --- INSTANCE BUILDING BLOCKS METHODS ---
-func add_part(pos: Vector3, rot_deg: Vector3, size: Vector3, classname: String, color: Color, is_disabled: bool, transparency: float) -> void:
+func add_part(pos: Vector3, rot_deg: Vector3, size: Vector3, classname: String, color: Color, is_disabled: bool, transparency: float, tp_id: String = "") -> void:
 	if part_prefab == null: return
 	var new_part = part_prefab.instantiate()
 	_spawn_parent.add_child(new_part)
@@ -229,6 +234,15 @@ func add_part(pos: Vector3, rot_deg: Vector3, size: Vector3, classname: String, 
 		print("Spawn found at: ", pos)
 		spawn_point = new_part
 		new_part.name = "Spawn"
+		
+	elif classname == "Destination":
+		new_part.name = "Destination_" + tp_id
+		destinations[tp_id] = new_part
+		if coll: coll.disabled = true # remove if you want dest collisions
+
+	elif classname == "Teleporter":
+		new_part.name = "Teleporter_" + tp_id
+		_setup_teleporter_trigger(new_part, coll, tp_id)
 
 func add_cylinder(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_disabled: bool, transparency: float) -> void:
 	if cylinder_prefab == null: return
@@ -530,11 +544,38 @@ func _json_to_color(d: Variant) -> Color:
 		return Color(r, g, b)
 	return Color.WHITE
 
+func _setup_teleporter_trigger(part: Node3D, solid_collider: CollisionShape3D, tp_id: String) -> void:
+	if solid_collider:
+		solid_collider.disabled = true
+
+	var area = Area3D.new()
+	part.add_child(area)
+
+	if solid_collider:
+		var trigger_collider = solid_collider.duplicate()
+		trigger_collider.disabled = false
+		area.add_child(trigger_collider)
+
+	area.body_entered.connect(func(body):
+		if body == player or body.is_in_group("player") or body is CharacterBody3D:
+			_teleport_player_to_id(body, tp_id)
+	)
+
+func _teleport_player_to_id(player_body: Node3D, tp_id: String) -> void:
+	if destinations.has(tp_id):
+		var dest_node = destinations[tp_id]
+		if player_body.has_method("_handle_teleportation"):
+			player_body.call("_handle_teleportation", dest_node.global_position, dest_node.global_rotation)
+		else:
+			player_body.global_position = dest_node.global_position
+	else:
+		push_warning("Teleporter with tpID '" + tp_id + "' entered but no matching Destination was found")
 
 # --- CHECKPOINT HANDLING---
 func _reset_loader_context() -> void:
 	spawn_point = null
 	_material_cache.clear()
+	destinations.clear()
 
 func _finalize_spawn_and_reset() -> void:
 	print_debug("Level loaded. Spawn = ", spawn_point)
