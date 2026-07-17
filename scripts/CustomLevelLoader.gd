@@ -607,11 +607,12 @@ func add_checkpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam
 		print_debug("Player spawn successfully updated to checkpoint!")
 
 func remove_checkpoints() -> void:
-	for cp in checkpoints:
-		if is_instance_valid(cp):
-			cp.queue_free()
-	checkpoints.clear()
-	
+	if checkpoints.size() > 0:
+		var latest_checkpoint = checkpoints.pop_back()
+		
+		if is_instance_valid(latest_checkpoint):
+			latest_checkpoint.queue_free()
+
 	var original_spawn = get_node_or_null("LevelParts/Spawn")
 	if original_spawn != null:
 		spawn_point = original_spawn

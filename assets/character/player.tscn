@@ -30,15 +30,15 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.9529234, 0.427)
 
 [node name="LedgeGrabRay" type="RayCast3D" parent="." unique_id=467875725]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.86, 0.43)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.230667, 0.43)
 debug_shape_custom_color = Color(0.6678365, 1.853034e-06, 4.813075e-07, 1)
 
 [node name="LedgeGrabRay2" type="RayCast3D" parent="." unique_id=502923743]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.3758577, 0.427)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.387779, 0.427)
 debug_shape_custom_color = Color(3.008172e-07, 0.42538303, 1.4439225e-06, 1)
 
 [node name="LedgeGrabRay3" type="RayCast3D" parent="." unique_id=370961036]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.94984066, 0.427)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.3640469, 0.427)
 debug_shape_custom_color = Color(3.008172e-07, 0.42538303, 1.4439225e-06, 1)
 
 [node name="GlideRay" type="RayCast3D" parent="." unique_id=370163608]
