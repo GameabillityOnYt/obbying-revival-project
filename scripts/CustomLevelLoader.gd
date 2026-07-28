@@ -45,7 +45,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if alljump == true and game_manager_alljump == false:
-		remove_checkpoints()
+		clear_all_checkpoints()
 	alljump = game_manager_alljump
 
 func _input(_event: InputEvent) -> void:
@@ -437,11 +437,7 @@ func add_truss(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_d
 			
 		var mesh_node = new_truss.get_node_or_null("Cube_016")
 		if mesh_node and opaque_shader != null:
-			var mat = ShaderMaterial.new()
-			mat.shader = transparent_shader if transparency > 0.0 else opaque_shader
-			mat.set_shader_parameter("base_color", color)
-			mat.set_shader_parameter("part_transparency", transparency)
-			mesh_node.material_override = mat
+			texture(mesh_node,color,transparency)
 
 	var physical_collider = StaticBody3D.new()
 	var collision_shape = CollisionShape3D.new()
@@ -609,12 +605,21 @@ func add_checkpoint(pos: Vector3, rot: Vector3, vel: Vector3, cam_mode: int, cam
 func remove_checkpoints() -> void:
 	if checkpoints.size() > 0:
 		var latest_checkpoint = checkpoints.pop_back()
-		
 		if is_instance_valid(latest_checkpoint):
 			latest_checkpoint.queue_free()
-
-	var original_spawn = get_node_or_null("LevelParts/Spawn")
-	if original_spawn != null:
-		spawn_point = original_spawn
-		if player:
-			player.set("spawn", original_spawn)
+			
+	if checkpoints.size() > 0:
+		var active_checkpoint = checkpoints.back()
+		if is_instance_valid(active_checkpoint):
+			spawn_point = active_checkpoint
+			if player:
+				player.set("spawn", active_checkpoint)
+	else:
+		var original_spawn = get_node_or_null("LevelParts/Spawn")
+		if original_spawn != null:
+			spawn_point = original_spawn
+			if player:
+				player.set("spawn", original_spawn)
+func clear_all_checkpoints() -> void:
+	while checkpoints.size() > 0:
+		remove_checkpoints()
