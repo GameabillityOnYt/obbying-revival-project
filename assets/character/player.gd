@@ -304,7 +304,6 @@ func _physics_process(delta: float) -> void:
 		if not active_ray: #ledge grabbing etc :D
 			if (ray.is_colliding() or ray2.is_colliding()) and not ledgegrabray.is_colliding() and ledgegrabray2.is_colliding() and not ledgegrabray3.is_colliding():
 				active_ray = topray if ray.is_colliding() else ray2
-				print_debug(active_ray.name)
 				is_ledge_climbing = true
 
 		if active_ray:
