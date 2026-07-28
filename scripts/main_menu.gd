@@ -460,7 +460,6 @@ func _save_pinned_levels_to_file():
 func _on_settings_pressed() -> void: # when you press settings it makes your camera go to the settings area
 	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "settings"
-	GameManager.set_sliders_enabled(true)
 	cam.global_position = Settings.global_position
 	
 	if DiscordRPCManager != null:
@@ -469,7 +468,6 @@ func _on_settings_pressed() -> void: # when you press settings it makes your cam
 func _on_return_to_main_pressed() -> void:
 	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "main"
-	GameManager.set_sliders_enabled(false)
 	cam.global_position = Main.global_position
 	
 	if search != null:
@@ -481,19 +479,16 @@ func _on_return_to_main_pressed() -> void:
 func _on_return_to_settings_pressed() -> void:
 	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "settings"
-	GameManager.set_sliders_enabled(true)
 	cam.global_position = Settings.global_position
 
 func _on_avatar_pressed() -> void:
 	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "avatar"
-	GameManager.set_sliders_enabled(false)
 	cam.global_position = AvatarCustom.global_position
 
 func _on_help_pressed() -> void:
 	$Camera2D.position_smoothing_enabled = GameManager.data.menuTransitions
 	current_page = "help"
-	GameManager.set_sliders_enabled(false)
 	cam.global_position = Help.global_position
 
 

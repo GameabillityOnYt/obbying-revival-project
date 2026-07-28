@@ -174,6 +174,3 @@ func ensure_levels_folder():
 	var dir = DirAccess.open("user://")
 	if not dir.dir_exists("levels"):
 		dir.make_dir("levels")
-
-func set_sliders_enabled(enabled: bool) -> void:
-	sliders_enabled_changed.emit(enabled)
