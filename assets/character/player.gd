@@ -4,6 +4,9 @@ extends CharacterBody3D
 var SPEED = 16
 var JUMP_VELOCITY = 50
 
+#sounds
+@onready var footstep = $Footstep
+
 # coyote time shi
 @export var coyote_time := 0.125
 var coyote_timer := 0.0
@@ -527,7 +530,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		if knockback_timer > 0.0:
 			knockback_timer -= delta
-			
 			var current_h_vel = Vector3(velocity.x, 0.0, velocity.z)
 			var target_h_vel = direction * SPEED
 			

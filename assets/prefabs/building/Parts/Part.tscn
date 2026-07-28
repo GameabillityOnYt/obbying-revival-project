@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dm30ao2mfqpgw" path="res://assets/prefabs/building/Parts/part.gd" id="1_4srl5"]
 [ext_resource type="Shader" uid="uid://b35qw48vmqolq" path="res://assets/resources/shaders/part_transparent.gdshader" id="1_rxqix"]
-[ext_resource type="Texture2D" uid="uid://c13kfsjqmtytl" path="res://assets/images/textures/Tile1.png" id="2_rxqix"]
+[ext_resource type="Texture2D" uid="uid://d16c6y0uly506" path="res://assets/images/textures/orp_brick_updated.png" id="3_4srl5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fpvxl"]
 
@@ -10,14 +10,15 @@
 render_priority = 0
 shader = ExtResource("1_rxqix")
 shader_parameter/base_color = Color(0.48962194, 0.48962235, 0.48962206, 1)
-shader_parameter/albedo_texture = ExtResource("2_rxqix")
-shader_parameter/tiling_scale = Vector2(0.25, 0.25)
+shader_parameter/albedo_texture = ExtResource("3_4srl5")
+shader_parameter/tiling_scale = Vector2(0.5, 0.5)
 shader_parameter/sharpness = 10.000000475
 shader_parameter/transparency = 0.8999999798832
 shader_parameter/part_transparency = 0.0
 shader_parameter/use_overlay_mode = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_iuq8f"]
+lightmap_size_hint = Vector2i(14, 21)
 material = SubResource("ShaderMaterial_wljxp")
 
 [sub_resource type="BoxOccluder3D" id="BoxOccluder3D_rxqix"]
