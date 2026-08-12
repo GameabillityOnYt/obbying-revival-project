@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://bxr5v8pgqbkjx"]
+
+[ext_resource type="Script" uid="uid://dnwxjlb4xb5sp" path="res://scripts/mmv2/mmv2_handler.gd" id="1_vnsgh"]
+[ext_resource type="Texture2D" uid="uid://wec8jyru71tj" path="res://assets/images/UI/Obby Revival Project.svg" id="2_62sql"]
+[ext_resource type="Script" uid="uid://cdgugc0oqve6i" path="res://scripts/mmv2/main_screen.gd" id="2_y5wyg"]
+[ext_resource type="Script" uid="uid://c6ugjorbi1s4t" path="res://scripts/mmv2/local_levels.gd" id="4_56cjo"]
+[ext_resource type="Texture2D" uid="uid://b7ng0dfrrgh2e" path="res://assets/images/UI/close.svg" id="5_adtn5"]
+[ext_resource type="StyleBox" uid="uid://c2yj1collbydd" path="res://assets/prefabs/UI/mmv2/menutitles.tres" id="5_v26qe"]
+[ext_resource type="Texture2D" uid="uid://b7gkendx453xt" path="res://assets/images/UI/refresh.svg" id="6_apsaa"]
+[ext_resource type="Sky" uid="uid://bjgj48o5wlsy8" path="res://assets/prefabs/UI/mmv2/panoramas/0.7.1variant1/sky.tres" id="7_apsaa"]
+
+[sub_resource type="Theme" id="Theme_8kbp2"]
+BoxContainer/constants/separation = 10
+
+[sub_resource type="Environment" id="Environment_v26qe"]
+background_mode = 2
+sky = ExtResource("7_apsaa")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8kbp2"]
+exposure_multiplier = 1.05
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.01
+dof_blur_far_transition = 2490.69
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.01
+dof_blur_near_transition = 752.24
+dof_blur_amount = 0.13
+
+[node name="MainMenu" type="Node3D" unique_id=40503930]
+script = ExtResource("1_vnsgh")
+
+[node name="MainMenuControlContainer" type="CanvasLayer" parent="." unique_id=655117878]
+layer = 2
+
+[node name="Control" type="Control" parent="MainMenuControlContainer" unique_id=1925052644]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainScreen" type="Control" parent="MainMenuControlContainer/Control" unique_id=86876055]
+anchors_preset = 0
+script = ExtResource("2_y5wyg")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/MainScreen" unique_id=450440056]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer" unique_id=48328947]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=513019011]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_62sql")
+stretch_mode = 3
+
+[node name="LocalLevels" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=1272770043]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Local Levels"
+
+[node name="OnlineLevels" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=1405385635]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Online Levels"
+
+[node name="Help" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=1042560359]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Help"
+
+[node name="Settings" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=1430449574]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="QuitGame" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=500713627]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Quit Game"
+
+[node name="LocalLevels" type="Control" parent="MainMenuControlContainer/Control" unique_id=199301052]
+anchors_preset = 0
+offset_left = 1280.0
+offset_right = 1280.0
+script = ExtResource("4_56cjo")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/LocalLevels" unique_id=1069062679]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer" unique_id=766252563]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="Title" type="Label" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer" unique_id=1755341112]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_v26qe")
+text = "Local Levels"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer" unique_id=1225698133]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LineEdit" type="LineEdit" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1035868877]
+custom_minimum_size = Vector2(400, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search local levels..."
+backspace_deletes_composite_character_enabled = true
+
+[node name="ClearQuery" type="TextureButton" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1476322421]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_adtn5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Refresh" type="TextureButton" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1806420097]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_apsaa")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LocalLevelsList" type="ScrollContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer" unique_id=1769935607]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+scroll_horizontal_by_default = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/LocalLevelsList" unique_id=1410604036]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer" unique_id=1046413939]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Panorama" type="WorldEnvironment" parent="." unique_id=475495200]
+environment = SubResource("Environment_v26qe")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=414902472]
+attributes = SubResource("CameraAttributesPractical_8kbp2")
+fov = 70.0
+
+[connection signal="pressed" from="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/LocalLevels" to="MainMenuControlContainer/Control/MainScreen" method="_on_local_levels_pressed"]
+[connection signal="text_changed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/LineEdit" to="MainMenuControlContainer/Control/LocalLevels" method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/LineEdit" to="MainMenuControlContainer/Control/LocalLevels" method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/ClearQuery" to="MainMenuControlContainer/Control/LocalLevels" method="_on_clear_query_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/Refresh" to="MainMenuControlContainer/Control/LocalLevels" method="_on_refresh_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/Back" to="MainMenuControlContainer/Control/LocalLevels" method="_on_back_pressed"]

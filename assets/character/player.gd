@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 # walkspeed and jump height
 var SPEED = 16
-var JUMP_VELOCITY = 50
+var JUMP_VELOCITY = 500
 
 #sounds
 @onready var footstep = $Footstep

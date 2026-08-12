@@ -47,6 +47,12 @@ func _notification(what: int) -> void:
 			autosave()
 			print_debug("Saved successfully on exit!")
 		get_tree().quit()
+	
+	if what == NOTIFICATION_WM_MOUSE_EXIT:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	if what == NOTIFICATION_WM_MOUSE_ENTER:
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _input(event):
 	if event is InputEventKey and event.pressed:

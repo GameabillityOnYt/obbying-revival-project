@@ -80,7 +80,7 @@ func _on_meta_clicked(meta: Variant) -> void:
 	OS.shell_open(meta)
 "
 
-[sub_resource type="Shader" id="Shader_8a8k8"]
+[sub_resource type="Shader" id="Shader_lw0hr"]
 code = "shader_type canvas_item;
 
 uniform float star_density : hint_range(0.01, 1.0) = 1;
@@ -123,7 +123,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
-shader = SubResource("Shader_8a8k8")
+shader = SubResource("Shader_lw0hr")
 shader_parameter/star_density = 0.5
 shader_parameter/elapsed_time = 16.937500000000163
 shader_parameter/direction = Vector2(-1, 0)
