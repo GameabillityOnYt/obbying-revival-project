@@ -47,6 +47,7 @@ folder_colors={
 "res://assets/images/": "orange",
 "res://assets/models/": "yellow",
 "res://assets/prefabs/": "teal",
+"res://assets/prefabs/UI/mmv2/panoramas/": "blue",
 "res://assets/resources/": "green",
 "res://assets/skyboxes/": "blue",
 "res://assets/sounds/": "pink",
@@ -54,7 +55,8 @@ folder_colors={
 "res://scripts/": "pink",
 "res://scripts/autoload/": "purple",
 "res://scripts/classes/": "yellow",
-"res://scripts/gui/": "green"
+"res://scripts/gui/": "green",
+"res://scripts/mmv2/": "orange"
 }
 
 [global_group]

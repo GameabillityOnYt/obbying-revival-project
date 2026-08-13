@@ -31,9 +31,13 @@ const difficultyColors: Dictionary = {
 
 @onready var camera = $Camera3D
 @onready var screensContainer = $MainMenuControlContainer/Control
+@onready var panorama = $Panorama
 @onready var screens: Dictionary[String, Control] = {
 	MainScreen = screensContainer.get_node("MainScreen"),
-	LocalLevels = screensContainer.get_node("LocalLevels")
+	LocalLevels = screensContainer.get_node("LocalLevels"),
+	Help = screensContainer.get_node("Help"),
+	Settings = screensContainer.get_node("Settings"),
+	Online = screensContainer.get_node("Online"),
 }
 @onready var tree = get_tree()
 @export var TransitionTime = 0.4
@@ -49,6 +53,9 @@ func switchToScreen(screenName: String) -> void:
 	var newScreen = screens[screenName]
 	newScreen.show()
 	newScreen.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	if newScreen.has_method("onSwitch"):
+		newScreen.call_deferred("onSwitch")
 	
 	var tweenout = tree.create_tween().bind_node(self).set_ease(Tween.EASE_OUT).set_parallel(true)
 	tweenout.tween_property(oldScreen, "modulate", Color.TRANSPARENT, TransitionTime).set_trans(Tween.TRANS_SINE)
@@ -155,6 +162,15 @@ func _ready() -> void:
 	screens[currentScreen].position = Vector2.ZERO
 	screens[currentScreen].show()
 	screens[currentScreen].process_mode = Node.PROCESS_MODE_INHERIT
+	
+	var base_path := "res://assets/prefabs/UI/mmv2/panoramas/"
+	var folders := DirAccess.get_directories_at(base_path)
+
+	if folders.size() > 0:
+		var random_folder: String = folders[randi() % folders.size()]
+		
+		var sky_path := base_path.path_join(random_folder).path_join("sky.tres")
+		panorama.environment.sky = load(sky_path)
 	pass # Replace with function body.
 
 
@@ -162,5 +178,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	panorama_rotation = fmod(panorama_rotation + delta * 0.03, 360.0) 
 	var panorama_normal = panorama_rotation - 180.0
-	camera.rotation = Vector3(0, panorama_rotation, 0)
+	camera.rotation = Vector3(-0.261799388, panorama_rotation, 0)
 	pass

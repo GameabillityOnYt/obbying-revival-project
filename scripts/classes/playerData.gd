@@ -17,6 +17,8 @@ signal MaxFPSChanged
 @export var renderer = "mobile"
 @export var menuTransitions = true
 @export var RToggle = false
+@export var disableCursorWobble = false
+@export var doNot = false
 
 @export var body_colors: Dictionary = {
 	"head": Color.WHITE,

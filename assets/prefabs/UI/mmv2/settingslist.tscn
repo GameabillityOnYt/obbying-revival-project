@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://dktmqw6memcns"]
+
+[ext_resource type="Script" uid="uid://deqp0c7fp2ep5" path="res://scripts/mmv2/settingslist.gd" id="1_i3fho"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=577217056]
+custom_minimum_size = Vector2(450, 0)
+script = ExtResource("1_i3fho")
+
+[node name="InnerTitle" type="Label" parent="." unique_id=368650485]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Rendering"
+
+[node name="RenderingMode" type="HBoxContainer" parent="." unique_id=1872359349]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RenderingMode" unique_id=972037877]
+modulate = Color(1, 1, 1, 0.90588236)
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(6, 0)
+text = "Rendering Mode"
+
+[node name="RenderingMode" type="OptionButton" parent="RenderingMode" unique_id=636026815]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Forward+"
+popup/item_0/id = 0
+popup/item_1/text = "Mobile"
+popup/item_1/id = 1
+popup/item_2/text = "Compatibility"
+popup/item_2/id = 2
+
+[node name="MaxFPS" type="HBoxContainer" parent="." unique_id=45452538]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MaxFPS" unique_id=411953876]
+modulate = Color(1, 1, 1, 0.90588236)
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(6, 0)
+text = "Maximum FPS"
+
+[node name="MaxFPS" type="SpinBox" parent="MaxFPS" unique_id=230673920]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 1200000.0
+value = 60.0
+rounded = true
+suffix = "fps"
+select_all_on_focus = true
+
+[node name="InnerTitle2" type="Label" parent="." unique_id=492352378]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Controls"
+
+[node name="Sensitivity" type="HBoxContainer" parent="." unique_id=670055871]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sensitivity" unique_id=375820172]
+modulate = Color(1, 1, 1, 0.90588236)
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(6, 0)
+text = "Sensitivity"
+
+[node name="SensitivitySlider" type="HSlider" parent="Sensitivity" unique_id=1545022124]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 2.0
+step = 0.1
+value = 0.5
+tick_count = 5
+ticks_position = 3
+
+[node name="SensitivityNumber" type="SpinBox" parent="Sensitivity" unique_id=1401198422]
+layout_mode = 2
+max_value = 2.0
+step = 0.1
+
+[node name="CtrlRToRestart" type="CheckButton" parent="." unique_id=51520073]
+layout_mode = 2
+text = "Ctrl + R instead of R to restart"
+
+[node name="InnerTitle3" type="Label" parent="." unique_id=245885690]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Game"
+
+[node name="FOV" type="HBoxContainer" parent="." unique_id=131775154]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FOV" unique_id=691460025]
+modulate = Color(1, 1, 1, 0.90588236)
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(6, 0)
+text = "FOV"
+
+[node name="FOVSlider" type="HSlider" parent="FOV" unique_id=897605085]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+min_value = 25.0
+max_value = 80.0
+value = 70.0
+tick_count = 11
+ticks_position = 3
+
+[node name="FOVNumber" type="SpinBox" parent="FOV" unique_id=284191647]
+layout_mode = 2
+min_value = 25.0
+max_value = 80.0
+value = 70.0
+
+[node name="UseAltStud" type="CheckButton" parent="." unique_id=531736479]
+layout_mode = 2
+text = "Use alternative stud texture"
+
+[node name="InnerTitle4" type="Label" parent="." unique_id=1729787433]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Other"
+
+[node name="DisableWobbly" type="CheckButton" parent="." unique_id=1808648870]
+layout_mode = 2
+text = "Disable wobbly cursor easter egg"
+
+[node name="DiscordRPC" type="CheckButton" parent="." unique_id=339259911]
+layout_mode = 2
+text = "Discord Rich Presence"
+
+[node name="UseOldStars" type="CheckButton" parent="." unique_id=1375555825]
+layout_mode = 2
+disabled = true
+text = "Old stars background"
+
+[node name="DoNot" type="CheckButton" parent="." unique_id=817299522]
+layout_mode = 2
+text = "Do not..."
+
+[connection signal="item_selected" from="RenderingMode/RenderingMode" to="." method="_on_rendering_mode_item_selected"]
+[connection signal="value_changed" from="MaxFPS/MaxFPS" to="." method="_on_max_fps_value_changed"]
+[connection signal="value_changed" from="Sensitivity/SensitivitySlider" to="." method="_on_sensitivity_slider_drag_ended"]
+[connection signal="value_changed" from="Sensitivity/SensitivityNumber" to="." method="_on_sensitivity_number_value_changed"]
+[connection signal="toggled" from="CtrlRToRestart" to="." method="_on_ctrl_r_to_restart_toggled"]
+[connection signal="value_changed" from="FOV/FOVSlider" to="." method="_on_fov_slider_value_changed"]
+[connection signal="value_changed" from="FOV/FOVNumber" to="." method="_on_fov_number_value_changed"]
+[connection signal="toggled" from="UseAltStud" to="." method="_on_use_alt_stud_toggled"]
+[connection signal="toggled" from="DisableWobbly" to="." method="_on_disable_wobbly_toggled"]
+[connection signal="toggled" from="DiscordRPC" to="." method="_on_discord_rpc_toggled"]
+[connection signal="toggled" from="DoNot" to="." method="_on_do_not_toggled"]

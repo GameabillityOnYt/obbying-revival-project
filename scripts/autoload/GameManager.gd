@@ -1,6 +1,6 @@
 extends Node
 
-const VERSIONLINK = "https://raw.githubusercontent.com/GameabillityOnYt/obbying-revival-project/refs/heads/main/version.txt"
+const VERSIONLINK = "https://static.obbyrevivalproject.org/version.txt"
 const TARGETRATIO = 16.0/9.0
 
 @onready var window = get_window()
@@ -15,6 +15,7 @@ const TARGETRATIO = 16.0/9.0
 @export var RToggle:bool = false
 @export var menuTransitions:bool = true
 @export var RobloxStuds:bool = false # should be a string later for more material if needed
+@export var customCacheFolder:String = "user://customcache"
 
 signal DataLoaded
 signal CharacterAdded(Player)
@@ -76,6 +77,11 @@ func _ready():
 	else:
 		leveldata = LevelData.new()
 		ResourceSaver.save(leveldata,"user://level_stats.tres")
+	
+	if not DirAccess.dir_exists_absolute("user://customcache"):
+		DirAccess.make_dir_absolute("user://customcache")
+	
+	
 
 	if RenderingServer.get_current_rendering_method() != data.renderer:
 		OS.create_instance(["--rendering-method",data.renderer])

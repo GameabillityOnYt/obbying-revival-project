@@ -16,6 +16,7 @@ func reloadLevels() -> void:
 	
 	var localLevels = current_scene.fetchLevelsDirectory()
 	for localLevelPath in localLevels:
+		print(localLevelPath)
 		var level = current_scene.fetchLevelMetadata(localLevelPath)
 		if not level:
 			continue
@@ -26,6 +27,9 @@ func reloadLevels() -> void:
 		levelsContainer.add_child(newLevelButton)
 		var diff_color = Color(current_scene.getColorOfDifficulty(level.Difficulty))
 		newLevelButton.setup(level.ObbyName, level.Creator, level.Difficulty, diff_color)
+		
+		if level.ObbyName == "Pile of Bile":
+			return
 		
 		_level_entries.append({
 			"node": newLevelButton,
@@ -131,4 +135,9 @@ func _on_refresh_pressed() -> void:
 func _on_clear_query_pressed() -> void:
 	$CenterContainer/VBoxContainer/HBoxContainer/LineEdit.text = ""
 	_execute_search("")
+	pass # Replace with function body.
+
+func _on_open_folder_pressed() -> void:
+	var folderpath = ProjectSettings.globalize_path("user://levels")
+	OS.shell_show_in_file_manager(folderpath)
 	pass # Replace with function body.

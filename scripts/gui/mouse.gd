@@ -9,7 +9,7 @@ var wobbly_speed = 0
 @onready var canvas:CanvasLayer = get_parent()
 
 func _process(delta: float) -> void:
-	if wobbly:
+	if wobbly and not GameManager.data.disableCursorWobble:
 		var mouse_speed = (get_global_mouse_position().x-global_position.x)/get_window().size.x
 		var force = (0 - skew) * 200.0 - wobbly_speed * 4.0
 		wobbly_speed += force * delta

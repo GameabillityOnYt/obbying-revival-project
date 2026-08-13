@@ -171,6 +171,7 @@ offset_left = 552.0
 offset_top = -351.0
 offset_right = 629.0
 offset_bottom = -255.0
+rotation = 0.0004798019
 theme = ExtResource("4_l72w3")
 theme_override_fonts/font = ExtResource("2_0ykhv")
 theme_override_font_sizes/font_size = 80

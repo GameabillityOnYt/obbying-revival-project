@@ -14,8 +14,8 @@ shader_parameter/texture_back = ExtResource("2_ec2at")
 shader_parameter/texture_front = ExtResource("4_v3xmi")
 shader_parameter/texture_left = ExtResource("5_rruq3")
 shader_parameter/texture_right = ExtResource("6_j78nu")
-shader_parameter/texture_up = ExtResource("7_fnd63")
 shader_parameter/texture_down = ExtResource("3_kq7l6")
+shader_parameter/texture_up = ExtResource("7_fnd63")
 
 [resource]
 sky_material = SubResource("ShaderMaterial_ciofv")
