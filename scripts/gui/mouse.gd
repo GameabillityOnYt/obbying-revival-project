@@ -64,6 +64,8 @@ func _process(delta: float) -> void:
 	
 	last_rotating = rotating
 	
+	set_inverted(Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT))
+	
 	if GameManager.shiftlocked:
 		set_icon(ICON.SHIFTLOCK)
 	elif get_viewport().gui_get_hovered_control():
@@ -84,8 +86,3 @@ func set_icon(icon:ICON):
 		offset = Vector2.ONE*16
 		scale = Vector2.ONE*1.5
 	pass
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and not event.is_echo():
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			set_inverted(event.is_pressed())

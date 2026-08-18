@@ -6,6 +6,8 @@ const TARGETRATIO = 16.0/9.0
 @onready var window = get_window()
 @export var data:PlayerData = PlayerData.new()
 @export var leveldata:LevelData = LevelData.new()
+@export var levelIsOnline = false
+@export var levelOnlineId = 0
 @export var currentLevel:String
 @export var currentLoadedLevel:String
 @export var Camera:CamStuff

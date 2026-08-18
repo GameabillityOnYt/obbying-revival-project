@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Obbying Revival Project"
+config/name="Obby Revival Project"
 config/version="0.7.1"
 run/main_scene="uid://de5w0bnvhc3wn"
 config/auto_accept_quit=false
@@ -47,7 +47,9 @@ folder_colors={
 "res://assets/images/": "orange",
 "res://assets/models/": "yellow",
 "res://assets/prefabs/": "teal",
+"res://assets/prefabs/UI/mmv2/icons/": "purple",
 "res://assets/prefabs/UI/mmv2/panoramas/": "blue",
+"res://assets/prefabs/UI/mmv2/styles/": "yellow",
 "res://assets/resources/": "green",
 "res://assets/skyboxes/": "blue",
 "res://assets/sounds/": "pink",

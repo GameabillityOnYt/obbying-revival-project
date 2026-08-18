@@ -7,6 +7,7 @@ extends Node3D
 @onready var ball_prefab = preload("res://assets/prefabs/building/Parts/ball.tscn")
 @onready var truss_prefab = preload("res://assets/prefabs/building/Parts/Truss.tscn")
 @onready var checkpoint_prefab = preload("res://assets/prefabs/models/checkpoint.tscn")
+@onready var winpad_prefab = preload("res://assets/prefabs/building/Parts/Winpad.tscn")
 
 @onready var player = $Player
 
@@ -124,6 +125,8 @@ func _spawn_node_json(node_data: Dictionary) -> void:
 	elif classname == "Teleporter" or classname == "Destination":
 		var tp_id = node_data.get("tpID", "")
 		add_part(pos, rot, size, classname, color, is_disabled, transparency, tp_id)
+	elif classname == "Winpad":
+		add_winpad(pos, rot, size, classname, color, is_disabled, transparency)
 		
 	var children = node_data.get("Children", [])
 	for child in children:
@@ -196,6 +199,8 @@ func _level_from_binary(raw_bytes: PackedByteArray) -> void:
 		elif classname == "Teleporter" or classname == "Destination":
 			add_part(pos, rot, size, classname, color, is_not_collidable, transparency, tp_id)
 			spawned_count += 1
+		elif classname == "Winpad":
+			add_winpad(pos, rot, size, classname, color, is_not_collidable, transparency)
 
 	add_child(container)
 	_spawn_parent = self
@@ -453,6 +458,39 @@ func add_truss(pos: Vector3, rot_deg: Vector3, size: Vector3, color: Color, is_d
 	
 	physical_collider.position = pos
 	physical_collider.transform.basis = basis
+
+func add_winpad(pos: Vector3, rot_deg: Vector3, size: Vector3, classname: String, color: Color, is_disabled: bool, transparency: float, tp_id: String = "") -> void:
+	if winpad_prefab == null: return
+	var new_part = winpad_prefab.instantiate()
+	_spawn_parent.add_child(new_part)
+	
+	var mesh = new_part.get_node_or_null("MeshInstance3D")
+	var coll:CollisionShape3D = new_part.get_node_or_null("CollisionShape3D")
+	var area = new_part.get_node_or_null("Area3D")
+	var coll2 = area.get_node_or_null("CollisionShape3D")
+	
+	new_part.position = pos
+	var rot_rad = Vector3(deg_to_rad(rot_deg.x), deg_to_rad(rot_deg.y), deg_to_rad(rot_deg.z))
+	new_part.transform.basis = Basis.from_euler(rot_rad, EULER_ORDER_XYZ)
+	new_part.scale = size
+	
+	if coll : coll.disabled = is_disabled
+	if mesh: texture(mesh, color, transparency)
+		
+	if classname == "Spawn":
+		print("Spawn found at: ", pos)
+		spawn_point = new_part
+		new_part.name = "Spawn"
+		
+	elif classname == "Destination":
+		new_part.name = "Destination_" + tp_id
+		destinations[tp_id] = new_part
+		if coll: coll.disabled = true # remove if you want dest collisions
+
+	elif classname == "Teleporter":
+		new_part.name = "Teleporter_" + tp_id
+		_setup_teleporter_trigger(new_part, coll, tp_id)
+
 
 func texture(mesh_instance: MeshInstance3D, color: Color, transparency: float = 0.0) -> void:
 	if mesh_instance == null: return

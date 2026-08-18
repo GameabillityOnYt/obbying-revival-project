@@ -145,7 +145,6 @@ text = "Discord Rich Presence"
 
 [node name="UseOldStars" type="CheckButton" parent="." unique_id=1375555825]
 layout_mode = 2
-disabled = true
 text = "Old stars background"
 
 [node name="DoNot" type="CheckButton" parent="." unique_id=817299522]
@@ -162,4 +161,5 @@ text = "Do not..."
 [connection signal="toggled" from="UseAltStud" to="." method="_on_use_alt_stud_toggled"]
 [connection signal="toggled" from="DisableWobbly" to="." method="_on_disable_wobbly_toggled"]
 [connection signal="toggled" from="DiscordRPC" to="." method="_on_discord_rpc_toggled"]
+[connection signal="toggled" from="UseOldStars" to="." method="_on_use_old_stars_toggled"]
 [connection signal="toggled" from="DoNot" to="." method="_on_do_not_toggled"]

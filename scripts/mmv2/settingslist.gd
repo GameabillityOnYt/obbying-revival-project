@@ -19,6 +19,7 @@ extends VBoxContainer
 }
 
 signal changed_renderer
+signal bg_option
 
 func reload() -> void:
 	var render_method = RenderingServer.get_current_rendering_method()
@@ -103,4 +104,10 @@ func _on_do_not_toggled(toggled_on: bool) -> void:
 
 func _on_ctrl_r_to_restart_toggled(toggled_on: bool) -> void:
 	GameManager.data.RToggle = not toggled_on
+	pass # Replace with function body.
+
+
+func _on_use_old_stars_toggled(toggled_on: bool) -> void:
+	GameManager.data.starsBg = toggled_on
+	bg_option.emit(toggled_on)
 	pass # Replace with function body.

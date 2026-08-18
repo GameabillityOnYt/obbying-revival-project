@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cq74jvhhw3igw"]
 
-[ext_resource type="StyleBox" uid="uid://7588ct6th75k" path="res://assets/prefabs/UI/mmv2/levelbutton.tres" id="1_ergc0"]
+[ext_resource type="StyleBox" uid="uid://7588ct6th75k" path="res://assets/prefabs/UI/mmv2/styles/levelbutton.tres" id="1_ergc0"]
 [ext_resource type="Script" uid="uid://bfj2p6omyj1a8" path="res://scripts/mmv2/levelbutton.gd" id="1_ojmcd"]
-[ext_resource type="StyleBox" uid="uid://cc8sdgvhov2na" path="res://assets/prefabs/UI/mmv2/difficultycontainer.tres" id="2_uqd7k"]
+[ext_resource type="StyleBox" uid="uid://cc8sdgvhov2na" path="res://assets/prefabs/UI/mmv2/styles/difficultycontainer.tres" id="2_uqd7k"]
 
 [node name="Level" type="PanelContainer" unique_id=1555848000]
 custom_minimum_size = Vector2(500, 44)
@@ -53,4 +53,5 @@ layout_mode = 2
 z_index = -1
 layout_mode = 2
 
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

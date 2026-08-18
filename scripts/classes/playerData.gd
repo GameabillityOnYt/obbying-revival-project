@@ -18,7 +18,12 @@ signal MaxFPSChanged
 @export var menuTransitions = true
 @export var RToggle = false
 @export var disableCursorWobble = false
+@export var starsBg = false
 @export var doNot = false
+
+@export var onlineLoggedIn = false
+@export var onlineUsername = ""
+@export var onlineAuth = ""
 
 @export var body_colors: Dictionary = {
 	"head": Color.WHITE,

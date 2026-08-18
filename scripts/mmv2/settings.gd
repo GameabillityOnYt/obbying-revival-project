@@ -21,10 +21,21 @@ func _on_back_pressed() -> void:
 	if rendering_switched:
 		$RenderSwitchRestartDialog.popup_centered()
 	rendering_switched = false
+	GameManager.autosave()
 	current_scene.switchToScreen("MainScreen")
 	pass # Replace with function body.
 
 
 func _on_v_box_container_changed_renderer() -> void:
 	rendering_switched = true
+	pass # Replace with function body.
+
+
+func _on_render_switch_restart_dialog_confirmed() -> void:
+	confirm_restart()
+	pass # Replace with function body.
+
+
+func _on_render_switch_restart_dialog_canceled() -> void:
+	$RenderSwitchRestartDialog.hide()
 	pass # Replace with function body.

@@ -31,6 +31,7 @@ const difficultyColors: Dictionary = {
 
 @onready var camera = $Camera3D
 @onready var screensContainer = $MainMenuControlContainer/Control
+@onready var starsBg = $MainMenuControlContainer/StarsBackground
 @onready var panorama = $Panorama
 @onready var screens: Dictionary[String, Control] = {
 	MainScreen = screensContainer.get_node("MainScreen"),
@@ -38,6 +39,8 @@ const difficultyColors: Dictionary = {
 	Help = screensContainer.get_node("Help"),
 	Settings = screensContainer.get_node("Settings"),
 	Online = screensContainer.get_node("Online"),
+	OnlineLevels = screensContainer.get_node("OnlineLevels"),
+	OnlineLoading = screensContainer.get_node("OnlineLoading"),
 }
 @onready var tree = get_tree()
 @export var TransitionTime = 0.4
@@ -171,8 +174,28 @@ func _ready() -> void:
 		
 		var sky_path := base_path.path_join(random_folder).path_join("sky.tres")
 		panorama.environment.sky = load(sky_path)
+	
+	if GameManager.data.starsBg:
+		starsBg.show()
+	
+	get_window().files_dropped.connect(_on_files_dropped)
 	pass # Replace with function body.
 
+func _on_files_dropped(files) -> void: # TODO: rework this, its fucking ass
+	for x in files:
+		if x.ends_with(".json") or x.ends_with(".bin"):
+			var file_name = x.get_file()
+			print_debug(file_name + " has been dragged into the game!")
+			var dest = "user://levels/"+file_name
+			
+			if FileAccess.file_exists(dest):
+				push_warning("Level already exists! Ignoring.")
+				return
+			
+			DirAccess.copy_absolute(x,dest)
+		else:
+			push_warning("File isn't json! Ignoring.")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -180,3 +203,8 @@ func _process(delta: float) -> void:
 	var panorama_normal = panorama_rotation - 180.0
 	camera.rotation = Vector3(-0.261799388, panorama_rotation, 0)
 	pass
+
+
+func _on_v_box_container_bg_option(toggle) -> void:
+	starsBg.visible = toggle
+	pass # Replace with function body.

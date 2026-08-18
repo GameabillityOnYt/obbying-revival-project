@@ -4,10 +4,15 @@ extends Control
 @onready var levelsContainer = $CenterContainer/VBoxContainer/LocalLevelsList/VBoxContainer
 var level_button = preload("res://assets/prefabs/UI/mmv2/levelbutton.tscn")
 var regex = RegEx.new()
-
+var contextfor = ""
+var deletefor = ""
 var _level_entries: Array[Dictionary] = []
 
 const FUZZY_THRESHOLD: float = 0.45
+
+func showContextFor(path) -> void:
+	contextfor = path
+	$PopupMenu.popup(Rect2i(get_global_mouse_position(), $PopupMenu.size))
 
 func reloadLevels() -> void:
 	_level_entries.clear()
@@ -22,11 +27,18 @@ func reloadLevels() -> void:
 			continue
 		
 		var newLevelButton = level_button.instantiate()
-		newLevelButton.name = level.ObbyName
 		newLevelButton.set_meta("path", localLevelPath)
 		levelsContainer.add_child(newLevelButton)
 		var diff_color = Color(current_scene.getColorOfDifficulty(level.Difficulty))
 		newLevelButton.setup(level.ObbyName, level.Creator, level.Difficulty, diff_color)
+		
+		newLevelButton.leftclick.connect(func():
+			current_scene.loadAndGotoGame(localLevelPath)
+		)
+		
+		newLevelButton.rightclick.connect(func():
+			showContextFor(localLevelPath)
+		)
 		
 		if level.ObbyName == "Pile of Bile":
 			return
@@ -47,6 +59,8 @@ func _process(_delta: float) -> void:
 
 func _on_back_pressed() -> void:
 	current_scene.switchToScreen("MainScreen")
+
+func onSwitch() -> void:
 	$CenterContainer/VBoxContainer/HBoxContainer/LineEdit.text = ""
 	_execute_search("")
 
@@ -140,4 +154,29 @@ func _on_clear_query_pressed() -> void:
 func _on_open_folder_pressed() -> void:
 	var folderpath = ProjectSettings.globalize_path("user://levels")
 	OS.shell_show_in_file_manager(folderpath)
+	pass # Replace with function body.
+
+
+func _on_popup_menu_index_pressed(index: int) -> void:
+	if index == 0:
+		GameManager.alljump = true
+		current_scene.loadAndGotoGame(contextfor)
+	if index == 1:
+		pass # TODO: noclip mode
+	if index == 2:
+		deletefor = contextfor
+		$ConfirmationDialog.dialog_text = "Are you sure you want to delete " + deletefor + "?"
+		$ConfirmationDialog.popup_centered()
+	pass # Replace with function body.
+
+
+func _on_confirmation_dialog_canceled() -> void:
+	$ConfirmationDialog.hide()
+	pass # Replace with function body.
+
+
+func _on_confirmation_dialog_confirmed() -> void:
+	DirAccess.remove_absolute(deletefor)
+	reloadLevels()
+	_execute_search($CenterContainer/VBoxContainer/HBoxContainer/LineEdit.text)
 	pass # Replace with function body.
