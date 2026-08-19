@@ -1,0 +1,832 @@
+[gd_scene format=3 uid="uid://bxr5v8pgqbkjx"]
+
+[ext_resource type="Script" uid="uid://dnwxjlb4xb5sp" path="res://scripts/mmv2/mmv2_handler.gd" id="1_vnsgh"]
+[ext_resource type="Texture2D" uid="uid://wec8jyru71tj" path="res://assets/images/UI/Obby Revival Project.svg" id="2_62sql"]
+[ext_resource type="Script" uid="uid://cdgugc0oqve6i" path="res://scripts/mmv2/main_screen.gd" id="2_y5wyg"]
+[ext_resource type="StyleBox" uid="uid://b36tamwhallho" path="res://assets/prefabs/UI/mmv2/styles/logo.tres" id="3_eoqoc"]
+[ext_resource type="Script" uid="uid://c6ugjorbi1s4t" path="res://scripts/mmv2/local_levels.gd" id="4_56cjo"]
+[ext_resource type="Texture2D" uid="uid://b7ng0dfrrgh2e" path="res://assets/images/UI/close.svg" id="5_adtn5"]
+[ext_resource type="StyleBox" uid="uid://c2yj1collbydd" path="res://assets/prefabs/UI/mmv2/styles/menutitles.tres" id="5_v26qe"]
+[ext_resource type="Texture2D" uid="uid://b7gkendx453xt" path="res://assets/images/UI/refresh.svg" id="6_apsaa"]
+[ext_resource type="Sky" uid="uid://bjgj48o5wlsy8" path="res://assets/prefabs/UI/mmv2/panoramas/0.7.1variant1/sky.tres" id="7_apsaa"]
+[ext_resource type="Texture2D" uid="uid://oqrl6aokn1rv" path="res://assets/images/UI/folder.svg" id="8_anepe"]
+[ext_resource type="Script" uid="uid://bliu1pumi4dqq" path="res://scripts/mmv2/help.gd" id="9_f0d5x"]
+[ext_resource type="StyleBox" uid="uid://dieilt543v4jr" path="res://assets/prefabs/UI/mmv2/styles/helpcontent.tres" id="10_votqb"]
+[ext_resource type="Texture2D" uid="uid://bt0mut7t2b5hr" path="res://assets/prefabs/UI/mmv2/icons/star.png" id="11_qlx78"]
+[ext_resource type="Script" uid="uid://dhgfn0cmlivnf" path="res://scripts/mmv2/online_levels.gd" id="11_tu4us"]
+[ext_resource type="Texture2D" uid="uid://doyevnw41frt" path="res://assets/prefabs/UI/mmv2/icons/filter.png" id="12_ht387"]
+[ext_resource type="Script" uid="uid://dtf8shjpxyfcn" path="res://scripts/mmv2/settings.gd" id="12_vbh0a"]
+[ext_resource type="PackedScene" uid="uid://dktmqw6memcns" path="res://assets/prefabs/UI/mmv2/settingslist.tscn" id="13_0srtr"]
+[ext_resource type="Texture2D" uid="uid://ch65n6sh8cgk8" path="res://assets/prefabs/UI/mmv2/icons/left.png" id="13_4p3lw"]
+[ext_resource type="Script" uid="uid://c20w4i35lwwcf" path="res://scripts/mmv2/online.gd" id="14_3snd7"]
+[ext_resource type="StyleBox" uid="uid://7588ct6th75k" path="res://assets/prefabs/UI/mmv2/styles/levelbutton.tres" id="14_a32bq"]
+[ext_resource type="Script" uid="uid://ct618qal1u18a" path="res://scripts/mmv2/global.gd" id="14_mjjo8"]
+[ext_resource type="Texture2D" uid="uid://soaw2oei1cwr" path="res://assets/prefabs/UI/mmv2/icons/right.png" id="14_tu4us"]
+[ext_resource type="Shader" uid="uid://6yxke1lha146" path="res://assets/prefabs/UI/mmv2/onlinebutton.gdshader" id="15_3snd7"]
+[ext_resource type="Texture2D" uid="uid://lwnl0dun1b67" path="res://assets/prefabs/UI/mmv2/icons/person.png" id="15_6mx0w"]
+[ext_resource type="Texture2D" uid="uid://c46sk3oh4yj3b" path="res://assets/prefabs/UI/mmv2/icons/levels.png" id="16_3snd7"]
+[ext_resource type="AudioStream" uid="uid://dmeg3ta1lwx2k" path="res://assets/sounds/orpington.wav" id="26_40yas"]
+[ext_resource type="AudioStream" uid="uid://dx52itdn1kpkq" path="res://assets/sounds/click.mp3" id="27_6ju5w"]
+
+[sub_resource type="Theme" id="Theme_8kbp2"]
+BoxContainer/constants/separation = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7o41x"]
+shader = ExtResource("15_3snd7")
+shader_parameter/color_top = Color(1, 1, 1, 1)
+shader_parameter/color_bottom = Color(1, 1, 1, 0)
+shader_parameter/angle_degrees = 90.00002137500002
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6mx0w"]
+shader = ExtResource("15_3snd7")
+shader_parameter/color_top = Color(1, 1, 1, 1)
+shader_parameter/color_bottom = Color(1, 1, 1, 0)
+shader_parameter/angle_degrees = 90.00002137500002
+
+[sub_resource type="Shader" id="Shader_lw0hr"]
+code = "shader_type canvas_item;
+
+uniform float star_density : hint_range(0.01, 1.0) = 1;
+uniform float elapsed_time;
+uniform vec2 direction = vec2(-1.0, 0.0); // Allow diagonal movement
+
+float rand(vec2 uv) {
+    return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+void fragment() {
+    // 1. Use TIME multiplied by speed for movement.
+    // Wrap it using fract() if you want to keep TIME values small,
+    // though for simple UV scrolling, TIME is usually fine.
+    vec2 movement = direction * elapsed_time * .0125;
+    vec2 uv = UV + movement;
+    
+    // 2. Scale the grid (increase 50.0 for smaller/more stars)
+    vec2 grid_uv = fract(uv * 360.0); 
+    vec2 grid_id = floor(uv * 360.0);
+    
+    // 3. Randomness for placement and \"twinkle\"
+    float r = rand(grid_id);
+    float star = 0.0;
+    
+    if (r > (1.0 - star_density * 0.1)) {
+        // Create a circular dot
+        float dist = distance(grid_uv, vec2(0.5));
+        
+        // 4. Frame-independent twinkling:
+        // We use sin(TIME) but offset it by our random value 'r' 
+        // so all stars don't blink at the exact same time.
+        float twinkle = sin(elapsed_time * 6.0 + r * 100.0) * 0.5 + 0.5;
+        
+        star = smoothstep(0.1, 0.02, dist) * twinkle;
+    }
+    
+    // Output white stars on a transparent/black background
+    COLOR = vec4(vec3(star), 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7la6k"]
+shader = SubResource("Shader_lw0hr")
+shader_parameter/star_density = 0.5
+shader_parameter/elapsed_time = 16.937500000000163
+shader_parameter/direction = Vector2(-1, 0)
+
+[sub_resource type="GDScript" id="GDScript_ucygd"]
+script/source = "extends ColorRect
+var elapsed_time:float
+
+func _process(delta: float) -> void:
+	elapsed_time += delta
+	var mat = material as ShaderMaterial
+	mat.set_shader_parameter(\"elapsed_time\",elapsed_time)
+"
+
+[sub_resource type="Environment" id="Environment_v26qe"]
+background_mode = 2
+sky = ExtResource("7_apsaa")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8kbp2"]
+exposure_multiplier = 1.05
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.01
+dof_blur_far_transition = 2490.69
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.01
+dof_blur_near_transition = 752.24
+dof_blur_amount = 0.13
+
+[node name="MainMenuV2" type="Node3D" unique_id=40503930]
+script = ExtResource("1_vnsgh")
+
+[node name="MainMenuControlContainer" type="CanvasLayer" parent="." unique_id=655117878]
+layer = 2
+
+[node name="Control" type="Control" parent="MainMenuControlContainer" unique_id=1925052644]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Global" type="Control" parent="MainMenuControlContainer/Control" unique_id=1294109962]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_mjjo8")
+
+[node name="Version" type="RichTextLabel" parent="MainMenuControlContainer/Control/Global" unique_id=655377681]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 567.0
+offset_top = 670.0
+offset_right = 703.0
+offset_bottom = 693.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Loading version..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="MainScreen" type="Control" parent="MainMenuControlContainer/Control" unique_id=86876055]
+anchors_preset = 0
+script = ExtResource("2_y5wyg")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/MainScreen" unique_id=450440056]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer" unique_id=48328947]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="LogoContainer" type="PanelContainer" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=2007524047]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_eoqoc")
+
+[node name="Logo" type="TextureRect" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/LogoContainer" unique_id=513019011]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_62sql")
+stretch_mode = 3
+
+[node name="Splash" type="Label" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/LogoContainer" unique_id=515065788]
+z_index = 1
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(240, 50)
+offset_transform_rotation = -0.31066862
+theme_override_colors/font_color = Color(1, 1, 0.1882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "you know..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LocalLevels" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=1272770043]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Local Levels"
+
+[node name="Online" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=1405385635]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Online"
+
+[node name="Help" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=1042560359]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Help"
+
+[node name="Settings" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=1430449574]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="QuitGame" type="Button" parent="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer" unique_id=500713627]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Quit Game"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="MainMenuControlContainer/Control/MainScreen" unique_id=1250071246]
+title = "You sure?"
+ok_button_text = "Yes"
+dialog_text = "Are you sure you want to quit the game?"
+cancel_button_text = "No"
+
+[node name="LocalLevels" type="Control" parent="MainMenuControlContainer/Control" unique_id=199301052]
+anchors_preset = 0
+offset_left = 1280.0
+offset_right = 1280.0
+script = ExtResource("4_56cjo")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/LocalLevels" unique_id=1069062679]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer" unique_id=766252563]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="Title" type="Label" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer" unique_id=1755341112]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_v26qe")
+text = "Local Levels"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer" unique_id=1225698133]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="LineEdit" type="LineEdit" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1035868877]
+custom_minimum_size = Vector2(370, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search local levels..."
+backspace_deletes_composite_character_enabled = true
+
+[node name="ClearQuery" type="PanelContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=2105885007]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/ClearQuery" unique_id=1476322421]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_adtn5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Refresh" type="PanelContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=922973388]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/Refresh" unique_id=1806420097]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_apsaa")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="OpenFolder" type="PanelContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1525437917]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/OpenFolder" unique_id=1383473207]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("8_anepe")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LocalLevelsList" type="ScrollContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer" unique_id=1769935607]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+scroll_horizontal_by_default = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/LocalLevelsList" unique_id=1410604036]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer" unique_id=1046413939]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="PopupMenu" type="PopupMenu" parent="MainMenuControlContainer/Control/LocalLevels" unique_id=696077582]
+oversampling_override = 1.0
+title = "I k"
+item_count = 3
+item_0/text = "Play in All Jumps Mode"
+item_0/id = 0
+item_1/text = "Play in Noclip Mode"
+item_1/id = 1
+item_2/text = "Delete Level..."
+item_2/id = 2
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="MainMenuControlContainer/Control/LocalLevels" unique_id=1342679296]
+oversampling_override = 1.0
+title = "Delete Level"
+position = Vector2i(0, 36)
+size = Vector2i(288, 100)
+ok_button_text = "Yes"
+dialog_text = "Are you sure you want to delete \"\"?"
+cancel_button_text = "No"
+
+[node name="Help" type="Control" parent="MainMenuControlContainer/Control" unique_id=822756170]
+anchors_preset = 0
+offset_left = 2560.0
+offset_right = 2560.0
+script = ExtResource("9_f0d5x")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/Help" unique_id=843690308]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/Help/CenterContainer" unique_id=595849497]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="Title" type="Label" parent="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer" unique_id=1313783877]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_v26qe")
+text = "Help"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer" unique_id=2025420558]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TabBar" type="TabBar" parent="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer/VBoxContainer" unique_id=1498010100]
+layout_mode = 2
+theme_override_constants/tab_separation = 10
+current_tab = 0
+close_with_middle_mouse = false
+scroll_to_selected = false
+tab_count = 4
+tab_0/title = "General"
+tab_1/title = "Creator"
+tab_2/title = "Other"
+tab_3/title = "Support"
+
+[node name="ContentContainer" type="PanelContainer" parent="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer/VBoxContainer" unique_id=2064081780]
+layout_mode = 2
+
+[node name="Content" type="RichTextLabel" parent="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer/VBoxContainer/ContentContainer" unique_id=813816335]
+custom_minimum_size = Vector2(500, 420)
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_styles/normal = ExtResource("10_votqb")
+bbcode_enabled = true
+text = "astral was here
+
+mraoww~
+
+if you see this the script failed to initalize"
+
+[node name="Back" type="Button" parent="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer" unique_id=1519262071]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Settings" type="Control" parent="MainMenuControlContainer/Control" unique_id=1609779395]
+anchors_preset = 0
+offset_left = 1280.0
+offset_top = 720.0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("12_vbh0a")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/Settings" unique_id=828652163]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/Settings/CenterContainer" unique_id=1745334595]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="Title" type="Label" parent="MainMenuControlContainer/Control/Settings/CenterContainer/VBoxContainer" unique_id=1260001418]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_v26qe")
+text = "Settings"
+
+[node name="PanelContainer" type="PanelContainer" parent="MainMenuControlContainer/Control/Settings/CenterContainer/VBoxContainer" unique_id=1738460012]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainMenuControlContainer/Control/Settings/CenterContainer/VBoxContainer/PanelContainer" unique_id=1656610175]
+custom_minimum_size = Vector2(450, 400)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/scrollbar_h_separation = 10
+theme_override_styles/panel = ExtResource("10_votqb")
+horizontal_scroll_mode = 0
+scroll_deadzone = 5
+
+[node name="VBoxContainer" parent="MainMenuControlContainer/Control/Settings/CenterContainer/VBoxContainer/PanelContainer/ScrollContainer" unique_id=577217056 instance=ExtResource("13_0srtr")]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MainMenuControlContainer/Control/Settings/CenterContainer/VBoxContainer" unique_id=1074508056]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="RenderSwitchRestartDialog" type="ConfirmationDialog" parent="MainMenuControlContainer/Control/Settings" unique_id=1495590068]
+oversampling_override = 1.0
+title = "Renderer Mode Switch"
+position = Vector2i(0, 36)
+size = Vector2i(400, 158)
+always_on_top = true
+popup_wm_hint = true
+dialog_text = "The game needs to be restarted for the new Rendering Mode option to apply.
+
+Restart now?"
+dialog_autowrap = true
+
+[node name="Online" type="Control" parent="MainMenuControlContainer/Control" unique_id=2008557250]
+anchors_preset = 0
+offset_top = 720.0
+offset_bottom = 720.0
+script = ExtResource("14_3snd7")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/Online" unique_id=1283385617]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/Online/CenterContainer" unique_id=1362838233]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="Title" type="Label" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer" unique_id=1204126446]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_v26qe")
+text = "Online"
+
+[node name="Buttons" type="HBoxContainer" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer" unique_id=1221781703]
+layout_mode = 2
+
+[node name="Account" type="PanelContainer" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons" unique_id=362729087]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("14_a32bq")
+
+[node name="Contents" type="VBoxContainer" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Account" unique_id=2008676077]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Account/Contents" unique_id=1481795031]
+material = SubResource("ShaderMaterial_7o41x")
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(45, 0)
+offset_transform_scale = Vector2(1.2, 1.2)
+texture = ExtResource("15_6mx0w")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Account/Contents" unique_id=1413989778]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, -10)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 28
+text = "Login"
+
+[node name="Login" type="Button" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Account" unique_id=1194415719]
+z_index = -1
+layout_mode = 2
+
+[node name="Levels" type="PanelContainer" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons" unique_id=1784600687]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("14_a32bq")
+
+[node name="Contents" type="VBoxContainer" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Levels" unique_id=1915339660]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Levels/Contents" unique_id=1602020124]
+material = SubResource("ShaderMaterial_6mx0w")
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(45, 0)
+offset_transform_scale = Vector2(1.2, 1.2)
+texture = ExtResource("16_3snd7")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Levels/Contents" unique_id=1000910659]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, -10)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 28
+text = "Levels"
+
+[node name="Levels" type="Button" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Levels" unique_id=1969919971]
+z_index = -1
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer" unique_id=29451370]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="RenderSwitchRestartDialog" type="ConfirmationDialog" parent="MainMenuControlContainer/Control/Online" unique_id=20442863]
+oversampling_override = 1.0
+title = "Renderer Mode Switch"
+position = Vector2i(0, 36)
+size = Vector2i(400, 158)
+always_on_top = true
+popup_wm_hint = true
+dialog_text = "The game needs to be restarted for the new Rendering Mode option to apply.
+
+Restart now?"
+dialog_autowrap = true
+
+[node name="OnlineLevels" type="Control" parent="MainMenuControlContainer/Control" unique_id=63715767]
+anchors_preset = 0
+offset_top = 1440.0
+offset_bottom = 1440.0
+script = ExtResource("11_tu4us")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/OnlineLevels" unique_id=1711613142]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer" unique_id=300891707]
+custom_minimum_size = Vector2(420, 0)
+custom_maximum_size = Vector2(1000, -1)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="Title" type="Label" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer" unique_id=798563497]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_v26qe")
+text = "Online Levels"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer" unique_id=1509828248]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="LineEdit" type="LineEdit" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=716983438]
+custom_minimum_size = Vector2(370, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search online levels..."
+backspace_deletes_composite_character_enabled = true
+
+[node name="ClearQuery" type="PanelContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=885103225]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer/ClearQuery" unique_id=1252311126]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_adtn5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Refresh" type="PanelContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1577250939]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer/Refresh" unique_id=1804419641]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_apsaa")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FilterFeatured" type="PanelContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1086620507]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer/FilterFeatured" unique_id=1098290841]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("11_qlx78")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Order" type="PanelContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1677695932]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer/Order" unique_id=1131105618]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("12_ht387")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PagePrev" type="PanelContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1907403583]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer/PagePrev" unique_id=285961935]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("13_4p3lw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PageNext" type="PanelContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer" unique_id=90303727]
+layout_mode = 2
+
+[node name="Inner" type="TextureButton" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/HBoxContainer/PageNext" unique_id=1507606350]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("14_tu4us")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer" unique_id=1568456390]
+layout_mode = 2
+text = "25 results"
+
+[node name="OnlineLevelsList" type="ScrollContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer" unique_id=1804904128]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+scroll_horizontal_by_default = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/OnlineLevelsList" unique_id=1786999335]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer" unique_id=753361002]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="PopupMenu" type="PopupMenu" parent="MainMenuControlContainer/Control/OnlineLevels" unique_id=2146426435]
+oversampling_override = 1.0
+title = "I k"
+item_count = 3
+item_0/text = "Play in All Jumps Mode"
+item_0/id = 0
+item_1/text = "Play in Noclip Mode"
+item_1/id = 1
+item_2/text = "Delete Level..."
+item_2/id = 2
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="MainMenuControlContainer/Control/OnlineLevels" unique_id=656487316]
+oversampling_override = 1.0
+title = "Delete Level"
+position = Vector2i(0, 36)
+size = Vector2i(288, 100)
+ok_button_text = "Yes"
+dialog_text = "Are you sure you want to delete \"\"?"
+cancel_button_text = "No"
+
+[node name="OnlineLoading" type="Control" parent="MainMenuControlContainer/Control" unique_id=416031778]
+anchors_preset = 0
+offset_left = 1280.0
+offset_top = 1440.0
+offset_right = 1280.0
+offset_bottom = 1440.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenuControlContainer/Control/OnlineLoading" unique_id=1351346]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuControlContainer/Control/OnlineLoading/CenterContainer" unique_id=1076063419]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(1000, -1)
+layout_mode = 2
+theme = SubResource("Theme_8kbp2")
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MainMenuControlContainer/Control/OnlineLoading/CenterContainer/VBoxContainer" unique_id=2043043597]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainMenuControlContainer/Control/OnlineLoading/CenterContainer/VBoxContainer/PanelContainer" unique_id=1212526670]
+layout_mode = 2
+text = "Loading online level..."
+horizontal_alignment = 1
+
+[node name="StarsBackground" type="Control" parent="MainMenuControlContainer" unique_id=1087865034]
+visible = false
+z_index = -5
+layout_mode = 3
+anchors_preset = 0
+offset_left = 635.0
+offset_top = 339.0
+offset_right = 635.0
+offset_bottom = 339.0
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="MainMenuControlContainer/StarsBackground" unique_id=68220059]
+z_index = -10
+material = SubResource("ShaderMaterial_7la6k")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7079.0
+offset_top = -3089.0
+offset_right = 5721.0
+offset_bottom = 4111.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = SubResource("GDScript_ucygd")
+metadata/_edit_lock_ = true
+
+[node name="Panorama" type="WorldEnvironment" parent="." unique_id=475495200]
+environment = SubResource("Environment_v26qe")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=414902472]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0)
+attributes = SubResource("CameraAttributesPractical_8kbp2")
+fov = 70.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1769462642]
+stream = ExtResource("26_40yas")
+volume_db = -3.059
+autoplay = true
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=422134630]
+stream = ExtResource("27_6ju5w")
+volume_db = -3.059
+max_distance = 124390.0
+playback_type = 1
+
+[connection signal="pressed" from="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/LocalLevels" to="MainMenuControlContainer/Control/MainScreen" method="_on_local_levels_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/Online" to="MainMenuControlContainer/Control/MainScreen" method="_on_online_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/Help" to="MainMenuControlContainer/Control/MainScreen" method="_on_help_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/Settings" to="MainMenuControlContainer/Control/MainScreen" method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/QuitGame" to="MainMenuControlContainer/Control/MainScreen" method="_on_quit_game_pressed"]
+[connection signal="canceled" from="MainMenuControlContainer/Control/MainScreen/ConfirmationDialog" to="MainMenuControlContainer/Control/MainScreen" method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="MainMenuControlContainer/Control/MainScreen/ConfirmationDialog" to="MainMenuControlContainer/Control/MainScreen" method="_on_confirmation_dialog_confirmed"]
+[connection signal="text_changed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/LineEdit" to="MainMenuControlContainer/Control/LocalLevels" method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/LineEdit" to="MainMenuControlContainer/Control/LocalLevels" method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/ClearQuery/Inner" to="MainMenuControlContainer/Control/LocalLevels" method="_on_clear_query_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/Refresh/Inner" to="MainMenuControlContainer/Control/LocalLevels" method="_on_refresh_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/HBoxContainer/OpenFolder/Inner" to="MainMenuControlContainer/Control/LocalLevels" method="_on_open_folder_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/LocalLevels/CenterContainer/VBoxContainer/Back" to="MainMenuControlContainer/Control/LocalLevels" method="_on_back_pressed"]
+[connection signal="index_pressed" from="MainMenuControlContainer/Control/LocalLevels/PopupMenu" to="MainMenuControlContainer/Control/LocalLevels" method="_on_popup_menu_index_pressed"]
+[connection signal="canceled" from="MainMenuControlContainer/Control/LocalLevels/ConfirmationDialog" to="MainMenuControlContainer/Control/LocalLevels" method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="MainMenuControlContainer/Control/LocalLevels/ConfirmationDialog" to="MainMenuControlContainer/Control/LocalLevels" method="_on_confirmation_dialog_confirmed"]
+[connection signal="tab_clicked" from="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer/VBoxContainer/TabBar" to="MainMenuControlContainer/Control/Help" method="_on_tab_bar_tab_clicked"]
+[connection signal="meta_clicked" from="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer/VBoxContainer/ContentContainer/Content" to="MainMenuControlContainer/Control/Help" method="_on_content_meta_clicked"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/Help/CenterContainer/VBoxContainer/Back" to="MainMenuControlContainer/Control/Help" method="_on_back_pressed"]
+[connection signal="bg_option" from="MainMenuControlContainer/Control/Settings/CenterContainer/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_bg_option"]
+[connection signal="changed_renderer" from="MainMenuControlContainer/Control/Settings/CenterContainer/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" to="MainMenuControlContainer/Control/Settings" method="_on_v_box_container_changed_renderer"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/Settings/CenterContainer/VBoxContainer/Back" to="MainMenuControlContainer/Control/Settings" method="_on_back_pressed"]
+[connection signal="canceled" from="MainMenuControlContainer/Control/Settings/RenderSwitchRestartDialog" to="MainMenuControlContainer/Control/Settings" method="_on_render_switch_restart_dialog_canceled"]
+[connection signal="confirmed" from="MainMenuControlContainer/Control/Settings/RenderSwitchRestartDialog" to="MainMenuControlContainer/Control/Settings" method="_on_render_switch_restart_dialog_confirmed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Buttons/Levels/Levels" to="MainMenuControlContainer/Control/Online" method="_on_levels_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/Online/CenterContainer/VBoxContainer/Back" to="MainMenuControlContainer/Control/Online" method="_on_back_pressed"]
+[connection signal="pressed" from="MainMenuControlContainer/Control/OnlineLevels/CenterContainer/VBoxContainer/Back" to="MainMenuControlContainer/Control/OnlineLevels" method="_on_back_pressed"]
+[connection signal="index_pressed" from="MainMenuControlContainer/Control/OnlineLevels/PopupMenu" to="MainMenuControlContainer/Control/OnlineLevels" method="_on_popup_menu_index_pressed"]
+[connection signal="canceled" from="MainMenuControlContainer/Control/OnlineLevels/ConfirmationDialog" to="MainMenuControlContainer/Control/OnlineLevels" method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="MainMenuControlContainer/Control/OnlineLevels/ConfirmationDialog" to="MainMenuControlContainer/Control/OnlineLevels" method="_on_confirmation_dialog_confirmed"]

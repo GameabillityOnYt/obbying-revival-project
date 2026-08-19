@@ -1,11 +1,13 @@
 extends Node
 
-const VERSIONLINK = "https://raw.githubusercontent.com/GameabillityOnYt/obbying-revival-project/refs/heads/main/version.txt"
+const VERSIONLINK = "https://static.obbyrevivalproject.org/version.txt"
 const TARGETRATIO = 16.0/9.0
 
 @onready var window = get_window()
 @export var data:PlayerData = PlayerData.new()
 @export var leveldata:LevelData = LevelData.new()
+@export var levelIsOnline = false
+@export var levelOnlineId = 0
 @export var currentLevel:String
 @export var currentLoadedLevel:String
 @export var Camera:CamStuff
@@ -15,6 +17,7 @@ const TARGETRATIO = 16.0/9.0
 @export var RToggle:bool = false
 @export var menuTransitions:bool = true
 @export var RobloxStuds:bool = false # should be a string later for more material if needed
+@export var customCacheFolder:String = "user://customcache"
 
 signal DataLoaded
 signal CharacterAdded(Player)
@@ -47,6 +50,12 @@ func _notification(what: int) -> void:
 			autosave()
 			print_debug("Saved successfully on exit!")
 		get_tree().quit()
+	
+	if what == NOTIFICATION_WM_MOUSE_EXIT:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	if what == NOTIFICATION_WM_MOUSE_ENTER:
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -61,7 +70,7 @@ func _ready():
 	else:
 		data = PlayerData.new()
 		ResourceSaver.save(data,"user://data.tres")
-		
+	apply_volume()
 	DataLoaded.emit() # Telling game its done loading
 	# loading level stats
 	
@@ -70,6 +79,11 @@ func _ready():
 	else:
 		leveldata = LevelData.new()
 		ResourceSaver.save(leveldata,"user://level_stats.tres")
+	
+	if not DirAccess.dir_exists_absolute("user://customcache"):
+		DirAccess.make_dir_absolute("user://customcache")
+	
+	
 
 	if RenderingServer.get_current_rendering_method() != data.renderer:
 		OS.create_instance(["--rendering-method",data.renderer])
@@ -169,7 +183,14 @@ func copy_default_levels():
 		print_debug("Copied level:", file_name)
 
 	source_dir.list_dir_end()
+func apply_volume():
+	var master_bus = AudioServer.get_bus_index("Master")
+	var volume = data.volume
 
+	AudioServer.set_bus_volume_db(
+		master_bus,
+		linear_to_db(volume / 100.0)
+	)
 func ensure_levels_folder(): 
 	var dir = DirAccess.open("user://")
 	if not dir.dir_exists("levels"):

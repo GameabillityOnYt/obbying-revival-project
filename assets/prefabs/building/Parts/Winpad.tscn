@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bk3ta5sriu7ga"]
+
+[ext_resource type="Script" uid="uid://c8bwq8eipcqye" path="res://assets/prefabs/building/Parts/winpad.gd" id="1_dl1t1"]
+[ext_resource type="Shader" uid="uid://b35qw48vmqolq" path="res://assets/resources/shaders/part_transparent.gdshader" id="2_4mrym"]
+[ext_resource type="Texture2D" uid="uid://d16c6y0uly506" path="res://assets/images/textures/orp_brick_updated.png" id="3_eadg1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fpvxl"]
+margin = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wljxp"]
+render_priority = 0
+shader = ExtResource("2_4mrym")
+shader_parameter/base_color = Color(0.48962194, 0.48962235, 0.48962206, 1)
+shader_parameter/albedo_texture = ExtResource("3_eadg1")
+shader_parameter/tiling_scale = Vector2(0.5, 0.5)
+shader_parameter/sharpness = 10.000000475
+shader_parameter/transparency = 0.8999999798832
+shader_parameter/part_transparency = 0.0
+shader_parameter/use_overlay_mode = false
+
+[sub_resource type="BoxMesh" id="BoxMesh_iuq8f"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("ShaderMaterial_wljxp")
+
+[node name="Part2" type="RigidBody3D" unique_id=1081425028]
+freeze = true
+script = ExtResource("1_dl1t1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1561046738]
+shape = SubResource("BoxShape3D_fpvxl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1760716609]
+cast_shadow = 0
+mesh = SubResource("BoxMesh_iuq8f")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1728220926]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1030342702]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_fpvxl")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

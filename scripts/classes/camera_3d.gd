@@ -27,6 +27,24 @@ enum CameraMode {NORMAL, FIRSTPERSON, GHOST_MODE}
 @onready var ray: RayCast3D = target.get_node("Focus/ray")
 @export var offset: Vector3 = Vector3.ZERO
 
+# --- CUBEMAP CAPTURE EXPORTS & VARS ---
+@export_group("Cubemap Capture")
+@export var capture_key: Key = KEY_F9
+@export var output_directory: String = "res://cubemap_faces/"
+
+var is_capturing := false
+
+# Cardinal rotations in radians for 6 cubemap faces
+const FACES = {
+	"front":  Vector3(0, 0, 0),                 # Forward (-Z)
+	"right":  Vector3(0, deg_to_rad(-90), 0),   # Right (+X)
+	"back":   Vector3(0, deg_to_rad(180), 0),   # Back (+Z)
+	"left":   Vector3(0, deg_to_rad(90), 0),    # Left (-X)
+	"up":     Vector3(deg_to_rad(-90), 0, 0),   # Up (+Y)
+	"down":   Vector3(deg_to_rad(90), 0, 0)     # Down (-Y)
+}
+# --------------------------------------
+
 var target_distance := 10.0 :
 	set(new):
 		target_distance = clamp(new, 0.0, max_distance)
@@ -49,6 +67,15 @@ func _ready():
 # whoever reads this please add camera shader caching it lags so hard on first zoom
 
 func _input(event):
+	if is_capturing:
+		return
+
+	# Shortcut key check for cubemap capture
+	if event is InputEventKey and event.pressed and not event.is_echo():
+		if event.keycode == capture_key:
+			capture_cubemap()
+			return
+
 	if freecam_active:
 		if event is InputEventMouseMotion:
 			var aspect = get_viewport().size.x / get_viewport().size.y
@@ -97,7 +124,7 @@ func _input(event):
 			pitch = clamp(pitch, -1.5, 1.5)
 
 func _process(delta):
-	if target == null:
+	if target == null or is_capturing:
 		return
 
 	if freecam_active:
@@ -156,19 +183,6 @@ func _process(delta):
 		
 	global_position = shifted_focus + (look_basis.z * distance)
 	auto_transparency()
-		
-func sync_angles(target_transform: Transform3D):
-	var euler = target_transform.basis.get_euler()
-	
-	self.yaw = euler.y
-	self.pitch = euler.x 
-	if mode == CameraMode.FIRSTPERSON:
-		self.target_distance = 0
-		self.distance = 0
-	
-	global_transform = target_transform
-
-# this function separate for auto transparencing player if part is blocking camera
 
 func auto_transparency():
 	if target == null:
@@ -186,3 +200,51 @@ func auto_transparency():
 	for child in target.find_children("*", "MeshInstance3D", true, false):
 		if child is MeshInstance3D:
 			child.transparency = target_transparency
+
+func capture_cubemap() -> void:
+	is_capturing = true
+	print("Starting 6-face cubemap capture from current camera location...")
+
+	# 1. Store initial states
+	var original_fov = fov
+	var original_size = DisplayServer.window_get_size()
+	var original_rotation = global_rotation
+	var original_target_visible = target.visible if target else true
+
+	# Hide target player character during capture so they don't block the panorama view
+	if target:
+		target.visible = false
+
+	# 2. Resize window to 1024x1024 and lock FOV to 90° for seamless stitching
+	DisplayServer.window_set_size(Vector2i(1024, 1024))
+	fov = 90.0
+
+	if not DirAccess.dir_exists_absolute(output_directory):
+		DirAccess.make_dir_absolute(output_directory)
+
+	# 3. Rotate to each cardinal direction, wait for draw, and save PNG
+	for face_name in FACES:
+		global_rotation = FACES[face_name]
+
+		# Allow GPU buffer to flush frame
+		await RenderingServer.frame_post_draw
+		await RenderingServer.frame_post_draw
+
+		var img = get_viewport().get_texture().get_image()
+		var file_path = output_directory + face_name + ".png"
+		var err = img.save_png(file_path)
+
+		if err == OK:
+			print("Saved: ", file_path)
+		else:
+			push_error("Failed to save: " + file_path)
+
+	# 4. Restore original state
+	DisplayServer.window_set_size(original_size)
+	fov = original_fov
+	global_rotation = original_rotation
+	if target:
+		target.visible = original_target_visible
+
+	is_capturing = false
+	print("Capture complete! 6 cubemap images saved to: ", output_directory)

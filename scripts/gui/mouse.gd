@@ -9,7 +9,7 @@ var wobbly_speed = 0
 @onready var canvas:CanvasLayer = get_parent()
 
 func _process(delta: float) -> void:
-	if wobbly:
+	if wobbly and not GameManager.data.disableCursorWobble:
 		var mouse_speed = (get_global_mouse_position().x-global_position.x)/get_window().size.x
 		var force = (0 - skew) * 200.0 - wobbly_speed * 4.0
 		wobbly_speed += force * delta
@@ -64,6 +64,8 @@ func _process(delta: float) -> void:
 	
 	last_rotating = rotating
 	
+	set_inverted(Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT))
+	
 	if GameManager.shiftlocked:
 		set_icon(ICON.SHIFTLOCK)
 	elif get_viewport().gui_get_hovered_control():
@@ -84,8 +86,3 @@ func set_icon(icon:ICON):
 		offset = Vector2.ONE*16
 		scale = Vector2.ONE*1.5
 	pass
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and not event.is_echo():
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			set_inverted(event.is_pressed())

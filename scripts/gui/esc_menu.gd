@@ -60,7 +60,7 @@ func _ready():
 	$Back.pressed.connect(toggle_paused) # runs the toggle_paused function when u press the back to game button
 	
 	$Menu.pressed.connect(func():
-		get_tree().call_deferred("change_scene_to_file","res://scenes/MainMenu.tscn") # changes scene to menu
+		get_tree().call_deferred("change_scene_to_file","res://scenes/MainMenuV2.tscn") # changes scene to menu
 		get_tree().paused = false # turns off paused
 		GameManager.alljump = false # turns off alljump when u go out of the game
 		GameManager.nfToggle = false # turns off noclip practice when u go out of the game

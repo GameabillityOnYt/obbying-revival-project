@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cq74jvhhw3igw"]
+
+[ext_resource type="StyleBox" uid="uid://7588ct6th75k" path="res://assets/prefabs/UI/mmv2/styles/levelbutton.tres" id="1_ergc0"]
+[ext_resource type="Script" uid="uid://bfj2p6omyj1a8" path="res://scripts/mmv2/levelbutton.gd" id="1_ojmcd"]
+[ext_resource type="StyleBox" uid="uid://cc8sdgvhov2na" path="res://assets/prefabs/UI/mmv2/styles/difficultycontainer.tres" id="2_uqd7k"]
+
+[node name="Level" type="PanelContainer" unique_id=1555848000]
+custom_minimum_size = Vector2(500, 44)
+offset_right = 568.0
+offset_bottom = 42.0
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_ergc0")
+script = ExtResource("1_ojmcd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=392575470]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SpacerLeft" type="Control" parent="HBoxContainer" unique_id=1206978401]
+layout_mode = 2
+
+[node name="DifficultyContainer" type="PanelContainer" parent="HBoxContainer" unique_id=368026450]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("2_uqd7k")
+
+[node name="Difficulty" type="Label" parent="HBoxContainer/DifficultyContainer" unique_id=443506111]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "0"
+horizontal_alignment = 1
+
+[node name="MainMetaContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=24207218]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="HBoxContainer/MainMetaContainer" unique_id=1710480197]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Unknown"
+
+[node name="Creator" type="Label" parent="HBoxContainer/MainMetaContainer" unique_id=561163874]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.49803922)
+theme_override_font_sizes/font_size = 18
+text = "by Unknown"
+
+[node name="SpacerRight" type="Control" parent="HBoxContainer" unique_id=2102791918]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1168762612]
+z_index = -1
+layout_mode = 2
+
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

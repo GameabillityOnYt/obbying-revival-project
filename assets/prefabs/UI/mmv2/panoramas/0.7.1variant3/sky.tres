@@ -1,0 +1,21 @@
+[gd_resource type="Sky" format=3 uid="uid://j0httn1by4e5"]
+
+[ext_resource type="Shader" uid="uid://cy6tk85mmvges" path="res://assets/prefabs/UI/mmv2/sky.gdshader" id="1_28fm6"]
+[ext_resource type="Texture2D" uid="uid://rlfmhy68kt7j" path="res://assets/prefabs/UI/mmv2/panoramas/0.7.1variant3/front.png" id="2_0w0qj"]
+[ext_resource type="Texture2D" uid="uid://v6i3p85ptvvi" path="res://assets/prefabs/UI/mmv2/panoramas/0.7.1variant3/up.png" id="3_i5sxj"]
+[ext_resource type="Texture2D" uid="uid://bbmr8ibd5rurj" path="res://assets/prefabs/UI/mmv2/panoramas/0.7.1variant3/back.png" id="4_1w3du"]
+[ext_resource type="Texture2D" uid="uid://hfllan0i5h31" path="res://assets/prefabs/UI/mmv2/panoramas/0.7.1variant3/left.png" id="5_t7ruh"]
+[ext_resource type="Texture2D" uid="uid://c8wsukauu046q" path="res://assets/prefabs/UI/mmv2/panoramas/0.7.1variant3/right.png" id="6_5dtg0"]
+[ext_resource type="Texture2D" uid="uid://yi73oaoca5vq" path="res://assets/prefabs/UI/mmv2/panoramas/0.7.1variant3/down.png" id="7_uj58y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ciofv"]
+shader = ExtResource("1_28fm6")
+shader_parameter/texture_back = ExtResource("2_0w0qj")
+shader_parameter/texture_front = ExtResource("4_1w3du")
+shader_parameter/texture_left = ExtResource("5_t7ruh")
+shader_parameter/texture_right = ExtResource("6_5dtg0")
+shader_parameter/texture_down = ExtResource("3_i5sxj")
+shader_parameter/texture_up = ExtResource("7_uj58y")
+
+[resource]
+sky_material = SubResource("ShaderMaterial_ciofv")

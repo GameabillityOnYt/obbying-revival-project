@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dusbpf0h51nok"]
+
+[ext_resource type="AudioStream" uid="uid://dx52itdn1kpkq" path="res://assets/sounds/click.mp3" id="1_hux41"]
+[ext_resource type="Script" uid="uid://coiif6dum42s2" path="res://scripts/autoload/AudioManager.gd" id="1_v6v0x"]
+
+[node name="AudioManager" type="Node" unique_id=1410158292]
+script = ExtResource("1_v6v0x")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1166755362]
+stream = ExtResource("1_hux41")

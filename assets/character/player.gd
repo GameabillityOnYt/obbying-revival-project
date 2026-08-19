@@ -223,7 +223,6 @@ func reset():
 			cam.mode = spawn.get_meta("camera_mode")
 			GameManager.shiftlocked = spawn.get_meta("shiftlocked")
 			cam.global_transform = spawn.get_meta("camera_transform")
-			cam.sync_angles(cam.global_transform)
 			
 		if not GameManager.alljump and timer and timer.has_node("Panel"):
 			timer.get_node("Panel").resetTime()
@@ -254,7 +253,13 @@ func _physics_process(delta: float) -> void:
 		set_char_transparency(0.3)
 	else:
 		set_char_transparency(1.0)
-		
+	
+	if State == states.Walking:
+		if !$Character/Footstep.playing:
+			$Character/Footstep.pitch_scale = randf_range(1.2,1.5)
+			$Character/Footstep.play()
+	else:
+		$Character/Footstep.stop()
 	# health regen
 	if Health < MaxHealth:
 		if took_damage:
@@ -363,6 +368,7 @@ func _physics_process(delta: float) -> void:
 		# you need to change this in some way to make it not accumulate velocity while lodging
 		velocity += get_gravity() * delta
 
+
 	# truss coyote logic
 	if truss_timer < 0.1 and not truss_used:
 		if is_leg_near_ground():
@@ -377,17 +383,16 @@ func _physics_process(delta: float) -> void:
 	else:
 		coyote_timer = max(coyote_timer - delta, 0.0)
 
-	if Input.is_action_pressed("ui_accept"):
-		if coyote_timer > 0 and not is_climbing and jump_lock <= 0.0:
-			velocity.y = JUMP_VELOCITY
-			coyote_timer = 0
-			
+	if Input.is_action_pressed("ui_accept") and coyote_timer > 0 and not is_climbing and jump_lock <= 0.0:
+		velocity.y = JUMP_VELOCITY
+		coyote_timer = 0
+		$Character/Jump.play()
+
 	if Input.is_action_just_pressed("Reset") and !GameManager.data.RToggle:
 		reset()
 
 	if Input.is_action_just_pressed("ResetAlt") and GameManager.data.RToggle:
 		reset()
-		
 	if GameManager.nfToggle:
 		if Input.is_action_just_pressed("noclip"):
 			$CollisionShape3D.disabled = not $CollisionShape3D.disabled
