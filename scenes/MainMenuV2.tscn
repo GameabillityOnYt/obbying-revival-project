@@ -25,6 +25,8 @@
 [ext_resource type="Shader" uid="uid://6yxke1lha146" path="res://assets/prefabs/UI/mmv2/onlinebutton.gdshader" id="15_3snd7"]
 [ext_resource type="Texture2D" uid="uid://lwnl0dun1b67" path="res://assets/prefabs/UI/mmv2/icons/person.png" id="15_6mx0w"]
 [ext_resource type="Texture2D" uid="uid://c46sk3oh4yj3b" path="res://assets/prefabs/UI/mmv2/icons/levels.png" id="16_3snd7"]
+[ext_resource type="AudioStream" uid="uid://dmeg3ta1lwx2k" path="res://assets/sounds/orpington.wav" id="26_40yas"]
+[ext_resource type="AudioStream" uid="uid://dx52itdn1kpkq" path="res://assets/sounds/click.mp3" id="27_6ju5w"]
 
 [sub_resource type="Theme" id="Theme_8kbp2"]
 BoxContainer/constants/separation = 10
@@ -786,6 +788,17 @@ environment = SubResource("Environment_v26qe")
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0)
 attributes = SubResource("CameraAttributesPractical_8kbp2")
 fov = 70.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1769462642]
+stream = ExtResource("26_40yas")
+volume_db = -3.059
+autoplay = true
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=422134630]
+stream = ExtResource("27_6ju5w")
+volume_db = -3.059
+max_distance = 124390.0
+playback_type = 1
 
 [connection signal="pressed" from="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/LocalLevels" to="MainMenuControlContainer/Control/MainScreen" method="_on_local_levels_pressed"]
 [connection signal="pressed" from="MainMenuControlContainer/Control/MainScreen/CenterContainer/VBoxContainer/Online" to="MainMenuControlContainer/Control/MainScreen" method="_on_online_pressed"]

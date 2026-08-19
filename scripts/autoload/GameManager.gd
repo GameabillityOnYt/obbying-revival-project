@@ -70,7 +70,7 @@ func _ready():
 	else:
 		data = PlayerData.new()
 		ResourceSaver.save(data,"user://data.tres")
-		
+	apply_volume()
 	DataLoaded.emit() # Telling game its done loading
 	# loading level stats
 	
@@ -183,7 +183,14 @@ func copy_default_levels():
 		print_debug("Copied level:", file_name)
 
 	source_dir.list_dir_end()
+func apply_volume():
+	var master_bus = AudioServer.get_bus_index("Master")
+	var volume = data.volume
 
+	AudioServer.set_bus_volume_db(
+		master_bus,
+		linear_to_db(volume / 100.0)
+	)
 func ensure_levels_folder(): 
 	var dir = DirAccess.open("user://")
 	if not dir.dir_exists("levels"):

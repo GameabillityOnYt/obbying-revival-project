@@ -16,8 +16,13 @@ run/main_scene="uid://de5w0bnvhc3wn"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
+boot_splash/show_image=false
 config/icon="uid://bff45kdw0wpbe"
 config/show_image=true
+
+[audio]
+
+buses/default_bus_layout="uid://b1t88d5tljepx"
 
 [autoload]
 
@@ -25,6 +30,7 @@ GameManager="*uid://cte5656lvloub"
 Mouse="*uid://cu25jxjffbj0w"
 DiscordRPCLoader="*uid://qnxs07vgnacx"
 DiscordRPCManager="*uid://dhduneqga1y8e"
+AudioManager="*uid://dusbpf0h51nok"
 
 [display]
 

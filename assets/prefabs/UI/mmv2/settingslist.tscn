@@ -125,6 +125,29 @@ min_value = 25.0
 max_value = 80.0
 value = 70.0
 
+[node name="Music" type="HBoxContainer" parent="." unique_id=2025809834]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Music" unique_id=2032977426]
+modulate = Color(1, 1, 1, 0.90588236)
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(6, 0)
+text = "Master Volume"
+
+[node name="Volume" type="HSlider" parent="Music" unique_id=1665881826]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+value = 50.0
+tick_count = 11
+ticks_position = 3
+
+[node name="Volume2" type="SpinBox" parent="Music" unique_id=1125098836]
+layout_mode = 2
+value = 50.0
+
 [node name="UseAltStud" type="CheckButton" parent="." unique_id=531736479]
 layout_mode = 2
 text = "Use alternative stud texture"
@@ -158,6 +181,8 @@ text = "Do not..."
 [connection signal="toggled" from="CtrlRToRestart" to="." method="_on_ctrl_r_to_restart_toggled"]
 [connection signal="value_changed" from="FOV/FOVSlider" to="." method="_on_fov_slider_value_changed"]
 [connection signal="value_changed" from="FOV/FOVNumber" to="." method="_on_fov_number_value_changed"]
+[connection signal="value_changed" from="Music/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Music/Volume2" to="." method="_on_volume_2_value_changed"]
 [connection signal="toggled" from="UseAltStud" to="." method="_on_use_alt_stud_toggled"]
 [connection signal="toggled" from="DisableWobbly" to="." method="_on_disable_wobbly_toggled"]
 [connection signal="toggled" from="DiscordRPC" to="." method="_on_discord_rpc_toggled"]

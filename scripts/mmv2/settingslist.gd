@@ -15,7 +15,9 @@ extends VBoxContainer
 	use_alt_stud = $UseAltStud,
 	disable_wobbly = $DisableWobbly,
 	discord_rpc = $DiscordRPC,
-	do_not = $DoNot
+	do_not = $DoNot,
+	volume_slider = $Music/Volume,
+	volume_number = $Music/Volume2
 }
 
 signal changed_renderer
@@ -35,6 +37,8 @@ func reload() -> void:
 	stuff.disable_wobbly.button_pressed = GameManager.data.disableCursorWobble
 	stuff.discord_rpc.button_pressed = GameManager.data.rpc_enabled
 	stuff.do_not.button_pressed = GameManager.data.doNot
+	stuff.volume_slider.value = GameManager.data.volume
+	stuff.volume_number.value = GameManager.data.volume
 	pass
 
 # Called when the node enters the scene tree for the first time.
@@ -111,3 +115,15 @@ func _on_use_old_stars_toggled(toggled_on: bool) -> void:
 	GameManager.data.starsBg = toggled_on
 	bg_option.emit(toggled_on)
 	pass # Replace with function body.
+
+
+func _on_volume_2_value_changed(value: float) -> void:
+	stuff.volume_slider.value = value
+	GameManager.data.volume = value
+	GameManager.apply_volume()
+
+
+func _on_volume_value_changed(value: float) -> void:
+	stuff.volume_number.value = value
+	GameManager.data.volume = value
+	GameManager.apply_volume()
